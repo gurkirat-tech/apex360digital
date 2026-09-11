@@ -1,139 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADEElEQVR4nO2bXUsUYRTHfzOtqy0aRi8sFoFlRS9SsomaqxVEhVEJWV3UVR+hwIs+gnd9BMHuKhEDqYtuaqUsAy/Ei6gIwaKCigwrNbvYFoedZ3Zn8HnRmfld7T7n7Nlz/s95Zp+ZnbHwwdK1uiU/fqsNa2DGKutTyrhWCy+mlBBCQ1gKL0YkhF08ENbiQVybXc4hbBTXaHsZwoyzVtcSiBo2RGv2CxRqjnwHWFGcfSeR74BYANMJmCYWwHQCpokFMJ2AaWIBTCdgmsgLkND6bU0n4UZ/aZ/eTvjwRk8+6O6AjstyfCSiT4DqWmg6Vd4v2wOWvrT0fVNrNyQqyvttTMPBDuXpFNAnQGeA1ta4DPQIsG0P1B/y7585A6kadfk40COA14xOPoVP793jySpoOa82p/+oF8BeB+0XxbbcPcjdF9s0LQP1AjQeg9qt7vH53/ByBEY9BNh9BNL1anNDhwBeM/nqEcz9gI9v4d2E2CervgvUCpDaAJnTYptz5r2WgYY9gdrobd2QSLrHZ7/BxOPl98+G4O+i229THexvV5UdoFqAjivi8bFhWFxYfv/9M0w+8YhxSX5eDtQJUNcAuw6LbaKWzw2KfZu7oKpaWlrFqBPA6+D3ZRpev3CPj4/Anzn3eHI9tJyTm5sDNQJYtvdv/+ggLAn+jPr1E8Yfij8TZBsdEDV/jTUeh947cmPePCreNa4QNR2gYsYU7QzlC5CqyZ/MyCbbA1bZm74CI1+AlgtQUSk9LJu3w7426WHlC6DwgOW5r1gBci+KpndCQ0Zsu9sHQ7f9xbneByeuusebu6D/Vv4XQxJyO6DUrm3sgf84Xr6VKWg+GyynMsgTwLKhvUdsm54Kdql7ahRmv4ptkpeYPAEOZPMnLyKeDweLtbiQv1YgYm8rbNkRLF4J5AlQqv2DCgDey8CypJ4gxTdJmU7ANLEAphMwTSyA6QRMEwtgOgHTxAL4ebQsrFgDMxpvxVil2ODvAcOwUag57oDCiyh1gbNW28sQVoprdC2BMIsgqi1+eNpPgLUqhJ9u/gfYf67ZvTRw9gAAAABJRU5ErkJggg=="/><meta name="theme-color" content="#FF5C1A"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Monday.com — Apex360 Digital</title>
-<meta name="description" content="Workspace architecture, workflow automation and team training — we implement Monday.com so your projects, clients and campaigns run smoother than ever."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--or:#FF5C1A;--olt:#FFF0EB;--ink:#111;--mu:#666;--bg:#fff;--sur:#f7f7f5;--bd:rgba(0,0,0,.08);--ra:14px;--pi:100px;--te:#0f9e72;--tebg:#F3FFF8;--bl:#2563eb;--blbg:#EBF2FF;--pu:#7c3aed;--pubg:#F5F2FF;}
-html{scroll-behavior:smooth}body{font-family:"Figtree",sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);overflow-x:hidden}
-#nav{position:sticky;top:0;z-index:500;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 5rem;height:72px;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd);transition:height .25s,box-shadow .25s}
-#nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
-.logo{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap;flex-shrink:0}.logo span{color:var(--or)}
-.nl{display:flex;align-items:center;gap:.15rem;list-style:none}
-.nl>li>a,.ndb{display:flex;align-items:center;gap:.3rem;padding:.45rem .8rem;font-size:.875rem;font-weight:500;color:var(--mu);text-decoration:none;background:none;border:none;cursor:pointer;border-radius:8px;white-space:nowrap;font-family:"Figtree",sans-serif;transition:background .15s,color .15s}
-.nl>li>a:hover,.ndb:hover,.nl>li>a.active{background:var(--olt);color:var(--or)}
-.chev{width:12px;height:12px;transition:transform .25s}.nd.open .chev{transform:rotate(180deg)}
-.nl>li>a.ncta{background:var(--or);color:#fff!important;padding:.5rem 1.3rem;border-radius:var(--pi);font-weight:600}.nl>li>a.ncta:hover{background:#e04a0e!important}
-.nd{position:relative}.dd{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;border:1px solid var(--bd);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.11);padding:.5rem;min-width:225px;opacity:0;pointer-events:none;transition:opacity .2s,transform .22s cubic-bezier(.22,1,.36,1)}.nd.open .dd{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.di{display:flex;align-items:center;gap:.7rem;padding:.55rem .85rem;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.84rem;font-weight:600;transition:background .15s}.di:hover{background:var(--sur)}.dio{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hbtn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem}.hbtn span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .2s}
-section{padding:5rem}.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--or);background:var(--olt);padding:.35rem .9rem;border-radius:var(--pi);margin-bottom:1rem}
-.sh{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:.4rem}.hl{color:var(--or)}.ss{color:var(--mu);font-size:.97rem;line-height:1.75;max-width:580px;margin-top:.75rem;font-weight:300}
-.ph{padding:5rem;background:linear-gradient(135deg,#0a0a0a 0%,#1c1c1c 100%);position:relative;overflow:hidden;text-align:center}.ph::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.15) 0%,transparent 65%);pointer-events:none}
-.phi{position:relative;max-width:720px;margin:0 auto}.phtag{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,92,26,.12);color:var(--or);border:1px solid rgba(255,92,26,.25);font-size:.72rem;font-weight:700;padding:.38rem 1rem;border-radius:var(--pi);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem}
-.ph h1{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.1rem}.ph h1 span{color:var(--or)}
-.phsub{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:1.5rem;font-weight:300}.phbc{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.3)}.phbc a{color:rgba(255,255,255,.45);text-decoration:none}.phbc a:hover{color:var(--or)}
-.phact{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
-.bor{display:inline-flex;align-items:center;gap:.4rem;background:var(--or);color:#fff;padding:.82rem 1.9rem;border-radius:var(--pi);font-family:"Figtree",sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:opacity .2s,transform .15s;border:none;cursor:pointer}.bor:hover{opacity:.88;transform:translateY(-2px)}
-.bout{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:#fff;padding:.82rem 1.9rem;border-radius:var(--pi);border:1.5px solid rgba(255,255,255,.3);font-family:"Figtree",sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:border-color .2s,transform .15s}.bout:hover{border-color:#fff;transform:translateY(-2px)}
-.bdout{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:var(--ink);padding:.82rem 1.9rem;border-radius:var(--pi);border:1.5px solid var(--bd);font-family:"Figtree",sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:border-color .2s,transform .15s}.bdout:hover{border-color:var(--ink);transform:translateY(-2px)}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
-.card{background:#fff;border:1px solid var(--bd);border-radius:var(--ra);padding:1.75rem;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
-.cico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}.ctit{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:1rem;margin-bottom:.5rem;line-height:1.3}.cdesc{font-size:.84rem;color:var(--mu);line-height:1.7}
-.cta{background:linear-gradient(135deg,#0a0a0a,#1a1a1a);padding:4.5rem 5rem;position:relative;overflow:hidden;text-align:center}
-.cta::before{content:"";position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.2) 0%,transparent 70%);pointer-events:none}
-.cta::after{content:"";position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.1) 0%,transparent 70%);pointer-events:none}
-.ctai{position:relative;max-width:640px;margin:0 auto}.ctai h2{font-family:"Plus Jakarta Sans",sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:.9rem}.ctai h2 span{color:var(--or)}.ctai p{color:rgba(255,255,255,.5);font-size:.95rem;line-height:1.75;margin-bottom:2rem}
-.ctabtns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.faq-list{display:flex;flex-direction:column;gap:.75rem}.faq-item{background:#fff;border:1px solid var(--bd);border-radius:14px;overflow:hidden}
-.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;background:none;border:none;font-family:"Plus Jakarta Sans",sans-serif;font-size:.92rem;font-weight:600;color:var(--ink);cursor:pointer;text-align:left;gap:1rem}
-.fiq{width:26px;height:26px;border-radius:50%;background:var(--olt);color:var(--or);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform .3s,background .2s;line-height:1}
-.faq-q[aria-expanded="true"] .fiq{transform:rotate(45deg);background:var(--or);color:#fff}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.22,1,.36,1)}.faq-a.open{max-height:300px}.faq-a p{padding:.1rem 1.4rem 1.1rem;font-size:.86rem;color:var(--mu);line-height:1.75;margin:0}
-footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
-.ft{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
-.fb p{font-size:.83rem;margin-top:.75rem;line-height:1.7;max-width:230px}.fso{display:flex;gap:1rem;margin-top:1rem}.fso a{color:rgba(255,255,255,.35);transition:color .2s;text-decoration:none}.fso a:hover{color:var(--or)}
-.fct{color:#fff;font-weight:600;font-size:.85rem;margin-bottom:1rem}.fc ul{list-style:none;display:flex;flex-direction:column;gap:.55rem}.fc ul a{text-decoration:none;color:rgba(255,255,255,.45);font-size:.83rem;transition:color .2s}.fc ul a:hover{color:var(--or)}
-.fbot{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;font-size:.78rem;flex-wrap:wrap;gap:1rem}.fbot a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}.fbot a:hover{color:#fff}
-.rv{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}.rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}.rv.d5{transition-delay:.4s}.rv.d6{transition-delay:.48s}
-@media(max-width:1100px){#nav,section,footer,.ph,.cta{padding-left:2.5rem;padding-right:2.5rem}.g3{grid-template-columns:repeat(2,1fr)}.g4{grid-template-columns:repeat(2,1fr)}.ft{grid-template-columns:1fr 1fr;gap:2rem}}
-@media(max-width:768px){#nav,section,footer,.ph,.cta{padding-left:1.5rem;padding-right:1.5rem}.hbtn{display:flex}.nl{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:.75rem 1rem 1rem;border-bottom:1px solid var(--bd);box-shadow:0 8px 24px rgba(0,0,0,.07);gap:.1rem}.nl.open{display:flex}.nl>li>a,.ndb{padding:.65rem 1rem;border-radius:8px;width:100%;font-size:.9rem}.dd{position:static;box-shadow:none;border:none;border-radius:0;padding:0 0 0 1rem;min-width:0;opacity:1;pointer-events:auto;transform:none;display:none}.nd.open .dd{display:flex;flex-direction:column}.g3,.g2,.g4{grid-template-columns:1fr}.ft{grid-template-columns:1fr;gap:2rem}.fbot,.ctabtns,.phact{flex-direction:column;align-items:flex-start}}.sico{width:80px;height:80px;border-radius:20px;background:#FFF8E1;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
-.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}.ps{background:#fff;border:1px solid var(--bd);border-radius:var(--ra);padding:1.75rem;transition:transform .25s,box-shadow .25s}.ps:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
-.pn{font-family:"Plus Jakarta Sans",sans-serif;font-size:2rem;font-weight:800;color:#F5A623;opacity:.18;line-height:1;margin-bottom:.75rem}.pt{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.4rem}.pd{font-size:.82rem;color:var(--mu);line-height:1.65}
-.rg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}.rb{background:#fff;border:1px solid var(--bd);border-radius:var(--ra);padding:2rem;text-align:center}
-.rn{font-family:"Plus Jakarta Sans",sans-serif;font-size:2.4rem;font-weight:800;color:#F5A623;line-height:1;margin-bottom:.4rem}.rl{font-size:.82rem;color:var(--mu)}
-@media(max-width:900px){.pg{grid-template-columns:repeat(2,1fr)}.rg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.pg{grid-template-columns:1fr}}</style>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Monday.com Implementation — Apex360 Digital</title>
+<meta name="description" content="Expert Monday.com setup, customisation, and automation for teams ready to manage projects, workflows, and operations at scale."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--orange:#FF5C1A;--orange-lt:#FFF0EB;--bg:#fff;--ink:#111;--muted:#555;--surface:#f7f7f5;--teal:#0f9e72;--teal-bg:#E8F8F3;--blue:#2563eb;--blue-bg:#EBF2FF;--purple:#7c3aed;--purple-bg:#F0EBFF;--pink:#db2777;--pink-bg:#FFF0F5;--amber:#d97706;--amber-bg:#FFFBEB;--border:rgba(0,0,0,.08);--radius:14px;--pill:100px}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);overflow-x:hidden}
+nav{position:sticky;top:0;z-index:500;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:0 5rem;height:72px;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);animation:slideDown .45s ease both}
+nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
+@keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}
+.logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
+.nav-links>li{position:relative}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:.3rem;padding:.48rem .85rem;font-family:'Figtree',sans-serif;font-size:.88rem;font-weight:500;color:var(--ink);text-decoration:none;background:none;border:none;cursor:pointer;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>button:hover{background:var(--orange-lt);color:var(--orange)}
+.nav-links>li>a.nav-cta{background:var(--orange);color:#fff!important;padding:.5rem 1.4rem;border-radius:var(--pill);font-weight:600}
+.nav-links>li>a.nav-cta:hover{background:#e04a0e}
+.nav-chevron{display:inline-block;width:14px;height:14px;flex-shrink:0;transition:transform .22s;opacity:.5}
+.nav-item-drop.open .nav-chevron{transform:rotate(180deg);opacity:1}
+.nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.11);padding:.5rem;min-width:230px;opacity:0;pointer-events:none;transition:opacity .2s,transform .22s cubic-bezier(.22,1,.36,1);z-index:600}
+.nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.nav-item-drop.open>.nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.drop-item{display:flex;align-items:center;gap:.7rem;padding:.6rem .75rem;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:500;transition:background .15s}
+.drop-item:hover{background:var(--surface);color:var(--orange)}
+.drop-item.active{color:var(--orange);font-weight:700;background:var(--orange-lt)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
+.svc-hero{background:#fff;padding:6rem 5rem 5rem;position:relative;overflow:hidden}
+.svc-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 65%);pointer-events:none}
+.svc-hero::after{content:'';position:absolute;bottom:-80px;left:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.05) 0%,transparent 70%);pointer-events:none}
+.svc-hero-inner{position:relative;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:#888;margin-bottom:1.5rem}
+.breadcrumb a{color:#666;text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--orange)}
+.hero-tag{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,92,26,.12);color:var(--orange);border:1px solid rgba(255,92,26,.25);font-size:.72rem;font-weight:700;padding:.38rem 1rem;border-radius:var(--pill);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.25rem}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.svc-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:1.2rem}
+.svc-hero h1 span{color:var(--orange)}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:2rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-orange{display:inline-flex;align-items:center;gap:.4rem;background:var(--orange);color:#fff;padding:.85rem 2rem;border-radius:var(--pill);font-family:'Figtree',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:opacity .2s,transform .15s;border:none;cursor:pointer}
+.btn-orange:hover{opacity:.88;transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:var(--ink);padding:.85rem 2rem;border-radius:var(--pill);border:1.5px solid rgba(0,0,0,.15);font-family:'Figtree',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:border-color .2s,transform .15s}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:#fff;padding:.85rem 2rem;border-radius:var(--pill);border:2px solid rgba(255,255,255,.25);font-family:'Figtree',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:border-color .2s,transform .15s}
+.btn-outline:hover{border-color:#fff;transform:translateY(-2px)}
+.stats-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;min-width:210px;flex-shrink:0;box-shadow:0 25px 60px rgba(15,23,42,.14);animation:floatPanel 5s ease-in-out infinite}
+@keyframes floatPanel{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.stat-box{padding:.9rem 1rem;background:var(--surface);border-radius:12px;border:1px solid var(--border)}
+.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.2rem}
+.stat-lbl{font-size:.74rem;color:var(--muted)}
+.results-strip{background:#EAF2FF;padding:4rem 5rem;position:relative;overflow:hidden}
+.results-strip::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
+.results-inner{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.08);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(15,23,42,.05)}
+.res-cell{background:#fff;padding:2.25rem 1.75rem;text-align:center;transition:background .2s}
+.res-cell:hover{background:#FAFAFA}
+.res-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.4rem}
+.res-lbl{font-size:.8rem;color:var(--muted);line-height:1.5}
+section{padding:5rem 5rem}
+.sec-hdr{text-align:center;margin-bottom:3rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:var(--orange-lt);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
+.sh{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.22;margin-top:.4rem;color:var(--ink)}
+.sh .hl{color:var(--orange)}
+.ss{font-size:.97rem;color:var(--muted);line-height:1.75;max-width:580px;margin:.75rem auto 0;font-weight:300}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+.card{background:#fff;border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;gap:.65rem}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.09)}
+.card-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.card-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:var(--ink);line-height:1.35}
+.card-desc{font-size:.84rem;color:var(--muted);line-height:1.7;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.tag-pill{font-size:.68rem;font-weight:600;padding:.22rem .65rem;border-radius:var(--pill);background:var(--surface);color:var(--muted)}
+.funnel-sec{max-width:640px;margin:2.5rem auto 0}
+.funnel-stage{position:relative;margin:0 auto 10px;border-radius:10px;padding:1.1rem 1.5rem;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 8px 20px rgba(0,0,0,.08);transition:transform .2s}
+.funnel-stage:hover{transform:scale(1.015)}
+.funnel-stage:last-child{margin-bottom:0}
+.funnel-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem}
+.funnel-sub{font-size:.72rem;opacity:.85;margin-top:.15rem;font-weight:400}
+.funnel-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.35rem;white-space:nowrap}
+.funnel-drop{text-align:center;font-size:.72rem;color:var(--muted);margin:-2px 0 8px;display:flex;align-items:center;justify-content:center;gap:.3rem}
+.funnel-drop svg{opacity:.4}
+.dark-sect{background:#fff;padding:5rem;position:relative;overflow:hidden}
+.dark-sect::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
+.dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem;position:relative}
+.dark-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:rgba(255,92,26,.12);border:1px solid rgba(255,92,26,.2);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
+.feats{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.feat{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.feat:hover{background:#FAFAFA}
+.feat-ico{width:36px;height:36px;border-radius:9px;background:rgba(255,92,26,.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:1px}
+.feat-badge{font-size:.62rem;font-weight:700;padding:.15rem .45rem;border-radius:var(--pill);background:rgba(15,158,114,.15);color:#0f9e72;letter-spacing:.05em;margin-left:.5rem;text-transform:uppercase}
+.feat-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;line-height:1.3;display:flex;align-items:center;flex-wrap:wrap;gap:.3rem}
+.feat-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.metric{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.metric:hover{background:#FAFAFA}
+.metric-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.2rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.4rem}
+.metric-lbl{font-size:.78rem;color:var(--muted);line-height:1.5}
+.metric-cta{grid-column:1/-1;background:#fff;border:1px solid rgba(255,92,26,.25);border-radius:16px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.metric-cta p{font-size:.9rem;color:var(--muted);line-height:1.6;flex:1}
+.metric-cta strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;color:var(--ink);margin-bottom:.3rem}
+.pstep{background:#fff;border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);display:flex;gap:1.25rem;transition:transform .2s,box-shadow .2s}
+.pstep:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.07)}
+.pnum{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;color:var(--orange);opacity:.15;line-height:1;flex-shrink:0;width:48px}
+.ptitle{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.97rem;color:var(--ink);margin-bottom:.45rem;line-height:1.35}
+.pdesc{font-size:.83rem;color:var(--muted);line-height:1.65}
+.why-card{border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);background:#fff;transition:transform .2s,box-shadow .2s}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.wico{font-size:1.8rem;margin-bottom:.9rem}
+.wtitle{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.97rem;color:var(--ink);margin-bottom:.45rem}
+.wdesc{font-size:.83rem;color:var(--muted);line-height:1.7}
+.ind-card{background:#fff;border-radius:var(--radius);padding:1.35rem 1.5rem;border:1px solid var(--border);display:flex;gap:.85rem;align-items:flex-start;transition:transform .2s}
+.ind-card:hover{transform:translateY(-3px)}
+.ind-ico{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;color:var(--ink);margin-bottom:.25rem}
+.ind-desc{font-size:.76rem;color:var(--muted);line-height:1.5}
+.tcard{background:var(--surface);border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);display:flex;flex-direction:column;gap:1rem}
+.tstars{color:#f59e0b;font-size:1rem;letter-spacing:2px}
+.ttext{font-size:.88rem;color:var(--ink);line-height:1.75;font-style:italic;flex:1}
+.tauthor{display:flex;align-items:center;gap:.85rem}
+.tavatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:#fff;flex-shrink:0}
+.tname{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem;color:var(--ink)}
+.trole{font-size:.75rem;color:var(--muted)}
+.tbadge{font-size:.68rem;color:var(--teal);font-weight:600;margin-top:.15rem}
+.faq-list{max-width:760px;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{background:#fff;border-radius:12px;border:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);background:none;border:none;cursor:pointer;text-align:left;transition:color .2s}
+.faq-q:hover{color:var(--orange)}
+.faq-q .ficon{flex-shrink:0;transition:transform .25s;color:var(--orange);font-size:1.2rem;font-weight:300}
+.faq-item.open .faq-q .ficon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;font-size:.88rem;color:var(--muted);line-height:1.75;padding:0 1.5rem}
+.faq-item.open .faq-a{max-height:320px;padding:.1rem 1.5rem 1.3rem}
+.page-cta{background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);padding:5.5rem 5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.75rem}
+.page-cta::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.2) 0%,transparent 70%);pointer-events:none}
+.cta-inner{position:relative;max-width:640px;margin:0 auto}
+.cta-inner h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:.9rem}
+.cta-inner h2 span{color:var(--orange)}
+.cta-inner p{color:rgba(255,255,255,.5);font-size:.95rem;line-height:1.75;margin-bottom:2rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand p{font-size:.83rem;margin-top:.75rem;line-height:1.7;max-width:220px}
+.fc-title{color:#fff;font-weight:600;font-size:.85rem;margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.footer-col ul a{text-decoration:none;color:rgba(255,255,255,.45);font-size:.83rem;transition:color .2s}
+.footer-col ul a:hover{color:var(--orange)}
+.footer-btm{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;font-size:.78rem;gap:1rem;flex-wrap:wrap}
+.fsoc{display:flex;gap:1rem}
+.fsoc a{color:rgba(255,255,255,.35);text-decoration:none;font-size:18px;transition:color .2s}
+.fsoc a:hover{color:var(--orange)}
+.fleg{display:flex;gap:1.5rem}
+.fleg a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.78rem;transition:color .2s}
+.fleg a:hover{color:#fff}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+.rv-r{opacity:0;transform:translateX(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s}
+.rv-r.in{opacity:1;transform:none}
+@media(max-width:1100px){
+  nav,section,footer,.svc-hero,.results-strip,.dark-sect,.page-cta{padding-left:2.5rem;padding-right:2.5rem}
+  .svc-hero-inner{grid-template-columns:1fr}
+  .stats-panel{display:none}
+  .grid3,.grid4{grid-template-columns:repeat(2,1fr)}
+  .results-inner,.grid2{grid-template-columns:repeat(2,1fr)}
+  .dark-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  nav,section,footer,.svc-hero,.results-strip,.dark-sect,.page-cta{padding-left:1.5rem;padding-right:1.5rem}
+  .hamburger{display:flex}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:.75rem 1rem 1rem;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.07);gap:.15rem}
+  .nav-links.open{display:flex}
+  .nav-links>li>a,.nav-links>li>button{padding:.65rem 1rem;border-radius:8px;width:100%;justify-content:space-between}
+  .nav-dropdown{position:static;transform:none!important;box-shadow:none;border:none;border-radius:0;padding:0 0 0 1rem;opacity:1;pointer-events:auto;display:none;min-width:0}
+  .nav-dropdown::before{display:none}
+  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column}
+  .grid3,.grid2,.grid4{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-btm{flex-direction:column;align-items:flex-start}
+  .cta-btns,.hero-btns{flex-direction:column;align-items:center}
+}
+@media(max-width:480px){.results-inner{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<nav id="nav">
-  <a class="logo" href="/apex360digital/index.html">Apex<span>360</span> Digital</a>
-  <button class="hbtn" id="hbtn" aria-label="Menu"><span></span><span></span><span></span></button>
-  <ul class="nl" id="nl">
-    <li class="nd"><button class="ndb" aria-haspopup="true">Services<svg class="chev" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="dd">
-        <a href="/apex360digital/digital-marketing.html" class="di"><div class="dio" style="background:#FFF0EB"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5C1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><span>Digital Marketing</span></a>
-        <a href="/apex360digital/hubspot.html" class="di"><div class="dio" style="background:#FFF3E0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><span>HubSpot Solutions</span></a>
-        <a href="/apex360digital/monday.html" class="di"><div class="dio" style="background:#FFF8E1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><span>Monday.com</span></a>
-        <a href="/apex360digital/web-development.html" class="di"><div class="dio" style="background:#EBF2FF"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><span>Web Development</span></a>
-        <a href="/apex360digital/marketing-automation.html" class="di"><div class="dio" style="background:#FFF9E6"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><span>Marketing Automation</span></a>
-        <a href="/apex360digital/ai-strategy.html" class="di"><div class="dio" style="background:#F0EBFF"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div><span>AI Strategy</span></a>
-      </div>
+<nav id="mn"><a class="logo" href="index.html">Apex<span>360</span> Digital</a>
+  <button class="hamburger" id="hb" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="nl">
+    <li class="nav-item-drop" id="dsvcs">
+      <button aria-haspopup="true" aria-expanded="false">Services <svg class="nav-chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-dropdown" role="menu"><a href="digital-marketing.html" class="drop-item">📢 Digital Marketing</a>
+<a href="hubspot.html" class="drop-item">🟠 HubSpot Solutions</a>
+<a href="monday.html" class="drop-item active">🗂️ Monday.com</a>
+<a href="web-development.html" class="drop-item">💻 Web Development</a>
+<a href="marketing-automation.html" class="drop-item">⚡ Marketing Automation</a>
+<a href="ai-strategy.html" class="drop-item">🤖 AI Strategy</a>
+</div>
     </li>
-    <li><a href="/apex360digital/about.html">About Us</a></li>
-    <li><a href="/apex360digital/pricing.html">Pricing</a></li>
-    <li><a href="/apex360digital/blog.html">Blog</a></li>
-    <li><a href="/apex360digital/contact.html">Contact</a></li>
-    <li><a href="/apex360digital/contact.html" class="ncta">Get Started →</a></li>
-  </ul>
-</nav>
-<div class="ph"><div class="phi"><div class="sico"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="phtag">Monday.com Setup</div><h1>Run Your Entire Business on <span>Monday.com</span></h1><p class="phsub">Workspace architecture, workflow automation and team training — we implement Monday.com so your projects, clients and campaigns run smoother than ever.</p><div class="phact"><a href="/apex360digital/contact.html" class="bor">Get Started →</a><a href="/apex360digital/contact.html" class="bout">Book Free Call</a></div><div class="phbc"><a href="/apex360digital/index.html">Home</a><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg><span>Monday.com</span></div></div></div>
-<section style="background:#fff"><div class="rv"><div class="tag">Monday.com Setup</div><h2 class="sh">Monday.com That Works the Way <span class="hl">Your Team Does</span></h2><p class="ss">We build custom workspaces, automations and integrations that map perfectly to how your team actually operates — not generic templates.</p></div><div class="g3"><div class="card rv d0"><div class="ctit">Workspace Architecture</div><p class="cdesc">Custom boards, groups, columns and dashboard design structured around your departments, workflows and reporting needs.</p></div><div class="card rv d1"><div class="ctit">Workflow Automation</div><p class="cdesc">Automated status updates, notifications, task assignments, deadline reminders and approval flows that eliminate repetitive manual work.</p></div><div class="card rv d2"><div class="ctit">CRM & Sales Pipelines</div><p class="cdesc">Contact management, deal tracking, lead scoring and activity logging — a fully functional CRM inside Monday.com without extra software.</p></div><div class="card rv d3"><div class="ctit">Project Management Setup</div><p class="cdesc">Sprint planning, resource allocation, Gantt views, workload management and client-facing project portals built for your team size.</p></div><div class="card rv d4"><div class="ctit">Tool Integrations</div><p class="cdesc">Native connections with HubSpot, Slack, Google Workspace, Jira, Salesforce, Zoom and 200+ apps plus custom Zapier automations.</p></div><div class="card rv d5"><div class="ctit">Team Training</div><p class="cdesc">Live group training sessions, recorded walkthroughs and written SOPs so your team adopts Monday.com fast and uses it consistently.</p></div></div></section>
-<section style="background:var(--sur)"><div style="text-align:center" class="rv"><div class="tag">Our Process</div><h2 class="sh">How We <span class="hl">Deliver Results</span></h2></div><div class="pg"><div class="ps rv d0"><div class="pn">01</div><div class="pt">Discovery Workshop</div><p class="pd">We map your current workflows and design the ideal Monday.com architecture for your team in a structured 90-minute workshop.</p></div><div class="ps rv d1"><div class="pn">02</div><div class="pt">Build & Configure</div><p class="pd">Boards, automations, dashboards and integrations built to your exact spec — fully tested before your team sees a single screen.</p></div><div class="ps rv d2"><div class="pn">03</div><div class="pt">Data Migration</div><p class="pd">Existing project data, tasks, contacts and files migrated cleanly from spreadsheets, Asana, Trello, Jira or your current tool.</p></div><div class="ps rv d3"><div class="pn">04</div><div class="pt">Training & Go-Live</div><p class="pd">Live training for all users, role-specific walkthroughs, and 30 days of post-launch support to ensure smooth adoption.</p></div></div></section>
-<section style="background:#fff"><div style="text-align:center" class="rv"><div class="tag">Results</div><h2 class="sh">What Clients <span class="hl">Achieve</span></h2></div><div class="rg"><div class="rb rv d0"><div class="rn">300+</div><div class="rl">Monday.com boards built</div></div><div class="rb rv d1"><div class="rn">10hrs</div><div class="rl">Avg. time saved per team/week</div></div><div class="rb rv d2"><div class="rn">3 wks</div><div class="rl">Average implementation</div></div><div class="rb rv d3"><div class="rn">100%</div><div class="rl">On-time delivery rate</div></div></div></section>
-<section style="background:var(--sur)"><div style="text-align:center" class="rv"><div class="tag">FAQs</div><h2 class="sh">Common <span class="hl">Questions</span></h2></div><div class="faq-list" style="max-width:740px;margin:2.5rem auto 0"><div class="faq-item rv"><button class="faq-q" aria-expanded="false">How long does setup take?<span class="fiq">+</span></button><div class="faq-a"><p>A standard Monday.com implementation takes 1-3 weeks depending on complexity. We give you a firm timeline after the discovery workshop.</p></div></div><div class="faq-item rv"><button class="faq-q" aria-expanded="false">Can you migrate from Asana or Trello?<span class="fiq">+</span></button><div class="faq-a"><p>Yes — we migrate tasks, projects, due dates, attachments and history from any major project management tool with zero data loss.</p></div></div><div class="faq-item rv"><button class="faq-q" aria-expanded="false">Do you offer ongoing support?<span class="fiq">+</span></button><div class="faq-a"><p>Yes. We offer monthly retainers for ongoing optimisation, new board builds, automation updates and user support as your team grows.</p></div></div></div></section>
-<div class="cta"><div class="ctai rv"><h2>Ready to <span>Get Started?</span></h2><p>Book a free 30-minute strategy call. We'll audit your current setup and show you exactly how we'd grow your business.</p><div class="ctabtns"><a href="/apex360digital/contact.html" class="bor">Book Free Strategy Call →</a><a href="/apex360digital/pricing.html" class="bout">View Pricing</a></div></div></div>
-<footer>
-  <div class="ft">
-    <div class="fb"><a class="logo" href="/apex360digital/index.html" style="color:#fff">Apex<span style="color:#FF5C1A">360</span> Digital</a>
-      <p>India's AI-driven growth agency — combining digital marketing, automation and technology to scale ambitious businesses worldwide.</p>
-      <div class="fso">
-        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></a>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html#resources">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get Started →</a></li>
+  </ul></nav>
+
+<div class="svc-hero">
+  <div class="svc-hero-inner">
+    <div>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        <span>Services</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        <span>Monday.com</span>
+      </div>
+      <div class="hero-tag"><span class="hero-dot"></span>Monday.com</div>
+      <h1>Build Your Business <span>On Monday.com</span></h1>
+      <p class="hero-sub">We implement and customise Monday.com to manage your projects, client delivery, sales pipeline, HR, and operations — all in one visual workspace your entire team will actually enjoy using.</p>
+      <div class="hero-btns">
+        <a href="index.html#contact" class="btn-orange">Get Free Consultation →</a>
+        <a href="#services" class="btn-ghost">Explore Services</a>
       </div>
     </div>
-    <div class="fc"><div class="fct">Services</div><ul>
-      <li><a href="/apex360digital/digital-marketing.html">Digital Marketing</a></li>
-      <li><a href="/apex360digital/hubspot.html">HubSpot Solutions</a></li>
-      <li><a href="/apex360digital/monday.html">Monday.com</a></li>
-      <li><a href="/apex360digital/web-development.html">Web Development</a></li>
-      <li><a href="/apex360digital/marketing-automation.html">Marketing Automation</a></li>
-      <li><a href="/apex360digital/ai-strategy.html">AI Strategy</a></li>
-    </ul></div>
-    <div class="fc"><div class="fct">Company</div><ul>
-      <li><a href="/apex360digital/about.html">About Us</a></li>
-      <li><a href="/apex360digital/pricing.html">Pricing</a></li>
-      <li><a href="/apex360digital/blog.html">Blog</a></li>
-      <li><a href="/apex360digital/contact.html">Contact</a></li>
-    </ul></div>
-    <div class="fc"><div class="fct">Contact</div><ul>
-      <li><a href="mailto:hello@apex360digital.com">hello@apex360digital.com</a></li>
-      <li><a href="tel:+919876543210">+91 98765 43210</a></li>
-      <li><a href="#">Chandigarh, India</a></li>
-      <li><a href="/apex360digital/contact.html">Book a Free Call</a></li>
-    </ul></div>
+    <div class="stats-panel">
+      <div class="stat-box"><div class="stat-num">85%</div><div class="stat-lbl">Faster Project Delivery</div></div>
+      <div class="stat-box"><div class="stat-num">70%</div><div class="stat-lbl">Less Status Meetings</div></div>
+      <div class="stat-box"><div class="stat-num">3×</div><div class="stat-lbl">Team Productivity</div></div>
+      <div class="stat-box"><div class="stat-num">150+</div><div class="stat-lbl">Workspaces Built</div></div>
+    </div>
   </div>
-  <div class="fbot"><p>&copy; 2026 Apex360 Digital. All rights reserved.</p><div style="display:flex;gap:1.5rem"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
-</footer>
+</div>
+
+<div class="results-strip">
+  <div class="results-inner">
+    <div class="res-cell rv"><div class="res-num">85%</div><div class="res-lbl">Faster Average Project Delivery</div></div>
+    <div class="res-cell rv d1"><div class="res-num">70%</div><div class="res-lbl">Reduction in Status Update Meetings</div></div>
+    <div class="res-cell rv d2"><div class="res-num">3×</div><div class="res-lbl">Average Team Productivity Increase</div></div>
+    <div class="res-cell rv d3"><div class="res-num">150+</div><div class="res-lbl">Monday.com Workspaces Delivered</div></div>
+  </div>
+</div>
+
+<section id="services" style="background:#fff">
+  <div class="sec-hdr">
+    <div class="tag rv">What We Build</div>
+    <h2 class="sh rv d1">Every Workflow. <span class="hl">One Powerful Workspace.</span></h2>
+    <p class="ss rv d2">We design and build Monday.com workspaces that match exactly how your business works — eliminating spreadsheet chaos, missed deadlines, and communication breakdowns permanently.</p>
+  </div>
+  <div class="grid3"><div class="card rv"><div class="card-ico" style="background:var(--orange-lt);color:var(--orange)">📋</div><div class="card-title">Project Management Setup</div><p class="card-desc">Boards, groups, items, and automations configured around your project delivery process — with status tracking, timeline views, dependency mapping, and client-facing portals all set up from day one.</p><div class="tags"><span class="tag-pill">Boards &amp; Timelines</span><span class="tag-pill">Dependencies</span><span class="tag-pill">Client Portals</span><span class="tag-pill">Sprint Planning</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--blue-bg);color:var(--blue)">💼</div><div class="card-title">CRM &amp; Sales Pipeline</div><p class="card-desc">A visual CRM built on Monday.com — contact management, deal tracking, activity logging, and automated follow-up reminders so your sales team never drops a lead or misses a follow-up again.</p><div class="tags"><span class="tag-pill">Deal Tracking</span><span class="tag-pill">Contact Management</span><span class="tag-pill">Email Integration</span><span class="tag-pill">Sales Reporting</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--teal-bg);color:var(--teal)">⚡</div><div class="card-title">Workflow Automation</div><p class="card-desc">Eliminate manual, repetitive tasks with Monday.com automations — status changes trigger notifications, approvals route to the right person, and deadline reminders fire automatically without any human input.</p><div class="tags"><span class="tag-pill">Status Automations</span><span class="tag-pill">Approval Flows</span><span class="tag-pill">Deadline Alerts</span><span class="tag-pill">Cross-Board Sync</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--purple-bg);color:var(--purple)">🔗</div><div class="card-title">Integrations &amp; API</div><p class="card-desc">Monday.com connected to Slack, HubSpot, Gmail, Zoom, Jira, Salesforce, Google Drive, and 200+ tools — your entire operational tech stack communicating and syncing seamlessly in real-time.</p><div class="tags"><span class="tag-pill">Slack</span><span class="tag-pill">HubSpot</span><span class="tag-pill">Google Workspace</span><span class="tag-pill">Jira &amp; Salesforce</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--pink-bg);color:var(--pink)">📊</div><div class="card-title">Dashboards &amp; Reporting</div><p class="card-desc">Executive dashboards, team performance reports, project health scores, and resource utilisation metrics — real-time visibility across every project and every team without manual data entry.</p><div class="tags"><span class="tag-pill">Executive Dashboards</span><span class="tag-pill">Resource Planning</span><span class="tag-pill">KPI Tracking</span><span class="tag-pill">Portfolio Views</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--amber-bg);color:var(--amber)">🎓</div><div class="card-title">Training &amp; Adoption</div><p class="card-desc">Live training sessions, recorded video guides, and a custom Monday.com playbook built for your business — ensuring 100% team adoption and maximum ROI from your Monday.com investment.</p><div class="tags"><span class="tag-pill">Live Training</span><span class="tag-pill">Video Guides</span><span class="tag-pill">Playbooks</span><span class="tag-pill">Ongoing Support</span></div></div></div>
+</section>
+
+<section style="background:#EAF2FF">
+  <div class="sec-hdr">
+    <div class="tag rv">Visual Sales Pipeline</div>
+    <h2 class="sh rv d1">See Exactly Where Deals Are <span class="hl">Getting Stuck</span></h2>
+    <p class="ss rv d2">Every lead moves through a clear, color-coded funnel on your Monday.com board — so you know precisely how many deals are at each stage, and where they're falling off.</p>
+  </div>
+  <div class="funnel-sec">
+    <div class="funnel-stage rv" style="width:100%;background:#FF5C1A">
+      <div><div class="funnel-label">New Leads Captured</div><div class="funnel-sub">From forms, ads &amp; referrals</div></div>
+      <div class="funnel-num">1,000</div>
+    </div>
+    <div class="funnel-drop">▾ 36% drop-off</div>
+    <div class="funnel-stage rv d1" style="width:82%;background:#F97133">
+      <div><div class="funnel-label">Contacted &amp; Qualified</div><div class="funnel-sub">First response logged</div></div>
+      <div class="funnel-num">640</div>
+    </div>
+    <div class="funnel-drop">▾ 52% drop-off</div>
+    <div class="funnel-stage rv d2" style="width:64%;background:#E0602E">
+      <div><div class="funnel-label">Proposal Sent</div><div class="funnel-sub">Quote or scope shared</div></div>
+      <div class="funnel-num">310</div>
+    </div>
+    <div class="funnel-drop">▾ 52% drop-off</div>
+    <div class="funnel-stage rv d3" style="width:46%;background:#C24A24">
+      <div><div class="funnel-label">In Negotiation</div><div class="funnel-sub">Terms being finalised</div></div>
+      <div class="funnel-num">150</div>
+    </div>
+    <div class="funnel-drop">▾ 39% drop-off</div>
+    <div class="funnel-stage rv d4" style="width:28%;background:#111827">
+      <div><div class="funnel-label">Deal Won</div><div class="funnel-sub">Closed &amp; onboarded</div></div>
+      <div class="funnel-num">92</div>
+    </div>
+  </div>
+</section>
+
+<div class="dark-sect">
+  <div class="dark-tag">AI + Monday.com</div>
+  <h2 class="sh rv" style="color:var(--ink);text-align:left;margin-top:.4rem">Smarter Workflows That <span class="hl">Run Automatically</span></h2>
+  <p class="ss rv d1" style="color:var(--muted);text-align:left;margin:.75rem 0 0">We layer Monday.com AI features and external AI tools on your workspace — automating decisions, surfacing insights, and eliminating bottlenecks before your team even notices them.</p>
+  <div class="dark-grid">
+    <div><div class="feats"><div class="feat rv"><div class="feat-ico">🤖</div><div><div class="feat-title">AI Task Generation <span class="feat-badge">Active</span></div><div class="feat-desc">Monday.com AI automatically generates task lists, sub-items, and timelines from project briefs — turning a single sentence into a fully structured project board in seconds.</div></div></div><div class="feat rv"><div class="feat-ico">📧</div><div><div class="feat-title">AI Email Summarisation <span class="feat-badge">Active</span></div><div class="feat-desc">Automatically summarise client email threads, extract action items, and create Monday.com tasks from your inbox — zero manual copy-paste work required from your team.</div></div></div><div class="feat rv"><div class="feat-ico">📈</div><div><div class="feat-title">Predictive Project Health <span class="feat-badge">Active</span></div><div class="feat-desc">AI analyses your historical project data to flag at-risk timelines and resource bottlenecks before they become delivery failures — enabling proactive not reactive management.</div></div></div><div class="feat rv"><div class="feat-ico">🔮</div><div><div class="feat-title">Smart Resource Allocation <span class="feat-badge">Active</span></div><div class="feat-desc">AI recommends the optimal team member for each task based on current workload, past performance, and skill matching — maximising team output and preventing burnout.</div></div></div></div></div>
+    <div class="rv-r">
+      <div class="metrics">
+        <div class="metric"><div class="metric-num">85%</div><div class="metric-lbl">Faster project delivery</div></div>
+        <div class="metric"><div class="metric-num">3×</div><div class="metric-lbl">Team productivity uplift</div></div>
+        <div class="metric"><div class="metric-num">70%</div><div class="metric-lbl">Fewer status meetings</div></div>
+        <div class="metric"><div class="metric-num">100%</div><div class="metric-lbl">Client reporting automated</div></div>
+        <div class="metric-cta"><div><strong>Monday.com + AI = Zero Operational Chaos</strong><p>Every Apex360 Monday.com implementation includes AI-powered automations that make your workspace proactively manage your business — not just track it.</p></div><a href="index.html#contact" class="btn-orange" style="white-space:nowrap">Get Started →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section style="background:#EAF2FF">
+  <div class="sec-hdr">
+    <div class="tag rv">Our Process</div>
+    <h2 class="sh rv d1">How We <span class="hl">Deliver Results</span></h2>
+    <p class="ss rv d2">A structured, repeatable process delivering measurable outcomes from week one and compounding growth every month.</p>
+  </div>
+  <div class="grid2"><div class="pstep rv"><div class="pnum">01</div><div><div class="ptitle">Process Discovery &amp; Mapping</div><p class="pdesc">We map every key workflow in your business — project delivery, sales, HR, finance — identifying exactly which processes to digitise, automate, and optimise in Monday.com first.</p></div></div><div class="pstep rv"><div class="pnum">02</div><div><div class="ptitle">Workspace Architecture Design</div><p class="pdesc">A custom Monday.com architecture designed around your business structure — boards, groups, columns, dashboards, and automation logic mapped out before a single board is created.</p></div></div><div class="pstep rv"><div class="pnum">03</div><div><div class="ptitle">Build &amp; Configure</div><p class="pdesc">Full workspace build including all boards, automations, integrations, and dashboards — delivered on a fixed timeline with daily updates and a dedicated Slack channel throughout.</p></div></div><div class="pstep rv"><div class="pnum">04</div><div><div class="ptitle">Data Migration &amp; Import</div><p class="pdesc">Clean import of existing projects, contacts, tasks, and historical data from spreadsheets, Asana, Trello, Jira, or any other platform — no manual re-entry required from your team.</p></div></div><div class="pstep rv"><div class="pnum">05</div><div><div class="ptitle">Team Training &amp; Adoption</div><p class="pdesc">Role-specific live training sessions for managers, team leads, and individual contributors — all recorded for your library and designed around your actual workspace and workflows.</p></div></div><div class="pstep rv"><div class="pnum">06</div><div><div class="ptitle">Ongoing Support &amp; Optimisation</div><p class="pdesc">Monthly workspace reviews, new automation builds as processes evolve, and priority Slack support — we stay with you as a long-term Monday.com partner as your business scales.</p></div></div></div>
+</section>
+
+<section style="background:#fff">
+  <div class="sec-hdr">
+    <div class="tag rv">Why Apex360</div>
+    <h2 class="sh rv d1">Built <span class="hl">Genuinely Different</span></h2>
+    <p class="ss rv d2">We're not a generalist agency doing everything for everyone. We're specialists obsessed with one thing: revenue growth you can measure.</p>
+  </div>
+  <div class="grid3"><div class="why-card rv"><div class="wico">🏗️</div><div class="wtitle">Built Around Your Process</div><p class="wdesc">We never use generic Monday.com templates. Every workspace is designed from scratch around your specific team structure, delivery process, and operational goals.</p></div><div class="why-card rv"><div class="wico">⚡</div><div class="wtitle">Automation-First Approach</div><p class="wdesc">Every implementation is built with automation at the core — eliminating manual work, reducing human error, and giving your team more time for high-value strategic activities.</p></div><div class="why-card rv"><div class="wico">🔗</div><div class="wtitle">Deep Integration Expertise</div><p class="wdesc">We connect Monday.com to your entire tech stack — HubSpot, Slack, Google Workspace, Salesforce, Jira, and custom API integrations that make every tool work as one.</p></div><div class="why-card rv"><div class="wico">🎓</div><div class="wtitle">Real Adoption Support</div><p class="wdesc">We don't just build and leave. Our role-specific training and custom playbooks ensure your entire team actually adopts Monday.com — not just the power users who requested it.</p></div><div class="why-card rv"><div class="wico">📊</div><div class="wtitle">Actionable Insights Built In</div><p class="wdesc">Every workspace includes pre-built dashboards giving leadership real-time visibility into project health, team utilisation, and operational KPIs without any manual reporting work.</p></div><div class="why-card rv"><div class="wico">🔄</div><div class="wtitle">Long-Term Partner</div><p class="wdesc">Monthly workspace optimisations, new board builds as your business evolves, and dedicated ongoing support — we grow your Monday.com workspace as your business scales.</p></div></div>
+</section>
+
+<section style="background:#EAF2FF">
+  <div class="sec-hdr">
+    <div class="tag rv">Industries We Serve</div>
+    <h2 class="sh rv d1">Tailored for <span class="hl">Your Industry</span></h2>
+    <p class="ss rv d2">Every strategy designed specifically for your audience, competitive landscape, and industry — never a copy-paste template.</p>
+  </div>
+  <div class="grid4"><div class="ind-card rv"><div class="ind-ico">💻</div><div><div class="ind-title">SaaS &amp; Technology</div><div class="ind-desc">Sprint planning, product roadmap, and engineering workflow boards</div></div></div><div class="ind-card rv"><div class="ind-ico">🏗️</div><div><div class="ind-title">Construction &amp; Real Estate</div><div class="ind-desc">Project delivery timelines, contractor management, and client portals</div></div></div><div class="ind-card rv"><div class="ind-ico">📺</div><div><div class="ind-title">Creative &amp; Marketing Agencies</div><div class="ind-desc">Campaign management, client delivery, and asset approval workflows</div></div></div><div class="ind-card rv"><div class="ind-ico">🏭</div><div><div class="ind-title">Manufacturing &amp; Operations</div><div class="ind-desc">Production scheduling, QA tracking, and supplier management boards</div></div></div><div class="ind-card rv"><div class="ind-ico">💰</div><div><div class="ind-title">Finance &amp; Professional Services</div><div class="ind-desc">Client onboarding, compliance tracking, and engagement management</div></div></div><div class="ind-card rv"><div class="ind-ico">🎓</div><div><div class="ind-title">EdTech &amp; Education</div><div class="ind-desc">Course development, student intake, and faculty coordination workflows</div></div></div><div class="ind-card rv"><div class="ind-ico">🏥</div><div><div class="ind-title">Healthcare &amp; Clinics</div><div class="ind-desc">Patient intake, compliance management, and staff scheduling boards</div></div></div><div class="ind-card rv"><div class="ind-ico">🛒</div><div><div class="ind-title">E-Commerce</div><div class="ind-desc">Product launch planning, influencer management, and ops workflows</div></div></div></div>
+</section>
+
+<section style="background:#fff">
+  <div class="sec-hdr">
+    <div class="tag rv">Client Stories</div>
+    <h2 class="sh rv d1">Results from <span class="hl">Real Clients</span></h2>
+    <p class="ss rv d2">Real results, real businesses — here is what working with Apex360 looks like in practice.</p>
+  </div>
+  <div class="grid3"><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Our team went from 14 different spreadsheets to one Monday.com workspace in 2 weeks. Apex360 built everything exactly how our agency works and now we deliver client projects 60% faster with zero missed deadlines."</p><div class="tauthor"><div class="tavatar" style="background:var(--orange)">K</div><div><div class="tname">Kavya Reddy</div><div class="trole">Operations Director, BrandLift Agency</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"The Monday.com CRM Apex360 built replaced Salesforce for us at a fraction of the cost. Our sales team actually uses it because it is visual, simple, and automated. Pipeline visibility went from guesswork to crystal clear."</p><div class="tauthor"><div class="tavatar" style="background:var(--blue)">M</div><div><div class="tname">Michael Torres</div><div class="trole">VP Sales, InnovateTech</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Apex360 connected Monday.com to our HubSpot, Slack, and Google Drive in one implementation. Every department now works from a single source of truth and our weekly leadership meetings have gone from 2 hours to 30 minutes."</p><div class="tauthor"><div class="tavatar" style="background:var(--purple)">D</div><div><div class="tname">Divya Sharma</div><div class="trole">COO, ScaleForce India</div><div class="tbadge">✓ Verified Client</div></div></div></div></div>
+</section>
+
+<section style="background:#EAF2FF">
+  <div class="sec-hdr">
+    <div class="tag rv">FAQ</div>
+    <h2 class="sh rv d1">Monday.com Implementation <span class="hl">Questions Answered</span></h2>
+  </div>
+  <div class="faq-list"><div class="faq-item"><button class="faq-q">How long does a Monday.com implementation take?<span class="ficon">+</span></button><div class="faq-a">A standard Monday.com workspace setup for a team of 10–50 people typically takes 2–4 weeks from kickoff to go-live. Larger, more complex implementations with multiple departments, custom integrations, and data migrations can take 6–8 weeks. We provide a detailed timeline during your discovery call.</div></div><div class="faq-item"><button class="faq-q">Can you migrate our data from Asana, Trello, or Jira?<span class="ficon">+</span></button><div class="faq-a">Yes — we handle migrations from all major project management tools including Asana, Trello, Jira, Basecamp, Notion, and Excel spreadsheets. We map your existing structure, clean the data, and import everything cleanly into Monday.com without any manual re-entry required from your team.</div></div><div class="faq-item"><button class="faq-q">What Monday.com plan do we need?<span class="ficon">+</span></button><div class="faq-a">The right plan depends on your team size, feature requirements, and automation needs. We help you choose between Basic, Standard, Pro, and Enterprise tiers during a free consultation — and as Monday.com partners we can advise on cost optimisation to ensure you only pay for what your team will actually use.</div></div><div class="faq-item"><button class="faq-q">Can Monday.com replace our existing CRM?<span class="ficon">+</span></button><div class="faq-a">For many businesses — especially SMEs — yes. Monday.com CRM is a powerful visual alternative to traditional CRMs. We have helped multiple clients replace Salesforce, HubSpot, and Pipedrive with Monday.com at significantly lower cost and with higher team adoption rates.</div></div><div class="faq-item"><button class="faq-q">Do you provide ongoing support after go-live?<span class="ficon">+</span></button><div class="faq-a">Yes — our monthly retainer includes workspace optimisations, new board builds as your processes evolve, user management, integration updates, and priority Slack support. Most clients keep us retained long-term because Monday.com evolves as their business grows.</div></div></div>
+</section>
+
+<div class="page-cta">
+  <div class="cta-inner">
+    <h2>Ready to Eliminate <span>Operational Chaos?</span></h2>
+    <p>Get a free workflow audit and a custom Monday.com workspace proposal — we will show you exactly how to streamline your operations in one visual workspace.</p>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="btn-orange">Get Free Workspace Audit →</a>
+      <a href="index.html#cases" class="btn-outline">View Case Studies</a>
+    </div>
+  </div>
+</div>
+
+<footer><div class="footer-top">
+  <div class="footer-brand"><a class="logo" href="index.html" style="color:#fff">Apex<span>360</span> Digital</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
+  <div class="footer-col"><div class="fc-title">Services</div><ul>
+    <li><a href="digital-marketing.html">Digital Marketing</a></li>
+    <li><a href="hubspot.html">HubSpot Solutions</a></li>
+    <li><a href="monday.html">Monday.com</a></li>
+    <li><a href="web-development.html">Web Development</a></li>
+    <li><a href="marketing-automation.html">Marketing Automation</a></li>
+    <li><a href="ai-strategy.html">AI Strategy</a></li>
+  </ul></div>
+  <div class="footer-col"><div class="fc-title">Company</div><ul>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html#cases">Case Studies</a></li>
+    <li><a href="index.html#resources">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul></div>
+  <div class="footer-col"><div class="fc-title">Contact</div><ul>
+    <li><a href="mailto:hello@apex360digital.com">hello@apex360digital.com</a></li>
+    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+    <li><a href="#">Chandigarh, India</a></li>
+    <li><a href="index.html#contact">Book a Call</a></li>
+  </ul></div>
+</div>
+<div class="footer-btm">
+  <p>© 2026 Apex360 Digital. All rights reserved.</p>
+  <div class="fsoc"><a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a><a href="#" aria-label="X"><i class="ti ti-brand-x"></i></a><a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a></div>
+  <div class="fleg"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+</div></footer>
 <script>
 (function(){
-var nav=document.getElementById("nav");
-if(nav)window.addEventListener("scroll",function(){nav.classList.toggle("scrolled",scrollY>60);},{passive:true});
-var hb=document.getElementById("hbtn"),nl=document.getElementById("nl");
-if(hb&&nl)hb.addEventListener("click",function(){var o=nl.classList.toggle("open");hb.setAttribute("aria-expanded",o);var b=hb.querySelectorAll("span");if(o){b[0].style.transform="translateY(7px) rotate(45deg)";b[1].style.opacity="0";b[2].style.transform="translateY(-7px) rotate(-45deg)";}else b.forEach(function(x){x.style.transform="";x.style.opacity="";});});
-document.querySelectorAll(".nd").forEach(function(d){var b=d.querySelector(".ndb");if(b)b.addEventListener("click",function(e){e.stopPropagation();d.classList.toggle("open");b.setAttribute("aria-expanded",d.classList.contains("open"));});});
-document.addEventListener("click",function(){document.querySelectorAll(".nd.open").forEach(function(d){d.classList.remove("open");});});
-var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.1,rootMargin:"0px 0px -40px 0px"});
-document.querySelectorAll(".rv").forEach(function(el){io.observe(el);});
-function cu(el){var r=el.getAttribute("data-count");if(!r)return;var t=parseFloat(r),s=el.getAttribute("data-suffix")||"",fl=r.includes(".");var dur=1500,st=performance.now();(function tk(n){var p=Math.min((n-st)/dur,1),e=1-Math.pow(1-p,3);el.textContent=(fl?(e*t).toFixed(1):Math.round(e*t))+s;if(p<1)requestAnimationFrame(tk);})(st);}
-var so=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){cu(e.target);so.unobserve(e.target);}});},{threshold:.5});
-document.querySelectorAll("[data-count]").forEach(function(el){so.observe(el);});
-document.querySelectorAll(".faq-q").forEach(function(b){b.addEventListener("click",function(){var it=this.closest(".faq-item"),a=it.querySelector(".faq-a"),op=this.getAttribute("aria-expanded")==="true";document.querySelectorAll(".faq-q").forEach(function(x){x.setAttribute("aria-expanded","false");x.closest(".faq-item").querySelector(".faq-a").classList.remove("open");});if(!op){this.setAttribute("aria-expanded","true");a.classList.add("open");}});});
+  var nav=document.getElementById('mn');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+  var hb=document.getElementById('hb'),nl=document.getElementById('nl');
+  hb.addEventListener('click',function(){
+    var o=nl.classList.toggle('open');hb.setAttribute('aria-expanded',o);
+    var b=hb.querySelectorAll('span');
+    if(o){b[0].style.transform='translateY(7px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-7px) rotate(-45deg)';}
+    else{b.forEach(function(x){x.style.transform='';x.style.opacity='';});}
+  });
+  var drop=document.getElementById('dsvcs');
+  if(drop){
+    var dbtn=drop.querySelector('button'),dp=drop.querySelector('.nav-dropdown'),dt;
+    function od(){clearTimeout(dt);drop.classList.add('open');dbtn.setAttribute('aria-expanded','true');}
+    function cd(){dt=setTimeout(function(){drop.classList.remove('open');dbtn.setAttribute('aria-expanded','false');},100);}
+    drop.addEventListener('mouseenter',od);drop.addEventListener('mouseleave',cd);
+    if(dp){dp.addEventListener('mouseenter',od);dp.addEventListener('mouseleave',cd);}
+    dbtn.addEventListener('click',function(e){e.stopPropagation();drop.classList.contains('open')?cd():od();});
+    if(dp){dp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drop.classList.remove('open');nl.classList.remove('open');});});}
+  }
+  document.addEventListener('click',function(){if(drop)drop.classList.remove('open');});
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv,.rv-r').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var it=btn.closest('.faq-item'),op=it.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
+      if(!op)it.classList.add('open');
+    });
+  });
 })();
 </script>
 </body>
