@@ -53,45 +53,11 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
 .btn-outline{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:#fff;padding:.85rem 2rem;border-radius:var(--pill);border:2px solid rgba(255,255,255,.25);font-family:'Figtree',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:border-color .2s,transform .15s}
 .btn-outline:hover{border-color:#fff;transform:translateY(-2px)}
+.stats-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;min-width:210px;flex-shrink:0;box-shadow:0 25px 60px rgba(15,23,42,.14);animation:floatPanel 5s ease-in-out infinite}
 @keyframes floatPanel{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.hero-visual{position:relative;width:320px;flex-shrink:0}
-.browser-mock{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:0 25px 60px rgba(15,23,42,.16);animation:floatPanel 5s ease-in-out infinite}
-.browser-bar{display:flex;align-items:center;gap:.32rem;padding:.7rem .85rem;background:var(--surface);border-bottom:1px solid var(--border)}
-.browser-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.browser-url{margin-left:.5rem;flex:1;background:#fff;border:1px solid var(--border);border-radius:6px;padding:.22rem .65rem;font-size:.64rem;color:#999;display:flex;align-items:center;gap:.3rem}
-.browser-body{padding:1.15rem;display:flex;flex-direction:column;gap:.85rem}
-.skel{background:linear-gradient(90deg,#eee 25%,#f3f3f1 50%,#eee 75%);background-size:200% 100%;animation:shimmer 1.8s infinite;border-radius:6px}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.skel-hero{height:64px;border-radius:10px}
-.skel-row{display:flex;gap:.7rem}
-.skel-img{width:52px;height:52px;border-radius:8px;flex-shrink:0}
-.skel-lines{flex:1;display:flex;flex-direction:column;gap:.45rem;justify-content:center}
-.skel-line{height:8px}
-.skel-line.w80{width:80%}.skel-line.w70{width:70%}.skel-line.w60{width:60%}.skel-line.w50{width:50%}
-.hero-badge{position:absolute;display:flex;align-items:center;gap:.55rem;background:#fff;border-radius:14px;padding:.6rem .95rem;box-shadow:0 14px 34px rgba(15,23,42,.16);border:1px solid var(--border);font-size:.68rem;z-index:3}
-.hero-badge-ico{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.hero-badge strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;color:var(--ink);display:block;line-height:1.1}
-.hero-badge span.hb-lbl{color:var(--muted);white-space:nowrap}
-.hero-badge-speed{top:-20px;left:-32px;animation:floatBadge 4s ease-in-out infinite}
-.hero-badge-score{bottom:-18px;right:-26px;animation:floatBadge 4.6s ease-in-out infinite reverse}
-@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.info-legend{display:flex;justify-content:center;gap:2rem;margin-top:2.25rem;font-size:.8rem;color:var(--muted);font-weight:600;flex-wrap:wrap}
-.legend-dot{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:.4rem;vertical-align:middle}
-.infographic-wrap{max-width:940px;margin:2.5rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.info-metric{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.6rem 1.75rem;display:flex;flex-direction:column;gap:1.1rem;transition:transform .25s,box-shadow .25s}
-.info-metric:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(0,0,0,.09)}
-.info-metric-top{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
-.info-metric-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;color:var(--ink);display:flex;align-items:center;gap:.6rem}
-.info-metric-ico{width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.info-metric-badge{font-family:'Plus Jakarta Sans',sans-serif;font-size:.68rem;font-weight:800;color:#fff;background:#161616;padding:.32rem .8rem;border-radius:var(--pill);white-space:nowrap;letter-spacing:.02em}
-.info-bars{display:flex;flex-direction:column;gap:.55rem}
-.info-bar-row{display:flex;align-items:center;gap:.7rem}
-.info-bar-tag{width:60px;flex-shrink:0;font-size:.66rem;font-weight:700;color:var(--muted);letter-spacing:.01em}
-.info-bar-tag.fast{color:var(--orange)}
-.info-bar-track{flex:1;position:relative;height:32px;background:#fff;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
-.info-bar-fill{height:100%;min-width:56px;border-radius:7px;display:flex;align-items:center;justify-content:flex-end;padding:0 .7rem;font-size:.74rem;font-weight:800;color:#fff;white-space:nowrap}
-.info-bar-fill.slow{background:#7A2115}
-.info-bar-fill.fast{background:#C2410C}
+.stat-box{padding:.9rem 1rem;background:var(--surface);border-radius:12px;border:1px solid var(--border)}
+.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.2rem}
+.stat-lbl{font-size:.74rem;color:var(--muted)}
 .results-strip{background:#EAF2FF;padding:4rem 5rem;position:relative;overflow:hidden}
 .results-strip::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
 .results-inner{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.08);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(15,23,42,.05)}
@@ -126,6 +92,24 @@ section{padding:5rem 5rem}
 .vital-metric{font-size:.66rem;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-top:.2rem}
 .vital-label{font-size:.85rem;color:var(--ink);font-weight:600;margin-top:1.1rem;text-align:center}
 .vital-badge{font-size:.68rem;font-weight:700;padding:.2rem .75rem;border-radius:var(--pill);margin-top:.5rem}
+.vitals-list{max-width:420px;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:1rem}
+.vitals-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.4rem 1.6rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.vitals-card-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.9rem;line-height:1}
+.vitals-card-info{text-align:right}
+.vitals-card-label{font-size:.9rem;font-weight:600;color:var(--ink)}
+.vitals-card-sub{font-size:.74rem;color:var(--muted);margin-top:.15rem}
+.cmp-table{max-width:820px;margin:2.5rem auto 0;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 24px rgba(15,23,42,.05)}
+.cmp-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;align-items:center}
+.cmp-row:not(:last-child){border-bottom:1px solid var(--border)}
+.cmp-row.cmp-head{background:var(--surface)}
+.cmp-row.cmp-head .cmp-typical,.cmp-row.cmp-head .cmp-apex{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem;color:var(--ink);padding:1rem 1.25rem}
+.cmp-row.cmp-head .cmp-apex{color:var(--orange)}
+.cmp-metric{font-size:.85rem;font-weight:600;color:var(--ink);padding:1rem 1.25rem}
+.cmp-typical{font-size:.83rem;color:var(--muted);padding:1rem 1.25rem;display:flex;align-items:center;gap:.5rem}
+.cmp-apex{font-size:.83rem;color:var(--ink);font-weight:600;padding:1rem 1.25rem;display:flex;align-items:center;gap:.5rem;background:rgba(255,92,26,.05)}
+.cmp-x{color:#dc2626;font-weight:700}
+.cmp-check{color:#0f9e72;font-weight:700}
+@media(max-width:768px){.cmp-row{grid-template-columns:1fr}.cmp-metric{background:var(--surface);font-weight:700}.cmp-apex{border-top:1px dashed var(--border)}}
 .dark-sect{background:#fff;padding:5rem;position:relative;overflow:hidden}
 .dark-sect::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
 .dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem;position:relative}
@@ -147,7 +131,7 @@ section{padding:5rem 5rem}
 .metric-cta strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;color:var(--ink);margin-bottom:.3rem}
 .pstep{background:#fff;border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);display:flex;gap:1.25rem;transition:transform .2s,box-shadow .2s}
 .pstep:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.07)}
-.pnum{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;color:#C2410C;opacity:.55;line-height:1;flex-shrink:0;width:48px}
+.pnum{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;color:var(--orange);opacity:.55;line-height:1;flex-shrink:0;width:48px}
 .ptitle{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.97rem;color:var(--ink);margin-bottom:.45rem;line-height:1.35}
 .pdesc{font-size:.83rem;color:var(--muted);line-height:1.65}
 .why-card{border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);background:#fff;transition:transform .2s,box-shadow .2s}
@@ -157,6 +141,11 @@ section{padding:5rem 5rem}
 .wdesc{font-size:.83rem;color:var(--muted);line-height:1.7}
 .ind-card{background:#fff;border-radius:var(--radius);padding:1.35rem 1.5rem;border:1px solid var(--border);display:flex;gap:.85rem;align-items:flex-start;transition:transform .2s}
 .ind-card:hover{transform:translateY(-3px)}
+.stat-float-wrap{max-width:380px;margin:2.5rem auto 0;background:#fff;border-radius:26px;padding:1.75rem;box-shadow:0 25px 60px rgba(15,23,42,.14);display:flex;flex-direction:column;gap:1rem;animation:floatPanel 5s ease-in-out infinite}
+.stat-float-item{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.15rem 1.4rem;transition:transform .2s}
+.stat-float-item:hover{transform:translateY(-3px)}
+.stat-float-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.9rem;color:var(--orange);line-height:1}
+.stat-float-lbl{font-size:.82rem;color:var(--muted);margin-top:.35rem;line-height:1.4}
 .ind-ico{font-size:1.4rem;flex-shrink:0;margin-top:2px}
 .ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;color:var(--ink);margin-bottom:.25rem}
 .ind-desc{font-size:.76rem;color:var(--muted);line-height:1.5}
@@ -205,12 +194,11 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 @media(max-width:1100px){
   nav,section,footer,.svc-hero,.results-strip,.dark-sect,.page-cta{padding-left:2.5rem;padding-right:2.5rem}
   .svc-hero-inner{grid-template-columns:1fr}
-  .hero-visual{display:none}
+  .stats-panel{display:none}
   .grid3,.grid4{grid-template-columns:repeat(2,1fr)}
   .results-inner,.grid2{grid-template-columns:repeat(2,1fr)}
   .dark-grid{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
-  .infographic-wrap{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   nav,section,footer,.svc-hero,.results-strip,.dark-sect,.page-cta{padding-left:1.5rem;padding-right:1.5rem}
@@ -225,9 +213,6 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .footer-top{grid-template-columns:1fr;gap:2rem}
   .footer-btm{flex-direction:column;align-items:flex-start}
   .cta-btns,.hero-btns{flex-direction:column;align-items:center}
-  .info-bar-fill{font-size:.68rem}
-  .info-legend{gap:1.1rem}
-  .info-metric{padding:1.3rem 1.4rem}
 }
 @media(max-width:480px){.results-inner{grid-template-columns:1fr}}
 </style>
@@ -270,22 +255,11 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <a href="#services" class="btn-ghost">Explore Services</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="browser-mock">
-        <div class="browser-bar">
-          <span class="browser-dot" style="background:#ff5f57"></span>
-          <span class="browser-dot" style="background:#febc2e"></span>
-          <span class="browser-dot" style="background:#28c840"></span>
-          <div class="browser-url"><i class="ti ti-lock" style="font-size:10px"></i> apex360digital.com</div>
-        </div>
-        <div class="browser-body">
-          <div class="skel skel-hero"></div>
-          <div class="skel-row"><div class="skel skel-img"></div><div class="skel-lines"><div class="skel skel-line w80"></div><div class="skel skel-line w60"></div><div class="skel skel-line w70"></div></div></div>
-          <div class="skel-row"><div class="skel skel-img"></div><div class="skel-lines"><div class="skel skel-line w70"></div><div class="skel skel-line w50"></div></div></div>
-        </div>
-      </div>
-      <div class="hero-badge hero-badge-speed"><div class="hero-badge-ico" style="background:var(--orange-lt);color:var(--orange)">⚡</div><div><strong>0.9s</strong><span class="hb-lbl">Load Time</span></div></div>
-      <div class="hero-badge hero-badge-score"><div class="hero-badge-ico" style="background:var(--teal-bg);color:var(--teal)">🚀</div><div><strong>98/100</strong><span class="hb-lbl">PageSpeed</span></div></div>
+    <div class="stats-panel">
+      <div class="stat-box"><div class="stat-num">99</div><div class="stat-lbl">PageSpeed Score</div></div>
+      <div class="stat-box"><div class="stat-num">&lt;1.8s</div><div class="stat-lbl">Average Load Time</div></div>
+      <div class="stat-box"><div class="stat-num">47%</div><div class="stat-lbl">Avg Conversion Uplift</div></div>
+      <div class="stat-box"><div class="stat-num">300+</div><div class="stat-lbl">Sites Delivered</div></div>
     </div>
   </div>
 </div>
@@ -314,39 +288,18 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     <h2 class="sh rv d1">Performance Google <span class="hl">Actually Rewards</span></h2>
     <p class="ss rv d2">Core Web Vitals are Google's official ranking signals for user experience. Here's where the average Apex360-built site lands, measured with Google PageSpeed Insights.</p>
   </div>
-  <div class="vitals-grid">
-    <div class="vital-gauge rv">
-      <div class="vital-ring">
-        <svg viewBox="0 0 120 120">
-          <circle class="vital-track" cx="60" cy="60" r="50"/>
-          <circle class="vital-fill" cx="60" cy="60" r="50" stroke="#FF5C1A" style="stroke-dasharray:314.16;stroke-dashoffset:6.3"/>
-        </svg>
-        <div class="vital-center"><div class="vital-score">98</div><div class="vital-metric">LCP</div></div>
-      </div>
-      <div class="vital-label">1.2s Largest Contentful Paint</div>
-      <div class="vital-badge" style="background:rgba(255,92,26,.12);color:#FF5C1A">Good</div>
+  <div class="vitals-list">
+    <div class="vitals-card rv">
+      <div class="vitals-card-num" style="color:#FF5C1A">98</div>
+      <div class="vitals-card-info"><div class="vitals-card-label">LCP — 1.2s</div><div class="vitals-card-sub">Largest Contentful Paint</div></div>
     </div>
-    <div class="vital-gauge rv d1">
-      <div class="vital-ring">
-        <svg viewBox="0 0 120 120">
-          <circle class="vital-track" cx="60" cy="60" r="50"/>
-          <circle class="vital-fill" cx="60" cy="60" r="50" stroke="#2563eb" style="stroke-dasharray:314.16;stroke-dashoffset:12.6"/>
-        </svg>
-        <div class="vital-center"><div class="vital-score">96</div><div class="vital-metric">INP</div></div>
-      </div>
-      <div class="vital-label">45ms Interaction to Next Paint</div>
-      <div class="vital-badge" style="background:var(--blue-bg);color:#2563eb">Good</div>
+    <div class="vitals-card rv d1">
+      <div class="vitals-card-num" style="color:#2563eb">96</div>
+      <div class="vitals-card-info"><div class="vitals-card-label">INP — 45ms</div><div class="vitals-card-sub">Interaction to Next Paint</div></div>
     </div>
-    <div class="vital-gauge rv d2">
-      <div class="vital-ring">
-        <svg viewBox="0 0 120 120">
-          <circle class="vital-track" cx="60" cy="60" r="50"/>
-          <circle class="vital-fill" cx="60" cy="60" r="50" stroke="#0f9e72" style="stroke-dasharray:314.16;stroke-dashoffset:3.1"/>
-        </svg>
-        <div class="vital-center"><div class="vital-score">99</div><div class="vital-metric">CLS</div></div>
-      </div>
-      <div class="vital-label">0.02 Cumulative Layout Shift</div>
-      <div class="vital-badge" style="background:var(--teal-bg);color:#0f9e72">Good</div>
+    <div class="vitals-card rv d2">
+      <div class="vitals-card-num" style="color:#0f9e72">99</div>
+      <div class="vitals-card-info"><div class="vitals-card-label">CLS — 0.02</div><div class="vitals-card-sub">Cumulative Layout Shift</div></div>
     </div>
   </div>
 </section>
@@ -369,7 +322,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </div>
 
-<section style="background:#fff">
+<section style="background:#EAF2FF">
   <div class="sec-hdr">
     <div class="tag rv">Our Process</div>
     <h2 class="sh rv d1">How We <span class="hl">Deliver Results</span></h2>
@@ -378,7 +331,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="grid2"><div class="pstep rv"><div class="pnum">01</div><div><div class="ptitle">Discovery &amp; Strategy</div><p class="pdesc">We audit your existing website, competitors, and target audience — identifying UX issues, SEO gaps, conversion blockers, and technical debt before designing a single wireframe.</p></div></div><div class="pstep rv"><div class="pnum">02</div><div><div class="ptitle">Design &amp; Prototype</div><p class="pdesc">High-fidelity mockups in Figma for every key page — reviewed and approved by you before we write a single line of code. Mobile-first, brand-aligned, and conversion-optimised by design.</p></div></div><div class="pstep rv"><div class="pnum">03</div><div><div class="ptitle">Development &amp; Build</div><p class="pdesc">Clean, semantic, fully responsive code built for speed and SEO — with daily commits, staging environment access, and weekly progress reviews throughout the build process.</p></div></div><div class="pstep rv"><div class="pnum">04</div><div><div class="ptitle">Content &amp; SEO Setup</div><p class="pdesc">On-page SEO configuration, schema markup, sitemap, robots.txt, and GA4 setup — your site is search-engine-ready from the moment it launches with zero technical SEO debt.</p></div></div><div class="pstep rv"><div class="pnum">05</div><div><div class="ptitle">QA &amp; Speed Testing</div><p class="pdesc">Cross-browser testing, mobile QA, Core Web Vitals testing, and security audit — every site achieves 90+ PageSpeed score before going live. No exceptions.</p></div></div><div class="pstep rv"><div class="pnum">06</div><div><div class="ptitle">Launch &amp; Post-Launch Support</div><p class="pdesc">Managed DNS migration, launch monitoring, and 30-day post-launch bug-fix support included with every project — ensuring a smooth go-live with zero business disruption.</p></div></div></div>
 </section>
 
-<section style="background:#EAF2FF">
+<section style="background:#fff">
   <div class="sec-hdr">
     <div class="tag rv">Why Apex360</div>
     <h2 class="sh rv d1">Built <span class="hl">Genuinely Different</span></h2>
@@ -387,58 +340,52 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="grid3"><div class="why-card rv"><div class="wico">⚡</div><div class="wtitle">Speed-First Development</div><p class="wdesc">Every site is engineered for sub-2-second load times from the ground up — not retrofitted with speed fixes after launch when it is too late to do it properly.</p></div><div class="why-card rv"><div class="wico">🔍</div><div class="wtitle">SEO Built-In From Day One</div><p class="wdesc">On-page SEO, schema markup, Core Web Vitals, and site architecture designed for search engines — not added as an afterthought after the site is already built.</p></div><div class="why-card rv"><div class="wico">📱</div><div class="wtitle">Mobile-First Always</div><p class="wdesc">Every design starts on mobile and scales up. 65%+ of your traffic is mobile — we build for your actual audience, not for how websites were designed a decade ago.</p></div><div class="why-card rv"><div class="wico">🎨</div><div class="wtitle">Custom Design Only</div><p class="wdesc">Zero Elementor, zero page builders, zero generic templates. Every design is created from scratch in Figma and built with clean, maintainable custom code that performs.</p></div><div class="why-card rv"><div class="wico">🔐</div><div class="wtitle">Security &amp; Compliance</div><p class="wdesc">SSL, WAF protection, GDPR compliance, regular security audits, and automated backups — every website we build is secured against modern threats from the moment it launches.</p></div><div class="why-card rv"><div class="wico">📈</div><div class="wtitle">Conversion Optimised</div><p class="wdesc">UX designed around your conversion goals — not just aesthetics. Every layout decision, CTA placement, and form design is informed by CRO principles and A/B testing data.</p></div></div>
 </section>
 
-<section style="background:#fff">
+<section style="background:#EAF2FF">
   <div class="sec-hdr">
-    <div class="tag rv">By The Numbers</div>
-    <h2 class="sh rv d1">The Real Cost of a <span class="hl">Slow Website</span></h2>
-    <p class="ss rv d2">Page speed isn't cosmetic — it's the difference between a visitor who converts and one who bounces. Here's how a typical slow website stacks up against an Apex360 build.</p>
+    <div class="tag rv">The Difference</div>
+    <h2 class="sh rv d1">A Typical Website <span class="hl">vs. an Apex360 Website</span></h2>
+    <p class="ss rv d2">Same budget range, completely different outcome. Here's how a typical agency build stacks up against what we ship as standard.</p>
   </div>
-  <div class="info-legend rv d1"><span><i class="legend-dot" style="background:#7A2115"></i>Typical Slow Website</span><span><i class="legend-dot" style="background:#C2410C"></i>Apex360-Built Website</span></div>
-  <div class="infographic-wrap">
-    <div class="info-metric rv d1">
-      <div class="info-metric-top">
-        <div class="info-metric-name"><span class="info-metric-ico">📉</span>Bounce Rate</div>
-        <div class="info-metric-badge">8.2× Lower</div>
-      </div>
-      <div class="info-bars">
-        <div class="info-bar-row"><span class="info-bar-tag">Slow Site</span><div class="info-bar-track"><div class="info-bar-fill slow" style="width:74%">74%</div></div></div>
-        <div class="info-bar-row"><span class="info-bar-tag fast">Apex360</span><div class="info-bar-track"><div class="info-bar-fill fast" style="width:9%">9%</div></div></div>
-      </div>
+  <div class="cmp-table rv d1">
+    <div class="cmp-row cmp-head">
+      <div class="cmp-metric"></div>
+      <div class="cmp-typical">Typical Website</div>
+      <div class="cmp-apex">Apex360 Website</div>
     </div>
-    <div class="info-metric rv d2">
-      <div class="info-metric-top">
-        <div class="info-metric-name"><span class="info-metric-ico">💰</span>Conversion Rate</div>
-        <div class="info-metric-badge">6.3× Higher</div>
-      </div>
-      <div class="info-bars">
-        <div class="info-bar-row"><span class="info-bar-tag">Slow Site</span><div class="info-bar-track"><div class="info-bar-fill slow" style="width:16%">0.6%</div></div></div>
-        <div class="info-bar-row"><span class="info-bar-tag fast">Apex360</span><div class="info-bar-track"><div class="info-bar-fill fast" style="width:100%">3.8%</div></div></div>
-      </div>
+    <div class="cmp-row">
+      <div class="cmp-metric">Page Load Time</div>
+      <div class="cmp-typical"><span class="cmp-x">✕</span> 4.8s average</div>
+      <div class="cmp-apex"><span class="cmp-check">✓</span> Under 1.8s</div>
     </div>
-    <div class="info-metric rv d3">
-      <div class="info-metric-top">
-        <div class="info-metric-name"><span class="info-metric-ico">⏱️</span>Avg Session Duration</div>
-        <div class="info-metric-badge">4.4× Longer</div>
-      </div>
-      <div class="info-bars">
-        <div class="info-bar-row"><span class="info-bar-tag">Slow Site</span><div class="info-bar-track"><div class="info-bar-fill slow" style="width:22%">45s</div></div></div>
-        <div class="info-bar-row"><span class="info-bar-tag fast">Apex360</span><div class="info-bar-track"><div class="info-bar-fill fast" style="width:100%">3m 20s</div></div></div>
-      </div>
+    <div class="cmp-row">
+      <div class="cmp-metric">Google PageSpeed Score</div>
+      <div class="cmp-typical"><span class="cmp-x">✕</span> 52 / 100</div>
+      <div class="cmp-apex"><span class="cmp-check">✓</span> 98 / 100</div>
     </div>
-    <div class="info-metric rv d4">
-      <div class="info-metric-top">
-        <div class="info-metric-name"><span class="info-metric-ico">🔁</span>Return Visitor Rate</div>
-        <div class="info-metric-badge">5.7× Higher</div>
-      </div>
-      <div class="info-bars">
-        <div class="info-bar-row"><span class="info-bar-tag">Slow Site</span><div class="info-bar-track"><div class="info-bar-fill slow" style="width:18%">12%</div></div></div>
-        <div class="info-bar-row"><span class="info-bar-tag fast">Apex360</span><div class="info-bar-track"><div class="info-bar-fill fast" style="width:100%">68%</div></div></div>
-      </div>
+    <div class="cmp-row">
+      <div class="cmp-metric">Mobile Optimisation</div>
+      <div class="cmp-typical"><span class="cmp-x">✕</span> Responsive only</div>
+      <div class="cmp-apex"><span class="cmp-check">✓</span> Mobile-first built</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-metric">SEO Foundation</div>
+      <div class="cmp-typical"><span class="cmp-x">✕</span> Bolted on later</div>
+      <div class="cmp-apex"><span class="cmp-check">✓</span> Built in from day one</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-metric">Conversion Rate</div>
+      <div class="cmp-typical"><span class="cmp-x">✕</span> Industry average</div>
+      <div class="cmp-apex"><span class="cmp-check">✓</span> +47% uplift average</div>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-metric">Ongoing Support</div>
+      <div class="cmp-typical"><span class="cmp-x">✕</span> One-time handoff</div>
+      <div class="cmp-apex"><span class="cmp-check">✓</span> Monthly optimisation</div>
     </div>
   </div>
 </section>
 
-<section style="background:#EAF2FF">
+<section style="background:#fff">
   <div class="sec-hdr">
     <div class="tag rv">Client Stories</div>
     <h2 class="sh rv d1">Results from <span class="hl">Real Clients</span></h2>
@@ -447,7 +394,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="grid3"><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Apex360 rebuilt our website from scratch in 6 weeks. Our PageSpeed went from 42 to 97, bounce rate dropped 35%, and organic enquiries increased by 180% within 3 months of launch. Genuinely transformational."</p><div class="tauthor"><div class="tavatar" style="background:var(--orange)">R</div><div><div class="tname">Rohan Mehta</div><div class="trole">CEO, InnovateTech India</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"We needed a Webflow site that our non-technical marketing team could manage independently. Apex360 built exactly that — beautiful design, blazing fast, and our team updates content daily without needing any developer help."</p><div class="tauthor"><div class="tavatar" style="background:var(--blue)">E</div><div><div class="tname">Emma Johnson</div><div class="trole">Head of Marketing, GrowthPad</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Our old WooCommerce store was slow and converting at 0.8%. Apex360 rebuilt it with a custom theme and conversion-optimised checkout flow. We now convert at 3.2% and load in under 1.5 seconds. Exceptional work."</p><div class="tauthor"><div class="tavatar" style="background:var(--teal)">A</div><div><div class="tname">Amit Singh</div><div class="trole">Founder, NatureCraft Store</div><div class="tbadge">✓ Verified Client</div></div></div></div></div>
 </section>
 
-<section style="background:#fff">
+<section style="background:#EAF2FF">
   <div class="sec-hdr">
     <div class="tag rv">FAQ</div>
     <h2 class="sh rv d1">Web Development Services <span class="hl">Questions Answered</span></h2>

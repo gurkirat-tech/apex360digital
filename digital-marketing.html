@@ -36,6 +36,17 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .nav-links>li>a.nav-cta:hover{background:#e04a0e}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem}
 .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .2s}
+.nav-links>li{position:relative}
+.nav-links>li>button{display:flex;align-items:center;gap:.3rem;padding:.48rem .85rem;font-family:'Figtree',sans-serif;font-size:.88rem;font-weight:500;color:var(--ink);background:none;border:none;cursor:pointer;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s}
+.nav-links>li>button:hover{background:var(--orange-lt);color:var(--orange)}
+.nav-chevron{display:inline-block;width:14px;height:14px;flex-shrink:0;transition:transform .22s;opacity:.5}
+.nav-item-drop.open .nav-chevron{transform:rotate(180deg);opacity:1}
+.nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.11);padding:.5rem;min-width:230px;opacity:0;pointer-events:none;transition:opacity .2s,transform .22s cubic-bezier(.22,1,.36,1);z-index:600}
+.nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.nav-item-drop.open>.nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.drop-item{display:flex;align-items:center;gap:.7rem;padding:.6rem .75rem;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:500;transition:background .15s}
+.drop-item:hover{background:var(--surface)}
+.drop-item.active{background:var(--orange-lt);color:var(--orange)}
 
 /* ── PAGE HERO ── */
 .page-hero{padding:6rem 3rem 5rem;background:#fff;position:relative;overflow:hidden}
@@ -266,6 +277,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:.75rem 1rem 1rem;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.07);gap:.15rem}
   .nav-links.open{display:flex}
   .nav-links>li>a{padding:.65rem 1rem;border-radius:8px;width:100%}
+  .nav-links>li>button{padding:.65rem 1rem;border-radius:8px;width:100%}
+  .nav-dropdown{position:static;transform:none!important;box-shadow:none;border:none;border-radius:0;padding:0 0 0 1rem;opacity:1;pointer-events:auto;display:none;min-width:0}
+  .nav-dropdown::before{display:none}
+  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column}
   .why-grid,.why-bottom{grid-template-columns:1fr}
   .team-grid{grid-template-columns:repeat(2,1fr)}
   .awards-grid{grid-template-columns:1fr}
@@ -285,7 +300,17 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html#services" class="active">Services</a></li>
+    <li class="nav-item-drop" id="dsvcs">
+      <button aria-haspopup="true" aria-expanded="false">Services <svg class="nav-chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-dropdown" role="menu">
+        <a href="digital-marketing.html" class="drop-item active">📢 Digital Marketing</a>
+        <a href="hubspot.html" class="drop-item">🟠 HubSpot Solutions</a>
+        <a href="monday.html" class="drop-item">🗂️ Monday.com</a>
+        <a href="web-development.html" class="drop-item">💻 Web Development</a>
+        <a href="marketing-automation.html" class="drop-item">⚡ Marketing Automation</a>
+        <a href="ai-strategy.html" class="drop-item">🤖 AI Strategy</a>
+      </div>
+    </li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="index.html#resources">Blog</a></li>
@@ -934,8 +959,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
       <div class="footer-col-title">Services</div>
       <ul>
         <li><a href="digital-marketing.html">Digital Marketing</a></li>
-        <li><a href="hubspot-solutions.html">HubSpot Solutions</a></li>
-        <li><a href="monday-com.html">Monday.com</a></li>
+        <li><a href="hubspot.html">HubSpot Solutions</a></li>
+        <li><a href="monday.html">Monday.com</a></li>
         <li><a href="web-development.html">Web Development</a></li>
         <li><a href="marketing-automation.html">Marketing Automation</a></li>
         <li><a href="ai-strategy.html">AI Strategy</a></li>
@@ -993,6 +1018,19 @@ hbtn.addEventListener('click',function(){
   if(o){b[0].style.transform='translateY(7px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-7px) rotate(-45deg)';}
   else{b.forEach(function(x){x.style.transform='';x.style.opacity='';});}
 });
+
+/* Services dropdown */
+var drop=document.getElementById('dsvcs');
+if(drop){
+  var dbtn=drop.querySelector('button'),dp=drop.querySelector('.nav-dropdown'),dt;
+  function od(){clearTimeout(dt);drop.classList.add('open');dbtn.setAttribute('aria-expanded','true');}
+  function cd(){dt=setTimeout(function(){drop.classList.remove('open');dbtn.setAttribute('aria-expanded','false');},100);}
+  drop.addEventListener('mouseenter',od);drop.addEventListener('mouseleave',cd);
+  if(dp){dp.addEventListener('mouseenter',od);dp.addEventListener('mouseleave',cd);}
+  dbtn.addEventListener('click',function(e){e.stopPropagation();drop.classList.contains('open')?cd():od();});
+  if(dp){dp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drop.classList.remove('open');nl.classList.remove('open');});});}
+}
+document.addEventListener('click',function(){if(drop)drop.classList.remove('open');});
 
 /* Scroll reveal */
 var rvEls=document.querySelectorAll('.rv');
