@@ -90,7 +90,8 @@ section{padding:5rem 5rem}
 /* ── FEATURED POST ── */
 #featured{background:#fff}
 .blog-featured{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(15,23,42,.08);margin-top:2.5rem}
-.blog-featured-visual{background:linear-gradient(135deg,#FFF0EB,#fff7f3);display:flex;align-items:center;justify-content:center;padding:3rem;position:relative;min-height:320px}
+.blog-featured-visual{display:flex;align-items:center;justify-content:center;position:relative;min-height:320px;overflow:hidden}
+.blog-featured-visual img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .blog-featured-ico{width:92px;height:92px;border-radius:24px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(255,92,26,.15)}
 .blog-featured-body{padding:3rem 3rem 3rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
 .blog-cat{display:inline-flex;align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .85rem;border-radius:var(--pill);margin-bottom:1.1rem}
@@ -118,6 +119,7 @@ section{padding:5rem 5rem}
 .blog-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
 .blog-card.hide{display:none}
 .blog-card-visual{height:140px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.blog-card-visual img{width:100%;height:100%;object-fit:cover}
 .blog-card-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
 .blog-card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.02rem;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:.6rem}
 .blog-card-excerpt{font-size:.83rem;color:var(--muted);line-height:1.65;margin-bottom:1.2rem;flex:1;font-weight:300}
@@ -299,13 +301,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
   <div class="blog-featured rv d1">
     <div class="blog-featured-visual">
-      <div style="position:absolute;top:26px;left:34px;width:22px;height:22px;border-radius:50%;background:#ffb08a;opacity:.55"></div>
-      <div style="position:absolute;top:46px;right:44px;width:16px;height:16px;border-radius:5px;background:#ff8a5b;opacity:.4;transform:rotate(18deg)"></div>
-      <div style="position:absolute;bottom:30px;left:56px;width:34px;height:34px;border-radius:50%;border:3px solid #ff8a5b;opacity:.35"></div>
-      <div style="position:absolute;bottom:40px;right:30px;width:12px;height:12px;border-radius:50%;background:#FF5C1A;opacity:.5"></div>
-      <div class="blog-featured-ico" style="background:linear-gradient(135deg,#FF5C1A,#ff8a5b);box-shadow:0 16px 34px rgba(255,92,26,.4)">
-        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4-4"/><path d="M11 8v6M8 11h6"/></svg>
-      </div>
+      <img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?fm=jpg&amp;q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Analytics dashboard on a laptop screen" loading="lazy"/>
     </div>
     <div class="blog-featured-body">
       <span class="blog-cat" style="background:#FFF0EB;color:#FF5C1A">Guide · SEO</span>
@@ -344,12 +340,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="blog-grid" id="blog-grid">
 
     <div class="blog-card rv d1" data-cat="ai">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#F0EBFF,#f7f3ff);position:relative;overflow:hidden">
-        <div style="position:absolute;top:12px;left:22px;width:12px;height:12px;border-radius:50%;background:#c4b5fd;opacity:.6"></div>
-        <div style="position:absolute;bottom:14px;right:24px;width:16px;height:16px;border-radius:5px;background:#ddd6fe;opacity:.6;transform:rotate(20deg)"></div>
-        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(124,58,237,.35)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1674027444485-cec3da58eef4?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Abstract AI network sphere" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#F0EBFF;color:#7c3aed">Report · AI</span>
@@ -363,12 +355,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d2" data-cat="seo">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#FFF0EB,#fff7f3);position:relative;overflow:hidden">
-        <div style="position:absolute;top:14px;right:26px;width:14px;height:14px;border-radius:50%;background:#ffcbb0;opacity:.7"></div>
-        <div style="position:absolute;bottom:12px;left:24px;width:34px;height:34px;border-radius:50%;border:3px solid #ffb08a;opacity:.35"></div>
-        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#FF5C1A,#ff8a5b);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(255,92,26,.35)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1754548930574-6a995e5eb5a7?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Checking off items on an audit checklist" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#FFF0EB;color:#FF5C1A">Template · Analytics</span>
@@ -382,12 +370,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d3" data-cat="seo">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#F3FFF8,#f2fbf6);position:relative;overflow:hidden">
-        <div style="position:absolute;top:16px;left:26px;width:10px;height:10px;border-radius:50%;background:#6ee7b7;opacity:.7"></div>
-        <div style="position:absolute;bottom:16px;right:28px;width:18px;height:18px;border-radius:5px;background:#a7f3d0;opacity:.6;transform:rotate(-15deg)"></div>
-        <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0f9e72,#34d399);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(15,158,114,.35)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1769699167906-a44d5ae50abb?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Professional video camera on a tripod in a studio" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#F3FFF8;color:#0f9e72">Webinar · Marketing</span>
@@ -401,12 +385,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d4" data-cat="ppc">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#FFFBEB,#fffdf5);position:relative;overflow:hidden">
-        <div style="position:absolute;top:14px;right:24px;width:12px;height:12px;border-radius:50%;background:#fde68a;opacity:.8"></div>
-        <div style="position:absolute;bottom:14px;left:26px;width:16px;height:16px;border-radius:5px;background:#fcd34d;opacity:.5;transform:rotate(12deg)"></div>
-        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#D97706,#F5A623);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(217,119,6,.35)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1762330464824-21e95b769038?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Ad campaign manager interface on a laptop screen" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#FFFBEB;color:#D97706">Blog · PPC</span>
@@ -420,12 +400,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d5" data-cat="case-study">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#EBF2FF,#f2f7ff);position:relative;overflow:hidden">
-        <div style="position:absolute;top:14px;left:24px;width:12px;height:12px;border-radius:50%;background:#93c5fd;opacity:.7"></div>
-        <div style="position:absolute;bottom:12px;right:26px;width:32px;height:32px;border-radius:50%;border:3px solid #93c5fd;opacity:.35"></div>
-        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#60a5fa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(37,99,235,.35)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Person completing an online purchase on a laptop" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#EBF2FF;color:#2563eb">Case Study · E-commerce</span>
@@ -439,12 +415,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d6" data-cat="crm">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#FFF0EB,#fff7f3);position:relative;overflow:hidden">
-        <div style="position:absolute;top:16px;right:28px;width:10px;height:10px;border-radius:50%;background:#ffb08a;opacity:.7"></div>
-        <div style="position:absolute;bottom:16px;left:26px;width:16px;height:16px;border-radius:5px;background:#ffcbb0;opacity:.6;transform:rotate(-10deg)"></div>
-        <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#FF7A00,#ffab5e);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(255,122,0,.35)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Two people shaking hands after a business deal" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#FFF0EB;color:#FF7A00">Guide · CRM</span>
@@ -458,12 +430,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d1" data-cat="development">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#EBF2FF,#f2f7ff);position:relative;overflow:hidden">
-        <div style="position:absolute;top:14px;left:28px;width:12px;height:12px;border-radius:50%;background:#93c5fd;opacity:.7"></div>
-        <div style="position:absolute;bottom:14px;right:24px;width:16px;height:16px;border-radius:5px;background:#bfdbfe;opacity:.6;transform:rotate(16deg)"></div>
-        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#60a5fa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(37,99,235,.35)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1754039984985-ef607d80113a?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Code displayed on computer screens" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#EBF2FF;color:#2563eb">Guide · Development</span>
@@ -477,12 +445,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d2" data-cat="crm">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#FFFBEB,#fffdf5);position:relative;overflow:hidden">
-        <div style="position:absolute;top:16px;right:26px;width:10px;height:10px;border-radius:50%;background:#fde68a;opacity:.8"></div>
-        <div style="position:absolute;bottom:14px;left:28px;width:30px;height:30px;border-radius:50%;border:3px solid #fcd34d;opacity:.4"></div>
-        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#D97706,#F5A623);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(217,119,6,.35)">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1759752393975-7ca7b302fcc6?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Hands typing on a laptop with an automated workflow on screen" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#FFFBEB;color:#D97706">Blog · Automation</span>
@@ -496,12 +460,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </div>
 
     <div class="blog-card rv d3" data-cat="ai">
-      <div class="blog-card-visual" style="background:linear-gradient(135deg,#F0EBFF,#f7f3ff);position:relative;overflow:hidden">
-        <div style="position:absolute;top:14px;left:26px;width:12px;height:12px;border-radius:50%;background:#c4b5fd;opacity:.7"></div>
-        <div style="position:absolute;bottom:14px;right:24px;width:16px;height:16px;border-radius:5px;background:#ddd6fe;opacity:.6;transform:rotate(-14deg)"></div>
-        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px rgba(124,58,237,.35)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-        </div>
+      <div class="blog-card-visual">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?fm=jpg&amp;q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Person using a laptop to create content" loading="lazy"/>
       </div>
       <div class="blog-card-body">
         <span class="blog-cat" style="background:#F0EBFF;color:#7c3aed">Guide · AI</span>
