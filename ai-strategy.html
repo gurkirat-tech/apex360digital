@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAANAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAANRJREFUeJy9kzELQVEYhp9zEcrChgxSYrFIXe5iMxiESTH6GX6HsvIPJD9AkWIkwzXeu1qU8RiuW+Qq9xRvfcvXeZ/eztsneEj2UxIfEjNbAGgqZgAppQmgqZgpVG8M81kppRn0bQY4baJMrTODdE4oJXiS5rkNhWFygqkFmYICoNyASAyuFzC6CoBaF8w9bOdQbYPwfuYNiMWhVIfd0plEEor6R8B7C3oLAkHojV4THddfJjA6cFjBIO3MYgyVpvOxHvpRjX8FuFelIjGznYJVIK7nDsKUOaBJSLBWAAAAAElFTkSuQmCC"/>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABtklEQVR4nO2XvUsDQRDFf3dJFESFiIV4pAjX+IEEi4CSGDsLQRHUmMJrxcbCzto/QbCxNWAlgqBYCCKoCCJooYJiJQYEQRCxSozFcuYuX25Csmkyzczs7M17vJtlWY08yy72ZvPXamlaMqU5c10leDEMrzLw7dfnPyyMrK2Erhrczm1MTTm40yzD1EsWa2mWYWIZJpf77ViGyetji13ylvuuZuZUYWT6y1mqvwKWYZZbV/cLSuT1H8J/rLoZiK/B1EouvzqAjaWqWlX+C3QPROfda8MT0NGliMDQOPh7RPz9KbzXB5FZRQTGE7l4axUyaRHHEsX315RAu1/IDZB6gusjuDkWeaAPgqE6E4jOCbkBTnfcHtzq1IVAbEH4TBrOdkV8ewIfbyIenQFfa0Ut5Y9hMASBfhF7vLB5W7inrRPCk3CxJ91WXgFZeSscRjkFfK1CXhBHb3kQsj/uPeuHQqWBCHQH4P1FqrWcAuFJIS/Aw0UhOMDdmfCaBrG4VFt5AvbwAdyfF99jEwAYi4Mm17rhl5Ga67hJoEmgHIH8t5pK05IpcVgbQcL1NFNNwomllyqoAAf4BT7RdN+jtJL4AAAAAElFTkSuQmCC"/>
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1ElEQVR4nL2TMQtBURiGn3MRysKGDFJisUhd7mIzGIRJMfoZfoey8g8kP0CRYiTDNd67WpTxGK5b5Cr3FG99y9d5n97O2yd4SPZTEh8SM1sAaCpmACmlCaCpmClUbwzzWSmlGfRtBjhtokytM4N0TigleJLmuQ2FYXKCqQWZggKg3IBIDK4XMLoKgFoXzD1s51Btg/B+5g2IxaFUh93SmUQSivpHwHsLegsCQeiNXhMd118mMDpwWMEg7cxiDJWm87Ee+lGNfwW4V6UiMbOdglUgrucOwpQ5oElIsFYAAAAASUVORK5CYII="/>
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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"/>
+<meta name="theme-color" content="#FF5C1A"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>AI Strategy Services — Apex360 Digital</title>
-<meta name="description" content="Custom AI strategy, implementation, and integration for businesses ready to use artificial intelligence as a genuine competitive advantage — not just a buzzword."/>
+<meta name="description" content="Custom AI strategy, implementation, and integration — turning artificial intelligence into a genuine competitive advantage for your business with measurable, compounding ROI."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
@@ -12,7 +18,7 @@
 :root{--orange:#FF5C1A;--orange-lt:#FFF0EB;--bg:#fff;--ink:#111;--muted:#555;--surface:#f7f7f5;--teal:#0f9e72;--teal-bg:#E8F8F3;--blue:#2563eb;--blue-bg:#EBF2FF;--purple:#7c3aed;--purple-bg:#F0EBFF;--pink:#db2777;--pink-bg:#FFF0F5;--amber:#d97706;--amber-bg:#FFFBEB;--border:rgba(0,0,0,.08);--radius:14px;--pill:100px}
 html{scroll-behavior:smooth}
 body{font-family:'Figtree',sans-serif;font-size:16px;line-height:1.65;color:var(--ink);background:var(--bg);overflow-x:hidden}
-nav{position:sticky;top:0;z-index:500;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:0 5rem;height:72px;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);animation:slideDown .45s ease both}
+nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:0 5rem;height:72px;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);animation:slideDown .45s ease both}
 nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 @keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}
 .logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap;flex-shrink:0}
@@ -25,22 +31,24 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .nav-links>li>a.nav-cta:hover{background:#e04a0e}
 .nav-chevron{display:inline-block;width:14px;height:14px;flex-shrink:0;transition:transform .22s;opacity:.5}
 .nav-item-drop.open .nav-chevron{transform:rotate(180deg);opacity:1}
-.nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.11);padding:.5rem;min-width:230px;opacity:0;pointer-events:none;transition:opacity .2s,transform .22s cubic-bezier(.22,1,.36,1);z-index:600}
+.nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.11);padding:.5rem;min-width:230px;max-width:250px;width:max-content;opacity:0;pointer-events:none;transition:opacity .2s,transform .22s cubic-bezier(.22,1,.36,1);z-index:9999}
 .nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
 .nav-item-drop.open>.nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.drop-item{display:flex;align-items:center;gap:.7rem;padding:.6rem .75rem;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:500;transition:background .15s}
+.drop-item{display:flex;align-items:center;gap:.7rem;padding:.6rem .75rem;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:500;transition:background .15s;white-space:nowrap}
 .drop-item:hover{background:var(--surface);color:var(--orange)}
 .drop-item.active{color:var(--orange);font-weight:700;background:var(--orange-lt)}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;flex-shrink:0}
 .hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
+
+/* HERO */
 .svc-hero{background:#fff;padding:6rem 5rem 5rem;position:relative;overflow:hidden}
-.svc-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 65%);pointer-events:none}
-.svc-hero::after{content:'';position:absolute;bottom:-80px;left:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.05) 0%,transparent 70%);pointer-events:none}
+.svc-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.07) 0%,transparent 65%);pointer-events:none}
+.svc-hero::after{content:'';position:absolute;bottom:-80px;left:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.06) 0%,transparent 70%);pointer-events:none}
 .svc-hero-inner{position:relative;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
 .breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:#888;margin-bottom:1.5rem}
 .breadcrumb a{color:#666;text-decoration:none;transition:color .2s}
 .breadcrumb a:hover{color:var(--orange)}
-.hero-tag{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,92,26,.12);color:var(--orange);border:1px solid rgba(255,92,26,.25);font-size:.72rem;font-weight:700;padding:.38rem 1rem;border-radius:var(--pill);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.25rem}
+.hero-tag{display:inline-flex;align-items:center;gap:.45rem;background:rgba(255,92,26,.1);color:var(--orange);border:1px solid rgba(255,92,26,.2);font-size:.72rem;font-weight:700;padding:.38rem 1rem;border-radius:var(--pill);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.25rem}
 .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 .svc-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:1.2rem}
@@ -53,22 +61,46 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
 .btn-outline{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:#fff;padding:.85rem 2rem;border-radius:var(--pill);border:2px solid rgba(255,255,255,.25);font-family:'Figtree',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:border-color .2s,transform .15s}
 .btn-outline:hover{border-color:#fff;transform:translateY(-2px)}
-.stats-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;min-width:210px;flex-shrink:0;box-shadow:0 25px 60px rgba(15,23,42,.14);animation:floatPanel 5s ease-in-out infinite}
-@keyframes floatPanel{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.stat-box{padding:.9rem 1rem;background:var(--surface);border-radius:12px;border:1px solid var(--border)}
-.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.2rem}
-.stat-lbl{font-size:.74rem;color:var(--muted)}
-.stats-icon-section{background:#EAF2FF;padding:4rem 5rem;position:relative;overflow:hidden}
-.stats-icon-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
-.stats-icon-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
-.stat-icon-card{background:#fff;border-radius:18px;padding:2.25rem 1.5rem;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,.06);transition:transform .25s,box-shadow .25s}
-.stat-icon-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(15,23,42,.1)}
-.stat-icon-badge{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
-.stat-icon-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.6rem;font-weight:800;color:var(--ink);line-height:1;margin-bottom:.4rem}
-.stat-icon-lbl{font-size:.8rem;color:var(--muted);line-height:1.5}
+
+/* ── HERO VISUAL: Neural Network / AI Brain ── */
+@keyframes floatPanel{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes nodeGlow{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
+@keyframes lineFlow{0%{stroke-dashoffset:40}100%{stroke-dashoffset:0}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.08);opacity:1}}
+.hero-visual{position:relative;width:320px;flex-shrink:0}
+.ai-brain-card{background:#fff;border-radius:18px;border:1px solid var(--border);box-shadow:0 25px 60px rgba(15,23,42,.13);padding:1.35rem;animation:floatPanel 5s ease-in-out infinite}
+.ai-brain-title{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem;text-align:center}
+.neural-svg{width:100%;height:auto;display:block;margin-bottom:.9rem}
+.ai-model-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.5rem}
+.ai-model-tag{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.45rem .65rem;text-align:center}
+.ai-model-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.72rem;color:var(--ink)}
+.ai-model-badge{font-size:.6rem;color:var(--teal);font-weight:600}
+.ai-brain-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.ai-bstat{text-align:center}
+.ai-bstat-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--orange)}
+.ai-bstat-lbl{font-size:.6rem;color:var(--muted);margin-top:.1rem}
+.hero-badge{position:absolute;display:flex;align-items:center;gap:.55rem;background:#fff;border-radius:14px;padding:.6rem .95rem;box-shadow:0 14px 34px rgba(15,23,42,.16);border:1px solid var(--border);font-size:.68rem;z-index:3}
+.hero-badge-ico{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.hero-badge strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;color:var(--ink);display:block;line-height:1.1}
+.hero-badge span{color:var(--muted);white-space:nowrap}
+.badge-a{top:-20px;left:-32px;animation:floatBadge 4s ease-in-out infinite}
+.badge-b{bottom:-18px;right:-24px;animation:floatBadge 4.6s ease-in-out infinite reverse}
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* RESULTS */
+
+
+
+
+
+
+
+
+/* SHARED */
 section{padding:5rem 5rem}
 .sec-hdr{text-align:center;margin-bottom:3rem}
 .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:var(--orange-lt);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
+.tag.purple{color:var(--purple);background:var(--purple-bg)}
 .sh{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.22;margin-top:.4rem;color:var(--ink)}
 .sh .hl{color:var(--orange)}
 .ss{font-size:.97rem;color:var(--muted);line-height:1.75;max-width:580px;margin:.75rem auto 0;font-weight:300}
@@ -82,57 +114,81 @@ section{padding:5rem 5rem}
 .card-desc{font-size:.84rem;color:var(--muted);line-height:1.7;flex:1}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
 .tag-pill{font-size:.68rem;font-weight:600;padding:.22rem .65rem;border-radius:var(--pill);background:var(--surface);color:var(--muted)}
+
+/* ── COMPARISON TABLE ── */
+.table-section{background:#fff}
+.ai-table-wrap{overflow-x:auto;margin-top:2.5rem;border-radius:18px;border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.ai-table{width:100%;border-collapse:collapse;min-width:700px}
+.ai-table thead tr{background:linear-gradient(135deg,#0a0a0a,#1a0a2e)}
+.ai-table thead th{padding:1.15rem 1.5rem;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.7);white-space:nowrap}
+.ai-table thead th:first-child{color:#fff;font-size:.88rem}
+.ai-table thead .th-highlight{color:var(--orange);position:relative}
+.ai-table thead .th-highlight::after{content:'★ Recommended';position:absolute;top:-1px;right:1rem;font-size:.58rem;background:var(--orange);color:#fff;padding:.15rem .55rem;border-radius:var(--pill);font-weight:700;letter-spacing:.03em}
+.ai-table tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.ai-table tbody tr:last-child{border-bottom:none}
+.ai-table tbody tr:hover{background:#fafafa}
+.ai-table tbody tr.section-row td{background:var(--purple-bg);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.8rem;color:var(--purple);letter-spacing:.06em;text-transform:uppercase;padding:.65rem 1.5rem}
+.ai-table td{padding:1rem 1.5rem;font-size:.86rem;color:var(--muted);vertical-align:middle}
+.ai-table td:first-child{color:var(--ink);font-weight:500;font-size:.88rem}
+.ai-table td:nth-child(2),.ai-table td:nth-child(3),.ai-table td:nth-child(4){text-align:center}
+.ai-table .check{color:var(--teal);font-size:1.15rem;font-weight:700}
+.ai-table .cross{color:#ddd;font-size:1rem}
+.ai-table .partial{color:var(--amber);font-size:.8rem;font-weight:600}
+.ai-table td.col-highlight{background:rgba(255,92,26,.04)}
+.ai-table thead th.col-highlight{background:rgba(255,92,26,.12)}
+.table-note{text-align:center;font-size:.8rem;color:var(--muted);margin-top:1.1rem}
+
+/* DARK SECTION */
 .dark-sect{background:#EAF2FF;padding:5rem;position:relative;overflow:hidden}
-.dark-sect::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
+.dark-sect::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.07) 0%,transparent 70%);pointer-events:none}
 .dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem;position:relative}
-.dark-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:rgba(255,92,26,.12);border:1px solid rgba(255,92,26,.2);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
+.dark-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);background:var(--purple-bg);border:1px solid rgba(124,58,237,.2);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
 .feats{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
 .feat{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
-.feat:hover{background:#FAFAFA}
-.feat-ico{width:36px;height:36px;border-radius:9px;background:rgba(255,92,26,.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:1px}
+.feat:hover{background:#fafafa}
+.feat-ico{width:36px;height:36px;border-radius:9px;background:rgba(124,58,237,.12);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:1px}
 .feat-badge{font-size:.62rem;font-weight:700;padding:.15rem .45rem;border-radius:var(--pill);background:rgba(15,158,114,.15);color:#0f9e72;letter-spacing:.05em;margin-left:.5rem;text-transform:uppercase}
 .feat-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;line-height:1.3;display:flex;align-items:center;flex-wrap:wrap;gap:.3rem}
 .feat-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
 .metrics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.metric{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
-.metric:hover{background:#FAFAFA}
-.metric-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.2rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.4rem}
+.metric{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.metric:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.metric-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.2rem;font-weight:800;color:var(--purple);line-height:1;margin-bottom:.4rem}
 .metric-lbl{font-size:.78rem;color:var(--muted);line-height:1.5}
-.metric-cta{grid-column:1/-1;background:#fff;border:1px solid rgba(255,92,26,.25);border-radius:16px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.metric-cta{grid-column:1/-1;background:var(--purple-bg);border:1px solid rgba(124,58,237,.2);border-radius:16px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .metric-cta p{font-size:.9rem;color:var(--muted);line-height:1.6;flex:1}
 .metric-cta strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;color:var(--ink);margin-bottom:.3rem}
-.roadmap{position:relative;max-width:960px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.roadmap::before{content:'';position:absolute;top:28px;left:12%;right:12%;height:2px;background:var(--border);z-index:0}
-.roadmap-step{position:relative;text-align:center;padding:0 .5rem;z-index:1}
-.roadmap-dot{width:56px;height:56px;border-radius:50%;background:#fff;border:3px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto .6rem;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.roadmap-step.done .roadmap-dot{border-color:var(--orange);background:var(--orange)}
-.roadmap-badge{font-size:.62rem;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.04em;height:1rem;margin-bottom:.5rem}
-.roadmap-stage{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
-.roadmap-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;color:var(--ink);margin-bottom:.4rem}
-.roadmap-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
-.roi-table-wrap{max-width:900px;margin:3.5rem auto 0;overflow-x:auto}
-.roi-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,.06);min-width:560px}
-.roi-table th{background:var(--ink);color:#fff;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;padding:.9rem 1.2rem;text-align:left;font-weight:700}
-.roi-table td{padding:.9rem 1.2rem;font-size:.85rem;color:var(--ink);border-bottom:1px solid var(--border)}
-.roi-table tr:last-child td{border-bottom:none}
-.roi-table tr:nth-child(even) td{background:var(--surface)}
-.roi-table td.roi-highlight{color:var(--orange);font-weight:700}
-@media(max-width:768px){.roadmap{grid-template-columns:1fr 1fr;row-gap:2rem}.roadmap::before{display:none}}
-.pstep{background:#fff;border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);display:flex;gap:1.25rem;transition:transform .2s,box-shadow .2s}
-.pstep:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.07)}
-.pnum{font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;color:var(--orange);opacity:.55;line-height:1;flex-shrink:0;width:48px}
-.ptitle{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.97rem;color:var(--ink);margin-bottom:.45rem;line-height:1.35}
-.pdesc{font-size:.83rem;color:var(--muted);line-height:1.65}
+
+/* ── AI ROADMAP TIMELINE ── */
+.roadmap-section{background:#EAF2FF}
+.roadmap-wrap{max-width:860px;margin:2.5rem auto 0;position:relative}
+.roadmap-wrap::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--purple),rgba(124,58,237,.1));border-radius:2px}
+.roadmap-item{display:flex;gap:1.5rem;padding-bottom:2rem;position:relative}
+.roadmap-item:last-child{padding-bottom:0}
+.r-circle{width:58px;height:58px;border-radius:50%;background:#fff;border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;z-index:1;box-shadow:0 4px 14px rgba(124,58,237,.18)}
+.r-content{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.75rem;flex:1;transition:transform .2s,box-shadow .2s}
+.r-content:hover{transform:translateX(4px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.r-phase{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:.3rem}
+.r-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:.45rem;line-height:1.35}
+.r-desc{font-size:.83rem;color:var(--muted);line-height:1.65;margin-bottom:.7rem}
+.r-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.r-tag{font-size:.67rem;font-weight:600;padding:.2rem .6rem;border-radius:var(--pill);background:var(--purple-bg);color:var(--purple)}
+
+/* WHY */
 .why-card{border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);background:#fff;transition:transform .2s,box-shadow .2s}
 .why-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .wico{font-size:1.8rem;margin-bottom:.9rem}
 .wtitle{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.97rem;color:var(--ink);margin-bottom:.45rem}
 .wdesc{font-size:.83rem;color:var(--muted);line-height:1.7}
+
+/* INDUSTRIES */
 .ind-card{background:#fff;border-radius:var(--radius);padding:1.35rem 1.5rem;border:1px solid var(--border);display:flex;gap:.85rem;align-items:flex-start;transition:transform .2s}
 .ind-card:hover{transform:translateY(-3px)}
 .ind-ico{font-size:1.4rem;flex-shrink:0;margin-top:2px}
 .ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;color:var(--ink);margin-bottom:.25rem}
 .ind-desc{font-size:.76rem;color:var(--muted);line-height:1.5}
+
+/* TESTIMONIALS */
 .tcard{background:var(--surface);border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);display:flex;flex-direction:column;gap:1rem}
 .tstars{color:#f59e0b;font-size:1rem;letter-spacing:2px}
 .ttext{font-size:.88rem;color:var(--ink);line-height:1.75;font-style:italic;flex:1}
@@ -141,6 +197,8 @@ section{padding:5rem 5rem}
 .tname{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.85rem;color:var(--ink)}
 .trole{font-size:.75rem;color:var(--muted)}
 .tbadge{font-size:.68rem;color:var(--teal);font-weight:600;margin-top:.15rem}
+
+/* FAQ */
 .faq-list{max-width:760px;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:.75rem}
 .faq-item{background:#fff;border-radius:12px;border:1px solid var(--border);overflow:hidden}
 .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);background:none;border:none;cursor:pointer;text-align:left;transition:color .2s}
@@ -149,13 +207,17 @@ section{padding:5rem 5rem}
 .faq-item.open .faq-q .ficon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;font-size:.88rem;color:var(--muted);line-height:1.75;padding:0 1.5rem}
 .faq-item.open .faq-a{max-height:320px;padding:.1rem 1.5rem 1.3rem}
-.page-cta{background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);padding:5.5rem 5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.75rem}
-.page-cta::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.2) 0%,transparent 70%);pointer-events:none}
+
+/* CTA */
+.page-cta{background:linear-gradient(135deg,#0a0a0a 0%,#111111 100%);padding:5.5rem 5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.75rem}
+.page-cta::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.18) 0%,transparent 70%);pointer-events:none}
 .cta-inner{position:relative;max-width:640px;margin:0 auto}
 .cta-inner h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:.9rem}
 .cta-inner h2 span{color:var(--orange)}
 .cta-inner p{color:rgba(255,255,255,.5);font-size:.95rem;line-height:1.75;margin-bottom:2rem}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
 footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;border-top:1px solid rgba(255,255,255,.06)}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
 .footer-brand p{font-size:.83rem;margin-top:.75rem;line-height:1.7;max-width:220px}
@@ -170,58 +232,86 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 .fleg{display:flex;gap:1.5rem}
 .fleg a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.78rem;transition:color .2s}
 .fleg a:hover{color:#fff}
+
+/* REVEAL */
 .rv{opacity:0;transform:translateY(30px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
 .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
 .rv-r{opacity:0;transform:translateX(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s}
 .rv-r.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
 @media(max-width:1100px){
-  nav,section,footer,.svc-hero,.stats-icon-section,.dark-sect,.page-cta{padding-left:2.5rem;padding-right:2.5rem}
+  nav,section,footer,.svc-hero,
   .svc-hero-inner{grid-template-columns:1fr}
-  .stats-panel{display:none}
+  .hero-visual{display:none}
   .grid3,.grid4{grid-template-columns:repeat(2,1fr)}
-  .stats-icon-grid,.grid2{grid-template-columns:repeat(2,1fr)}
+  
   .dark-grid{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
 }
 @media(max-width:768px){
-  nav,section,footer,.svc-hero,.stats-icon-section,.dark-sect,.page-cta{padding-left:1.5rem;padding-right:1.5rem}
+  nav,section,footer,.svc-hero{padding-left:1.5rem;padding-right:1.5rem}
   .hamburger{display:flex}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:.75rem 1rem 1rem;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.07);gap:.15rem}
   .nav-links.open{display:flex}
   .nav-links>li>a,.nav-links>li>button{padding:.65rem 1rem;border-radius:8px;width:100%;justify-content:space-between}
-  .nav-dropdown{position:static;transform:none!important;box-shadow:none;border:none;border-radius:0;padding:0 0 0 1rem;opacity:1;pointer-events:auto;display:none;min-width:0}
+  .nav-dropdown{position:static;transform:none!important;box-shadow:none;border:none;border-radius:0;padding:0 0 0 1rem;min-width:0;max-width:none;width:auto;opacity:1;pointer-events:auto;display:none}
   .nav-dropdown::before{display:none}
   .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column}
   .grid3,.grid2,.grid4{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr;gap:2rem}
   .footer-btm{flex-direction:column;align-items:flex-start}
   .cta-btns,.hero-btns{flex-direction:column;align-items:center}
+  .roadmap-section{background:#fff!important}.roadmap-wrap::before{left:22px}
+  .r-circle{width:46px;height:46px;font-size:1.1rem}
 }
-@media(max-width:480px){.stats-icon-grid{grid-template-columns:1fr}}
+@media(max-width:480px){}
+
+/* DETAILS SECTION */
+.details-section{background:#fff;padding:3.5rem 5rem}
+.details-inner{max-width:1100px;margin:0 auto}
+.details-top{margin-bottom:2rem}
+.details-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:var(--orange-lt);padding:.32rem .85rem;border-radius:var(--pill);margin-bottom:.85rem}
+.details-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;color:var(--ink)}
+.details-h .hl{color:var(--orange)}
+.details-sub{font-size:.92rem;color:var(--muted);line-height:1.75;max-width:700px;margin:.6rem 0 0;font-weight:300}
+.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.75rem}
+.detail-card{background:#fff;border-radius:14px;padding:1.4rem 1.5rem;border:1px solid rgba(0,0,0,.07);display:flex;gap:.9rem;align-items:flex-start;transition:transform .22s,box-shadow .22s}
+.detail-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.detail-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:1.1rem}
+.detail-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.88rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3}
+.detail-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
+@media(max-width:1100px){.details-section{padding-left:2.5rem;padding-right:2.5rem}.details-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.details-section{padding-left:1.5rem;padding-right:1.5rem}.details-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav id="mn"><a class="logo" href="index.html">Apex<span>360</span> Digital</a>
   <button class="hamburger" id="hb" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="nl">
     <li class="nav-item-drop" id="dsvcs">
       <button aria-haspopup="true" aria-expanded="false">Services <svg class="nav-chevron" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="nav-dropdown" role="menu"><a href="digital-marketing.html" class="drop-item">📢 Digital Marketing</a>
-<a href="hubspot.html" class="drop-item">🟠 HubSpot Solutions</a>
-<a href="monday.html" class="drop-item">🗂️ Monday.com</a>
-<a href="web-development.html" class="drop-item">💻 Web Development</a>
-<a href="marketing-automation.html" class="drop-item">⚡ Marketing Automation</a>
-<a href="ai-strategy.html" class="drop-item active">🤖 AI Strategy</a>
-</div>
+      <div class="nav-dropdown" role="menu">
+        <a href="digital-marketing.html" class="drop-item">📢 Digital Marketing</a>
+        <a href="hubspot.html" class="drop-item">🟠 HubSpot Solutions</a>
+        <a href="monday.html" class="drop-item">🗂️ Monday.com</a>
+        <a href="web-development.html" class="drop-item">💻 Web Development</a>
+        <a href="marketing-automation.html" class="drop-item">⚡ Marketing Automation</a>
+        <a href="ai-strategy.html" class="drop-item active">🤖 AI Strategy</a>
+      </div>
     </li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="pricing.html">Pricing</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get Started →</a></li>
-  </ul></nav>
+  </ul>
+</nav>
 
+<!-- HERO -->
 <div class="svc-hero">
   <div class="svc-hero-inner">
     <div>
@@ -232,187 +322,457 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
         <span>AI Strategy</span>
       </div>
-      <div class="hero-tag"><span class="hero-dot"></span>AI Strategy</div>
-      <h1>Give Your Business an <span>Unfair AI Advantage</span></h1>
-      <p class="hero-sub">We design and implement bespoke AI strategies that automate your operations, enhance your marketing, supercharge your sales team, and surface insights that would take your team weeks to find manually — compounding competitive advantage every month.</p>
+      <div class="hero-tag"><span class="hero-dot"></span>AI Strategy &amp; Implementation</div>
+      <h1>Give Your Business an<br><span>Unfair AI Advantage</span></h1>
+      <p class="hero-sub">We design and implement bespoke AI strategies that automate your operations, supercharge your marketing, and surface insights that would take your team weeks to find — compounding competitive advantage every single month.</p>
       <div class="hero-btns">
-        <a href="contact.html" class="btn-orange">Get Free Consultation →</a>
-        <a href="#services" class="btn-ghost">Explore Services</a>
+        <a href="contact.html" class="btn-orange">Get Free AI Assessment →</a>
+        <a href="#services" class="btn-ghost">Explore AI Services</a>
       </div>
     </div>
-    <div class="stats-panel">
-      <div class="stat-box"><div class="stat-num">10×</div><div class="stat-lbl">Operational Efficiency</div></div>
-      <div class="stat-box"><div class="stat-num">70%</div><div class="stat-lbl">Cost Reduction</div></div>
-      <div class="stat-box"><div class="stat-num">4×</div><div class="stat-lbl">Decision Speed</div></div>
-      <div class="stat-box"><div class="stat-num">50+</div><div class="stat-lbl">AI Systems Built</div></div>
+
+    <!-- UNIQUE HERO VISUAL: Neural Network SVG -->
+    <div class="hero-visual">
+      <div class="ai-brain-card">
+        <div class="ai-brain-title">🧠 AI System Architecture</div>
+
+        <!-- Animated Neural Network SVG -->
+        <svg class="neural-svg" viewBox="0 0 260 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Connection lines -->
+          <line x1="50" y1="40" x2="130" y2="30" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <line x1="50" y1="40" x2="130" y2="70" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <line x1="50" y1="90" x2="130" y2="30" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.3"/>
+          <line x1="50" y1="90" x2="130" y2="70" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <line x1="50" y1="90" x2="130" y2="110" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <line x1="50" y1="140" x2="130" y2="70" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.3"/>
+          <line x1="50" y1="140" x2="130" y2="110" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <line x1="50" y1="140" x2="130" y2="150" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <line x1="130" y1="30" x2="210" y2="50" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.5"/>
+          <line x1="130" y1="70" x2="210" y2="50" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.5"/>
+          <line x1="130" y1="70" x2="210" y2="100" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.5"/>
+          <line x1="130" y1="110" x2="210" y2="100" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.5"/>
+          <line x1="130" y1="110" x2="210" y2="140" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <line x1="130" y1="150" x2="210" y2="140" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <!-- Input layer -->
+          <circle cx="50" cy="40" r="14" fill="#F0EBFF" stroke="#7c3aed" stroke-width="2"/>
+          <text x="50" y="45" text-anchor="middle" font-size="11" fill="#7c3aed">📊</text>
+          <circle cx="50" cy="90" r="14" fill="#F0EBFF" stroke="#7c3aed" stroke-width="2"/>
+          <text x="50" y="95" text-anchor="middle" font-size="11" fill="#7c3aed">📧</text>
+          <circle cx="50" cy="140" r="14" fill="#F0EBFF" stroke="#7c3aed" stroke-width="2"/>
+          <text x="50" y="145" text-anchor="middle" font-size="11" fill="#7c3aed">👤</text>
+          <!-- Hidden layer -->
+          <circle cx="130" cy="30" r="16" fill="#fff" stroke="#7c3aed" stroke-width="2.5" style="animation:nodeGlow 2.8s ease-in-out infinite"/>
+          <text x="130" y="35" text-anchor="middle" font-size="12" fill="#7c3aed">🧠</text>
+          <circle cx="130" cy="70" r="16" fill="#fff" stroke="#FF5C1A" stroke-width="2.5" style="animation:nodeGlow 3.2s ease-in-out infinite 0.4s"/>
+          <text x="130" y="75" text-anchor="middle" font-size="12" fill="#FF5C1A">⚡</text>
+          <circle cx="130" cy="110" r="16" fill="#fff" stroke="#7c3aed" stroke-width="2.5" style="animation:nodeGlow 2.6s ease-in-out infinite 0.8s"/>
+          <text x="130" y="115" text-anchor="middle" font-size="12" fill="#7c3aed">🔮</text>
+          <circle cx="130" cy="150" r="16" fill="#fff" stroke="#FF5C1A" stroke-width="2.5" style="animation:nodeGlow 3.0s ease-in-out infinite 1.2s"/>
+          <text x="130" y="155" text-anchor="middle" font-size="12" fill="#FF5C1A">🎯</text>
+          <!-- Output layer -->
+          <circle cx="210" cy="50" r="18" fill="#FFF0EB" stroke="#FF5C1A" stroke-width="2.5"/>
+          <text x="210" y="55" text-anchor="middle" font-size="13" fill="#FF5C1A">💰</text>
+          <circle cx="210" cy="100" r="18" fill="#FFF0EB" stroke="#FF5C1A" stroke-width="2.5"/>
+          <text x="210" y="105" text-anchor="middle" font-size="13" fill="#FF5C1A">📈</text>
+          <circle cx="210" cy="140" r="18" fill="#FFF0EB" stroke="#FF5C1A" stroke-width="2.5"/>
+          <text x="210" y="145" text-anchor="middle" font-size="13" fill="#FF5C1A">🚀</text>
+          <!-- Labels -->
+          <text x="50" y="168" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#aaa">Input</text>
+          <text x="130" y="168" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#aaa">AI Engine</text>
+          <text x="210" y="168" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#aaa">Output</text>
+        </svg>
+
+        <div class="ai-model-row">
+          <div class="ai-model-tag"><div class="ai-model-name">GPT-4o</div><div class="ai-model-badge">✓ Connected</div></div>
+          <div class="ai-model-tag"><div class="ai-model-name">Claude 3.5</div><div class="ai-model-badge">✓ Connected</div></div>
+          <div class="ai-model-tag"><div class="ai-model-name">Gemini Pro</div><div class="ai-model-badge">✓ Connected</div></div>
+          <div class="ai-model-tag"><div class="ai-model-name">LLaMA 3</div><div class="ai-model-badge">✓ Connected</div></div>
+        </div>
+
+        <div class="ai-brain-stats">
+          <div class="ai-bstat"><div class="ai-bstat-num">50+</div><div class="ai-bstat-lbl">AI Systems</div></div>
+          <div class="ai-bstat"><div class="ai-bstat-num">10×</div><div class="ai-bstat-lbl">Efficiency</div></div>
+          <div class="ai-bstat"><div class="ai-bstat-num">70%</div><div class="ai-bstat-lbl">Cost Down</div></div>
+        </div>
+      </div>
+      <div class="hero-badge badge-a"><div class="hero-badge-ico" style="background:var(--purple-bg);color:var(--purple)">🤖</div><div><strong>AI Ready</strong><span>In 30 Days</span></div></div>
+      <div class="hero-badge badge-b"><div class="hero-badge-ico" style="background:var(--orange-lt);color:var(--orange)">📊</div><div><strong>4× Faster</strong><span>Decisions</span></div></div>
     </div>
   </div>
 </div>
 
-<div class="stats-icon-section">
-  <div class="stats-icon-grid">
-    <div class="stat-icon-card rv"><div class="stat-icon-badge" style="background:var(--orange-lt);color:var(--orange)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="stat-icon-num">10×</div><div class="stat-icon-lbl">Average Operational Efficiency Gain</div></div>
-    <div class="stat-icon-card rv d1"><div class="stat-icon-badge" style="background:var(--blue-bg);color:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="stat-icon-num">70%</div><div class="stat-icon-lbl">Average Cost Reduction From AI Automation</div></div>
-    <div class="stat-icon-card rv d2"><div class="stat-icon-badge" style="background:var(--teal-bg);color:var(--teal)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="stat-icon-num">4×</div><div class="stat-icon-lbl">Faster Data-Driven Decision Making</div></div>
-    <div class="stat-icon-card rv d3"><div class="stat-icon-badge" style="background:var(--purple-bg);color:var(--purple)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2M9 2v2M15 20v2M9 20v2M2 15h2M2 9h2M20 15h2M20 9h2"/></svg></div><div class="stat-icon-num">50+</div><div class="stat-icon-lbl">Custom AI Systems Successfully Built</div></div>
+<!-- TRUST BADGES (replaces removed stats strip) -->
+<div style="background:#f7f7f5;padding:2rem 5rem;border-bottom:1px solid rgba(0,0,0,.06)">
+  <div style="display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;max-width:1100px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
+      <span style="width:32px;height:32px;border-radius:9px;background:#E8F8F3;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">✅</span>Certified AI Specialists
+    </div>
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
+      <span style="width:32px;height:32px;border-radius:9px;background:#FFF0EB;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🔒</span>GDPR Compliant Builds
+    </div>
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
+      <span style="width:32px;height:32px;border-radius:9px;background:#EBF2FF;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">⚡</span>Results Within 30 Days
+    </div>
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
+      <span style="width:32px;height:32px;border-radius:9px;background:#F0EBFF;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🤝</span>No Lock-In Contracts
+    </div>
+    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
+      <span style="width:32px;height:32px;border-radius:9px;background:#FFFBEB;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🏆</span>50+ AI Systems Delivered
+    </div>
+  </div>
+</div>
+<!-- DETAILS SECTION -->
+<div class="details-section">
+  <div class="details-inner">
+    <div class="details-top rv">
+      <div class="details-tag">AI Strategy</div>
+      <h2 class="details-h">AI Strategy That Delivers <span class="hl">Measurable Business ROI</span></h2>
+      <p class="details-sub">We identify the highest-value AI opportunities in your business and implement solutions that automate operations, enhance decision-making, and compound your competitive advantage monthly.</p>
+    </div>
+    <div class="details-grid">
+      <div class="detail-card rv"><div class="detail-ico" style="background:rgba(255,92,26,0.12);color:#FF5C1A">🗺️</div><div><div class="detail-title">Discovery-First Approach</div><div class="detail-desc">We spend 2 weeks auditing your processes, data, and tech stack before recommending a single AI tool, ensuring every implementation is grounded in your specific business context.</div></div></div>
+      <div class="detail-card rv"><div class="detail-ico" style="background:rgba(124,58,237,0.12);color:#7c3aed">🤖</div><div><div class="detail-title">50+ AI Systems Built</div><div class="detail-desc">Custom chatbots, content engines, predictive analytics, and process automation built using GPT-4, Claude, LLaMA, and open-source models fine-tuned on your business data.</div></div></div>
+      <div class="detail-card rv"><div class="detail-ico" style="background:rgba(37,99,235,0.12);color:#2563eb">💰</div><div><div class="detail-title">70% Average Cost Reduction</div><div class="detail-desc">Businesses that implement our AI process automation reduce operational costs by an average of 70 percent within 6 months while improving output quality and speed simultaneously.</div></div></div>
+      <div class="detail-card rv"><div class="detail-ico" style="background:rgba(217,119,6,0.12);color:#d97706">⚡</div><div><div class="detail-title">10x Operational Efficiency</div><div class="detail-desc">AI handles repetitive time-consuming tasks that drain your team, freeing them to focus on strategic high-value work that actually moves your business meaningfully forward.</div></div></div>
+      <div class="detail-card rv"><div class="detail-ico" style="background:rgba(15,158,114,0.12);color:#0f9e72">🔐</div><div><div class="detail-title">Security and Privacy First</div><div class="detail-desc">Every AI system is built with GDPR compliance, data residency controls, and enterprise-grade security. Your customer data never trains public models without explicit consent.</div></div></div>
+      <div class="detail-card rv"><div class="detail-ico" style="background:rgba(219,39,119,0.12);color:#db2777">📈</div><div><div class="detail-title">Results Within 30 Days</div><div class="detail-desc">We identify and implement your highest-ROI AI use cases first, delivering measurable business impact within 30 days, not 6-month timelines that delay value and frustrate stakeholders.</div></div></div>
+    </div>
   </div>
 </div>
 
-<section id="services" style="background:#fff">
+
+<!-- WHAT WE DELIVER -->
+<section id="services" style="background:#EAF2FF">
   <div class="sec-hdr">
     <div class="tag rv">What We Deliver</div>
     <h2 class="sh rv d1">Every AI Use Case. <span class="hl">Built For Your Business.</span></h2>
     <p class="ss rv d2">We don't sell generic AI tools. We identify the highest-ROI AI opportunities in your specific business and build, integrate, or configure the right AI solutions to capture that value immediately.</p>
   </div>
-  <div class="grid3"><div class="card rv"><div class="card-ico" style="background:var(--orange-lt);color:var(--orange)">🗺️</div><div class="card-title">AI Opportunity Mapping</div><p class="card-desc">A structured audit of your entire business to identify every process that AI can automate, enhance, or optimise — prioritised by ROI impact so you always implement the highest-value use cases first.</p><div class="tags"><span class="tag-pill">Process Audit</span><span class="tag-pill">ROI Prioritisation</span><span class="tag-pill">Tool Selection</span><span class="tag-pill">Implementation Roadmap</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--blue-bg);color:var(--blue)">🤖</div><div class="card-title">Custom AI Chatbots &amp; Agents</div><p class="card-desc">GPT-4 and Claude-powered chatbots trained on your business data — answering customer questions, qualifying leads, booking meetings, and handling support tickets 24/7 with human-level accuracy.</p><div class="tags"><span class="tag-pill">Customer Support AI</span><span class="tag-pill">Lead Qualification</span><span class="tag-pill">Meeting Booking</span><span class="tag-pill">WhatsApp AI</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--teal-bg);color:var(--teal)">✍️</div><div class="card-title">AI Content &amp; Copy Systems</div><p class="card-desc">Custom AI content engines trained on your brand voice — generating blog posts, ad copy, email sequences, social content, and product descriptions at scale with brand-consistent quality every time.</p><div class="tags"><span class="tag-pill">Brand-Voice Training</span><span class="tag-pill">Blog Generation</span><span class="tag-pill">Ad Copy AI</span><span class="tag-pill">Email Sequences</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--purple-bg);color:var(--purple)">📊</div><div class="card-title">AI Analytics &amp; Business Intelligence</div><p class="card-desc">AI-powered dashboards that surface insights automatically — identifying revenue trends, churn risk signals, demand forecasts, and growth opportunities before your team would ever find them manually.</p><div class="tags"><span class="tag-pill">Predictive Analytics</span><span class="tag-pill">Churn Prediction</span><span class="tag-pill">Demand Forecasting</span><span class="tag-pill">Anomaly Detection</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--pink-bg);color:var(--pink)">⚙️</div><div class="card-title">AI Process Automation</div><p class="card-desc">End-to-end AI automation of your most time-consuming business processes — data entry, report generation, invoice processing, customer onboarding, and document analysis all handled by AI.</p><div class="tags"><span class="tag-pill">Document AI</span><span class="tag-pill">Data Extraction</span><span class="tag-pill">Report Automation</span><span class="tag-pill">Workflow AI</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--amber-bg);color:var(--amber)">🎓</div><div class="card-title">AI Team Training &amp; Upskilling</div><p class="card-desc">Practical AI training programmes for your leadership, marketing, sales, and operations teams — giving every employee the skills to use AI tools effectively in their specific daily workflows.</p><div class="tags"><span class="tag-pill">Prompt Engineering</span><span class="tag-pill">Tool Training</span><span class="tag-pill">AI Workflows</span><span class="tag-pill">Team Workshops</span></div></div></div>
+  <div class="grid3">
+    <div class="card rv"><div class="card-ico" style="background:var(--purple-bg);color:var(--purple)">🗺️</div><div class="card-title">AI Opportunity Mapping</div><p class="card-desc">A structured audit of your entire business to identify every process AI can automate, enhance, or optimise — prioritised by ROI impact so you always implement the highest-value use cases first, not the flashiest ones.</p><div class="tags"><span class="tag-pill">Process Audit</span><span class="tag-pill">ROI Prioritisation</span><span class="tag-pill">Tool Selection</span><span class="tag-pill">AI Roadmap</span></div></div>
+    <div class="card rv"><div class="card-ico" style="background:var(--orange-lt);color:var(--orange)">🤖</div><div class="card-title">Custom AI Chatbots &amp; Agents</div><p class="card-desc">GPT-4 and Claude-powered chatbots trained on your business data — answering customer questions, qualifying leads, booking meetings, and handling support tickets 24/7 with human-level accuracy and zero downtime.</p><div class="tags"><span class="tag-pill">Customer Support AI</span><span class="tag-pill">Lead Qualification</span><span class="tag-pill">Meeting Booking</span><span class="tag-pill">WhatsApp AI</span></div></div>
+    <div class="card rv"><div class="card-ico" style="background:var(--teal-bg);color:var(--teal)">✍️</div><div class="card-title">AI Content &amp; Copy Systems</div><p class="card-desc">Custom AI content engines trained on your brand voice — generating blog posts, ad copy, email sequences, social content, and product descriptions at scale with brand-consistent quality every time, automatically.</p><div class="tags"><span class="tag-pill">Brand Voice Training</span><span class="tag-pill">Blog Generation</span><span class="tag-pill">Ad Copy AI</span><span class="tag-pill">Email Sequences</span></div></div>
+    <div class="card rv"><div class="card-ico" style="background:var(--blue-bg);color:var(--blue)">📊</div><div class="card-title">AI Analytics &amp; Business Intelligence</div><p class="card-desc">AI-powered dashboards that surface insights automatically — identifying revenue trends, churn risk signals, demand forecasts, and growth opportunities before your team would ever find them manually through data analysis.</p><div class="tags"><span class="tag-pill">Predictive Analytics</span><span class="tag-pill">Churn Prediction</span><span class="tag-pill">Demand Forecasting</span><span class="tag-pill">Anomaly Detection</span></div></div>
+    <div class="card rv"><div class="card-ico" style="background:var(--pink-bg);color:var(--pink)">⚙️</div><div class="card-title">AI Process Automation</div><p class="card-desc">End-to-end AI automation of your most time-consuming business processes — data entry, report generation, invoice processing, customer onboarding, and document analysis all handled by AI without any human intervention.</p><div class="tags"><span class="tag-pill">Document AI</span><span class="tag-pill">Data Extraction</span><span class="tag-pill">Report Automation</span><span class="tag-pill">Workflow AI</span></div></div>
+    <div class="card rv"><div class="card-ico" style="background:var(--amber-bg);color:var(--amber)">🎓</div><div class="card-title">AI Team Training &amp; Upskilling</div><p class="card-desc">Practical AI training programmes for your leadership, marketing, sales, and operations teams — giving every employee the skills to use AI tools effectively in their specific daily workflows and compound your AI advantage.</p><div class="tags"><span class="tag-pill">Prompt Engineering</span><span class="tag-pill">Tool Training</span><span class="tag-pill">AI Workflows</span><span class="tag-pill">Team Workshops</span></div></div>
+  </div>
 </section>
 
+<!-- COMPARISON TABLE -->
+<section class="table-section" style="background:#fff">
+  <div class="sec-hdr">
+    <div class="tag rv">AI vs Traditional vs DIY</div>
+    <h2 class="sh rv d1">Why Apex360 AI Strategy <span class="hl">Outperforms Every Alternative</span></h2>
+    <p class="ss rv d2">See exactly how our managed AI strategy compares against doing it yourself, using generic AI tools, or hiring a traditional consultant — across every dimension that matters.</p>
+  </div>
+  <div class="ai-table-wrap rv d1">
+    <table class="ai-table">
+      <thead>
+        <tr>
+          <th>Capability / Feature</th>
+          <th>DIY AI Tools</th>
+          <th class="col-highlight th-highlight">Apex360 AI Strategy</th>
+          <th>Traditional Consultant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="section-row"><td colspan="4">⚡ Speed &amp; Implementation</td></tr>
+        <tr>
+          <td>Time to First AI Results</td>
+          <td>3–6 months (trial &amp; error)</td>
+          <td class="col-highlight"><span class="check">✓</span> <strong>2–4 weeks</strong></td>
+          <td>6–12 months</td>
+        </tr>
+        <tr>
+          <td>Live AI Systems in Week 1</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Always</td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Proven Implementation Playbook</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> 50+ deployments</td>
+          <td><span class="partial">Varies</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="4">🧠 AI Capability</td></tr>
+        <tr>
+          <td>Access to GPT-4, Claude &amp; LLaMA</td>
+          <td><span class="partial">Basic only</span></td>
+          <td class="col-highlight"><span class="check">✓</span> All models</td>
+          <td><span class="partial">Limited</span></td>
+        </tr>
+        <tr>
+          <td>Custom Fine-Tuned Models</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Brand-specific</td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>AI Integrated With Your CRM &amp; Stack</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Full integration</td>
+          <td><span class="partial">Extra cost</span></td>
+        </tr>
+        <tr>
+          <td>Ongoing AI Optimisation &amp; Retraining</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Monthly</td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="4">💰 Cost &amp; ROI</td></tr>
+        <tr>
+          <td>Predictable Monthly Cost</td>
+          <td><span class="partial">Tool costs vary</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Fixed retainer</td>
+          <td><span class="cross">✗ Day rates</span></td>
+        </tr>
+        <tr>
+          <td>Average ROI Within 90 Days</td>
+          <td><span class="cross">✗ Unlikely</span></td>
+          <td class="col-highlight"><span class="check">✓</span> 3–8× typical</td>
+          <td><span class="partial">12+ months</span></td>
+        </tr>
+        <tr>
+          <td>Revenue Attribution Reporting</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Every workflow</td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+
+        <tr class="section-row"><td colspan="4">🔒 Security &amp; Support</td></tr>
+        <tr>
+          <td>Data Privacy &amp; GDPR Compliance</td>
+          <td><span class="partial">Your responsibility</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Fully managed</td>
+          <td><span class="partial">Guidance only</span></td>
+        </tr>
+        <tr>
+          <td>Dedicated AI Specialist Assigned</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> From day 1</td>
+          <td><span class="partial">Shared team</span></td>
+        </tr>
+        <tr>
+          <td>Team Training Included</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> All roles</td>
+          <td><span class="cross">✗ Extra cost</span></td>
+        </tr>
+        <tr>
+          <td>Monthly Performance Reviews</td>
+          <td><span class="cross">✗</span></td>
+          <td class="col-highlight"><span class="check">✓</span> Always</td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="table-note rv d2">Based on average client outcomes across 50+ AI implementations. Individual results vary by industry and use case.</p>
+</section>
+
+<!-- AI CAPABILITIES SECTION -->
 <div class="dark-sect">
-  <div class="dark-tag">Our AI Approach</div>
-  <h2 class="sh rv" style="color:var(--ink);text-align:left;margin-top:.4rem">How We Build AI That <span class="hl">Delivers Real ROI</span></h2>
-  <p class="ss rv d1" style="color:var(--muted);text-align:left;margin:.75rem 0 0">We use a rigorous discovery-first approach to identify your highest-impact AI opportunities — then build, integrate, and optimise AI systems specifically for your business context, data, and goals.</p>
+  <div class="dark-tag">🤖 How We Work</div>
+  <h2 class="sh rv" style="text-align:left;margin-top:.4rem;color:var(--ink)">AI That's Built For <span class="hl">Your Business Goals</span></h2>
+  <p class="ss rv d1" style="text-align:left;margin:.75rem 0 0;color:var(--muted)">We use a rigorous discovery-first approach — identifying your highest-impact AI opportunities first, then building, integrating, and optimising AI systems specifically for your context, data, and revenue goals.</p>
   <div class="dark-grid">
-    <div><div class="feats"><div class="feat rv"><div class="feat-ico">🔍</div><div><div class="feat-title">AI Opportunity Discovery <span class="feat-badge">Active</span></div><div class="feat-desc">We conduct a structured audit of your business processes, data assets, and competitive landscape — identifying the 5 highest-ROI AI opportunities specific to your business that you should implement first.</div></div></div><div class="feat rv"><div class="feat-ico">🏗️</div><div><div class="feat-title">Custom AI Development <span class="feat-badge">Active</span></div><div class="feat-desc">Where off-the-shelf tools do not exist, we build custom AI solutions using GPT-4, Claude, LLaMA, and open-source models — fine-tuned on your data and integrated with your existing tech stack.</div></div></div><div class="feat rv"><div class="feat-ico">🔗</div><div><div class="feat-title">Existing Tool AI Activation <span class="feat-badge">Active</span></div><div class="feat-desc">Most businesses already have AI capabilities they are not using in HubSpot, Salesforce, Monday.com, and Google Workspace. We activate and configure these built-in AI features for immediate ROI with zero new tool cost.</div></div></div><div class="feat rv"><div class="feat-ico">📈</div><div><div class="feat-title">AI Performance Monitoring <span class="feat-badge">Active</span></div><div class="feat-desc">Every AI system we implement is monitored for accuracy, performance, and ROI — with monthly reviews, model retraining, and continuous optimisation to keep your AI systems improving over time.</div></div></div></div></div>
+    <div>
+      <div class="feats">
+        <div class="feat rv"><div class="feat-ico">🔍</div><div><div class="feat-title">AI Opportunity Discovery <span class="feat-badge">Included</span></div><div class="feat-desc">We conduct a structured audit of your business processes, data assets, and competitive landscape — identifying the 5 highest-ROI AI opportunities specific to your business that you should implement first, ranked by impact.</div></div></div>
+        <div class="feat rv"><div class="feat-ico">🏗️</div><div><div class="feat-title">Custom AI Development <span class="feat-badge">Included</span></div><div class="feat-desc">Where off-the-shelf tools don't exist, we build custom AI solutions using GPT-4, Claude, LLaMA, and open-source models — fine-tuned on your data and integrated with your existing tech stack seamlessly.</div></div></div>
+        <div class="feat rv"><div class="feat-ico">🔗</div><div><div class="feat-title">Existing Tool AI Activation <span class="feat-badge">Included</span></div><div class="feat-desc">Most businesses already have AI capabilities they're not using in HubSpot, Salesforce, Monday.com, and Google Workspace. We activate and configure these built-in AI features for immediate ROI with zero new tool cost.</div></div></div>
+        <div class="feat rv"><div class="feat-ico">📈</div><div><div class="feat-title">AI Performance Monitoring <span class="feat-badge">Monthly</span></div><div class="feat-desc">Every AI system we implement is monitored for accuracy, performance, and ROI — with monthly reviews, model retraining, and continuous optimisation to keep your AI systems improving over time and widening your advantage.</div></div></div>
+      </div>
+    </div>
     <div class="rv-r">
       <div class="metrics">
-        <div class="metric"><div class="metric-num">10×</div><div class="metric-lbl">Operational efficiency gain</div></div>
-        <div class="metric"><div class="metric-num">70%</div><div class="metric-lbl">Cost reduction from AI</div></div>
-        <div class="metric"><div class="metric-num">4×</div><div class="metric-lbl">Faster decision making</div></div>
-        <div class="metric"><div class="metric-num">91%</div><div class="metric-lbl">AI implementation success rate</div></div>
-        <div class="metric-cta"><div><strong>Custom AI Built For Your Business Goals</strong><p>Every AI system we build is designed around your specific data, processes, and competitive context — not generic off-the-shelf tools deployed without strategic thinking.</p></div><a href="contact.html" class="btn-orange" style="white-space:nowrap">Get Started →</a></div>
+        <div class="metric"><div class="metric-num">10×</div><div class="metric-lbl">Operational efficiency gain on average</div></div>
+        <div class="metric"><div class="metric-num">70%</div><div class="metric-lbl">Cost reduction from AI process automation</div></div>
+        <div class="metric"><div class="metric-num">4×</div><div class="metric-lbl">Faster decision making with AI analytics</div></div>
+        <div class="metric"><div class="metric-num">91%</div><div class="metric-lbl">AI implementation success rate across clients</div></div>
+        <div class="metric-cta"><div><strong>Custom AI Built For Your Business Goals</strong><p>Every AI system we build is designed around your specific data, processes, and competitive context — not generic off-the-shelf tools deployed without any strategic thinking behind them.</p></div><a href="contact.html" class="btn-orange" style="white-space:nowrap">Get Started →</a></div>
       </div>
     </div>
   </div>
 </div>
 
-<section style="background:#fff">
+<!-- AI ROADMAP PROCESS -->
+<section class="roadmap-section" style="background:#fff">
   <div class="sec-hdr">
-    <div class="tag rv">Our Process</div>
-    <h2 class="sh rv d1">How We <span class="hl">Deliver Results</span></h2>
-    <p class="ss rv d2">A structured, repeatable process delivering measurable outcomes from week one and compounding growth every month.</p>
+    <div class="tag rv">Our AI Process</div>
+    <h2 class="sh rv d1">Your 6-Step Journey to <span class="hl">AI-First Business</span></h2>
+    <p class="ss rv d2">A proven, structured process that delivers your first AI results within 30 days and compounds your competitive advantage every quarter thereafter.</p>
   </div>
-  <div class="grid2"><div class="pstep rv"><div class="pnum">01</div><div><div class="ptitle">AI Discovery &amp; Opportunity Audit</div><p class="pdesc">A structured 2-week audit of your business — processes, data assets, tech stack, competitive landscape, and team capabilities — producing a prioritised AI opportunity roadmap with ROI estimates for each use case.</p></div></div><div class="pstep rv"><div class="pnum">02</div><div><div class="ptitle">Strategy &amp; Use Case Selection</div><p class="pdesc">We present your AI opportunity roadmap and recommend the 3–5 highest-ROI use cases to implement first — with tool selection, build vs buy analysis, and implementation timeline for each recommended initiative.</p></div></div><div class="pstep rv"><div class="pnum">03</div><div><div class="ptitle">Build &amp; Integration</div><p class="pdesc">Custom AI development, off-the-shelf tool configuration, or existing platform AI activation — delivered on a fixed timeline with weekly demos, staging environment access, and your team involved at every decision point.</p></div></div><div class="pstep rv"><div class="pnum">04</div><div><div class="ptitle">Testing &amp; Validation</div><p class="pdesc">Rigorous testing of every AI system against real business scenarios — checking accuracy, edge cases, and failure modes before any AI touches real customer interactions or business data.</p></div></div><div class="pstep rv"><div class="pnum">05</div><div><div class="ptitle">Team Training &amp; Adoption</div><p class="pdesc">Practical, hands-on training for every team member who will interact with the AI systems — with custom prompt libraries, workflow guides, and recorded sessions so new hires can self-onboard quickly.</p></div></div><div class="pstep rv"><div class="pnum">06</div><div><div class="ptitle">Monitoring &amp; Continuous Improvement</div><p class="pdesc">Monthly AI performance reviews, accuracy monitoring, model retraining as your data evolves, and new use case identification — ensuring your AI advantage compounds and widens over time.</p></div></div></div>
+  <div class="roadmap-wrap">
+    <div class="roadmap-item rv">
+      <div class="r-circle">🔍</div>
+      <div class="r-content">
+        <div class="r-phase">Week 1–2 · Discovery</div>
+        <div class="r-title">AI Opportunity Audit</div>
+        <p class="r-desc">A structured 2-week audit of your business — processes, data assets, tech stack, competitive landscape, and team capabilities — producing a prioritised AI opportunity roadmap with ROI estimates for each identified use case.</p>
+        <div class="r-tags"><span class="r-tag">Process Mapping</span><span class="r-tag">Data Assessment</span><span class="r-tag">ROI Estimation</span><span class="r-tag">Competitor Analysis</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item rv d1">
+      <div class="r-circle">🗺️</div>
+      <div class="r-content">
+        <div class="r-phase">Week 2–3 · Strategy</div>
+        <div class="r-title">Use Case Selection &amp; Planning</div>
+        <p class="r-desc">We present your AI opportunity roadmap and recommend the 3–5 highest-ROI use cases to implement first — with tool selection, build vs buy analysis, data requirements, and a fixed implementation timeline for each initiative.</p>
+        <div class="r-tags"><span class="r-tag">Tool Selection</span><span class="r-tag">Build vs Buy</span><span class="r-tag">Timeline Planning</span><span class="r-tag">Budget Mapping</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item rv d2">
+      <div class="r-circle">🏗️</div>
+      <div class="r-content">
+        <div class="r-phase">Week 3–6 · Build</div>
+        <div class="r-title">AI System Development &amp; Integration</div>
+        <p class="r-desc">Custom AI development, off-the-shelf tool configuration, or existing platform AI activation — delivered on a fixed timeline with weekly demos, staging environment access, and your team involved at every decision point throughout the build.</p>
+        <div class="r-tags"><span class="r-tag">Custom Development</span><span class="r-tag">API Integration</span><span class="r-tag">CRM Connection</span><span class="r-tag">Data Pipeline</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item rv d3">
+      <div class="r-circle">🧪</div>
+      <div class="r-content">
+        <div class="r-phase">Week 6–7 · Test</div>
+        <div class="r-title">Testing, Validation &amp; QA</div>
+        <p class="r-desc">Rigorous testing of every AI system against real business scenarios — checking accuracy, edge cases, and failure modes before any AI touches real customer interactions or business-critical data in your live environment.</p>
+        <div class="r-tags"><span class="r-tag">Accuracy Testing</span><span class="r-tag">Edge Cases</span><span class="r-tag">Load Testing</span><span class="r-tag">Security Review</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item rv d4">
+      <div class="r-circle">🚀</div>
+      <div class="r-content">
+        <div class="r-phase">Week 7–8 · Launch</div>
+        <div class="r-title">Team Training &amp; Go-Live</div>
+        <p class="r-desc">Practical, hands-on training for every team member who will interact with the AI systems — with custom prompt libraries, workflow guides, and recorded sessions so new hires can self-onboard quickly without any ongoing cost.</p>
+        <div class="r-tags"><span class="r-tag">Role-Based Training</span><span class="r-tag">Prompt Libraries</span><span class="r-tag">Video Guides</span><span class="r-tag">Go-Live Support</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item rv d5">
+      <div class="r-circle">📈</div>
+      <div class="r-content">
+        <div class="r-phase">Month 3+ · Scale</div>
+        <div class="r-title">Monitoring, Optimisation &amp; Expansion</div>
+        <p class="r-desc">Monthly AI performance reviews, accuracy monitoring, model retraining as your data evolves, and new use case identification — ensuring your AI advantage compounds and widens over time as competitors scramble to catch up.</p>
+        <div class="r-tags"><span class="r-tag">Monthly Reviews</span><span class="r-tag">Model Retraining</span><span class="r-tag">New Use Cases</span><span class="r-tag">ROI Reporting</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section style="background:#EAF2FF">
+<!-- WHY APEX360 -->
+<section style="background:#fff">
   <div class="sec-hdr">
     <div class="tag rv">Why Apex360</div>
     <h2 class="sh rv d1">Built <span class="hl">Genuinely Different</span></h2>
-    <p class="ss rv d2">We're not a generalist agency doing everything for everyone. We're specialists obsessed with one thing: revenue growth you can measure.</p>
+    <p class="ss rv d2">We're not an AI hype agency selling vague transformation promises. We're practitioners who build AI systems that generate measurable, attributable revenue within 90 days.</p>
   </div>
-  <div class="grid3"><div class="why-card rv"><div class="wico">🎯</div><div class="wtitle">Business-First Not Technology-First</div><p class="wdesc">We start with your business goals and work backward to the right AI solution — not the other way around. We never recommend AI for the sake of it if simpler solutions would deliver better ROI.</p></div><div class="why-card rv"><div class="wico">🔐</div><div class="wtitle">Security &amp; Data Privacy</div><p class="wdesc">Every AI system we build is designed with enterprise-grade security, data residency compliance, and GDPR/data protection requirements — your customer data never trains public AI models without explicit consent.</p></div><div class="why-card rv"><div class="wico">🚀</div><div class="wtitle">Fast Time To Value</div><p class="wdesc">We identify and implement your highest-ROI AI use cases first — delivering measurable business impact within 30 days, not 6-month implementation timelines that delay value indefinitely.</p></div><div class="why-card rv"><div class="wico">🧪</div><div class="wtitle">Proven AI Stack</div><p class="wdesc">GPT-4, Claude, LLaMA, Stable Diffusion, LangChain, and enterprise AI platforms — we use the right model and framework for each use case rather than forcing every problem into a single AI solution.</p></div><div class="why-card rv"><div class="wico">📊</div><div class="wtitle">ROI-First Measurement</div><p class="wdesc">Every AI system includes clear success metrics tied to business outcomes — cost reduction, revenue increase, or time saved — not abstract AI performance metrics your leadership team cannot act on.</p></div><div class="why-card rv"><div class="wico">🤝</div><div class="wtitle">Ongoing Partnership</div><p class="wdesc">AI is not a one-time project. As your business grows and AI technology evolves, we continuously identify new opportunities and optimise existing systems — compounding your AI advantage every quarter.</p></div></div>
+  <div class="grid3">
+    <div class="why-card rv"><div class="wico">🎯</div><div class="wtitle">Business-First, Not Technology-First</div><p class="wdesc">We start with your business goals and work backward to the right AI solution — never recommend AI for the sake of it if simpler solutions would deliver better ROI and a faster path to results.</p></div>
+    <div class="why-card rv"><div class="wico">🔐</div><div class="wtitle">Security &amp; Data Privacy Built In</div><p class="wdesc">Every AI system is designed with enterprise-grade security, data residency compliance, and GDPR requirements — your customer data never trains public AI models without explicit written consent from your business.</p></div>
+    <div class="why-card rv"><div class="wico">🚀</div><div class="wtitle">Fast Time To Value</div><p class="wdesc">We identify and implement your highest-ROI AI use cases first — delivering measurable business impact within 30 days, not 6-month implementation timelines that delay value and frustrate your stakeholders.</p></div>
+    <div class="why-card rv"><div class="wico">🧪</div><div class="wtitle">Proven AI Tech Stack</div><p class="wdesc">GPT-4, Claude, LLaMA, Stable Diffusion, LangChain, and enterprise AI platforms — we use the right model and framework for each use case rather than forcing every problem into a single AI solution.</p></div>
+    <div class="why-card rv"><div class="wico">📊</div><div class="wtitle">ROI-First Measurement</div><p class="wdesc">Every AI system includes clear success metrics tied to business outcomes — cost reduction, revenue increase, or time saved — not abstract AI performance metrics your leadership team cannot act on or understand.</p></div>
+    <div class="why-card rv"><div class="wico">🤝</div><div class="wtitle">Ongoing Growth Partnership</div><p class="wdesc">AI is not a one-time project. As your business grows and AI evolves, we continuously identify new opportunities and optimise existing systems — compounding your AI advantage every single quarter.</p></div>
+  </div>
 </section>
 
+<!-- INDUSTRIES -->
 <section style="background:#fff">
   <div class="sec-hdr">
-    <div class="tag rv">Your AI Journey</div>
-    <h2 class="sh rv d1">From Manual Work to <span class="hl">AI-Native Business</span></h2>
-    <p class="ss rv d2">Every business sits somewhere on this curve. Here's what the journey to genuine AI advantage looks like — and what it's worth at each stage.</p>
+    <div class="tag rv">Industries We Serve</div>
+    <h2 class="sh rv d1">AI Strategy Built for <span class="hl">Your Industry</span></h2>
+    <p class="ss rv d2">Every AI implementation is tailored to your specific workflows, data assets, regulatory requirements, and competitive dynamics — never a generic template.</p>
   </div>
-
-  <div class="roadmap rv d1">
-    <div class="roadmap-step">
-      <div class="roadmap-dot">📋</div>
-      <div class="roadmap-badge">Most businesses start here</div>
-      <div class="roadmap-stage">Stage 1</div>
-      <div class="roadmap-title">Manual Operations</div>
-      <div class="roadmap-desc">Every process run by hand. Decisions made on gut feel, not data.</div>
-    </div>
-    <div class="roadmap-step">
-      <div class="roadmap-dot">🤖</div>
-      <div class="roadmap-badge">&nbsp;</div>
-      <div class="roadmap-stage">Stage 2</div>
-      <div class="roadmap-title">AI-Assisted</div>
-      <div class="roadmap-desc">Point AI tools support individual tasks — content, support, research.</div>
-    </div>
-    <div class="roadmap-step">
-      <div class="roadmap-dot">⚙️</div>
-      <div class="roadmap-badge">&nbsp;</div>
-      <div class="roadmap-stage">Stage 3</div>
-      <div class="roadmap-title">AI-Automated</div>
-      <div class="roadmap-desc">End-to-end workflows run automatically with human oversight only.</div>
-    </div>
-    <div class="roadmap-step done">
-      <div class="roadmap-dot">🚀</div>
-      <div class="roadmap-badge">Where we take you</div>
-      <div class="roadmap-stage">Stage 4</div>
-      <div class="roadmap-title">AI-Native</div>
-      <div class="roadmap-desc">AI embedded in every decision. Your genuine, compounding advantage.</div>
-    </div>
-  </div>
-
-  <div class="roi-table-wrap rv d2">
-    <table class="roi-table">
-      <thead>
-        <tr><th>AI Use Case</th><th>Setup Time</th><th>Typical Impact</th><th>ROI Payback</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>AI Chatbots &amp; Support</td><td>2–4 weeks</td><td class="roi-highlight">30–50% lower support cost</td><td>30–60 days</td></tr>
-        <tr><td>AI Content &amp; Copy Engine</td><td>3–5 weeks</td><td class="roi-highlight">4× content output</td><td>45–90 days</td></tr>
-        <tr><td>Predictive Analytics</td><td>6–8 weeks</td><td class="roi-highlight">15–25% revenue lift</td><td>60–120 days</td></tr>
-        <tr><td>AI Process Automation</td><td>4–6 weeks</td><td class="roi-highlight">40–70% time saved</td><td>30–90 days</td></tr>
-        <tr><td>AI Sales Enablement</td><td>3–4 weeks</td><td class="roi-highlight">20–35% faster close</td><td>45–75 days</td></tr>
-      </tbody>
-    </table>
+  <div class="grid4">
+    <div class="ind-card rv"><div class="ind-ico">💻</div><div><div class="ind-title">SaaS &amp; Technology</div><div class="ind-desc">AI product features, support automation, and predictive churn prevention</div></div></div>
+    <div class="ind-card rv"><div class="ind-ico">🛒</div><div><div class="ind-title">E-Commerce</div><div class="ind-desc">AI personalisation, demand forecasting, and automated customer support</div></div></div>
+    <div class="ind-card rv"><div class="ind-ico">🏥</div><div><div class="ind-title">Healthcare</div><div class="ind-desc">AI diagnostic assistance, appointment optimisation, and patient communication</div></div></div>
+    <div class="ind-card rv"><div class="ind-ico">💰</div><div><div class="ind-title">Finance &amp; Fintech</div><div class="ind-desc">AI risk assessment, fraud detection, and automated compliance reporting</div></div></div>
+    <div class="ind-card rv"><div class="ind-ico">🎓</div><div><div class="ind-title">EdTech &amp; Education</div><div class="ind-desc">AI tutoring assistants, personalised learning paths, and student success prediction</div></div></div>
+    <div class="ind-card rv"><div class="ind-ico">🏭</div><div><div class="ind-title">Manufacturing</div><div class="ind-desc">Predictive maintenance, quality control AI, and supply chain optimisation</div></div></div>
+    <div class="ind-card rv"><div class="ind-ico">📺</div><div><div class="ind-title">Marketing Agencies</div><div class="ind-desc">AI content production, campaign optimisation, and client reporting automation</div></div></div>
+    <div class="ind-card rv"><div class="ind-ico">🏘️</div><div><div class="ind-title">Real Estate</div><div class="ind-desc">AI property valuation, lead scoring, and automated client communication</div></div></div>
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section style="background:#EAF2FF">
   <div class="sec-hdr">
     <div class="tag rv">Client Stories</div>
-    <h2 class="sh rv d1">Results from <span class="hl">Real Clients</span></h2>
-    <p class="ss rv d2">Real results, real businesses — here is what working with Apex360 looks like in practice.</p>
+    <h2 class="sh rv d1">Results from <span class="hl">Real AI Implementations</span></h2>
+    <p class="ss rv d2">Here's what business owners say after 90 days of working with Apex360's AI strategy team.</p>
   </div>
-  <div class="grid3"><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Apex360 built a custom AI chatbot trained on our entire product knowledge base. It now handles 73% of our customer support tickets automatically — our support team focuses only on complex issues that genuinely need a human. Customer satisfaction actually went up."</p><div class="tauthor"><div class="tavatar" style="background:var(--orange)">K</div><div><div class="tname">Kiran Rao</div><div class="trole">CTO, ProductHive India</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"The AI content engine Apex360 built for us produces 40 SEO-optimised blog posts per month in our brand voice — content we would have needed 4 full-time writers to produce. Our organic traffic has grown 280% in 8 months."</p><div class="tauthor"><div class="tavatar" style="background:var(--blue)">L</div><div><div class="tname">Lisa Park</div><div class="trole">CMO, ScaleFast SaaS</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Apex360 ran an AI opportunity audit on our operations and identified ₹45L per year in potential savings from automation. We have implemented 60% of their recommendations so far and the savings are tracking exactly as predicted. Outstanding strategic work."</p><div class="tauthor"><div class="tavatar" style="background:var(--purple)">A</div><div><div class="tname">Arjun Mehta</div><div class="trole">COO, LogiTech Solutions</div><div class="tbadge">✓ Verified Client</div></div></div></div></div>
+  <div class="grid3">
+    <div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Apex360 built a custom AI chatbot trained on our entire product knowledge base. It now handles 73% of customer support tickets automatically — our support team focuses only on complex issues. Customer satisfaction actually went up by 18%."</p><div class="tauthor"><div class="tavatar" style="background:var(--purple)">K</div><div><div class="tname">Kiran Rao</div><div class="trole">CTO, ProductHive India</div><div class="tbadge">✓ Verified Client</div></div></div></div>
+    <div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"The AI content engine Apex360 built produces 40 SEO-optimised blog posts per month in our brand voice — content we would have needed 4 full-time writers to produce. Our organic traffic has grown 280% in 8 months with zero paid ads."</p><div class="tauthor"><div class="tavatar" style="background:var(--blue)">L</div><div><div class="tname">Lisa Park</div><div class="trole">CMO, ScaleFast SaaS</div><div class="tbadge">✓ Verified Client</div></div></div></div>
+    <div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Apex360 ran an AI opportunity audit on our operations and identified ₹45L per year in potential savings from automation. We have implemented 60% of their recommendations and the savings are tracking exactly as predicted. Outstanding work."</p><div class="tauthor"><div class="tavatar" style="background:var(--orange)">A</div><div><div class="tname">Arjun Mehta</div><div class="trole">COO, LogiTech Solutions</div><div class="tbadge">✓ Verified Client</div></div></div></div>
+  </div>
 </section>
 
+<!-- FAQ -->
 <section style="background:#fff">
   <div class="sec-hdr">
     <div class="tag rv">FAQ</div>
-    <h2 class="sh rv d1">AI Strategy Services <span class="hl">Questions Answered</span></h2>
+    <h2 class="sh rv d1">AI Strategy <span class="hl">Questions Answered</span></h2>
   </div>
-  <div class="faq-list"><div class="faq-item"><button class="faq-q">What does an AI strategy engagement with Apex360 look like?<span class="ficon">+</span></button><div class="faq-a">We start with a 2-week AI discovery audit — analysing your processes, data, tech stack, and competitive landscape to produce a prioritised AI opportunity roadmap. We then recommend the 3–5 highest-ROI use cases to implement first, and you choose how many to proceed with. Most clients start with 2–3 initiatives and expand as results compound.</div></div><div class="faq-item"><button class="faq-q">Do we need to have our own data to use AI effectively?<span class="ficon">+</span></button><div class="faq-a">Not necessarily. Many powerful AI applications use public or pre-trained models that require no proprietary data. However, the most valuable AI systems are fine-tuned on your specific business data — customer conversations, product documentation, sales history. We help you assess what data you have and how to leverage it effectively.</div></div><div class="faq-item"><button class="faq-q">How do you ensure our data is secure when using AI?<span class="ficon">+</span></button><div class="faq-a">We use enterprise AI APIs with data processing agreements, configure data residency settings, implement role-based access controls, and ensure no customer data is used to train public AI models without explicit consent. Every AI system is designed to comply with GDPR and Indian data protection regulations from day one.</div></div><div class="faq-item"><button class="faq-q">What is the typical cost of an AI strategy and implementation engagement?<span class="ficon">+</span></button><div class="faq-a">AI discovery and strategy audits start from ₹2.5L. Implementation costs vary significantly based on use case complexity — a simple AI chatbot implementation can cost ₹1.5–3L while custom AI systems with fine-tuned models and complex integrations can range from ₹5–25L. We provide fixed-scope pricing for every project after the discovery phase.</div></div><div class="faq-item"><button class="faq-q">How long before we see ROI from AI implementation?<span class="ficon">+</span></button><div class="faq-a">Simple AI implementations like chatbots and content automation typically show measurable ROI within 30–60 days of go-live. Predictive analytics and ML models typically require 60–90 days of live data before showing their full predictive power. We set realistic ROI timelines for each use case during the strategy phase so expectations are always grounded in reality.</div></div></div>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q">What does an AI strategy engagement with Apex360 actually look like?<span class="ficon">+</span></button><div class="faq-a">We start with a 2-week AI discovery audit — analysing your processes, data, tech stack, and competitive landscape to produce a prioritised AI opportunity roadmap. We then recommend the 3–5 highest-ROI use cases to implement first, and you choose how many to proceed with. Most clients start with 2–3 initiatives and expand as results compound each quarter.</div></div>
+    <div class="faq-item"><button class="faq-q">Do we need to have our own data to use AI effectively?<span class="ficon">+</span></button><div class="faq-a">Not necessarily. Many powerful AI applications use pre-trained models that require no proprietary data. However, the most valuable AI systems are fine-tuned on your specific business data — customer conversations, product documentation, sales history. We help you assess what data you have and how to leverage it most effectively for maximum ROI.</div></div>
+    <div class="faq-item"><button class="faq-q">How do you ensure our data is secure when using AI?<span class="ficon">+</span></button><div class="faq-a">We use enterprise AI APIs with data processing agreements, configure data residency settings, implement role-based access controls, and ensure no customer data is used to train public AI models without explicit consent. Every AI system is designed to comply with GDPR and Indian data protection regulations from day one of implementation.</div></div>
+    <div class="faq-item"><button class="faq-q">What is the typical cost of an AI strategy and implementation engagement?<span class="ficon">+</span></button><div class="faq-a">AI discovery and strategy audits start from ₹2.5L. Implementation costs vary based on complexity — a simple AI chatbot can cost ₹1.5–3L while custom AI systems with fine-tuned models and complex integrations range from ₹5–25L. We provide fixed-scope pricing for every project after the discovery phase so there are never any billing surprises.</div></div>
+    <div class="faq-item"><button class="faq-q">How long before we see measurable ROI from AI implementation?<span class="ficon">+</span></button><div class="faq-a">Simple AI implementations like chatbots and content automation typically show measurable ROI within 30–60 days of go-live. Predictive analytics and ML models typically require 60–90 days of live data before showing their full predictive power. We set realistic ROI timelines for each use case during the strategy phase so expectations are always grounded in reality, not hype.</div></div>
+  </div>
 </section>
 
+<!-- CTA -->
 <div class="page-cta">
   <div class="cta-inner">
     <h2>Ready to Build Your <span>AI Advantage?</span></h2>
     <p>Get a free AI opportunity assessment — we will identify the 3 highest-ROI AI use cases for your specific business and show you exactly how to implement them within 90 days.</p>
     <div class="cta-btns">
       <a href="contact.html" class="btn-orange">Get Free AI Assessment →</a>
-      <a href="index.html#cases" class="btn-outline">View Case Studies</a>
+      <a href="about.html" class="btn-outline">View Case Studies</a>
     </div>
   </div>
 </div>
 
-<footer><div class="footer-top">
-  <div class="footer-brand"><a class="logo" href="index.html" style="color:#fff">Apex<span>360</span> Digital</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
-  <div class="footer-col"><div class="fc-title">Services</div><ul>
-    <li><a href="digital-marketing.html">Digital Marketing</a></li>
-    <li><a href="hubspot.html">HubSpot Solutions</a></li>
-    <li><a href="monday.html">Monday.com</a></li>
-    <li><a href="web-development.html">Web Development</a></li>
-    <li><a href="marketing-automation.html">Marketing Automation</a></li>
-    <li><a href="ai-strategy.html">AI Strategy</a></li>
-  </ul></div>
-  <div class="footer-col"><div class="fc-title">Company</div><ul>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="index.html#cases">Case Studies</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul></div>
-  <div class="footer-col"><div class="fc-title">Contact</div><ul>
-    <li><a href="mailto:hello@apex360digital.com">hello@apex360digital.com</a></li>
-    <li><a href="tel:+919876543210">+91 98765 43210</a></li>
-    <li><a href="#">Chandigarh, India</a></li>
-    <li><a href="contact.html">Book a Call</a></li>
-  </ul></div>
-</div>
-<div class="footer-btm">
-  <p>© 2026 Apex360 Digital. All rights reserved.</p>
-  <div class="fsoc"><a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a><a href="#" aria-label="X"><i class="ti ti-brand-x"></i></a><a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a></div>
-  <div class="fleg"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
-</div></footer>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><a class="logo" href="index.html" style="color:#fff">Apex<span>360</span> Digital</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
+    <div class="footer-col"><div class="fc-title">Services</div><ul>
+      <li><a href="digital-marketing.html">Digital Marketing</a></li>
+      <li><a href="hubspot.html">HubSpot Solutions</a></li>
+      <li><a href="monday.html">Monday.com</a></li>
+      <li><a href="web-development.html">Web Development</a></li>
+      <li><a href="marketing-automation.html">Marketing Automation</a></li>
+      <li><a href="ai-strategy.html">AI Strategy</a></li>
+    </ul></div>
+    <div class="footer-col"><div class="fc-title">Company</div><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="about.html">Case Studies</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><div class="fc-title">Contact</div><ul>
+      <li><a href="mailto:hello@apex360digital.com">hello@apex360digital.com</a></li>
+      <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+      <li><a href="#">Chandigarh, India</a></li>
+      <li><a href="contact.html">Book a Call</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-btm">
+    <p>© 2026 Apex360 Digital. All rights reserved.</p>
+    <div class="fsoc"><a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a><a href="#" aria-label="X"><i class="ti ti-brand-x"></i></a><a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a></div>
+    <div class="fleg"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+  </div>
+</footer>
+
 <script>
 (function(){
   var nav=document.getElementById('mn');
