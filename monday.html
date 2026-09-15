@@ -58,13 +58,14 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .stat-box{padding:.9rem 1rem;background:var(--surface);border-radius:12px;border:1px solid var(--border)}
 .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.2rem}
 .stat-lbl{font-size:.74rem;color:var(--muted)}
-.results-strip{background:#EAF2FF;padding:4rem 5rem;position:relative;overflow:hidden}
-.results-strip::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
-.results-inner{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.08);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(15,23,42,.05)}
-.res-cell{background:#fff;padding:2.25rem 1.75rem;text-align:center;transition:background .2s}
-.res-cell:hover{background:#FAFAFA}
-.res-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.4rem}
-.res-lbl{font-size:.8rem;color:var(--muted);line-height:1.5}
+.stats-icon-section{background:#EAF2FF;padding:4rem 5rem;position:relative;overflow:hidden}
+.stats-icon-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
+.stats-icon-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.stat-icon-card{background:#fff;border-radius:18px;padding:2.25rem 1.5rem;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,.06);transition:transform .25s,box-shadow .25s}
+.stat-icon-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(15,23,42,.1)}
+.stat-icon-badge{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.stat-icon-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.6rem;font-weight:800;color:var(--ink);line-height:1;margin-bottom:.4rem}
+.stat-icon-lbl{font-size:.8rem;color:var(--muted);line-height:1.5}
 section{padding:5rem 5rem}
 .sec-hdr{text-align:center;margin-bottom:3rem}
 .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:var(--orange-lt);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
@@ -167,16 +168,16 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 .rv-r{opacity:0;transform:translateX(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s}
 .rv-r.in{opacity:1;transform:none}
 @media(max-width:1100px){
-  nav,section,footer,.svc-hero,.results-strip,.dark-sect,.page-cta{padding-left:2.5rem;padding-right:2.5rem}
+  nav,section,footer,.svc-hero,.stats-icon-section,.dark-sect,.page-cta{padding-left:2.5rem;padding-right:2.5rem}
   .svc-hero-inner{grid-template-columns:1fr}
   .stats-panel{display:none}
   .grid3,.grid4{grid-template-columns:repeat(2,1fr)}
-  .results-inner,.grid2{grid-template-columns:repeat(2,1fr)}
+  .stats-icon-grid,.grid2{grid-template-columns:repeat(2,1fr)}
   .dark-grid{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
 }
 @media(max-width:768px){
-  nav,section,footer,.svc-hero,.results-strip,.dark-sect,.page-cta{padding-left:1.5rem;padding-right:1.5rem}
+  nav,section,footer,.svc-hero,.stats-icon-section,.dark-sect,.page-cta{padding-left:1.5rem;padding-right:1.5rem}
   .hamburger{display:flex}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:.75rem 1rem 1rem;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.07);gap:.15rem}
   .nav-links.open{display:flex}
@@ -189,7 +190,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .footer-btm{flex-direction:column;align-items:flex-start}
   .cta-btns,.hero-btns{flex-direction:column;align-items:center}
 }
-@media(max-width:480px){.results-inner{grid-template-columns:1fr}}
+@media(max-width:480px){.stats-icon-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -208,7 +209,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     </li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="index.html#resources">Blog</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#contact">Contact</a></li>
     <li><a href="index.html#contact" class="nav-cta">Get Started →</a></li>
   </ul></nav>
@@ -240,12 +241,12 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </div>
 
-<div class="results-strip">
-  <div class="results-inner">
-    <div class="res-cell rv"><div class="res-num">85%</div><div class="res-lbl">Faster Average Project Delivery</div></div>
-    <div class="res-cell rv d1"><div class="res-num">70%</div><div class="res-lbl">Reduction in Status Update Meetings</div></div>
-    <div class="res-cell rv d2"><div class="res-num">3×</div><div class="res-lbl">Average Team Productivity Increase</div></div>
-    <div class="res-cell rv d3"><div class="res-num">150+</div><div class="res-lbl">Monday.com Workspaces Delivered</div></div>
+<div class="stats-icon-section">
+  <div class="stats-icon-grid">
+    <div class="stat-icon-card rv"><div class="stat-icon-badge" style="background:var(--orange-lt);color:var(--orange)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="stat-icon-num">85%</div><div class="stat-icon-lbl">Faster Average Project Delivery</div></div>
+    <div class="stat-icon-card rv d1"><div class="stat-icon-badge" style="background:var(--blue-bg);color:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="stat-icon-num">70%</div><div class="stat-icon-lbl">Reduction in Status Update Meetings</div></div>
+    <div class="stat-icon-card rv d2"><div class="stat-icon-badge" style="background:var(--teal-bg);color:var(--teal)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="stat-icon-num">3×</div><div class="stat-icon-lbl">Average Team Productivity Increase</div></div>
+    <div class="stat-icon-card rv d3"><div class="stat-icon-badge" style="background:var(--purple-bg);color:var(--purple)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="stat-icon-num">150+</div><div class="stat-icon-lbl">Monday.com Workspaces Delivered</div></div>
   </div>
 </div>
 
@@ -378,7 +379,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="footer-col"><div class="fc-title">Company</div><ul>
     <li><a href="about.html">About Us</a></li>
     <li><a href="index.html#cases">Case Studies</a></li>
-    <li><a href="index.html#resources">Blog</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul></div>
   <div class="footer-col"><div class="fc-title">Contact</div><ul>
