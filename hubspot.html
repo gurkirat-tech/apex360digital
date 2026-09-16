@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAANAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAANRJREFUeJy9kzELQVEYhp9zEcrChgxSYrFIXe5iMxiESTH6GX6HsvIPJD9AkWIkwzXeu1qU8RiuW+Qq9xRvfcvXeZ/eztsneEj2UxIfEjNbAGgqZgAppQmgqZgpVG8M81kppRn0bQY4baJMrTODdE4oJXiS5rkNhWFygqkFmYICoNyASAyuFzC6CoBaF8w9bOdQbYPwfuYNiMWhVIfd0plEEor6R8B7C3oLAkHojV4THddfJjA6cFjBIO3MYgyVpvOxHvpRjX8FuFelIjGznYJVIK7nDsKUOaBJSLBWAAAAAElFTkSuQmCC"/>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABtklEQVR4nO2XvUsDQRDFf3dJFESFiIV4pAjX+IEEi4CSGDsLQRHUmMJrxcbCzto/QbCxNWAlgqBYCCKoCCJooYJiJQYEQRCxSozFcuYuX25Csmkyzczs7M17vJtlWY08yy72ZvPXamlaMqU5c10leDEMrzLw7dfnPyyMrK2Erhrczm1MTTm40yzD1EsWa2mWYWIZJpf77ViGyetji13ylvuuZuZUYWT6y1mqvwKWYZZbV/cLSuT1H8J/rLoZiK/B1EouvzqAjaWqWlX+C3QPROfda8MT0NGliMDQOPh7RPz9KbzXB5FZRQTGE7l4axUyaRHHEsX315RAu1/IDZB6gusjuDkWeaAPgqE6E4jOCbkBTnfcHtzq1IVAbEH4TBrOdkV8ewIfbyIenQFfa0Ut5Y9hMASBfhF7vLB5W7inrRPCk3CxJ91WXgFZeSscRjkFfK1CXhBHb3kQsj/uPeuHQqWBCHQH4P1FqrWcAuFJIS/Aw0UhOMDdmfCaBrG4VFt5AvbwAdyfF99jEwAYi4Mm17rhl5Ga67hJoEmgHIH8t5pK05IpcVgbQcL1NFNNwomllyqoAAf4BT7RdN+jtJL4AAAAAElFTkSuQmCC"/>
+<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1ElEQVR4nL2TMQtBURiGn3MRysKGDFJisUhd7mIzGIRJMfoZfoey8g8kP0CRYiTDNd67WpTxGK5b5Cr3FG99y9d5n97O2yd4SPZTEh8SM1sAaCpmACmlCaCpmClUbwzzWSmlGfRtBjhtokytM4N0TigleJLmuQ2FYXKCqQWZggKg3IBIDK4XMLoKgFoXzD1s51Btg/B+5g2IxaFUh93SmUQSivpHwHsLegsCQeiNXhMd118mMDpwWMEg7cxiDJWm87Ee+lGNfwW4V6UiMbOdglUgrucOwpQ5oElIsFYAAAAASUVORK5CYII="/>
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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"/>
+<meta name="theme-color" content="#FF5C1A"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>HubSpot Solutions — Apex360 Digital</title>
 <meta name="description" content="Certified HubSpot CRM setup, onboarding, automation, and optimisation for businesses ready to scale their sales and marketing in India."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -58,7 +64,7 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .stat-box{padding:.9rem 1rem;background:var(--surface);border-radius:12px;border:1px solid var(--border)}
 .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.2rem}
 .stat-lbl{font-size:.74rem;color:var(--muted)}
-.stats-icon-section{background:#EAF2FF;padding:4rem 5rem;position:relative;overflow:hidden}
+.stats-icon-section{background:#fff;padding:4rem 5rem;position:relative;overflow:hidden}
 .stats-icon-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
 .stats-icon-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 .stat-icon-card{background:#fff;border-radius:18px;padding:2.25rem 1.5rem;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,.06);transition:transform .25s,box-shadow .25s}
@@ -82,23 +88,23 @@ section{padding:5rem 5rem}
 .card-desc{font-size:.84rem;color:var(--muted);line-height:1.7;flex:1}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
 .tag-pill{font-size:.68rem;font-weight:600;padding:.22rem .65rem;border-radius:var(--pill);background:var(--surface);color:var(--muted)}
-.dark-sect{background:#EAF2FF;padding:5rem;position:relative;overflow:hidden}
-.dark-sect::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
+.dark-sect{background:#fff;padding:5rem;position:relative;overflow:hidden}
+.dark-sect::before{display:none}
 .dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem;position:relative}
 .dark-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:rgba(255,92,26,.12);border:1px solid rgba(255,92,26,.2);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
 .feats{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
-.feat{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
-.feat:hover{background:#FAFAFA}
+.feat{display:flex;gap:1rem;align-items:flex-start;background:#f7f7f5;border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.feat:hover{background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.07)}
 .feat-ico{width:36px;height:36px;border-radius:9px;background:rgba(255,92,26,.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:1px}
 .feat-badge{font-size:.62rem;font-weight:700;padding:.15rem .45rem;border-radius:var(--pill);background:rgba(15,158,114,.15);color:#0f9e72;letter-spacing:.05em;margin-left:.5rem;text-transform:uppercase}
 .feat-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;line-height:1.3;display:flex;align-items:center;flex-wrap:wrap;gap:.3rem}
 .feat-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
 .metrics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.metric{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
-.metric:hover{background:#FAFAFA}
+.metric{background:#f7f7f5;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.metric:hover{background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.07)}
 .metric-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.2rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.4rem}
 .metric-lbl{font-size:.78rem;color:var(--muted);line-height:1.5}
-.metric-cta{grid-column:1/-1;background:#fff;border:1px solid rgba(255,92,26,.25);border-radius:16px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.metric-cta{grid-column:1/-1;background:#FFF0EB;border:1px solid rgba(255,92,26,.25);border-radius:16px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .metric-cta p{font-size:.9rem;color:var(--muted);line-height:1.6;flex:1}
 .metric-cta strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;color:var(--ink);margin-bottom:.3rem}
 .pstep{background:#fff;border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);display:flex;gap:1.25rem;transition:transform .2s,box-shadow .2s}
@@ -132,7 +138,7 @@ section{padding:5rem 5rem}
 .faq-item.open .faq-q .ficon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;font-size:.88rem;color:var(--muted);line-height:1.75;padding:0 1.5rem}
 .faq-item.open .faq-a{max-height:320px;padding:.1rem 1.5rem 1.3rem}
-.page-cta{background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);padding:5.5rem 5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.75rem}
+.page-cta{background:#0a0a0a;padding:5.5rem 5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.75rem}
 .page-cta::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.2) 0%,transparent 70%);pointer-events:none}
 .cta-inner{position:relative;max-width:640px;margin:0 auto}
 .cta-inner h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:.9rem}
@@ -182,6 +188,28 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .cta-btns,.hero-btns{flex-direction:column;align-items:center}
 }
 @media(max-width:480px){.stats-icon-grid{grid-template-columns:1fr}}
+
+.trust-bar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;max-width:1000px;margin:0 auto;row-gap:1.75rem}
+.trust-item{display:flex;align-items:center;gap:.65rem;padding:0 1.85rem;position:relative}
+.trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:22px;background:rgba(0,0,0,.1)}
+.trust-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.trust-label{font-size:.87rem;font-weight:600;color:var(--ink);white-space:nowrap}
+@media(max-width:768px){.trust-item{padding:0 1rem}.trust-item::after{display:none}}
+
+.hero-snap-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.75rem;box-shadow:0 20px 50px rgba(15,23,42,.1);min-width:290px;animation:heroFloat 5s ease-in-out infinite}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-snap-head{display:flex;align-items:center;gap:.6rem;margin-bottom:1.4rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
+.hero-snap-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;animation:blink 2s infinite}
+.hero-snap-head-text{font-size:.78rem;font-weight:600;color:var(--ink)}
+.hero-snap-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.25rem;margin-bottom:1.4rem}
+.hero-snap-stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:800;color:var(--orange);line-height:1}
+.hero-snap-stat-lbl{font-size:.72rem;color:var(--muted);margin-top:.3rem;line-height:1.4}
+.hero-snap-quote{background:var(--orange-lt);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;padding:.9rem 1.1rem;font-size:.82rem;color:var(--ink);line-height:1.6;font-style:italic}
+.hero-snap-wrap{position:relative}
+.hero-snap-float{position:absolute;bottom:-18px;right:-18px;background:var(--ink);color:#fff;border-radius:14px;padding:.85rem 1.1rem;box-shadow:0 12px 30px rgba(0,0,0,.2);text-align:center}
+.hero-snap-float-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:800;line-height:1}
+.hero-snap-float-lbl{font-size:.66rem;opacity:.7;margin-top:.15rem}
+@media(max-width:768px){.hero-snap-wrap{margin:2.5rem auto 0;max-width:340px}}
 </style>
 </head>
 <body>
@@ -223,22 +251,25 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <a href="#services" class="btn-ghost">Explore Services</a>
       </div>
     </div>
-    <div class="stats-panel">
-      <div class="stat-box"><div class="stat-num">3×</div><div class="stat-lbl">Pipeline Growth</div></div>
-      <div class="stat-box"><div class="stat-num">60%</div><div class="stat-lbl">Less Manual Work</div></div>
-      <div class="stat-box"><div class="stat-num">40%</div><div class="stat-lbl">Faster Deal Close</div></div>
-      <div class="stat-box"><div class="stat-num">200+</div><div class="stat-lbl">Portals Delivered</div></div>
+    <div class="hero-snap-wrap rv">
+      <div class="hero-snap-card">
+        <div class="hero-snap-head">
+          <span class="hero-snap-dot"></span>
+          <span class="hero-snap-head-text">HubSpot Certified Partner</span>
+        </div>
+        <div class="hero-snap-grid"><div><div class="hero-snap-stat-num">3×</div><div class="hero-snap-stat-lbl">Pipeline growth on average</div></div><div><div class="hero-snap-stat-num">60%</div><div class="hero-snap-stat-lbl">Less manual work</div></div><div><div class="hero-snap-stat-num">40%</div><div class="hero-snap-stat-lbl">Faster deal close</div></div><div><div class="hero-snap-stat-num">200+</div><div class="hero-snap-stat-lbl">Portals delivered</div></div></div>
+        <div class="hero-snap-quote">"They don't just install HubSpot — they make it think."</div>
+      </div>
+      <div class="hero-snap-float">
+        <div class="hero-snap-float-num">4.9★</div>
+        <div class="hero-snap-float-lbl">Avg Client Rating</div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="stats-icon-section">
-  <div class="stats-icon-grid">
-    <div class="stat-icon-card rv"><div class="stat-icon-badge" style="background:var(--orange-lt);color:var(--orange)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="stat-icon-num">3×</div><div class="stat-icon-lbl">Average Pipeline Growth After Setup</div></div>
-    <div class="stat-icon-card rv d1"><div class="stat-icon-badge" style="background:var(--blue-bg);color:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="stat-icon-num">60%</div><div class="stat-icon-lbl">Reduction in Manual Sales Tasks</div></div>
-    <div class="stat-icon-card rv d2"><div class="stat-icon-badge" style="background:var(--teal-bg);color:var(--teal)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="stat-icon-num">40%</div><div class="stat-icon-lbl">Faster Average Deal Close Rate</div></div>
-    <div class="stat-icon-card rv d3"><div class="stat-icon-badge" style="background:var(--purple-bg);color:var(--purple)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><div class="stat-icon-num">200+</div><div class="stat-icon-lbl">HubSpot Portals Successfully Built</div></div>
-  </div>
+<div class="stats-icon-section" style="background:#EAF2FF">
+  <div class="trust-bar rv-up"><div class="trust-item"><div class="trust-ico" style="background:var(--teal-bg);color:var(--teal)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="trust-label">Certified HubSpot Specialists</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--orange-lt);color:var(--orange)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><span class="trust-label">GDPR Compliant Builds</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--purple-bg);color:var(--purple)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><span class="trust-label">Results Within 30 Days</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--pink-bg);color:var(--pink)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="trust-label">No Lock-In Contracts</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--blue-bg);color:var(--blue)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><span class="trust-label">200+ Portals Built</span></div></div>
 </div>
 
 <section id="services" style="background:#fff">
@@ -250,7 +281,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="grid3"><div class="card rv"><div class="card-ico" style="background:var(--orange-lt);color:var(--orange)">🏗️</div><div class="card-title">CRM Setup &amp; Migration</div><p class="card-desc">Complete HubSpot CRM configuration or clean migration from Salesforce, Zoho, Pipedrive, or spreadsheets — zero data loss, logical pipeline structure, and a scalable foundation built for growth.</p><div class="tags"><span class="tag-pill">Deal Pipelines</span><span class="tag-pill">Contact Properties</span><span class="tag-pill">Data Migration</span><span class="tag-pill">Team Setup</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--blue-bg);color:var(--blue)">⚙️</div><div class="card-title">Marketing Hub Implementation</div><p class="card-desc">Email marketing, landing pages, forms, ad tracking, and SEO tools fully configured — so every lead is captured, tracked, and nurtured automatically from first touch to close.</p><div class="tags"><span class="tag-pill">Email Automation</span><span class="tag-pill">Landing Pages</span><span class="tag-pill">Lead Scoring</span><span class="tag-pill">Ad Tracking</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--teal-bg);color:var(--teal)">💼</div><div class="card-title">Sales Hub &amp; Pipeline Automation</div><p class="card-desc">Deal stages, task automation, email sequences, meeting booking, and predictive lead scoring — giving your sales team everything needed to close more deals with significantly less effort.</p><div class="tags"><span class="tag-pill">Deal Automation</span><span class="tag-pill">Email Sequences</span><span class="tag-pill">Meeting Links</span><span class="tag-pill">Forecasting</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--purple-bg);color:var(--purple)">🎧</div><div class="card-title">Service Hub &amp; Ticketing</div><p class="card-desc">Customer support tickets, knowledge base, feedback surveys, and SLA automation — so your support team delivers exceptional experiences at scale without burning out on admin tasks.</p><div class="tags"><span class="tag-pill">Ticket Pipelines</span><span class="tag-pill">Knowledge Base</span><span class="tag-pill">NPS Surveys</span><span class="tag-pill">SLA Management</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--pink-bg);color:var(--pink)">🔗</div><div class="card-title">Custom Integrations</div><p class="card-desc">HubSpot connected to WhatsApp, Razorpay, Shopify, Slack, Zoom, Google Sheets, and 100+ tools via native integrations and custom API builds — your entire tech stack working as one.</p><div class="tags"><span class="tag-pill">WhatsApp</span><span class="tag-pill">Razorpay</span><span class="tag-pill">Shopify</span><span class="tag-pill">Slack &amp; Zoom</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--amber-bg);color:var(--amber)">📊</div><div class="card-title">Reporting &amp; Revenue Attribution</div><p class="card-desc">Custom dashboards, multi-touch revenue attribution, forecasting reports, and executive-ready analytics — showing exactly which activities are driving closed revenue every month.</p><div class="tags"><span class="tag-pill">Custom Dashboards</span><span class="tag-pill">Attribution Reports</span><span class="tag-pill">Forecasting</span><span class="tag-pill">Executive Reporting</span></div></div></div>
 </section>
 
-<div class="dark-sect">
+<div class="dark-sect" style="background:#EAF2FF">
   <div class="dark-tag">AI + HubSpot</div>
   <h2 class="sh rv" style="color:var(--ink);text-align:left;margin-top:.4rem">Smart Automations That <span class="hl">Run Themselves</span></h2>
   <p class="ss rv d1" style="color:var(--muted);text-align:left;margin:.75rem 0 0">We layer AI intelligence on top of HubSpot — making your CRM predict, prioritise, and act automatically so your team focuses only on high-value work that closes deals.</p>
