@@ -127,6 +127,9 @@ section{padding:5rem 5rem}
 .why-card{background:#fff;border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;gap:.75rem}
 .why-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
 .why-card-ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.why-card-banner{margin:-1.75rem -1.75rem 0;height:140px;border-radius:var(--radius) var(--radius) 0 0;position:relative;overflow:hidden;background:var(--surface)}
+.why-card-banner img{width:100%;height:100%;object-fit:cover;display:block}
+.why-card-icon-badge{position:absolute;top:12px;left:12px;width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.95);box-shadow:0 6px 16px rgba(15,23,42,.18);display:flex;align-items:center;justify-content:center;z-index:2}
 .why-card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.3}
 .why-card-desc{font-size:.84rem;color:var(--muted);line-height:1.7}
 .industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
@@ -461,8 +464,9 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
   </div>
   <div class="why-grid">
     <div class="why-card rv d1">
-      <div class="why-card-ico" style="background:#FFF0EB">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF5C1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <div class="why-card-banner">
+        <img src="https://images.unsplash.com/photo-1637606346315-d23ed32a6cfc?w=800&q=75&auto=format&fit=crop" alt="SEO and organic search analytics"/>
+        <div class="why-card-icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF5C1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
       </div>
       <div class="why-card-title">SEO &amp; Organic Search</div>
       <p class="why-card-desc">We fix what's holding your rankings back first, then build outward with content clusters and backlinks that compound over time.</p>
@@ -474,8 +478,9 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
       </div>
     </div>
     <div class="why-card rv d2">
-      <div class="why-card-ico" style="background:#EBF2FF">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <div class="why-card-banner">
+        <img src="https://images.unsplash.com/photo-1537731121640-bc1c4aba9b80?w=800&q=75&auto=format&fit=crop" alt="Paid media and PPC advertising"/>
+        <div class="why-card-icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
       </div>
       <div class="why-card-title">Paid Media &amp; PPC</div>
       <p class="why-card-desc">Search, social and retargeting campaigns managed toward a cost-per-lead target you set — with budget shifted weekly to whatever's converting.</p>
@@ -487,8 +492,9 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
       </div>
     </div>
     <div class="why-card rv d3">
-      <div class="why-card-ico" style="background:#F3FFF8">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f9e72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="why-card-banner">
+        <img src="https://images.unsplash.com/photo-1690883794145-e96486fbe66b?w=800&q=75&auto=format&fit=crop" alt="Social media marketing on phone"/>
+        <div class="why-card-icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f9e72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       </div>
       <div class="why-card-title">Social Media Marketing</div>
       <p class="why-card-desc">A content and community plan that builds a real audience, not just a posting schedule — with paid social layered in once organic proves what resonates.</p>
@@ -500,8 +506,9 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
       </div>
     </div>
     <div class="why-card rv d1">
-      <div class="why-card-ico" style="background:#F5F2FF">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      <div class="why-card-banner">
+        <img src="https://images.unsplash.com/photo-1683117927786-f146451082fb?w=800&q=75&auto=format&fit=crop" alt="Email and lifecycle marketing"/>
+        <div class="why-card-icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
       </div>
       <div class="why-card-title">Email &amp; Lifecycle Marketing</div>
       <p class="why-card-desc">Lifecycle flows built around real customer behaviour, with list growth and deliverability treated as seriously as the copy itself.</p>
@@ -513,8 +520,9 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
       </div>
     </div>
     <div class="why-card rv d2">
-      <div class="why-card-ico" style="background:#FFF8E1">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <div class="why-card-banner">
+        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=75&auto=format&fit=crop" alt="Content strategy planning"/>
+        <div class="why-card-icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
       </div>
       <div class="why-card-title">Content Strategy</div>
       <p class="why-card-desc">An editorial calendar built around what your buyers actually search for, then repurposed across every channel instead of written once and forgotten.</p>
@@ -526,8 +534,9 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
       </div>
     </div>
     <div class="why-card rv d3">
-      <div class="why-card-ico" style="background:#FFF0F5">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      <div class="why-card-banner">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=75&auto=format&fit=crop" alt="Analytics and reporting dashboard"/>
+        <div class="why-card-icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
       </div>
       <div class="why-card-title">Analytics &amp; Reporting</div>
       <p class="why-card-desc">Custom dashboards and attribution modelling that tell you which channel actually closed the deal, not just which one got the last click.</p>
