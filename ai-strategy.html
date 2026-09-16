@@ -263,13 +263,13 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .footer-top{grid-template-columns:1fr;gap:2rem}
   .footer-btm{flex-direction:column;align-items:flex-start}
   .cta-btns,.hero-btns{flex-direction:column;align-items:center}
-  .roadmap-section{background:#fff!important}.roadmap-wrap::before{left:22px}
+  .roadmap-section{background:#FFF7F2!important}.roadmap-wrap::before{left:22px}
   .r-circle{width:46px;height:46px;font-size:1.1rem}
 }
 @media(max-width:480px){}
 
 /* DETAILS SECTION */
-.details-section{background:#fff;padding:3.5rem 5rem}
+.details-section{background:#FFF7F2;padding:3.5rem 5rem}
 .details-inner{max-width:1100px;margin:0 auto}
 .details-top{margin-bottom:2rem}
 .details-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:var(--orange-lt);padding:.32rem .85rem;border-radius:var(--pill);margin-bottom:.85rem}
@@ -284,6 +284,16 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 .detail-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
 @media(max-width:1100px){.details-section{padding-left:2.5rem;padding-right:2.5rem}.details-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.details-section{padding-left:1.5rem;padding-right:1.5rem}.details-grid{grid-template-columns:1fr}}
+
+.marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,#fff,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
 </style>
 </head>
 <body>
@@ -401,24 +411,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </div>
 
-<!-- TRUST BADGES (replaces removed stats strip) -->
-<div style="background:#f7f7f5;padding:2rem 5rem;border-bottom:1px solid rgba(0,0,0,.06)">
-  <div style="display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;max-width:1100px;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
-      <span style="width:32px;height:32px;border-radius:9px;background:#E8F8F3;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">✅</span>Certified AI Specialists
-    </div>
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
-      <span style="width:32px;height:32px;border-radius:9px;background:#FFF0EB;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🔒</span>GDPR Compliant Builds
-    </div>
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
-      <span style="width:32px;height:32px;border-radius:9px;background:#EBF2FF;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">⚡</span>Results Within 30 Days
-    </div>
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
-      <span style="width:32px;height:32px;border-radius:9px;background:#F0EBFF;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🤝</span>No Lock-In Contracts
-    </div>
-    <div style="display:flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:#555">
-      <span style="width:32px;height:32px;border-radius:9px;background:#FFFBEB;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0">🏆</span>50+ AI Systems Delivered
-    </div>
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>Certified AI Specialists</div><div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div><div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div><div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div><div class="marquee-item"><span class="marquee-dot"></span>50+ AI Systems Delivered</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Certified AI Specialists</div><div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div><div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div><div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div><div class="marquee-item"><span class="marquee-dot"></span>50+ AI Systems Delivered</div>
   </div>
 </div>
 <!-- DETAILS SECTION -->
@@ -600,7 +596,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 </div>
 
 <!-- AI ROADMAP PROCESS -->
-<section class="roadmap-section" style="background:#fff">
+<section class="roadmap-section" style="background:#FFF7F2">
   <div class="sec-hdr">
     <div class="tag rv">Our AI Process</div>
     <h2 class="sh rv d1">Your 6-Step Journey to <span class="hl">AI-First Business</span></h2>
@@ -682,7 +678,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 </section>
 
 <!-- INDUSTRIES -->
-<section style="background:#fff">
+<section style="background:#EAF2FF">
   <div class="sec-hdr">
     <div class="tag rv">Industries We Serve</div>
     <h2 class="sh rv d1">AI Strategy Built for <span class="hl">Your Industry</span></h2>
@@ -715,7 +711,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 </section>
 
 <!-- FAQ -->
-<section style="background:#fff">
+<section style="background:#FFF7F2">
   <div class="sec-hdr">
     <div class="tag rv">FAQ</div>
     <h2 class="sh rv d1">AI Strategy <span class="hl">Questions Answered</span></h2>
