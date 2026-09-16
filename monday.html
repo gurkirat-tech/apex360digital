@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png"/>
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAANAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAANRJREFUeJy9kzELQVEYhp9zEcrChgxSYrFIXe5iMxiESTH6GX6HsvIPJD9AkWIkwzXeu1qU8RiuW+Qq9xRvfcvXeZ/eztsneEj2UxIfEjNbAGgqZgAppQmgqZgpVG8M81kppRn0bQY4baJMrTODdE4oJXiS5rkNhWFygqkFmYICoNyASAyuFzC6CoBaF8w9bOdQbYPwfuYNiMWhVIfd0plEEor6R8B7C3oLAkHojV4THddfJjA6cFjBIO3MYgyVpvOxHvpRjX8FuFelIjGznYJVIK7nDsKUOaBJSLBWAAAAAElFTkSuQmCC"/>
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABtklEQVR4nO2XvUsDQRDFf3dJFESFiIV4pAjX+IEEi4CSGDsLQRHUmMJrxcbCzto/QbCxNWAlgqBYCCKoCCJooYJiJQYEQRCxSozFcuYuX25Csmkyzczs7M17vJtlWY08yy72ZvPXamlaMqU5c10leDEMrzLw7dfnPyyMrK2Erhrczm1MTTm40yzD1EsWa2mWYWIZJpf77ViGyetji13ylvuuZuZUYWT6y1mqvwKWYZZbV/cLSuT1H8J/rLoZiK/B1EouvzqAjaWqWlX+C3QPROfda8MT0NGliMDQOPh7RPz9KbzXB5FZRQTGE7l4axUyaRHHEsX315RAu1/IDZB6gusjuDkWeaAPgqE6E4jOCbkBTnfcHtzq1IVAbEH4TBrOdkV8ewIfbyIenQFfa0Ut5Y9hMASBfhF7vLB5W7inrRPCk3CxJ91WXgFZeSscRjkFfK1CXhBHb3kQsj/uPeuHQqWBCHQH4P1FqrWcAuFJIS/Aw0UhOMDdmfCaBrG4VFt5AvbwAdyfF99jEwAYi4Mm17rhl5Ga67hJoEmgHIH8t5pK05IpcVgbQcL1NFNNwomllyqoAAf4BT7RdN+jtJL4AAAAAElFTkSuQmCC"/>
 <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1ElEQVR4nL2TMQtBURiGn3MRysKGDFJisUhd7mIzGIRJMfoZfoey8g8kP0CRYiTDNd67WpTxGK5b5Cr3FG99y9d5n97O2yd4SPZTEh8SM1sAaCpmACmlCaCpmClUbwzzWSmlGfRtBjhtokytM4N0TigleJLmuQ2FYXKCqQWZggKg3IBIDK4XMLoKgFoXzD1s51Btg/B+5g2IxaFUh93SmUQSivpHwHsLegsCQeiNXhMd118mMDpwWMEg7cxiDJWm87Ee+lGNfwW4V6UiMbOdglUgrucOwpQ5oElIsFYAAAAASUVORK5CYII="/>
@@ -219,6 +224,38 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 .hero-snap-float-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:800;line-height:1}
 .hero-snap-float-lbl{font-size:.66rem;opacity:.7;margin-top:.15rem}
 @media(max-width:768px){.hero-snap-wrap{margin:2.5rem auto 0;max-width:340px}}
+/* ── Illustrated sections ── */
+.showcase-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:3.5rem;align-items:center;max-width:1150px;margin:0 auto}
+.showcase-copy .sh{text-align:left}
+.showcase-copy .ss{text-align:left;margin:.75rem 0 0}
+.showcase-list{list-style:none;margin-top:1.75rem;display:flex;flex-direction:column;gap:.85rem}
+.showcase-list li{display:flex;align-items:flex-start;gap:.7rem;font-size:.88rem;color:var(--muted);line-height:1.6}
+.showcase-check{width:20px;height:20px;border-radius:50%;background:var(--teal-bg);color:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:11px;font-weight:700}
+.figure{position:relative}
+.figure svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 22px 55px rgba(15,23,42,.13);border:1px solid var(--border)}
+.figure figcaption{text-align:center;font-size:.76rem;color:var(--muted);margin-top:.9rem;font-style:italic}
+.fig-float{position:absolute;background:#fff;border-radius:13px;padding:.6rem .9rem;box-shadow:0 14px 34px rgba(15,23,42,.16);border:1px solid var(--border);display:flex;align-items:center;gap:.6rem;z-index:2;animation:figFloat 4.5s ease-in-out infinite}
+@keyframes figFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.fig-float-ico{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.fig-float strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;color:var(--ink);display:block;line-height:1.1}
+.fig-float span{font-size:.68rem;color:var(--muted);white-space:nowrap}
+.fig-float.ff-a{top:-16px;right:-14px}
+.fig-float.ff-b{bottom:-16px;left:-14px;animation-delay:1.1s}
+.stack-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;max-width:1000px;margin:3rem auto 0}
+.stack-tile{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem .75rem;text-align:center;transition:transform .2s,box-shadow .2s}
+.stack-tile:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,23,42,.09)}
+.stack-tile svg{width:34px;height:34px;margin:0 auto .6rem}
+.stack-name{font-size:.75rem;font-weight:600;color:var(--ink)}
+@media(max-width:1100px){.showcase-grid{grid-template-columns:1fr;gap:2.5rem}.showcase-copy .sh,.showcase-copy .ss{text-align:center;margin-left:auto;margin-right:auto}.stack-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.stack-grid{grid-template-columns:repeat(2,1fr)}.fig-float{display:none}}.marquee-wrap{background:var(--surface);padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
 </style>
 </head>
 <body>
@@ -277,8 +314,19 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </div>
 
-<div class="stats-icon-section" style="background:var(--surface)">
-  <div class="trust-bar rv-up"><div class="trust-item"><div class="trust-ico" style="background:var(--teal-bg);color:var(--teal)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="trust-label">Certified Monday.com Specialists</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--orange-lt);color:var(--orange)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><span class="trust-label">GDPR Compliant Builds</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--purple-bg);color:var(--purple)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><span class="trust-label">Results Within 30 Days</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--pink-bg);color:var(--pink)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="trust-label">No Lock-In Contracts</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--blue-bg);color:var(--blue)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><span class="trust-label">150+ Workspaces Built</span></div></div>
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>Certified Monday.com Specialists</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>150+ Workspaces Built</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Certified Monday.com Specialists</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>150+ Workspaces Built</div>
+  </div>
 </div>
 
 <section id="services" style="background:#fff">
@@ -288,6 +336,99 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     <p class="ss rv d2">We design and build Monday.com workspaces that match exactly how your business works — eliminating spreadsheet chaos, missed deadlines, and communication breakdowns permanently.</p>
   </div>
   <div class="grid3"><div class="card rv"><div class="card-ico" style="background:var(--orange-lt);color:var(--orange)">📋</div><div class="card-title">Project Management Setup</div><p class="card-desc">Boards, groups, items, and automations configured around your project delivery process — with status tracking, timeline views, dependency mapping, and client-facing portals all set up from day one.</p><div class="tags"><span class="tag-pill">Boards &amp; Timelines</span><span class="tag-pill">Dependencies</span><span class="tag-pill">Client Portals</span><span class="tag-pill">Sprint Planning</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--blue-bg);color:var(--blue)">💼</div><div class="card-title">CRM &amp; Sales Pipeline</div><p class="card-desc">A visual CRM built on Monday.com — contact management, deal tracking, activity logging, and automated follow-up reminders so your sales team never drops a lead or misses a follow-up again.</p><div class="tags"><span class="tag-pill">Deal Tracking</span><span class="tag-pill">Contact Management</span><span class="tag-pill">Email Integration</span><span class="tag-pill">Sales Reporting</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--teal-bg);color:var(--teal)">⚡</div><div class="card-title">Workflow Automation</div><p class="card-desc">Eliminate manual, repetitive tasks with Monday.com automations — status changes trigger notifications, approvals route to the right person, and deadline reminders fire automatically without any human input.</p><div class="tags"><span class="tag-pill">Status Automations</span><span class="tag-pill">Approval Flows</span><span class="tag-pill">Deadline Alerts</span><span class="tag-pill">Cross-Board Sync</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--purple-bg);color:var(--purple)">🔗</div><div class="card-title">Integrations &amp; API</div><p class="card-desc">Monday.com connected to Slack, HubSpot, Gmail, Zoom, Jira, Salesforce, Google Drive, and 200+ tools — your entire operational tech stack communicating and syncing seamlessly in real-time.</p><div class="tags"><span class="tag-pill">Slack</span><span class="tag-pill">HubSpot</span><span class="tag-pill">Google Workspace</span><span class="tag-pill">Jira &amp; Salesforce</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--pink-bg);color:var(--pink)">📊</div><div class="card-title">Dashboards &amp; Reporting</div><p class="card-desc">Executive dashboards, team performance reports, project health scores, and resource utilisation metrics — real-time visibility across every project and every team without manual data entry.</p><div class="tags"><span class="tag-pill">Executive Dashboards</span><span class="tag-pill">Resource Planning</span><span class="tag-pill">KPI Tracking</span><span class="tag-pill">Portfolio Views</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--amber-bg);color:var(--amber)">🎓</div><div class="card-title">Training &amp; Adoption</div><p class="card-desc">Live training sessions, recorded video guides, and a custom Monday.com playbook built for your business — ensuring 100% team adoption and maximum ROI from your Monday.com investment.</p><div class="tags"><span class="tag-pill">Live Training</span><span class="tag-pill">Video Guides</span><span class="tag-pill">Playbooks</span><span class="tag-pill">Ongoing Support</span></div></div></div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="showcase-grid">
+    <div class="showcase-copy">
+      <div class="tag rv">Inside Your Workspace</div>
+      <h2 class="sh rv d1">A Board Your Team <span class="hl">Actually Updates</span></h2>
+      <p class="ss rv d2">We design groups, columns and statuses around the way your team already works — so the board replaces the status meeting instead of becoming one more thing to keep in sync.</p>
+      <ul class="showcase-list rv d3">
+        <li><span class="showcase-check">✓</span>Columns mapped to your real stages, not a stock template</li>
+        <li><span class="showcase-check">✓</span>Owners and due dates on every item, so nothing goes unassigned</li>
+        <li><span class="showcase-check">✓</span>Colour-coded statuses that read at a glance from across the room</li>
+        <li><span class="showcase-check">✓</span>Timeline and workload views leadership can check without asking</li>
+      </ul>
+    </div>
+    <figure class="figure rv-r">
+      <svg viewBox="0 0 600 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a configured Monday.com board showing grouped tasks, owners, colour-coded statuses and timeline bars">
+        <rect width="600" height="430" rx="16" fill="#ffffff"/>
+        <rect x="0" y="0" width="600" height="46" rx="16" fill="#0a0a0a"/>
+        <rect x="0" y="30" width="600" height="16" fill="#0a0a0a"/>
+        <circle cx="26" cy="23" r="5" fill="#FF5C1A"/><circle cx="44" cy="23" r="5" fill="#3f3f3f"/><circle cx="62" cy="23" r="5" fill="#3f3f3f"/>
+        <rect x="84" y="16" width="150" height="14" rx="7" fill="#242424"/>
+        <rect x="498" y="14" width="78" height="18" rx="9" fill="#FF5C1A"/>
+        <text x="537" y="27" font-family="Figtree,sans-serif" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">Main board</text>
+
+        <text x="24" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">ITEM</text>
+        <text x="272" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">OWNER</text>
+        <text x="342" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">STATUS</text>
+        <text x="452" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">TIMELINE</text>
+
+        <rect x="24" y="86" width="4" height="14" rx="2" fill="#FF5C1A"/>
+        <text x="38" y="98" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111">Client Onboarding</text>
+        <g>
+          <rect x="24" y="108" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
+          <text x="40" y="129" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Kickoff call scheduled</text>
+          <circle cx="282" cy="125" r="10" fill="#FF5C1A"/><text x="282" y="129" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">A</text>
+          <rect x="342" y="115" width="92" height="20" rx="6" fill="#0f9e72"/>
+          <text x="388" y="129" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Done</text>
+          <rect x="452" y="120" width="104" height="10" rx="5" fill="#E8F8F3"/>
+          <rect x="452" y="120" width="104" height="10" rx="5" fill="#0f9e72"/>
+        </g>
+        <g>
+          <rect x="24" y="148" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
+          <text x="40" y="169" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Access &amp; tooling setup</text>
+          <circle cx="282" cy="165" r="10" fill="#2563eb"/><text x="282" y="169" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">R</text>
+          <rect x="342" y="155" width="92" height="20" rx="6" fill="#f59e0b"/>
+          <text x="388" y="169" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Working on it</text>
+          <rect x="452" y="160" width="104" height="10" rx="5" fill="#FFF4E5"/>
+          <rect x="452" y="160" width="68" height="10" rx="5" fill="#f59e0b"/>
+        </g>
+        <g>
+          <rect x="24" y="188" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
+          <text x="40" y="209" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Data import &amp; cleanup</text>
+          <circle cx="282" cy="205" r="10" fill="#7c3aed"/><text x="282" y="209" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">P</text>
+          <rect x="342" y="195" width="92" height="20" rx="6" fill="#dc2626"/>
+          <text x="388" y="209" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Stuck</text>
+          <rect x="452" y="200" width="104" height="10" rx="5" fill="#FDECEC"/>
+          <rect x="452" y="200" width="34" height="10" rx="5" fill="#dc2626"/>
+        </g>
+
+        <rect x="24" y="238" width="4" height="14" rx="2" fill="#2563eb"/>
+        <text x="38" y="250" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111">Delivery Sprint</text>
+        <g>
+          <rect x="24" y="260" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
+          <text x="40" y="281" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Workflow automations built</text>
+          <circle cx="282" cy="277" r="10" fill="#0f9e72"/><text x="282" y="281" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">S</text>
+          <rect x="342" y="267" width="92" height="20" rx="6" fill="#f59e0b"/>
+          <text x="388" y="281" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Working on it</text>
+          <rect x="452" y="272" width="104" height="10" rx="5" fill="#FFF4E5"/>
+          <rect x="452" y="272" width="82" height="10" rx="5" fill="#f59e0b"/>
+        </g>
+        <g>
+          <rect x="24" y="300" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
+          <text x="40" y="321" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Team training session</text>
+          <circle cx="282" cy="317" r="10" fill="#db2777"/><text x="282" y="321" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">M</text>
+          <rect x="342" y="307" width="92" height="20" rx="6" fill="#c4c4c4"/>
+          <text x="388" y="321" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Not started</text>
+          <rect x="452" y="312" width="104" height="10" rx="5" fill="#f0f0f0"/>
+        </g>
+
+        <rect x="24" y="352" width="552" height="54" rx="12" fill="#0a0a0a"/>
+        <circle cx="54" cy="379" r="16" fill="#FF5C1A"/>
+        <text x="54" y="384" font-family="Figtree,sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">⚡</text>
+        <text x="82" y="374" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Automation ran</text>
+        <text x="82" y="390" font-family="Figtree,sans-serif" font-size="8.5" fill="#8d8d8d">Status set to Stuck → owner notified in Slack → due date flagged</text>
+        <rect x="486" y="368" width="70" height="22" rx="11" fill="#1c3f33"/>
+        <text x="521" y="383" font-family="Figtree,sans-serif" font-size="8.5" font-weight="600" fill="#34d399" text-anchor="middle">No manual work</text>
+      </svg>
+      <div class="fig-float ff-a"><div class="fig-float-ico" style="background:var(--teal-bg)">⏱️</div><div><strong>12+</strong><span>Hours saved weekly</span></div></div>
+      <div class="fig-float ff-b"><div class="fig-float-ico" style="background:var(--orange-lt)">👥</div><div><strong>90%</strong><span>Team adoption</span></div></div>
+      <figcaption>Example board layout from a recent Apex360 Monday.com build.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <section style="background:#EAF2FF">
@@ -344,6 +485,68 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 
 <section style="background:#EAF2FF">
   <div class="sec-hdr">
+    <div class="tag rv">Automations</div>
+    <h2 class="sh rv d1">One Trigger, <span class="hl">Four Things Happen</span></h2>
+    <p class="ss rv d2">Every automation we build replaces a chase-up message or a status meeting. Here's a recipe that runs on nearly every board we ship.</p>
+  </div>
+  <figure class="figure rv d1" style="max-width:980px;margin:0 auto">
+    <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a Monday.com automation recipe: when a status changes, the owner is notified, a task is created, the timeline updates and the dashboard refreshes">
+      <rect width="900" height="250" rx="16" fill="#ffffff"/>
+
+      <rect x="26" y="70" width="168" height="110" rx="13" fill="#0a0a0a"/>
+      <text x="110" y="52" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111" text-anchor="middle">Trigger</text>
+      <circle cx="110" cy="106" r="19" fill="#FF5C1A"/>
+      <text x="110" y="112" font-family="Figtree,sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">⚡</text>
+      <text x="110" y="145" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Status changes</text>
+      <text x="110" y="162" font-family="Figtree,sans-serif" font-size="8.5" fill="#8d8d8d" text-anchor="middle">to "Stuck"</text>
+
+      <path d="M206 125 L244 125" stroke="#FF5C1A" stroke-width="2"/>
+      <path d="M238 119 L248 125 L238 131 Z" fill="#FF5C1A"/>
+
+      <text x="572" y="52" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111" text-anchor="middle">Then, automatically</text>
+
+      <g>
+        <rect x="258" y="70" width="148" height="52" rx="11" fill="#FFF0EB" stroke="#ffd9c9"/>
+        <text x="280" y="101" font-family="Figtree,sans-serif" font-size="14">🔔</text>
+        <text x="302" y="92" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Owner notified</text>
+        <text x="302" y="106" font-family="Figtree,sans-serif" font-size="8.5" fill="#a8654a">Slack + email, instantly</text>
+      </g>
+      <g>
+        <rect x="258" y="130" width="148" height="52" rx="11" fill="#EBF2FF" stroke="#d3e0fb"/>
+        <text x="280" y="161" font-family="Figtree,sans-serif" font-size="14">📋</text>
+        <text x="302" y="152" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Follow-up created</text>
+        <text x="302" y="166" font-family="Figtree,sans-serif" font-size="8.5" fill="#5c7cb5">Assigned with a due date</text>
+      </g>
+      <g>
+        <rect x="422" y="70" width="148" height="52" rx="11" fill="#F0EBFF" stroke="#e0d5fb"/>
+        <text x="444" y="101" font-family="Figtree,sans-serif" font-size="14">📆</text>
+        <text x="466" y="92" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Timeline shifts</text>
+        <text x="466" y="106" font-family="Figtree,sans-serif" font-size="8.5" fill="#7e6bb0">Dependent items move too</text>
+      </g>
+      <g>
+        <rect x="422" y="130" width="148" height="52" rx="11" fill="#E8F8F3" stroke="#cdece1"/>
+        <text x="444" y="161" font-family="Figtree,sans-serif" font-size="14">📊</text>
+        <text x="466" y="152" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Dashboard updates</text>
+        <text x="466" y="166" font-family="Figtree,sans-serif" font-size="8.5" fill="#4e8f79">Leadership view stays live</text>
+      </g>
+
+      <path d="M586 125 L624 125" stroke="#0f9e72" stroke-width="2"/>
+      <path d="M618 119 L628 125 L618 131 Z" fill="#0f9e72"/>
+
+      <rect x="638" y="70" width="236" height="110" rx="13" fill="#FAFAFA" stroke="#e8e8e8"/>
+      <text x="756" y="52" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111" text-anchor="middle">Result</text>
+      <text x="662" y="100" font-family="Figtree,sans-serif" font-size="11" fill="#0f9e72">✓</text>
+      <text x="682" y="100" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Nobody chases a status update</text>
+      <text x="662" y="126" font-family="Figtree,sans-serif" font-size="11" fill="#0f9e72">✓</text>
+      <text x="682" y="126" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Blockers surface the same day</text>
+      <text x="662" y="152" font-family="Figtree,sans-serif" font-size="11" fill="#0f9e72">✓</text>
+      <text x="682" y="152" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">The weekly check-in gets shorter</text>
+
+      <rect x="26" y="200" width="848" height="30" rx="9" fill="#FFF7F2"/>
+      <text x="450" y="219" font-family="Figtree,sans-serif" font-size="9.5" fill="#a8654a" text-anchor="middle">Typical workspace ships with 15–40 automation recipes, tuned monthly as your process changes.</text>
+    </svg>
+  </figure>
+  <div class="sec-hdr" style="margin-top:4.5rem">
     <div class="tag rv">Our Process</div>
     <h2 class="sh rv d1">How We <span class="hl">Deliver Results</span></h2>
     <p class="ss rv d2">A structured, repeatable process delivering measurable outcomes from week one and compounding growth every month.</p>
@@ -371,6 +574,38 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 
 <section style="background:#fff">
   <div class="sec-hdr">
+    <div class="tag rv">Integrations</div>
+    <h2 class="sh rv d1">Connected to the Tools <span class="hl">You Already Run</span></h2>
+    <p class="ss rv d2">Two-way syncs and custom API work so your board reflects reality — without anyone copying information between apps.</p>
+  </div>
+  <div class="stack-grid">
+    <div class="stack-tile rv">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#FFF0F5"/><path d="M15 12h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6l-5 4v-4h-1a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3h2Z" stroke="#db2777" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="stack-name">Slack</div>
+    </div>
+    <div class="stack-tile rv d1">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#FFF0EB"/><rect x="10" y="13" width="20" height="14" rx="3" stroke="#FF5C1A" stroke-width="2"/><path d="m10 16 10 6 10-6" stroke="#FF5C1A" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="stack-name">Gmail</div>
+    </div>
+    <div class="stack-tile rv d2">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#EBF2FF"/><rect x="10" y="12" width="20" height="18" rx="3" stroke="#2563eb" stroke-width="2"/><path d="M10 18h20M16 12v18" stroke="#2563eb" stroke-width="2"/></svg>
+      <div class="stack-name">Google Drive</div>
+    </div>
+    <div class="stack-tile rv">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#FFFBEB"/><rect x="10" y="15" width="14" height="11" rx="3" stroke="#d97706" stroke-width="2"/><path d="m24 19 6-3v9l-6-3v-3Z" stroke="#d97706" stroke-width="2" stroke-linejoin="round"/></svg>
+      <div class="stack-name">Zoom</div>
+    </div>
+    <div class="stack-tile rv d1">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#F0EBFF"/><path d="M20 10 30 20 20 30 10 20 20 10Z" stroke="#7c3aed" stroke-width="2" stroke-linejoin="round"/><path d="M20 16.5 23.5 20 20 23.5 16.5 20 20 16.5Z" fill="#7c3aed"/></svg>
+      <div class="stack-name">Jira</div>
+    </div>
+    <div class="stack-tile rv d2">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#E8F8F3"/><rect x="11" y="11" width="18" height="18" rx="3" stroke="#0f9e72" stroke-width="2"/><path d="M11 17h18M17 17v12" stroke="#0f9e72" stroke-width="2"/></svg>
+      <div class="stack-name">Excel &amp; Sheets</div>
+    </div>
+  </div>
+  <p class="ss rv d3" style="text-align:center;margin-top:1.75rem">Plus 200+ more via native connectors and custom API builds.</p>
+  <div class="sec-hdr" style="margin-top:4.5rem">
     <div class="tag rv">Client Stories</div>
     <h2 class="sh rv d1">Results from <span class="hl">Real Clients</span></h2>
     <p class="ss rv d2">Real results, real businesses — here is what working with Apex360 looks like in practice.</p>
