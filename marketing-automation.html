@@ -219,6 +219,15 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .funnel-wrap{width:100%}
   .funnel-stage{width:100%!important}
 }
+
+/* ── TRUST BAR ── */
+.trust-bar{background:#f5f5f4;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07);padding:.9rem 5rem}
+.trust-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.trust-pill{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem 1.5rem;font-size:.82rem;font-weight:600;color:#444;white-space:nowrap;position:relative}
+.trust-pill:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:16px;background:rgba(0,0,0,.12)}
+.trust-pill-ico{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+@media(max-width:1100px){.trust-bar{padding-left:2.5rem;padding-right:2.5rem}}
+@media(max-width:768px){.trust-bar{padding-left:1.5rem;padding-right:1.5rem;overflow-x:auto}.trust-bar-inner{justify-content:flex-start;gap:0}.trust-pill{padding:.45rem 1rem;font-size:.75rem}}
 </style>
 </head>
 <body>
@@ -276,13 +285,16 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </div>
 
-<div class="stats-icon-section">
-  <div class="stats-icon-grid">
-    <div class="stat-icon-card rv"><div class="stat-icon-badge" style="background:var(--orange-lt);color:var(--orange)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="stat-icon-num">3×</div><div class="stat-icon-lbl">Average Pipeline Growth</div></div>
-    <div class="stat-icon-card rv d1"><div class="stat-icon-badge" style="background:var(--blue-bg);color:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="stat-icon-num">60%</div><div class="stat-icon-lbl">Reduction in Manual Work</div></div>
-    <div class="stat-icon-card rv d2"><div class="stat-icon-badge" style="background:var(--teal-bg);color:var(--teal)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="stat-icon-num">40%</div><div class="stat-icon-lbl">Faster Deal Close Time</div></div>
-    <div class="stat-icon-card rv d3"><div class="stat-icon-badge" style="background:var(--purple-bg);color:var(--purple)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div><div class="stat-icon-num">200+</div><div class="stat-icon-lbl">Automated Workflows Delivered</div></div>
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-pill"><div class="trust-pill-ico" style="background:rgba(15,158,114,.15);color:#0f9e72">✅</div> Certified Automation Specialists</div>
+    <div class="trust-pill"><div class="trust-pill-ico" style="background:rgba(255,92,26,.13);color:#FF5C1A">🔒</div> GDPR Compliant Builds</div>
+    <div class="trust-pill"><div class="trust-pill-ico" style="background:rgba(124,58,237,.12);color:#7c3aed">⚡</div> Results Within 30 Days</div>
+    <div class="trust-pill"><div class="trust-pill-ico" style="background:rgba(219,39,119,.12);color:#db2777">🤝</div> No Lock-In Contracts</div>
+    <div class="trust-pill"><div class="trust-pill-ico" style="background:rgba(217,119,6,.13);color:#d97706">🔄</div> 400+ Automations Built</div>
   </div>
+</div>
+
 </div>
 
 <section id="services" style="background:#fff">
