@@ -171,7 +171,8 @@ section{padding:5.5rem 5rem}
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
 .ind-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.75rem;transition:transform .25s,box-shadow .25s;cursor:default}
 .ind-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.09)}
-.ind-icon{width:68px;height:68px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;flex-shrink:0}
+.ind-icon{width:68px;height:68px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;flex-shrink:0;overflow:hidden}
+.ind-icon img{width:100%;height:100%;object-fit:cover}
 .ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.3}
 .ind-desc{font-size:.78rem;color:var(--orange);line-height:1.6;text-align:center}
 
@@ -1056,8 +1057,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- SaaS & Technology -->
     <div class="ind-card rv-card">
-      <div class="ind-icon" style="background:#EBF2FF">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="SaaS and technology team collaborating"/>
       </div>
       <div class="ind-title">SaaS &amp; Technology</div>
       <p class="ind-desc">Product-led growth, trial signups, demo bookings, and MRR expansion campaigns</p>
@@ -1065,8 +1066,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- E-Commerce -->
     <div class="ind-card rv-card d1">
-      <div class="ind-icon" style="background:#FFF0EB">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="E-commerce packaging box"/>
       </div>
       <div class="ind-title">E-Commerce</div>
       <p class="ind-desc">ROAS-focused paid ads, abandoned cart recovery, and lifecycle email automation</p>
@@ -1074,8 +1075,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- Healthcare -->
     <div class="ind-card rv-card d2">
-      <div class="ind-icon" style="background:#F3FFF8">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0f9e72" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1758691461957-474a7686e388?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Doctor consulting with patient"/>
       </div>
       <div class="ind-title">Healthcare</div>
       <p class="ind-desc">Compliant patient acquisition, reputation management, and telehealth growth</p>
@@ -1083,8 +1084,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- Real Estate -->
     <div class="ind-card rv-card d3">
-      <div class="ind-icon" style="background:#FFF8E1">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5Z"/><path d="M9 21V12h6v9"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Modern house exterior"/>
       </div>
       <div class="ind-title">Real Estate</div>
       <p class="ind-desc">Geo-targeted lead gen, property marketing, and developer campaign management</p>
@@ -1092,8 +1093,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- Finance & Fintech -->
     <div class="ind-card rv-card d1">
-      <div class="ind-icon" style="background:#F5F2FF">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1645226880663-81561dcab0ae?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Finance app stock chart on phone"/>
       </div>
       <div class="ind-title">Finance &amp; Fintech</div>
       <p class="ind-desc">Compliant digital marketing, lead nurturing, and trust-building content strategy</p>
@@ -1101,8 +1102,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- EdTech & Education -->
     <div class="ind-card rv-card d2">
-      <div class="ind-icon" style="background:#FFF5FB">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1758270705290-62b6294dd044?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Students gathered around a laptop"/>
       </div>
       <div class="ind-title">EdTech &amp; Education</div>
       <p class="ind-desc">Student acquisition, course promotion, and retention-focused email campaigns</p>
@@ -1110,8 +1111,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- Manufacturing & B2B -->
     <div class="ind-card rv-card d3">
-      <div class="ind-icon" style="background:#F0F7FF">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-6H4a2 2 0 0 0-2 2v16Z"/><path d="M14 2v6h6M10 13H8M16 13h-2M10 17H8M16 17h-2"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Interior of large industrial factory"/>
       </div>
       <div class="ind-title">Manufacturing &amp; B2B</div>
       <p class="ind-desc">LinkedIn ABM campaigns, thought leadership, and long sales cycle lead nurturing</p>
@@ -1119,8 +1120,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- Hospitality & F&B -->
     <div class="ind-card rv-card d4">
-      <div class="ind-icon" style="background:#FFF0EB">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+      <div class="ind-icon">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Modern restaurant interior with booths"/>
       </div>
       <div class="ind-title">Hospitality &amp; F&amp;B</div>
       <p class="ind-desc">Local SEO, social media management, and seasonal campaign execution</p>
