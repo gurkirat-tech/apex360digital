@@ -239,6 +239,47 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 .stack-name{font-size:.75rem;font-weight:600;color:var(--ink)}
 @media(max-width:1100px){.showcase-grid{grid-template-columns:1fr;gap:2.5rem}.showcase-copy .sh,.showcase-copy .ss{text-align:center;margin-left:auto;margin-right:auto}.stack-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.stack-grid{grid-template-columns:repeat(2,1fr)}.fig-float{display:none}}
+
+/* ── MIGRATION PROCESS SECTION ── */
+.migration-section{background:#fff;padding:5.5rem 5rem;position:relative;overflow:hidden}
+.migration-section::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.05) 0%,transparent 65%);pointer-events:none}
+.migration-hdr{text-align:center;margin-bottom:4rem}
+.mig-outer{position:relative;max-width:960px;margin:0 auto;height:900px}
+.mig-centre{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;width:110px;height:110px;border-radius:24px;background:linear-gradient(135deg,#FF5C1A,#e04a0e);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(255,92,26,.3),0 0 0 14px rgba(255,92,26,.07),0 0 0 28px rgba(255,92,26,.03);animation:cpulse 3s ease-in-out infinite}
+@keyframes cpulse{0%,100%{box-shadow:0 20px 50px rgba(255,92,26,.3),0 0 0 14px rgba(255,92,26,.07),0 0 0 28px rgba(255,92,26,.03)}50%{box-shadow:0 28px 60px rgba(255,92,26,.42),0 0 0 18px rgba(255,92,26,.1),0 0 0 36px rgba(255,92,26,.05)}}
+.mig-centre-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:#fff;text-align:center;line-height:1.1}
+.mig-centre-name em{color:rgba(255,255,255,.65);font-style:normal}
+.mig-centre-tag{font-size:.52rem;color:rgba(255,255,255,.7);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem;text-align:center}
+.mig-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.mig-card{position:absolute;width:208px;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,.08);padding:1.3rem 1.4rem;box-shadow:0 4px 20px rgba(15,23,42,.07);transition:transform .3s cubic-bezier(.34,1.3,.64,1),box-shadow .3s,border-color .3s}
+.mig-card:hover{box-shadow:0 16px 40px rgba(15,23,42,.12);border-color:rgba(255,92,26,.25)}
+/* Exact positions within 960x900 container */
+.mc1{top:20px;left:20px}.mc1:hover{transform:translate(3px,3px)}
+.mc2{top:20px;right:20px}.mc2:hover{transform:translate(-3px,3px)}
+.mc3{top:300px;left:20px}.mc3:hover{transform:translate(3px,0)}
+.mc4{top:300px;right:20px}.mc4:hover{transform:translate(-3px,0)}
+.mc5{top:580px;left:20px}.mc5:hover{transform:translate(3px,-3px)}
+.mc6{top:580px;right:20px}.mc6:hover{transform:translate(-3px,-3px)}
+.marquee-wrap{background:var(--surface);padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+.mig-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:.75rem}
+.mig-step{font-size:.6rem;font-weight:800;color:var(--orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;opacity:.75}
+.mig-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;color:#111;line-height:1.3;margin-bottom:.38rem}
+.mig-desc{font-size:.74rem;color:#666;line-height:1.55}
+@media(max-width:1100px){.migration-section{padding-left:2.5rem;padding-right:2.5rem}}
+@media(max-width:900px){
+  .mig-outer{height:auto}
+  .mig-svg{display:none}
+  .mig-centre{position:relative;top:auto;left:auto;transform:none;margin:0 auto 2rem}
+  .mig-card{position:relative;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;width:100%}
+  .mig-card:hover{transform:translateY(-4px)!important}
+  .mig-outer{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:1rem 0}
+}
+@media(max-width:600px){.migration-section{padding-left:1.5rem;padding-right:1.5rem}}
 </style>
 </head>
 <body>
@@ -297,8 +338,23 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </div>
 
-<div class="stats-icon-section" style="background:var(--surface)">
-  <div class="trust-bar rv-up"><div class="trust-item"><div class="trust-ico" style="background:var(--teal-bg);color:var(--teal)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><span class="trust-label">Certified HubSpot Specialists</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--orange-lt);color:var(--orange)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><span class="trust-label">GDPR Compliant Builds</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--purple-bg);color:var(--purple)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><span class="trust-label">Results Within 30 Days</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--pink-bg);color:var(--pink)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="trust-label">No Lock-In Contracts</span></div><div class="trust-item"><div class="trust-ico" style="background:var(--blue-bg);color:var(--blue)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><span class="trust-label">200+ Portals Built</span></div></div>
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>HubSpot Certified Partner</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>200+ Portals Migrated</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Zero Data Loss Guarantee</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>24/7 Priority Support</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>3× Average Pipeline Growth</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Platinum Solutions Partner</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>HubSpot Certified Partner</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>200+ Portals Migrated</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Zero Data Loss Guarantee</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>24/7 Priority Support</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>3× Average Pipeline Growth</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Platinum Solutions Partner</div>
+  </div>
 </div>
 
 <section id="services" style="background:#fff">
@@ -560,6 +616,135 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     <p class="ss rv d2">Real results, real businesses — here is what working with Apex360 looks like in practice.</p>
   </div>
   <div class="grid3"><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"Apex360 migrated our entire Salesforce setup to HubSpot in 3 weeks with zero data loss. Our sales team now closes 40% faster and manual data entry has dropped by 80%. ROI was visible within the first month."</p><div class="tauthor"><div class="tavatar" style="background:var(--orange)">V</div><div><div class="tname">Vikram Nair</div><div class="trole">VP Sales, CloudFirst India</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"The HubSpot automation workflows Apex360 built saved our marketing team 18 hours every single week. Lead scoring alone tripled our call quality because reps only call people genuinely ready to buy."</p><div class="tauthor"><div class="tavatar" style="background:var(--blue)">P</div><div><div class="tname">Priya Kapoor</div><div class="trole">Head of Marketing, FinEdge</div><div class="tbadge">✓ Verified Client</div></div></div></div><div class="tcard rv"><div class="tstars">★★★★★</div><p class="ttext">"We had a broken HubSpot portal with 12,000 duplicate contacts and zero automation. Apex360 cleaned everything up, rebuilt our pipeline architecture, and now our CRM actively helps us close deals."</p><div class="tauthor"><div class="tavatar" style="background:var(--teal)">J</div><div><div class="tname">James Chen</div><div class="trole">COO, ScaleOps Global</div><div class="tbadge">✓ Verified Client</div></div></div></div></div>
+</section>
+
+<!-- MIGRATION PROCESS SECTION -->
+<section class="migration-section">
+  <div class="migration-hdr">
+    <div class="tag rv" style="color:var(--orange);background:var(--orange-lt)">Migration Process</div>
+    <h2 class="sh rv d1">Our HubSpot <span class="hl">Migration Journey</span></h2>
+    <p class="ss rv d2" style="margin:0 auto;margin-top:.75rem">A seamless, zero-disruption process — every step planned in detail so your business keeps running while we rebuild your CRM foundation the right way.</p>
+  </div>
+
+  <div class="mig-outer">
+
+    <!-- Apex360 Centre Logo -->
+    <div class="mig-centre">
+      <div class="mig-centre-name">Apex<em>360</em></div>
+    </div>
+
+    <!-- Animated SVG lines + dots -->
+    <svg class="mig-svg" viewBox="0 0 960 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Lines from centre (480,450) to each card anchor -->
+      <line x1="480" y1="450" x2="228" y2="145" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="7 4" opacity="0.25"/>
+      <line x1="480" y1="450" x2="732" y2="145" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="7 4" opacity="0.25"/>
+      <line x1="480" y1="450" x2="208" y2="425" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="7 4" opacity="0.25"/>
+      <line x1="480" y1="450" x2="752" y2="425" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="7 4" opacity="0.25"/>
+      <line x1="480" y1="450" x2="228" y2="705" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="7 4" opacity="0.25"/>
+      <line x1="480" y1="450" x2="732" y2="705" stroke="#FF5C1A" stroke-width="1.5" stroke-dasharray="7 4" opacity="0.25"/>
+
+      <!-- Animated dots travelling outward -->
+      <circle r="4.5" fill="#FF5C1A">
+        <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s" path="M480,450 L228,145"/>
+        <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.8s" repeatCount="indefinite" begin="0s"/>
+      </circle>
+      <circle r="4.5" fill="#FF5C1A">
+        <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.46s" path="M480,450 L732,145"/>
+        <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.8s" repeatCount="indefinite" begin="0.46s"/>
+      </circle>
+      <circle r="4.5" fill="#FF5C1A">
+        <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.93s" path="M480,450 L208,425"/>
+        <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.8s" repeatCount="indefinite" begin="0.93s"/>
+      </circle>
+      <circle r="4.5" fill="#FF5C1A">
+        <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.4s" path="M480,450 L752,425"/>
+        <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.8s" repeatCount="indefinite" begin="1.4s"/>
+      </circle>
+      <circle r="4.5" fill="#FF5C1A">
+        <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.86s" path="M480,450 L228,705"/>
+        <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.8s" repeatCount="indefinite" begin="1.86s"/>
+      </circle>
+      <circle r="4.5" fill="#FF5C1A">
+        <animateMotion dur="2.8s" repeatCount="indefinite" begin="2.33s" path="M480,450 L732,705"/>
+        <animate attributeName="opacity" values="0;0.9;0.9;0" dur="2.8s" repeatCount="indefinite" begin="2.33s"/>
+      </circle>
+
+      <!-- Pulsing node dots at card ends -->
+      <circle cx="228" cy="145" r="5" fill="#fff" stroke="#FF5C1A" stroke-width="2">
+        <animate attributeName="r" values="5;7.5;5" dur="2.5s" repeatCount="indefinite" begin="0s"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" begin="0s"/>
+      </circle>
+      <circle cx="732" cy="145" r="5" fill="#fff" stroke="#FF5C1A" stroke-width="2">
+        <animate attributeName="r" values="5;7.5;5" dur="2.5s" repeatCount="indefinite" begin="0.4s"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" begin="0.4s"/>
+      </circle>
+      <circle cx="208" cy="425" r="5" fill="#fff" stroke="#FF5C1A" stroke-width="2">
+        <animate attributeName="r" values="5;7.5;5" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" begin="0.8s"/>
+      </circle>
+      <circle cx="752" cy="425" r="5" fill="#fff" stroke="#FF5C1A" stroke-width="2">
+        <animate attributeName="r" values="5;7.5;5" dur="2.5s" repeatCount="indefinite" begin="1.2s"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" begin="1.2s"/>
+      </circle>
+      <circle cx="228" cy="705" r="5" fill="#fff" stroke="#FF5C1A" stroke-width="2">
+        <animate attributeName="r" values="5;7.5;5" dur="2.5s" repeatCount="indefinite" begin="1.6s"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" begin="1.6s"/>
+      </circle>
+      <circle cx="732" cy="705" r="5" fill="#fff" stroke="#FF5C1A" stroke-width="2">
+        <animate attributeName="r" values="5;7.5;5" dur="2.5s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+    </svg>
+
+    <!-- Card 1: Top Left -->
+    <div class="mig-card mc1 rv">
+      <div class="mig-ico" style="background:rgba(255,92,26,.1);color:#FF5C1A">🔍</div>
+      <div class="mig-step">Step 01</div>
+      <div class="mig-title">Audit Your Existing CRM</div>
+      <div class="mig-desc">We deep-dive into your current platform — mapping all contacts, deals, pipelines, and integrations to build a complete blueprint before touching a single record.</div>
+    </div>
+
+    <!-- Card 2: Top Right -->
+    <div class="mig-card mc2 rv d1">
+      <div class="mig-ico" style="background:rgba(37,99,235,.1);color:#2563eb">📦</div>
+      <div class="mig-step">Step 02</div>
+      <div class="mig-title">Extract &amp; Cleanse Data</div>
+      <div class="mig-desc">We export, deduplicate, and sanitise all records — removing junk data, fixing formatting issues, and structuring everything cleanly for import into HubSpot.</div>
+    </div>
+
+    <!-- Card 3: Mid Left -->
+    <div class="mig-card mc3 rv d2">
+      <div class="mig-ico" style="background:rgba(15,158,114,.1);color:#0f9e72">⚙️</div>
+      <div class="mig-step">Step 03</div>
+      <div class="mig-title">Configure HubSpot Portal</div>
+      <div class="mig-desc">Custom properties, pipeline stages, lifecycle definitions, user permissions, and team structure set up — ready to receive your data in the correct architecture.</div>
+    </div>
+
+    <!-- Card 4: Mid Right -->
+    <div class="mig-card mc4 rv d3">
+      <div class="mig-ico" style="background:rgba(124,58,237,.1);color:#7c3aed">🚀</div>
+      <div class="mig-step">Step 04</div>
+      <div class="mig-title">Import &amp; Map Records</div>
+      <div class="mig-desc">All contacts, companies, deals, notes, and activities imported with full field mapping — preserving relationship history and ownership across every record without data loss.</div>
+    </div>
+
+    <!-- Card 5: Bottom Left -->
+    <div class="mig-card mc5 rv d4">
+      <div class="mig-ico" style="background:rgba(219,39,119,.1);color:#db2777">🧪</div>
+      <div class="mig-step">Step 05</div>
+      <div class="mig-title">Test &amp; Verify Everything</div>
+      <div class="mig-desc">Systematic QA across all imported data, workflows, integrations, and user access — validating record counts, field accuracy, and automation triggers before going live.</div>
+    </div>
+
+    <!-- Card 6: Bottom Right -->
+    <div class="mig-card mc6 rv d5">
+      <div class="mig-ico" style="background:rgba(217,119,6,.1);color:#d97706">📈</div>
+      <div class="mig-step">Step 06</div>
+      <div class="mig-title">Go Live &amp; Optimise</div>
+      <div class="mig-desc">Your team goes live with full day-one support — we monitor performance, resolve issues immediately, and begin optimising workflows for maximum early ROI from week one.</div>
+    </div>
+
+  </div>
 </section>
 
 <section style="background:#fff">
