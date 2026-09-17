@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png"/>
 <title>Pricing — Apex360 Digital</title>
 <meta name="description" content="Simple, transparent pricing across Digital Marketing, HubSpot, Monday.com, Web Development, Marketing Automation, and AI Strategy — compare packages and find your fit."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -53,7 +58,7 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
 .btn-outline{display:inline-flex;align-items:center;gap:.4rem;background:transparent;color:#fff;padding:.85rem 2rem;border-radius:var(--pill);border:2px solid rgba(255,255,255,.25);font-family:'Figtree',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;transition:border-color .2s,transform .15s}
 .btn-outline:hover{border-color:#fff;transform:translateY(-2px)}
-.-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1080px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1080px;margin:0 auto}
 @keyframes floatPanel{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .hero-visual{position:relative;width:320px;flex-shrink:0}
 .plan-mock{background:#fff;border-radius:18px;border:1px solid var(--border);box-shadow:0 25px 60px rgba(15,23,42,.16);padding:1.35rem;animation:floatPanel 5s ease-in-out infinite}
@@ -237,6 +242,20 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .compare-table th,.compare-table td{padding:.85rem 1rem;font-size:.78rem}
 }
 @media(max-width:480px){.results-inner{grid-template-columns:1fr}}
+/* ── Marquee ── */
+.marquee-wrap{background:var(--surface);padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+/* ── Illustrated sections ── */
+.figure{position:relative}
+.figure svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 22px 55px rgba(15,23,42,.13);border:1px solid var(--border);overflow:hidden}
+.figure figcaption{text-align:center;font-size:.76rem;color:var(--muted);margin-top:.9rem;font-style:italic}
 </style>
 </head>
 <body>
@@ -301,6 +320,21 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </div>
 
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>No Setup Fees</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Cancel Anytime</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Save 20% Billed Annually</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Dedicated Account Manager</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Month-to-Month Contracts</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>No Setup Fees</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Cancel Anytime</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Save 20% Billed Annually</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Dedicated Account Manager</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Month-to-Month Contracts</div>
+  </div>
+</div>
+
 <section id="services" style="background:#fff">
   <div class="sec-hdr">
     <div class="tag rv">Choose Your Package</div>
@@ -319,7 +353,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <div class="price-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Up to 3 active workflows</div>
         <div class="price-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Email support, 2 business day SLA</div>
       </div>
-      <a href="index.html#contact" class="btn-ghost" style="text-align:center;justify-content:center">Get Started →</a>
+      <a href="contact.html" class="btn-ghost" style="text-align:center;justify-content:center">Get Started →</a>
     </div>
     <div class="price-card popular rv d1">
       <div class="price-pop-badge">Most Popular</div>
@@ -334,7 +368,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <div class="price-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Priority support, same business day SLA</div>
         <div class="price-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Quarterly strategy &amp; roadmap reviews</div>
       </div>
-      <a href="index.html#contact" class="btn-orange" style="text-align:center;justify-content:center">Get Started →</a>
+      <a href="contact.html" class="btn-orange" style="text-align:center;justify-content:center">Get Started →</a>
     </div>
     <div class="price-card rv d2">
       <div class="price-name">Enterprise</div>
@@ -348,9 +382,50 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <div class="price-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>24/7 priority support with custom SLAs</div>
         <div class="price-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>AI governance &amp; compliance included</div>
       </div>
-      <a href="index.html#contact" class="btn-ghost" style="text-align:center;justify-content:center">Talk to Sales →</a>
+      <a href="contact.html" class="btn-ghost" style="text-align:center;justify-content:center">Talk to Sales →</a>
     </div>
   </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="sec-hdr">
+    <div class="tag rv">Return on Investment</div>
+    <h2 class="sh rv d1">What Clients Typically <span class="hl">Get Back</span></h2>
+    <p class="ss rv d2">Every package is priced to pay for itself well before the invoice is due — here's the average return across active accounts.</p>
+  </div>
+  <figure class="figure rv d1" style="max-width:900px;margin:0 auto">
+    <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing monthly package cost against average monthly value generated for Starter, Growth and Enterprise packages">
+      <rect width="900" height="260" rx="16" fill="#ffffff"/>
+      <line x1="60" y1="210" x2="840" y2="210" stroke="#eee" stroke-width="1.5"/>
+      <line x1="60" y1="160" x2="840" y2="160" stroke="#f4f4f4" stroke-width="1"/>
+      <line x1="60" y1="110" x2="840" y2="110" stroke="#f4f4f4" stroke-width="1"/>
+      <line x1="60" y1="60" x2="840" y2="60" stroke="#f4f4f4" stroke-width="1"/>
+
+      <text x="180" y="34" font-family="Plus Jakarta Sans,sans-serif" font-size="12" font-weight="800" fill="#111" text-anchor="middle">Starter</text>
+      <rect x="140" y="176" width="34" height="34" rx="4" fill="#e2e2e2"/>
+      <text x="157" y="197" font-family="Figtree,sans-serif" font-size="8" fill="#777" text-anchor="middle">Cost</text>
+      <rect x="186" y="120" width="34" height="90" rx="4" fill="#FFB08F"/>
+      <text x="203" y="112" font-family="Figtree,sans-serif" font-size="9" font-weight="700" fill="#FF5C1A" text-anchor="middle">3.1×</text>
+      <text x="180" y="230" font-family="Figtree,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">$1,499/mo → ~$4,650 value</text>
+
+      <text x="450" y="34" font-family="Plus Jakarta Sans,sans-serif" font-size="12" font-weight="800" fill="#111" text-anchor="middle">Growth</text>
+      <rect x="400" y="166" width="34" height="44" rx="4" fill="#e2e2e2"/>
+      <text x="417" y="187" font-family="Figtree,sans-serif" font-size="8" fill="#777" text-anchor="middle">Cost</text>
+      <rect x="446" y="72" width="34" height="138" rx="4" fill="#FF5C1A"/>
+      <text x="463" y="64" font-family="Figtree,sans-serif" font-size="9" font-weight="700" fill="#FF5C1A" text-anchor="middle">4.9×</text>
+      <text x="450" y="230" font-family="Figtree,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">$3,499/mo → ~$17,200 value</text>
+
+      <text x="720" y="34" font-family="Plus Jakarta Sans,sans-serif" font-size="12" font-weight="800" fill="#111" text-anchor="middle">Enterprise</text>
+      <rect x="670" y="150" width="34" height="60" rx="4" fill="#e2e2e2"/>
+      <text x="687" y="171" font-family="Figtree,sans-serif" font-size="8" fill="#777" text-anchor="middle">Cost</text>
+      <rect x="716" y="46" width="34" height="164" rx="4" fill="#c2410c"/>
+      <text x="733" y="38" font-family="Figtree,sans-serif" font-size="9" font-weight="700" fill="#c2410c" text-anchor="middle">5.8×</text>
+      <text x="720" y="230" font-family="Figtree,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Custom cost, scaled value</text>
+
+      <rect x="60" y="242" width="780" height="0" fill="none"/>
+      <text x="450" y="252" font-family="Figtree,sans-serif" font-size="8.5" fill="#999" text-anchor="middle">Illustrative average based on attributed pipeline, leads and cost savings across active accounts.</text>
+    </svg>
+  </figure>
 </section>
 
 <section id="compare" style="background:#EAF2FF">
@@ -409,6 +484,58 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
       </tbody>
     </table>
   </div>
+</section>
+
+<section style="background:#fff">
+  <div class="sec-hdr">
+    <div class="tag rv">How Billing Works</div>
+    <h2 class="sh rv d1">No Surprises <span class="hl">on Your Invoice</span></h2>
+    <p class="ss rv d2">One flat monthly rate for your package, billed the same day every month — nothing added without your sign-off first.</p>
+  </div>
+  <figure class="figure rv d1" style="max-width:900px;margin:0 auto">
+    <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing the monthly billing cycle: package selected, invoice sent on the same date each month, then service delivered">
+      <rect width="900" height="220" rx="16" fill="#ffffff"/>
+
+      <rect x="34" y="46" width="192" height="132" rx="13" fill="#FAFAFA" stroke="#ececec"/>
+      <circle cx="130" cy="86" r="18" fill="#FFF0EB"/>
+      <text x="130" y="92" font-family="Figtree,sans-serif" font-size="16" text-anchor="middle">📦</text>
+      <text x="130" y="122" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="800" fill="#111" text-anchor="middle">Pick a Package</text>
+      <text x="130" y="140" font-family="Figtree,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Starter, Growth or</text>
+      <text x="130" y="152" font-family="Figtree,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Enterprise</text>
+
+      <path d="M240 112 L282 112" stroke="#d8d8d8" stroke-width="2" stroke-dasharray="5 5"/>
+      <path d="M276 106 L286 112 L276 118 Z" fill="#d8d8d8"/>
+
+      <rect x="296" y="46" width="192" height="132" rx="13" fill="#FFF7F2" stroke="#ffd9c9"/>
+      <circle cx="392" cy="86" r="18" fill="#ffffff"/>
+      <text x="392" y="92" font-family="Figtree,sans-serif" font-size="16" text-anchor="middle">🧾</text>
+      <text x="392" y="122" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="800" fill="#111" text-anchor="middle">Invoice Sent</text>
+      <text x="392" y="140" font-family="Figtree,sans-serif" font-size="8.5" fill="#a8654a" text-anchor="middle">Same date every month,</text>
+      <text x="392" y="152" font-family="Figtree,sans-serif" font-size="8.5" fill="#a8654a" text-anchor="middle">flat rate, no surprises</text>
+
+      <path d="M502 112 L544 112" stroke="#d8d8d8" stroke-width="2" stroke-dasharray="5 5"/>
+      <path d="M538 106 L548 112 L538 118 Z" fill="#d8d8d8"/>
+
+      <rect x="558" y="46" width="192" height="132" rx="13" fill="#FAFAFA" stroke="#ececec"/>
+      <circle cx="654" cy="86" r="18" fill="#E8F8F3"/>
+      <text x="654" y="92" font-family="Figtree,sans-serif" font-size="16" text-anchor="middle">⚙️</text>
+      <text x="654" y="122" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="800" fill="#111" text-anchor="middle">Work Delivered</text>
+      <text x="654" y="140" font-family="Figtree,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">Services run continuously —</text>
+      <text x="654" y="152" font-family="Figtree,sans-serif" font-size="8.5" fill="#888" text-anchor="middle">nothing paused for billing</text>
+
+      <path d="M764 112 L806 112" stroke="#0f9e72" stroke-width="2"/>
+      <path d="M800 106 L810 112 L800 118 Z" fill="#0f9e72"/>
+
+      <rect x="800" y="46" width="66" height="132" rx="13" fill="#0a0a0a"/>
+      <circle cx="833" cy="90" r="16" fill="#12251e"/>
+      <text x="833" y="95" font-family="Figtree,sans-serif" font-size="14" text-anchor="middle">🔁</text>
+      <text x="833" y="126" font-family="Figtree,sans-serif" font-size="8" font-weight="700" fill="#34d399" text-anchor="middle">Renews</text>
+      <text x="833" y="138" font-family="Figtree,sans-serif" font-size="8" font-weight="700" fill="#34d399" text-anchor="middle">monthly</text>
+
+      <rect x="34" y="192" width="832" height="0" fill="none"/>
+      <text x="450" y="204" font-family="Figtree,sans-serif" font-size="8.5" fill="#999" text-anchor="middle">Upgrade, downgrade or cancel anytime — changes apply from your next billing date.</text>
+    </svg>
+  </figure>
 </section>
 
 <section style="background:#fff">
