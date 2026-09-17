@@ -169,12 +169,14 @@ section{padding:5.5rem 5rem}
 .who-lbl{font-size:.82rem;font-weight:500}
 /* ── INDUSTRIES ── */
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
-.ind-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.75rem;transition:transform .25s,box-shadow .25s;cursor:default}
+.ind-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;cursor:default}
 .ind-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.09)}
-.ind-icon{width:68px;height:68px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;flex-shrink:0;overflow:hidden}
-.ind-icon img{width:100%;height:100%;object-fit:cover}
-.ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.3}
-.ind-desc{font-size:.78rem;color:var(--orange);line-height:1.6;text-align:center}
+.ind-icon{width:100%;height:150px;overflow:hidden;flex-shrink:0}
+.ind-icon img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.ind-card:hover .ind-icon img{transform:scale(1.07)}
+.ind-body{padding:1.5rem 1.35rem 1.75rem}
+.ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:.5rem}
+.ind-desc{font-size:.78rem;color:var(--orange);line-height:1.6;text-align:left}
 
 /* ── PRICING ── */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start;max-width:1100px;margin:0 auto}
@@ -1060,8 +1062,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="SaaS and technology team collaborating"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">SaaS &amp; Technology</div>
       <p class="ind-desc">Product-led growth, trial signups, demo bookings, and MRR expansion campaigns</p>
+    </div>
     </div>
 
     <!-- E-Commerce -->
@@ -1069,8 +1073,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="E-commerce packaging box"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">E-Commerce</div>
       <p class="ind-desc">ROAS-focused paid ads, abandoned cart recovery, and lifecycle email automation</p>
+    </div>
     </div>
 
     <!-- Healthcare -->
@@ -1078,8 +1084,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1758691461957-474a7686e388?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Doctor consulting with patient"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">Healthcare</div>
       <p class="ind-desc">Compliant patient acquisition, reputation management, and telehealth growth</p>
+    </div>
     </div>
 
     <!-- Real Estate -->
@@ -1087,8 +1095,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Modern house exterior"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">Real Estate</div>
       <p class="ind-desc">Geo-targeted lead gen, property marketing, and developer campaign management</p>
+    </div>
     </div>
 
     <!-- Finance & Fintech -->
@@ -1096,8 +1106,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1645226880663-81561dcab0ae?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Finance app stock chart on phone"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">Finance &amp; Fintech</div>
       <p class="ind-desc">Compliant digital marketing, lead nurturing, and trust-building content strategy</p>
+    </div>
     </div>
 
     <!-- EdTech & Education -->
@@ -1105,8 +1117,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1758270705290-62b6294dd044?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Students gathered around a laptop"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">EdTech &amp; Education</div>
       <p class="ind-desc">Student acquisition, course promotion, and retention-focused email campaigns</p>
+    </div>
     </div>
 
     <!-- Manufacturing & B2B -->
@@ -1114,8 +1128,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Interior of large industrial factory"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">Manufacturing &amp; B2B</div>
       <p class="ind-desc">LinkedIn ABM campaigns, thought leadership, and long sales cycle lead nurturing</p>
+    </div>
     </div>
 
     <!-- Hospitality & F&B -->
@@ -1123,8 +1139,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
       <div class="ind-icon">
         <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Modern restaurant interior with booths"/>
       </div>
+      <div class="ind-body">
       <div class="ind-title">Hospitality &amp; F&amp;B</div>
       <p class="ind-desc">Local SEO, social media management, and seasonal campaign execution</p>
+    </div>
     </div>
 
   </div>
