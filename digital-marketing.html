@@ -130,7 +130,14 @@ section{padding:5rem 5rem}
 .why-card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.3}
 .why-card-desc{font-size:.84rem;color:var(--muted);line-height:1.7}
 .industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
-.industry-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem 1.25rem;text-align:center;transition:transform .25s,box-shadow .25s}
+.industry-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.industry-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.09)}
+.industry-banner{width:100%;height:130px;overflow:hidden}
+.industry-banner img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.industry-card:hover .industry-banner img{transform:scale(1.07)}
+.industry-body{padding:1.4rem 1.25rem 1.6rem;text-align:left}
+.industry-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:.5rem;color:var(--ink)}
+.industry-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
 .industry-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.06)}
 .industry-ico{font-size:1.8rem;margin-bottom:.75rem}
 .industry-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:.5rem;color:var(--ink)}
@@ -290,87 +297,37 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem}
   .about-cta-btns{flex-direction:column;align-items:center}
 }
 
-/* ── NAV FIXES ── */
-nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 4rem;height:76px;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 1px 0 rgba(0,0,0,.06)}
-.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;gap:0}
-.logo svg{height:44px;width:auto}
-.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
-.nav-links>li{position:relative}
-.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:.28rem;padding:.45rem .82rem;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:500;color:#111;text-decoration:none;background:none;border:none;cursor:pointer;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s;line-height:1}
-.nav-links>li>a:hover,.nav-links>li>button:hover{background:#FFF0EB;color:#FF5C1A}
-.nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{background:#FF5C1A;color:#fff!important;padding:.48rem 1.3rem;border-radius:100px;font-weight:700;font-size:.86rem}
-.nav-links>li>a.nav-cta:hover,.nav-links>li>a.nav-cta-purple:hover{background:#e04a0e;color:#fff!important}
-.nav-chevron{width:13px;height:13px;flex-shrink:0;transition:transform .2s;opacity:.45;pointer-events:none}
-.nav-item-drop.open .nav-chevron{transform:rotate(180deg);opacity:1}
-.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.13);padding:.5rem;min-width:220px;max-width:260px;width:max-content;opacity:0;pointer-events:none;transition:opacity .18s,transform .2s cubic-bezier(.22,1,.36,1);z-index:9999}
-.nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:#fff;border-top:none}
-.nav-item-drop.open>.nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.drop-item{display:flex;align-items:center;gap:.65rem;padding:.58rem .75rem;border-radius:10px;text-decoration:none;color:#111;font-size:.83rem;font-weight:500;transition:background .14s;white-space:nowrap}
-.drop-item:hover,.drop-item.active{background:#f7f7f5;color:#FF5C1A}
-.drop-item.active{font-weight:700;background:#FFF0EB}
-.drop-ico{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.drop-title{font-size:.83rem;font-weight:600;color:inherit}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem;flex-shrink:0;z-index:10}
-.hamburger span{display:block;width:22px;height:2px;background:#111;border-radius:2px;transition:transform .25s,opacity .25s}
+.trust-bar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;max-width:1000px;margin:0 auto;row-gap:1.75rem}
+.trust-item{display:flex;align-items:center;gap:.65rem;padding:0 1.85rem;position:relative}
+.trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:22px;background:rgba(0,0,0,.1)}
+.trust-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.trust-label{font-size:.87rem;font-weight:600;color:var(--ink);white-space:nowrap}
+@media(max-width:768px){.trust-item{padding:0 1rem}.trust-item::after{display:none}}
 
-/* MOBILE NAV */
-@media(max-width:1024px){nav{padding:0 2rem}}
-@media(max-width:768px){
-  nav{padding:0 1.25rem;height:64px}
-  .hamburger{display:flex}
-  .nav-links{
-    display:none;position:fixed;top:64px;left:0;right:0;bottom:0;
-    background:#fff;flex-direction:column;align-items:stretch;
-    padding:1rem 1.25rem 2rem;gap:.2rem;
-    overflow-y:auto;z-index:9998;
-    box-shadow:0 8px 32px rgba(0,0,0,.12);
-    border-top:1px solid rgba(0,0,0,.07)
-  }
-  .nav-links.open{display:flex}
-  .nav-links>li>a,.nav-links>li>button{
-    padding:.75rem 1rem;border-radius:10px;
-    width:100%;justify-content:space-between;font-size:.92rem
-  }
-  .nav-dropdown{
-    position:static;transform:none!important;opacity:1;pointer-events:auto;
-    box-shadow:none;border:none;background:#f7f7f5;border-radius:12px;
-    padding:.35rem .5rem .35rem 1rem;margin-top:.25rem;
-    min-width:0;max-width:none;width:auto;display:none
-  }
-  .nav-dropdown::before{display:none}
-  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column;gap:.05rem}
-  .drop-item{padding:.6rem .75rem;font-size:.88rem}
-  .nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{
-    margin-top:.5rem;text-align:center;justify-content:center;
-    padding:.75rem 1rem;border-radius:10px
-  }
-  .logo svg{height:38px}
-}
-@media(max-width:480px){
-  nav{padding:0 1rem;height:60px}
-  .nav-links{top:60px}
-  .logo svg{height:34px}
-}
-
+.marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,#fff,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="44" style="display:block;flex-shrink:0" aria-hidden="true">
-    <defs><linearGradient id="aG4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
-    <!-- Icon square -->
-    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aG4)"/>
+  <a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="44" style="display:block;flex-shrink:0" aria-hidden="true">
+    <defs><linearGradient id="aG9" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aG9)"/>
     <circle cx="20" cy="22" r="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="70 26" transform="rotate(128 20 22)" opacity="0.55"/>
     <circle cx="30" cy="12" r="2" fill="#fff" opacity="0.9"/>
     <path d="M20 12 L29 32 L24 32 L20 23 L16 32 L11 32 Z" fill="#fff"/>
-    <!-- Wordmark -->
     <text x="50" y="18" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:-.3px" fill="#111">Apex<tspan fill="#FF5C1A">360</tspan></text>
     <text x="50" y="36" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.02em" fill="#888">Digital Agency</text>
-  </svg>
-</a>
+  </svg></a>
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -388,9 +345,9 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
     </li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="nav-cta">Get Started →</a></li>
+    <li><a href="index.html#resources">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get Started →</a></li>
   </ul>
 </nav>
 
@@ -409,7 +366,7 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
       <h1 class="ph-h1">Marketing That Compounds, <span>Not Just Campaigns That Spike</span></h1>
       <p class="ph-sub">We build integrated SEO, paid, social, email and content systems that get smarter every month — powered by AI where it counts, run by strategists who own the outcome.</p>
       <div class="ph-btns">
-        <a href="contact.html" class="btn-orange">Book a Free Audit →</a>
+        <a href="index.html#contact" class="btn-orange">Book a Free Audit →</a>
         <a href="#capabilities" class="btn-white-solid">Explore Our Services</a>
       </div>
     </div>
@@ -463,6 +420,13 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
         <div><div class="ph-float-num">30 Days</div><div class="ph-float-lbl">First Results</div></div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>Google & Meta Certified</div><div class="marquee-item"><span class="marquee-dot"></span>Data-Driven Campaigns</div><div class="marquee-item"><span class="marquee-dot"></span>Transparent Reporting</div><div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div><div class="marquee-item"><span class="marquee-dot"></span>500+ Clients Served</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Google & Meta Certified</div><div class="marquee-item"><span class="marquee-dot"></span>Data-Driven Campaigns</div><div class="marquee-item"><span class="marquee-dot"></span>Transparent Reporting</div><div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div><div class="marquee-item"><span class="marquee-dot"></span>500+ Clients Served</div>
   </div>
 </div>
 
@@ -731,44 +695,60 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
   </div>
   <div class="industry-grid">
     <div class="industry-card rv d1">
-      <div class="industry-ico">💻</div>
-      <div class="industry-title">SaaS &amp; Technology</div>
-      <div class="industry-desc">Free-trial nurture sequences, demo booking flows, and renewal campaigns that reduce churn.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="SaaS and technology team collaborating"/></div>
+      <div class="industry-body">
+        <div class="industry-title">SaaS &amp; Technology</div>
+        <div class="industry-desc">Free-trial nurture sequences, demo booking flows, and renewal campaigns that reduce churn.</div>
+      </div>
     </div>
     <div class="industry-card rv d2">
-      <div class="industry-ico">🛍️</div>
-      <div class="industry-title">E-Commerce</div>
-      <div class="industry-desc">Cart recovery flows, post-purchase upsells, and paid social campaigns built around your margins.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="E-commerce packaging box"/></div>
+      <div class="industry-body">
+        <div class="industry-title">E-Commerce</div>
+        <div class="industry-desc">Cart recovery flows, post-purchase upsells, and paid social campaigns built around your margins.</div>
+      </div>
     </div>
     <div class="industry-card rv d3">
-      <div class="industry-ico">🏥</div>
-      <div class="industry-title">Healthcare</div>
-      <div class="industry-desc">Compliant patient communication, appointment reminders, and local search visibility for clinics.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1758691461957-474a7686e388?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Doctor consulting with patient"/></div>
+      <div class="industry-body">
+        <div class="industry-title">Healthcare</div>
+        <div class="industry-desc">Compliant patient communication, appointment reminders, and local search visibility for clinics.</div>
+      </div>
     </div>
     <div class="industry-card rv d1">
-      <div class="industry-ico">🏡</div>
-      <div class="industry-title">Real Estate</div>
-      <div class="industry-desc">Listing-based lead capture, agent-routing automations, and nurture sequences for buyers and sellers.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Modern house exterior"/></div>
+      <div class="industry-body">
+        <div class="industry-title">Real Estate</div>
+        <div class="industry-desc">Listing-based lead capture, agent-routing automations, and nurture sequences for buyers and sellers.</div>
+      </div>
     </div>
     <div class="industry-card rv d2">
-      <div class="industry-ico">💰</div>
-      <div class="industry-title">Finance &amp; Fintech</div>
-      <div class="industry-desc">Compliance-conscious lead nurturing and onboarding sequences built for regulated industries.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1645226880663-81561dcab0ae?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Finance app stock chart on phone"/></div>
+      <div class="industry-body">
+        <div class="industry-title">Finance &amp; Fintech</div>
+        <div class="industry-desc">Compliance-conscious lead nurturing and onboarding sequences built for regulated industries.</div>
+      </div>
     </div>
     <div class="industry-card rv d3">
-      <div class="industry-ico">🎓</div>
-      <div class="industry-title">Education</div>
-      <div class="industry-desc">Enrolment funnels, inquiry follow-up, and alumni engagement campaigns for schools and institutions.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1758270705290-62b6294dd044?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Students gathered around a laptop"/></div>
+      <div class="industry-body">
+        <div class="industry-title">Education</div>
+        <div class="industry-desc">Enrolment funnels, inquiry follow-up, and alumni engagement campaigns for schools and institutions.</div>
+      </div>
     </div>
     <div class="industry-card rv d1">
-      <div class="industry-ico">🏭</div>
-      <div class="industry-title">B2B Manufacturing</div>
-      <div class="industry-desc">Long sales-cycle nurture tracks, distributor portals, and quote-request automation.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Interior of large industrial factory"/></div>
+      <div class="industry-body">
+        <div class="industry-title">B2B Manufacturing</div>
+        <div class="industry-desc">Long sales-cycle nurture tracks, distributor portals, and quote-request automation.</div>
+      </div>
     </div>
     <div class="industry-card rv d2">
-      <div class="industry-ico">⚖️</div>
-      <div class="industry-title">Professional Services</div>
-      <div class="industry-desc">Proposal follow-up, client onboarding, and retainer renewal sequences for firms and consultancies.</div>
+      <div class="industry-banner"><img src="https://images.unsplash.com/photo-1757405944970-dfca42373629?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Business meeting with a presenter and colleagues"/></div>
+      <div class="industry-body">
+        <div class="industry-title">Professional Services</div>
+        <div class="industry-desc">Proposal follow-up, client onboarding, and retainer renewal sequences for firms and consultancies.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1016,7 +996,7 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
     <h2>Ready to Turn Traffic Into <span>Revenue?</span></h2>
     <p>Book a free 30-minute strategy call. We'll audit your current marketing, identify quick wins, and show you exactly how we'd grow your pipeline — no commitment required.</p>
     <div class="about-cta-btns">
-      <a href="contact.html" class="btn-orange">Book Free Strategy Call →</a>
+      <a href="index.html#contact" class="btn-orange">Book Free Strategy Call →</a>
       <a href="pricing.html" class="btn-white-outline">View Pricing</a>
     </div>
   </div>
@@ -1027,16 +1007,14 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
+      <a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
     <defs><linearGradient id="aGf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
     <rect x="98" y="0" width="64" height="64" rx="17.5" fill="url(#aGf)"/>
     <circle cx="130" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="125 42" transform="rotate(128 130 32)" opacity="0.55"/>
     <circle cx="149.3" cy="15.8" r="2.7" fill="#fff" opacity="0.9"/>
     <path d="M130 16.5 L145 46.5 L137 46.5 L130 32 L123 46.5 L115 46.5 Z" fill="#fff"/>
     <text x="130" y="100" text-anchor="middle" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:21px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan><tspan fill="#fff"> Digital</tspan></text>
-  </svg>
-</a>
+  </svg></a>
       <p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p>
     </div>
     <div class="footer-col">
@@ -1056,7 +1034,7 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
         <li><a href="about.html">Who We Are</a></li>
         <li><a href="index.html#cases">Case Studies</a></li>
         <li><a href="index.html#resources">Resources</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#resources">Blog</a></li>
         <li><a href="#">Careers</a></li>
       </ul>
     </div>
@@ -1066,7 +1044,7 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
         <li><a href="mailto:hello@apex360digital.com">hello@apex360digital.com</a></li>
         <li><a href="tel:+919876543210">+91 98765 43210</a></li>
         <li><a href="#">Chandigarh, India</a></li>
-        <li><a href="contact.html">Book a Call</a></li>
+        <li><a href="index.html#contact">Book a Call</a></li>
       </ul>
     </div>
   </div>
@@ -1085,110 +1063,84 @@ nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-c
   </div>
 </footer>
 
-
-
 <script>
-
 (function(){
-  /* ── nav scroll shadow ── */
-  var nav=document.getElementById('main-nav')||document.getElementById('mn');
-  if(nav){
-    window.addEventListener('scroll',function(){
-      nav.style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.1)':'0 1px 0 rgba(0,0,0,.06)';
-    },{passive:true});
-  }
+'use strict';
+/* Nav shrink on scroll */
+var nav=document.getElementById('main-nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
 
-  /* ── hamburger ── */
-  var hb=document.getElementById('hamburger')||document.getElementById('hb');
-  var nl=document.getElementById('nav-links')||document.getElementById('nl');
-  if(hb&&nl){
-    hb.addEventListener('click',function(e){
-      e.stopPropagation();
-      var open=nl.classList.toggle('open');
-      hb.setAttribute('aria-expanded',open);
-      var bars=hb.querySelectorAll('span');
-      if(open){
-        bars[0].style.transform='translateY(7px) rotate(45deg)';
-        bars[1].style.opacity='0';
-        bars[2].style.transform='translateY(-7px) rotate(-45deg)';
-        document.body.style.overflow='hidden';
-      } else {
-        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
-        document.body.style.overflow='';
-      }
-    });
-  }
+/* Hamburger */
+var hbtn=document.getElementById('hamburger');
+var nl=document.getElementById('nav-links');
+hbtn.addEventListener('click',function(){
+  var o=nl.classList.toggle('open');
+  hbtn.setAttribute('aria-expanded',o);
+  var b=hbtn.querySelectorAll('span');
+  if(o){b[0].style.transform='translateY(7px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-7px) rotate(-45deg)';}
+  else{b.forEach(function(x){x.style.transform='';x.style.opacity='';});}
+});
 
-  /* ── services dropdown ── */
-  var dropEl=document.getElementById('drop-services')||document.getElementById('dsvcs');
-  if(dropEl){
-    var dbtn=dropEl.querySelector('button');
-    var ddMenu=dropEl.querySelector('.nav-dropdown');
-    var timer;
-    function openDrop(){clearTimeout(timer);dropEl.classList.add('open');if(dbtn)dbtn.setAttribute('aria-expanded','true');}
-    function closeDrop(){timer=setTimeout(function(){dropEl.classList.remove('open');if(dbtn)dbtn.setAttribute('aria-expanded','false');},120);}
-    /* desktop hover */
-    dropEl.addEventListener('mouseenter',openDrop);
-    dropEl.addEventListener('mouseleave',closeDrop);
-    if(ddMenu){ddMenu.addEventListener('mouseenter',openDrop);ddMenu.addEventListener('mouseleave',closeDrop);}
-    /* mobile / click toggle */
-    if(dbtn){
-      dbtn.addEventListener('click',function(e){
-        e.stopPropagation();
-        dropEl.classList.contains('open')?closeDrop():openDrop();
-      });
-    }
-    /* close when link clicked */
-    if(ddMenu){
-      ddMenu.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click',function(){
-          dropEl.classList.remove('open');
-          if(nl)nl.classList.remove('open');
-          if(hb){
-            var bars=hb.querySelectorAll('span');
-            bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
-            hb.setAttribute('aria-expanded','false');
-          }
-          document.body.style.overflow='';
-        });
-      });
-    }
-  }
+/* Services dropdown */
+var drop=document.getElementById('dsvcs');
+if(drop){
+  var dbtn=drop.querySelector('button'),dp=drop.querySelector('.nav-dropdown'),dt;
+  function od(){clearTimeout(dt);drop.classList.add('open');dbtn.setAttribute('aria-expanded','true');}
+  function cd(){dt=setTimeout(function(){drop.classList.remove('open');dbtn.setAttribute('aria-expanded','false');},100);}
+  drop.addEventListener('mouseenter',od);drop.addEventListener('mouseleave',cd);
+  if(dp){dp.addEventListener('mouseenter',od);dp.addEventListener('mouseleave',cd);}
+  dbtn.addEventListener('click',function(e){e.stopPropagation();drop.classList.contains('open')?cd():od();});
+  if(dp){dp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drop.classList.remove('open');nl.classList.remove('open');});});}
+}
+document.addEventListener('click',function(){if(drop)drop.classList.remove('open');});
 
-  /* ── close on outside click ── */
-  document.addEventListener('click',function(){
-    if(dropEl)dropEl.classList.remove('open');
-    if(nl&&window.innerWidth<=768){
-      nl.classList.remove('open');
-      document.body.style.overflow='';
-      if(hb){
-        var bars=hb.querySelectorAll('span');
-        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
-        hb.setAttribute('aria-expanded','false');
-      }
-    }
+/* Scroll reveal */
+var rvEls=document.querySelectorAll('.rv');
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
   });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+rvEls.forEach(function(el){io.observe(el);});
 
-  /* ── scroll reveal ── */
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
-    });
-  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
-  document.querySelectorAll('.rv,.rv-r,.rv-l,.rv-scale').forEach(function(el){io.observe(el);});
-
-  /* ── FAQ accordion ── */
-  document.querySelectorAll('.faq-q,.faq-question').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var item=btn.closest('.faq-item,.faq-card');
-      if(!item)return;
-      var isOpen=item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open,.faq-card.open').forEach(function(i){i.classList.remove('open');});
-      if(!isOpen)item.classList.add('open');
-    });
+/* Count-up for stat numbers */
+function countUp(el){
+  var raw=el.getAttribute('data-count');
+  if(!raw)return;
+  var target=parseFloat(raw);
+  var suffix=el.getAttribute('data-suffix')||'';
+  var isFloat=raw.includes('.');
+  var dur=1600;
+  var start=performance.now();
+  (function tick(now){
+    var p=Math.min((now-start)/dur,1);
+    var e=1-Math.pow(1-p,3);
+    el.textContent=(isFloat?(e*target).toFixed(1):Math.round(e*target))+suffix;
+    if(p<1)requestAnimationFrame(tick);
+  })(start);
+}
+var statObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){countUp(e.target);statObs.unobserve(e.target);}
   });
+},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(function(el){statObs.observe(el);});
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.closest('.faq-item');
+    var ans=item.querySelector('.faq-a');
+    var isOpen=this.getAttribute('aria-expanded')==='true';
+    document.querySelectorAll('.faq-q').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
+    });
+    if(!isOpen){this.setAttribute('aria-expanded','true');ans.classList.add('open');}
+  });
+});
+
 })();
-
 </script>
 </body>
 </html>

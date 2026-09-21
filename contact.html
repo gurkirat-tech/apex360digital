@@ -246,10 +246,28 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .contact-info-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){.results-inner{grid-template-columns:1fr}}
+
+.marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,#fff,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
 </style>
 </head>
 <body>
-<nav id="mn"><a class="logo" href="index.html">Apex<span>360</span> Digital</a>
+<nav id="mn"><a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="44" style="display:block;flex-shrink:0" aria-hidden="true">
+    <defs><linearGradient id="aG9" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aG9)"/>
+    <circle cx="20" cy="22" r="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="70 26" transform="rotate(128 20 22)" opacity="0.55"/>
+    <circle cx="30" cy="12" r="2" fill="#fff" opacity="0.9"/>
+    <path d="M20 12 L29 32 L24 32 L20 23 L16 32 L11 32 Z" fill="#fff"/>
+    <text x="50" y="18" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:-.3px" fill="#111">Apex<tspan fill="#FF5C1A">360</tspan></text>
+    <text x="50" y="36" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.02em" fill="#888">Digital Agency</text>
+  </svg></a>
   <button class="hamburger" id="hb" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="nl">
     <li class="nav-item-drop" id="dsvcs">
@@ -323,6 +341,13 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     <div class="contact-info-card rv d3"><div class="cic-ico" style="background:var(--purple-bg);color:var(--purple)">📅</div><div class="cic-title">Book a Call</div><a href="#contact-form" class="cic-detail">Schedule a Strategy Call</a><div class="cic-sub">30-minute free consultation</div></div>
   </div>
 </section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-dot"></span>Replies Within 2 Hours</div><div class="marquee-item"><span class="marquee-dot"></span>Free 30-Min Strategy Call</div><div class="marquee-item"><span class="marquee-dot"></span>No Obligation</div><div class="marquee-item"><span class="marquee-dot"></span>500+ Clients Served</div><div class="marquee-item"><span class="marquee-dot"></span>4.9★ Average Rating</div>
+    <div class="marquee-item"><span class="marquee-dot"></span>Replies Within 2 Hours</div><div class="marquee-item"><span class="marquee-dot"></span>Free 30-Min Strategy Call</div><div class="marquee-item"><span class="marquee-dot"></span>No Obligation</div><div class="marquee-item"><span class="marquee-dot"></span>500+ Clients Served</div><div class="marquee-item"><span class="marquee-dot"></span>4.9★ Average Rating</div>
+  </div>
+</div>
 
 <section id="contact-form" style="background:#EAF2FF">
   <div class="sec-hdr">
@@ -404,7 +429,14 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 </div>
 
 <footer><div class="footer-top">
-  <div class="footer-brand"><a class="logo" href="index.html" style="color:#fff">Apex<span>360</span> Digital</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
+  <div class="footer-brand"><a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
+    <defs><linearGradient id="aGf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <rect x="98" y="0" width="64" height="64" rx="17.5" fill="url(#aGf)"/>
+    <circle cx="130" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="125 42" transform="rotate(128 130 32)" opacity="0.55"/>
+    <circle cx="149.3" cy="15.8" r="2.7" fill="#fff" opacity="0.9"/>
+    <path d="M130 16.5 L145 46.5 L137 46.5 L130 32 L123 46.5 L115 46.5 Z" fill="#fff"/>
+    <text x="130" y="100" text-anchor="middle" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:21px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan><tspan fill="#fff"> Digital</tspan></text>
+  </svg></a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
   <div class="footer-col"><div class="fc-title">Services</div><ul>
     <li><a href="digital-marketing.html">Digital Marketing</a></li>
     <li><a href="hubspot.html">HubSpot Solutions</a></li>
