@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
-<link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png"/>
-<link rel="shortcut icon" href="favicon.ico"/>
-<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png"/>
-<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAANAQAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAANRJREFUeJy9kzELQVEYhp9zEcrChgxSYrFIXe5iMxiESTH6GX6HsvIPJD9AkWIkwzXeu1qU8RiuW+Qq9xRvfcvXeZ/eztsneEj2UxIfEjNbAGgqZgAppQmgqZgpVG8M81kppRn0bQY4baJMrTODdE4oJXiS5rkNhWFygqkFmYICoNyASAyuFzC6CoBaF8w9bOdQbYPwfuYNiMWhVIfd0plEEor6R8B7C3oLAkHojV4THddfJjA6cFjBIO3MYgyVpvOxHvpRjX8FuFelIjGznYJVIK7nDsKUOaBJSLBWAAAAAElFTkSuQmCC"/>
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABtklEQVR4nO2XvUsDQRDFf3dJFESFiIV4pAjX+IEEi4CSGDsLQRHUmMJrxcbCzto/QbCxNWAlgqBYCCKoCCJooYJiJQYEQRCxSozFcuYuX25Csmkyzczs7M17vJtlWY08yy72ZvPXamlaMqU5c10leDEMrzLw7dfnPyyMrK2Erhrczm1MTTm40yzD1EsWa2mWYWIZJpf77ViGyetji13ylvuuZuZUYWT6y1mqvwKWYZZbV/cLSuT1H8J/rLoZiK/B1EouvzqAjaWqWlX+C3QPROfda8MT0NGliMDQOPh7RPz9KbzXB5FZRQTGE7l4axUyaRHHEsX315RAu1/IDZB6gusjuDkWeaAPgqE6E4jOCbkBTnfcHtzq1IVAbEH4TBrOdkV8ewIfbyIenQFfa0Ut5Y9hMASBfhF7vLB5W7inrRPCk3CxJ91WXgFZeSscRjkFfK1CXhBHb3kQsj/uPeuHQqWBCHQH4P1FqrWcAuFJIS/Aw0UhOMDdmfCaBrG4VFt5AvbwAdyfF99jEwAYi4Mm17rhl5Ga67hJoEmgHIH8t5pK05IpcVgbQcL1NFNNwomllyqoAAf4BT7RdN+jtJL4AAAAAElFTkSuQmCC"/>
-<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA1ElEQVR4nL2TMQtBURiGn3MRysKGDFJisUhd7mIzGIRJMfoZfoey8g8kP0CRYiTDNd67WpTxGK5b5Cr3FG99y9d5n97O2yd4SPZTEh8SM1sAaCpmACmlCaCpmClUbwzzWSmlGfRtBjhtokytM4N0TigleJLmuQ2FYXKCqQWZggKg3IBIDK4XMLoKgFoXzD1s51Btg/B+5g2IxaFUh93SmUQSivpHwHsLegsCQeiNXhMd118mMDpwWMEg7cxiDJWm87Ee+lGNfwW4V6UiMbOdglUgrucOwpQ5oElIsFYAAAAASUVORK5CYII="/>
-<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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"/>
-<meta name="theme-color" content="#FF5C1A"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Monday.com Implementation — Apex360 Digital</title>
 <meta name="description" content="Expert Monday.com setup, customisation, and automation for teams ready to manage projects, workflows, and operations at scale."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -69,7 +58,7 @@ nav.scrolled{height:60px;box-shadow:0 2px 24px rgba(0,0,0,.07)}
 .stat-box{padding:.9rem 1rem;background:var(--surface);border-radius:12px;border:1px solid var(--border)}
 .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.2rem}
 .stat-lbl{font-size:.74rem;color:var(--muted)}
-.stats-icon-section{background:#fff;padding:4rem 5rem;position:relative;overflow:hidden}
+.stats-icon-section{background:#EAF2FF;padding:4rem 5rem;position:relative;overflow:hidden}
 .stats-icon-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
 .stats-icon-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 .stat-icon-card{background:#fff;border-radius:18px;padding:2.25rem 1.5rem;text-align:center;box-shadow:0 8px 24px rgba(15,23,42,.06);transition:transform .25s,box-shadow .25s}
@@ -103,22 +92,22 @@ section{padding:5rem 5rem}
 .funnel-drop{text-align:center;font-size:.72rem;color:var(--muted);margin:-2px 0 8px;display:flex;align-items:center;justify-content:center;gap:.3rem}
 .funnel-drop svg{opacity:.4}
 .dark-sect{background:#fff;padding:5rem;position:relative;overflow:hidden}
-.dark-sect::before{display:none}
+.dark-sect::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.08) 0%,transparent 70%);pointer-events:none}
 .dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem;position:relative}
 .dark-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);background:rgba(255,92,26,.12);border:1px solid rgba(255,92,26,.2);padding:.35rem .9rem;border-radius:var(--pill);margin-bottom:1rem}
 .feats{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
-.feat{display:flex;gap:1rem;align-items:flex-start;background:#f7f7f5;border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
-.feat:hover{background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.07)}
+.feat{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.feat:hover{background:#FAFAFA}
 .feat-ico{width:36px;height:36px;border-radius:9px;background:rgba(255,92,26,.15);color:var(--orange);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-top:1px}
 .feat-badge{font-size:.62rem;font-weight:700;padding:.15rem .45rem;border-radius:var(--pill);background:rgba(15,158,114,.15);color:#0f9e72;letter-spacing:.05em;margin-left:.5rem;text-transform:uppercase}
 .feat-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;line-height:1.3;display:flex;align-items:center;flex-wrap:wrap;gap:.3rem}
 .feat-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
 .metrics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.metric{background:#f7f7f5;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
-.metric:hover{background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.07)}
+.metric{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem;text-align:center;transition:background .2s;box-shadow:0 4px 16px rgba(15,23,42,.04)}
+.metric:hover{background:#FAFAFA}
 .metric-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.2rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:.4rem}
 .metric-lbl{font-size:.78rem;color:var(--muted);line-height:1.5}
-.metric-cta{grid-column:1/-1;background:#FFF0EB;border:1px solid rgba(255,92,26,.25);border-radius:16px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.metric-cta{grid-column:1/-1;background:#fff;border:1px solid rgba(255,92,26,.25);border-radius:16px;padding:1.75rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .metric-cta p{font-size:.9rem;color:var(--muted);line-height:1.6;flex:1}
 .metric-cta strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;color:var(--ink);margin-bottom:.3rem}
 .pstep{background:#fff;border-radius:var(--radius);padding:1.75rem;border:1px solid var(--border);display:flex;gap:1.25rem;transition:transform .2s,box-shadow .2s}
@@ -152,7 +141,7 @@ section{padding:5rem 5rem}
 .faq-item.open .faq-q .ficon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s ease;font-size:.88rem;color:var(--muted);line-height:1.75;padding:0 1.5rem}
 .faq-item.open .faq-a{max-height:320px;padding:.1rem 1.5rem 1.3rem}
-.page-cta{background:#0a0a0a;padding:5.5rem 5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.75rem}
+.page-cta{background:linear-gradient(135deg,#0a0a0a 0%,#1a1a1a 100%);padding:5.5rem 5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.75rem}
 .page-cta::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,26,.2) 0%,transparent 70%);pointer-events:none}
 .cta-inner{position:relative;max-width:640px;margin:0 auto}
 .cta-inner h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:.9rem}
@@ -203,63 +192,84 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 }
 @media(max-width:480px){.stats-icon-grid{grid-template-columns:1fr}}
 
-.trust-bar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;max-width:1000px;margin:0 auto;row-gap:1.75rem}
-.trust-item{display:flex;align-items:center;gap:.65rem;padding:0 1.85rem;position:relative}
-.trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:22px;background:rgba(0,0,0,.1)}
-.trust-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.trust-label{font-size:.87rem;font-weight:600;color:var(--ink);white-space:nowrap}
-@media(max-width:768px){.trust-item{padding:0 1rem}.trust-item::after{display:none}}
+/* ── NAV FIXES ── */
+nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 4rem;height:76px;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;gap:0}
+.logo svg{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav-links>li{position:relative}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:.28rem;padding:.45rem .82rem;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:500;color:#111;text-decoration:none;background:none;border:none;cursor:pointer;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s;line-height:1}
+.nav-links>li>a:hover,.nav-links>li>button:hover{background:#FFF0EB;color:#FF5C1A}
+.nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{background:#FF5C1A;color:#fff!important;padding:.48rem 1.3rem;border-radius:100px;font-weight:700;font-size:.86rem}
+.nav-links>li>a.nav-cta:hover,.nav-links>li>a.nav-cta-purple:hover{background:#e04a0e;color:#fff!important}
+.nav-chevron{width:13px;height:13px;flex-shrink:0;transition:transform .2s;opacity:.45;pointer-events:none}
+.nav-item-drop.open .nav-chevron{transform:rotate(180deg);opacity:1}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.13);padding:.5rem;min-width:220px;max-width:260px;width:max-content;opacity:0;pointer-events:none;transition:opacity .18s,transform .2s cubic-bezier(.22,1,.36,1);z-index:9999}
+.nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:#fff;border-top:none}
+.nav-item-drop.open>.nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.drop-item{display:flex;align-items:center;gap:.65rem;padding:.58rem .75rem;border-radius:10px;text-decoration:none;color:#111;font-size:.83rem;font-weight:500;transition:background .14s;white-space:nowrap}
+.drop-item:hover,.drop-item.active{background:#f7f7f5;color:#FF5C1A}
+.drop-item.active{font-weight:700;background:#FFF0EB}
+.drop-ico{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.drop-title{font-size:.83rem;font-weight:600;color:inherit}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem;flex-shrink:0;z-index:10}
+.hamburger span{display:block;width:22px;height:2px;background:#111;border-radius:2px;transition:transform .25s,opacity .25s}
 
-.hero-snap-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:1.75rem;box-shadow:0 20px 50px rgba(15,23,42,.1);min-width:290px;animation:heroFloat 5s ease-in-out infinite}
-@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero-snap-head{display:flex;align-items:center;gap:.6rem;margin-bottom:1.4rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
-.hero-snap-dot{width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0;animation:blink 2s infinite}
-.hero-snap-head-text{font-size:.78rem;font-weight:600;color:var(--ink)}
-.hero-snap-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.25rem;margin-bottom:1.4rem}
-.hero-snap-stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:800;color:var(--orange);line-height:1}
-.hero-snap-stat-lbl{font-size:.72rem;color:var(--muted);margin-top:.3rem;line-height:1.4}
-.hero-snap-quote{background:var(--orange-lt);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;padding:.9rem 1.1rem;font-size:.82rem;color:var(--ink);line-height:1.6;font-style:italic}
-.hero-snap-wrap{position:relative}
-.hero-snap-float{position:absolute;bottom:-18px;right:-18px;background:var(--ink);color:#fff;border-radius:14px;padding:.85rem 1.1rem;box-shadow:0 12px 30px rgba(0,0,0,.2);text-align:center}
-.hero-snap-float-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:800;line-height:1}
-.hero-snap-float-lbl{font-size:.66rem;opacity:.7;margin-top:.15rem}
-@media(max-width:768px){.hero-snap-wrap{margin:2.5rem auto 0;max-width:340px}}
-/* ── Illustrated sections ── */
-.showcase-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:3.5rem;align-items:center;max-width:1150px;margin:0 auto}
-.showcase-copy .sh{text-align:left}
-.showcase-copy .ss{text-align:left;margin:.75rem 0 0}
-.showcase-list{list-style:none;margin-top:1.75rem;display:flex;flex-direction:column;gap:.85rem}
-.showcase-list li{display:flex;align-items:flex-start;gap:.7rem;font-size:.88rem;color:var(--muted);line-height:1.6}
-.showcase-check{width:20px;height:20px;border-radius:50%;background:var(--teal-bg);color:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:11px;font-weight:700}
-.figure{position:relative}
-.figure svg{width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 22px 55px rgba(15,23,42,.13);border:1px solid var(--border)}
-.figure figcaption{text-align:center;font-size:.76rem;color:var(--muted);margin-top:.9rem;font-style:italic}
-.fig-float{position:absolute;background:#fff;border-radius:13px;padding:.6rem .9rem;box-shadow:0 14px 34px rgba(15,23,42,.16);border:1px solid var(--border);display:flex;align-items:center;gap:.6rem;z-index:2;animation:figFloat 4.5s ease-in-out infinite}
-@keyframes figFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.fig-float-ico{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.fig-float strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;color:var(--ink);display:block;line-height:1.1}
-.fig-float span{font-size:.68rem;color:var(--muted);white-space:nowrap}
-.fig-float.ff-a{top:-16px;right:-14px}
-.fig-float.ff-b{bottom:-16px;left:-14px;animation-delay:1.1s}
-.stack-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;max-width:1000px;margin:3rem auto 0}
-.stack-tile{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem .75rem;text-align:center;transition:transform .2s,box-shadow .2s}
-.stack-tile:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(15,23,42,.09)}
-.stack-tile svg{width:34px;height:34px;margin:0 auto .6rem}
-.stack-name{font-size:.75rem;font-weight:600;color:var(--ink)}
-@media(max-width:1100px){.showcase-grid{grid-template-columns:1fr;gap:2.5rem}.showcase-copy .sh,.showcase-copy .ss{text-align:center;margin-left:auto;margin-right:auto}.stack-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.stack-grid{grid-template-columns:repeat(2,1fr)}.fig-float{display:none}}.marquee-wrap{background:var(--surface);padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
-.marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
-.marquee-wrap::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
-.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
-.marquee-wrap:hover .marquee-track{animation-play-state:paused}
-@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
-.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+/* MOBILE NAV */
+@media(max-width:1024px){nav{padding:0 2rem}}
+@media(max-width:768px){
+  nav{padding:0 1.25rem;height:64px}
+  .hamburger{display:flex}
+  .nav-links{
+    display:none;position:fixed;top:64px;left:0;right:0;bottom:0;
+    background:#fff;flex-direction:column;align-items:stretch;
+    padding:1rem 1.25rem 2rem;gap:.2rem;
+    overflow-y:auto;z-index:9998;
+    box-shadow:0 8px 32px rgba(0,0,0,.12);
+    border-top:1px solid rgba(0,0,0,.07)
+  }
+  .nav-links.open{display:flex}
+  .nav-links>li>a,.nav-links>li>button{
+    padding:.75rem 1rem;border-radius:10px;
+    width:100%;justify-content:space-between;font-size:.92rem
+  }
+  .nav-dropdown{
+    position:static;transform:none!important;opacity:1;pointer-events:auto;
+    box-shadow:none;border:none;background:#f7f7f5;border-radius:12px;
+    padding:.35rem .5rem .35rem 1rem;margin-top:.25rem;
+    min-width:0;max-width:none;width:auto;display:none
+  }
+  .nav-dropdown::before{display:none}
+  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column;gap:.05rem}
+  .drop-item{padding:.6rem .75rem;font-size:.88rem}
+  .nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{
+    margin-top:.5rem;text-align:center;justify-content:center;
+    padding:.75rem 1rem;border-radius:10px
+  }
+  .logo svg{height:38px}
+}
+@media(max-width:480px){
+  nav{padding:0 1rem;height:60px}
+  .nav-links{top:60px}
+  .logo svg{height:34px}
+}
+
 </style>
 </head>
 <body>
-<nav id="mn"><a class="logo" href="index.html">Apex<span>360</span> Digital</a>
+<nav id="mn"><a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="44" style="display:block;flex-shrink:0" aria-hidden="true">
+    <defs><linearGradient id="aG7" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <!-- Icon square -->
+    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aG7)"/>
+    <circle cx="20" cy="22" r="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="70 26" transform="rotate(128 20 22)" opacity="0.55"/>
+    <circle cx="30" cy="12" r="2" fill="#fff" opacity="0.9"/>
+    <path d="M20 12 L29 32 L24 32 L20 23 L16 32 L11 32 Z" fill="#fff"/>
+    <!-- Wordmark -->
+    <text x="50" y="18" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:-.3px" fill="#111">Apex<tspan fill="#FF5C1A">360</tspan></text>
+    <text x="50" y="36" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.02em" fill="#888">Digital Agency</text>
+  </svg>
+</a>
   <button class="hamburger" id="hb" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="nl">
     <li class="nav-item-drop" id="dsvcs">
@@ -297,35 +307,21 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <a href="#services" class="btn-ghost">Explore Services</a>
       </div>
     </div>
-    <div class="hero-snap-wrap rv">
-      <div class="hero-snap-card">
-        <div class="hero-snap-head">
-          <span class="hero-snap-dot"></span>
-          <span class="hero-snap-head-text">Monday.com Certified Partner</span>
-        </div>
-        <div class="hero-snap-grid"><div><div class="hero-snap-stat-num">85%</div><div class="hero-snap-stat-lbl">Faster project delivery</div></div><div><div class="hero-snap-stat-num">70%</div><div class="hero-snap-stat-lbl">Fewer status meetings</div></div><div><div class="hero-snap-stat-num">3×</div><div class="hero-snap-stat-lbl">Team productivity</div></div><div><div class="hero-snap-stat-num">150+</div><div class="hero-snap-stat-lbl">Workspaces built</div></div></div>
-        <div class="hero-snap-quote">"Our whole team finally works from one screen, not five."</div>
-      </div>
-      <div class="hero-snap-float">
-        <div class="hero-snap-float-num">4.9★</div>
-        <div class="hero-snap-float-lbl">Avg Client Rating</div>
-      </div>
+    <div class="stats-panel">
+      <div class="stat-box"><div class="stat-num">85%</div><div class="stat-lbl">Faster Project Delivery</div></div>
+      <div class="stat-box"><div class="stat-num">70%</div><div class="stat-lbl">Less Status Meetings</div></div>
+      <div class="stat-box"><div class="stat-num">3×</div><div class="stat-lbl">Team Productivity</div></div>
+      <div class="stat-box"><div class="stat-num">150+</div><div class="stat-lbl">Workspaces Built</div></div>
     </div>
   </div>
 </div>
 
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <div class="marquee-item"><span class="marquee-dot"></span>Certified Monday.com Specialists</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>150+ Workspaces Built</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Certified Monday.com Specialists</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>150+ Workspaces Built</div>
+<div class="stats-icon-section">
+  <div class="stats-icon-grid">
+    <div class="stat-icon-card rv"><div class="stat-icon-badge" style="background:var(--orange-lt);color:var(--orange)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="stat-icon-num">85%</div><div class="stat-icon-lbl">Faster Average Project Delivery</div></div>
+    <div class="stat-icon-card rv d1"><div class="stat-icon-badge" style="background:var(--blue-bg);color:var(--blue)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="stat-icon-num">70%</div><div class="stat-icon-lbl">Reduction in Status Update Meetings</div></div>
+    <div class="stat-icon-card rv d2"><div class="stat-icon-badge" style="background:var(--teal-bg);color:var(--teal)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div class="stat-icon-num">3×</div><div class="stat-icon-lbl">Average Team Productivity Increase</div></div>
+    <div class="stat-icon-card rv d3"><div class="stat-icon-badge" style="background:var(--purple-bg);color:var(--purple)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="stat-icon-num">150+</div><div class="stat-icon-lbl">Monday.com Workspaces Delivered</div></div>
   </div>
 </div>
 
@@ -336,99 +332,6 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     <p class="ss rv d2">We design and build Monday.com workspaces that match exactly how your business works — eliminating spreadsheet chaos, missed deadlines, and communication breakdowns permanently.</p>
   </div>
   <div class="grid3"><div class="card rv"><div class="card-ico" style="background:var(--orange-lt);color:var(--orange)">📋</div><div class="card-title">Project Management Setup</div><p class="card-desc">Boards, groups, items, and automations configured around your project delivery process — with status tracking, timeline views, dependency mapping, and client-facing portals all set up from day one.</p><div class="tags"><span class="tag-pill">Boards &amp; Timelines</span><span class="tag-pill">Dependencies</span><span class="tag-pill">Client Portals</span><span class="tag-pill">Sprint Planning</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--blue-bg);color:var(--blue)">💼</div><div class="card-title">CRM &amp; Sales Pipeline</div><p class="card-desc">A visual CRM built on Monday.com — contact management, deal tracking, activity logging, and automated follow-up reminders so your sales team never drops a lead or misses a follow-up again.</p><div class="tags"><span class="tag-pill">Deal Tracking</span><span class="tag-pill">Contact Management</span><span class="tag-pill">Email Integration</span><span class="tag-pill">Sales Reporting</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--teal-bg);color:var(--teal)">⚡</div><div class="card-title">Workflow Automation</div><p class="card-desc">Eliminate manual, repetitive tasks with Monday.com automations — status changes trigger notifications, approvals route to the right person, and deadline reminders fire automatically without any human input.</p><div class="tags"><span class="tag-pill">Status Automations</span><span class="tag-pill">Approval Flows</span><span class="tag-pill">Deadline Alerts</span><span class="tag-pill">Cross-Board Sync</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--purple-bg);color:var(--purple)">🔗</div><div class="card-title">Integrations &amp; API</div><p class="card-desc">Monday.com connected to Slack, HubSpot, Gmail, Zoom, Jira, Salesforce, Google Drive, and 200+ tools — your entire operational tech stack communicating and syncing seamlessly in real-time.</p><div class="tags"><span class="tag-pill">Slack</span><span class="tag-pill">HubSpot</span><span class="tag-pill">Google Workspace</span><span class="tag-pill">Jira &amp; Salesforce</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--pink-bg);color:var(--pink)">📊</div><div class="card-title">Dashboards &amp; Reporting</div><p class="card-desc">Executive dashboards, team performance reports, project health scores, and resource utilisation metrics — real-time visibility across every project and every team without manual data entry.</p><div class="tags"><span class="tag-pill">Executive Dashboards</span><span class="tag-pill">Resource Planning</span><span class="tag-pill">KPI Tracking</span><span class="tag-pill">Portfolio Views</span></div></div><div class="card rv"><div class="card-ico" style="background:var(--amber-bg);color:var(--amber)">🎓</div><div class="card-title">Training &amp; Adoption</div><p class="card-desc">Live training sessions, recorded video guides, and a custom Monday.com playbook built for your business — ensuring 100% team adoption and maximum ROI from your Monday.com investment.</p><div class="tags"><span class="tag-pill">Live Training</span><span class="tag-pill">Video Guides</span><span class="tag-pill">Playbooks</span><span class="tag-pill">Ongoing Support</span></div></div></div>
-</section>
-
-<section style="background:var(--surface)">
-  <div class="showcase-grid">
-    <div class="showcase-copy">
-      <div class="tag rv">Inside Your Workspace</div>
-      <h2 class="sh rv d1">A Board Your Team <span class="hl">Actually Updates</span></h2>
-      <p class="ss rv d2">We design groups, columns and statuses around the way your team already works — so the board replaces the status meeting instead of becoming one more thing to keep in sync.</p>
-      <ul class="showcase-list rv d3">
-        <li><span class="showcase-check">✓</span>Columns mapped to your real stages, not a stock template</li>
-        <li><span class="showcase-check">✓</span>Owners and due dates on every item, so nothing goes unassigned</li>
-        <li><span class="showcase-check">✓</span>Colour-coded statuses that read at a glance from across the room</li>
-        <li><span class="showcase-check">✓</span>Timeline and workload views leadership can check without asking</li>
-      </ul>
-    </div>
-    <figure class="figure rv-r">
-      <svg viewBox="0 0 600 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a configured Monday.com board showing grouped tasks, owners, colour-coded statuses and timeline bars">
-        <rect width="600" height="430" rx="16" fill="#ffffff"/>
-        <rect x="0" y="0" width="600" height="46" rx="16" fill="#0a0a0a"/>
-        <rect x="0" y="30" width="600" height="16" fill="#0a0a0a"/>
-        <circle cx="26" cy="23" r="5" fill="#FF5C1A"/><circle cx="44" cy="23" r="5" fill="#3f3f3f"/><circle cx="62" cy="23" r="5" fill="#3f3f3f"/>
-        <rect x="84" y="16" width="150" height="14" rx="7" fill="#242424"/>
-        <rect x="498" y="14" width="78" height="18" rx="9" fill="#FF5C1A"/>
-        <text x="537" y="27" font-family="Figtree,sans-serif" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">Main board</text>
-
-        <text x="24" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">ITEM</text>
-        <text x="272" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">OWNER</text>
-        <text x="342" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">STATUS</text>
-        <text x="452" y="74" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#9a9a9a">TIMELINE</text>
-
-        <rect x="24" y="86" width="4" height="14" rx="2" fill="#FF5C1A"/>
-        <text x="38" y="98" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111">Client Onboarding</text>
-        <g>
-          <rect x="24" y="108" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
-          <text x="40" y="129" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Kickoff call scheduled</text>
-          <circle cx="282" cy="125" r="10" fill="#FF5C1A"/><text x="282" y="129" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">A</text>
-          <rect x="342" y="115" width="92" height="20" rx="6" fill="#0f9e72"/>
-          <text x="388" y="129" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Done</text>
-          <rect x="452" y="120" width="104" height="10" rx="5" fill="#E8F8F3"/>
-          <rect x="452" y="120" width="104" height="10" rx="5" fill="#0f9e72"/>
-        </g>
-        <g>
-          <rect x="24" y="148" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
-          <text x="40" y="169" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Access &amp; tooling setup</text>
-          <circle cx="282" cy="165" r="10" fill="#2563eb"/><text x="282" y="169" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">R</text>
-          <rect x="342" y="155" width="92" height="20" rx="6" fill="#f59e0b"/>
-          <text x="388" y="169" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Working on it</text>
-          <rect x="452" y="160" width="104" height="10" rx="5" fill="#FFF4E5"/>
-          <rect x="452" y="160" width="68" height="10" rx="5" fill="#f59e0b"/>
-        </g>
-        <g>
-          <rect x="24" y="188" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
-          <text x="40" y="209" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Data import &amp; cleanup</text>
-          <circle cx="282" cy="205" r="10" fill="#7c3aed"/><text x="282" y="209" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">P</text>
-          <rect x="342" y="195" width="92" height="20" rx="6" fill="#dc2626"/>
-          <text x="388" y="209" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Stuck</text>
-          <rect x="452" y="200" width="104" height="10" rx="5" fill="#FDECEC"/>
-          <rect x="452" y="200" width="34" height="10" rx="5" fill="#dc2626"/>
-        </g>
-
-        <rect x="24" y="238" width="4" height="14" rx="2" fill="#2563eb"/>
-        <text x="38" y="250" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111">Delivery Sprint</text>
-        <g>
-          <rect x="24" y="260" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
-          <text x="40" y="281" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Workflow automations built</text>
-          <circle cx="282" cy="277" r="10" fill="#0f9e72"/><text x="282" y="281" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">S</text>
-          <rect x="342" y="267" width="92" height="20" rx="6" fill="#f59e0b"/>
-          <text x="388" y="281" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Working on it</text>
-          <rect x="452" y="272" width="104" height="10" rx="5" fill="#FFF4E5"/>
-          <rect x="452" y="272" width="82" height="10" rx="5" fill="#f59e0b"/>
-        </g>
-        <g>
-          <rect x="24" y="300" width="552" height="34" rx="8" fill="#FAFAFA" stroke="#efefef"/>
-          <text x="40" y="321" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Team training session</text>
-          <circle cx="282" cy="317" r="10" fill="#db2777"/><text x="282" y="321" font-size="9" font-weight="700" fill="#fff" text-anchor="middle">M</text>
-          <rect x="342" y="307" width="92" height="20" rx="6" fill="#c4c4c4"/>
-          <text x="388" y="321" font-family="Figtree,sans-serif" font-size="9" font-weight="600" fill="#fff" text-anchor="middle">Not started</text>
-          <rect x="452" y="312" width="104" height="10" rx="5" fill="#f0f0f0"/>
-        </g>
-
-        <rect x="24" y="352" width="552" height="54" rx="12" fill="#0a0a0a"/>
-        <circle cx="54" cy="379" r="16" fill="#FF5C1A"/>
-        <text x="54" y="384" font-family="Figtree,sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">⚡</text>
-        <text x="82" y="374" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="700" fill="#ffffff">Automation ran</text>
-        <text x="82" y="390" font-family="Figtree,sans-serif" font-size="8.5" fill="#8d8d8d">Status set to Stuck → owner notified in Slack → due date flagged</text>
-        <rect x="486" y="368" width="70" height="22" rx="11" fill="#1c3f33"/>
-        <text x="521" y="383" font-family="Figtree,sans-serif" font-size="8.5" font-weight="600" fill="#34d399" text-anchor="middle">No manual work</text>
-      </svg>
-      <div class="fig-float ff-a"><div class="fig-float-ico" style="background:var(--teal-bg)">⏱️</div><div><strong>12+</strong><span>Hours saved weekly</span></div></div>
-      <div class="fig-float ff-b"><div class="fig-float-ico" style="background:var(--orange-lt)">👥</div><div><strong>90%</strong><span>Team adoption</span></div></div>
-      <figcaption>Example board layout from a recent Apex360 Monday.com build.</figcaption>
-    </figure>
-  </div>
 </section>
 
 <section style="background:#EAF2FF">
@@ -465,7 +368,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   </div>
 </section>
 
-<div class="dark-sect" style="background:#fff">
+<div class="dark-sect">
   <div class="dark-tag">AI + Monday.com</div>
   <h2 class="sh rv" style="color:var(--ink);text-align:left;margin-top:.4rem">Smarter Workflows That <span class="hl">Run Automatically</span></h2>
   <p class="ss rv d1" style="color:var(--muted);text-align:left;margin:.75rem 0 0">We layer Monday.com AI features and external AI tools on your workspace — automating decisions, surfacing insights, and eliminating bottlenecks before your team even notices them.</p>
@@ -485,68 +388,6 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 
 <section style="background:#EAF2FF">
   <div class="sec-hdr">
-    <div class="tag rv">Automations</div>
-    <h2 class="sh rv d1">One Trigger, <span class="hl">Four Things Happen</span></h2>
-    <p class="ss rv d2">Every automation we build replaces a chase-up message or a status meeting. Here's a recipe that runs on nearly every board we ship.</p>
-  </div>
-  <figure class="figure rv d1" style="max-width:980px;margin:0 auto">
-    <svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of a Monday.com automation recipe: when a status changes, the owner is notified, a task is created, the timeline updates and the dashboard refreshes">
-      <rect width="900" height="250" rx="16" fill="#ffffff"/>
-
-      <rect x="26" y="70" width="168" height="110" rx="13" fill="#0a0a0a"/>
-      <text x="110" y="52" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111" text-anchor="middle">Trigger</text>
-      <circle cx="110" cy="106" r="19" fill="#FF5C1A"/>
-      <text x="110" y="112" font-family="Figtree,sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">⚡</text>
-      <text x="110" y="145" font-family="Plus Jakarta Sans,sans-serif" font-size="10.5" font-weight="700" fill="#ffffff" text-anchor="middle">Status changes</text>
-      <text x="110" y="162" font-family="Figtree,sans-serif" font-size="8.5" fill="#8d8d8d" text-anchor="middle">to "Stuck"</text>
-
-      <path d="M206 125 L244 125" stroke="#FF5C1A" stroke-width="2"/>
-      <path d="M238 119 L248 125 L238 131 Z" fill="#FF5C1A"/>
-
-      <text x="572" y="52" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111" text-anchor="middle">Then, automatically</text>
-
-      <g>
-        <rect x="258" y="70" width="148" height="52" rx="11" fill="#FFF0EB" stroke="#ffd9c9"/>
-        <text x="280" y="101" font-family="Figtree,sans-serif" font-size="14">🔔</text>
-        <text x="302" y="92" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Owner notified</text>
-        <text x="302" y="106" font-family="Figtree,sans-serif" font-size="8.5" fill="#a8654a">Slack + email, instantly</text>
-      </g>
-      <g>
-        <rect x="258" y="130" width="148" height="52" rx="11" fill="#EBF2FF" stroke="#d3e0fb"/>
-        <text x="280" y="161" font-family="Figtree,sans-serif" font-size="14">📋</text>
-        <text x="302" y="152" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Follow-up created</text>
-        <text x="302" y="166" font-family="Figtree,sans-serif" font-size="8.5" fill="#5c7cb5">Assigned with a due date</text>
-      </g>
-      <g>
-        <rect x="422" y="70" width="148" height="52" rx="11" fill="#F0EBFF" stroke="#e0d5fb"/>
-        <text x="444" y="101" font-family="Figtree,sans-serif" font-size="14">📆</text>
-        <text x="466" y="92" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Timeline shifts</text>
-        <text x="466" y="106" font-family="Figtree,sans-serif" font-size="8.5" fill="#7e6bb0">Dependent items move too</text>
-      </g>
-      <g>
-        <rect x="422" y="130" width="148" height="52" rx="11" fill="#E8F8F3" stroke="#cdece1"/>
-        <text x="444" y="161" font-family="Figtree,sans-serif" font-size="14">📊</text>
-        <text x="466" y="152" font-family="Figtree,sans-serif" font-size="9.5" font-weight="700" fill="#111">Dashboard updates</text>
-        <text x="466" y="166" font-family="Figtree,sans-serif" font-size="8.5" fill="#4e8f79">Leadership view stays live</text>
-      </g>
-
-      <path d="M586 125 L624 125" stroke="#0f9e72" stroke-width="2"/>
-      <path d="M618 119 L628 125 L618 131 Z" fill="#0f9e72"/>
-
-      <rect x="638" y="70" width="236" height="110" rx="13" fill="#FAFAFA" stroke="#e8e8e8"/>
-      <text x="756" y="52" font-family="Plus Jakarta Sans,sans-serif" font-size="11" font-weight="800" fill="#111" text-anchor="middle">Result</text>
-      <text x="662" y="100" font-family="Figtree,sans-serif" font-size="11" fill="#0f9e72">✓</text>
-      <text x="682" y="100" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Nobody chases a status update</text>
-      <text x="662" y="126" font-family="Figtree,sans-serif" font-size="11" fill="#0f9e72">✓</text>
-      <text x="682" y="126" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">Blockers surface the same day</text>
-      <text x="662" y="152" font-family="Figtree,sans-serif" font-size="11" fill="#0f9e72">✓</text>
-      <text x="682" y="152" font-family="Figtree,sans-serif" font-size="9.5" fill="#444">The weekly check-in gets shorter</text>
-
-      <rect x="26" y="200" width="848" height="30" rx="9" fill="#FFF7F2"/>
-      <text x="450" y="219" font-family="Figtree,sans-serif" font-size="9.5" fill="#a8654a" text-anchor="middle">Typical workspace ships with 15–40 automation recipes, tuned monthly as your process changes.</text>
-    </svg>
-  </figure>
-  <div class="sec-hdr" style="margin-top:4.5rem">
     <div class="tag rv">Our Process</div>
     <h2 class="sh rv d1">How We <span class="hl">Deliver Results</span></h2>
     <p class="ss rv d2">A structured, repeatable process delivering measurable outcomes from week one and compounding growth every month.</p>
@@ -574,38 +415,6 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 
 <section style="background:#fff">
   <div class="sec-hdr">
-    <div class="tag rv">Integrations</div>
-    <h2 class="sh rv d1">Connected to the Tools <span class="hl">You Already Run</span></h2>
-    <p class="ss rv d2">Two-way syncs and custom API work so your board reflects reality — without anyone copying information between apps.</p>
-  </div>
-  <div class="stack-grid">
-    <div class="stack-tile rv">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#FFF0F5"/><path d="M15 12h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6l-5 4v-4h-1a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3h2Z" stroke="#db2777" stroke-width="2" stroke-linejoin="round"/></svg>
-      <div class="stack-name">Slack</div>
-    </div>
-    <div class="stack-tile rv d1">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#FFF0EB"/><rect x="10" y="13" width="20" height="14" rx="3" stroke="#FF5C1A" stroke-width="2"/><path d="m10 16 10 6 10-6" stroke="#FF5C1A" stroke-width="2" stroke-linejoin="round"/></svg>
-      <div class="stack-name">Gmail</div>
-    </div>
-    <div class="stack-tile rv d2">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#EBF2FF"/><rect x="10" y="12" width="20" height="18" rx="3" stroke="#2563eb" stroke-width="2"/><path d="M10 18h20M16 12v18" stroke="#2563eb" stroke-width="2"/></svg>
-      <div class="stack-name">Google Drive</div>
-    </div>
-    <div class="stack-tile rv">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#FFFBEB"/><rect x="10" y="15" width="14" height="11" rx="3" stroke="#d97706" stroke-width="2"/><path d="m24 19 6-3v9l-6-3v-3Z" stroke="#d97706" stroke-width="2" stroke-linejoin="round"/></svg>
-      <div class="stack-name">Zoom</div>
-    </div>
-    <div class="stack-tile rv d1">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#F0EBFF"/><path d="M20 10 30 20 20 30 10 20 20 10Z" stroke="#7c3aed" stroke-width="2" stroke-linejoin="round"/><path d="M20 16.5 23.5 20 20 23.5 16.5 20 20 16.5Z" fill="#7c3aed"/></svg>
-      <div class="stack-name">Jira</div>
-    </div>
-    <div class="stack-tile rv d2">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="11" fill="#E8F8F3"/><rect x="11" y="11" width="18" height="18" rx="3" stroke="#0f9e72" stroke-width="2"/><path d="M11 17h18M17 17v12" stroke="#0f9e72" stroke-width="2"/></svg>
-      <div class="stack-name">Excel &amp; Sheets</div>
-    </div>
-  </div>
-  <p class="ss rv d3" style="text-align:center;margin-top:1.75rem">Plus 200+ more via native connectors and custom API builds.</p>
-  <div class="sec-hdr" style="margin-top:4.5rem">
     <div class="tag rv">Client Stories</div>
     <h2 class="sh rv d1">Results from <span class="hl">Real Clients</span></h2>
     <p class="ss rv d2">Real results, real businesses — here is what working with Apex360 looks like in practice.</p>
@@ -633,7 +442,16 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 </div>
 
 <footer><div class="footer-top">
-  <div class="footer-brand"><a class="logo" href="index.html" style="color:#fff">Apex<span>360</span> Digital</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
+  <div class="footer-brand"><a href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
+    <defs><linearGradient id="aGf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <rect x="98" y="0" width="64" height="64" rx="17.5" fill="url(#aGf)"/>
+    <circle cx="130" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="125 42" transform="rotate(128 130 32)" opacity="0.55"/>
+    <circle cx="149.3" cy="15.8" r="2.7" fill="#fff" opacity="0.9"/>
+    <path d="M130 16.5 L145 46.5 L137 46.5 L130 32 L123 46.5 L115 46.5 Z" fill="#fff"/>
+    <text x="130" y="100" text-anchor="middle" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:21px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan><tspan fill="#fff"> Digital</tspan></text>
+  </svg>
+</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
   <div class="footer-col"><div class="fc-title">Services</div><ul>
     <li><a href="digital-marketing.html">Digital Marketing</a></li>
     <li><a href="hubspot.html">HubSpot Solutions</a></li>
@@ -660,38 +478,110 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="fsoc"><a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a><a href="#" aria-label="X"><i class="ti ti-brand-x"></i></a><a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a></div>
   <div class="fleg"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
 </div></footer>
+
+
 <script>
+
 (function(){
-  var nav=document.getElementById('mn');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
-  var hb=document.getElementById('hb'),nl=document.getElementById('nl');
-  hb.addEventListener('click',function(){
-    var o=nl.classList.toggle('open');hb.setAttribute('aria-expanded',o);
-    var b=hb.querySelectorAll('span');
-    if(o){b[0].style.transform='translateY(7px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-7px) rotate(-45deg)';}
-    else{b.forEach(function(x){x.style.transform='';x.style.opacity='';});}
-  });
-  var drop=document.getElementById('dsvcs');
-  if(drop){
-    var dbtn=drop.querySelector('button'),dp=drop.querySelector('.nav-dropdown'),dt;
-    function od(){clearTimeout(dt);drop.classList.add('open');dbtn.setAttribute('aria-expanded','true');}
-    function cd(){dt=setTimeout(function(){drop.classList.remove('open');dbtn.setAttribute('aria-expanded','false');},100);}
-    drop.addEventListener('mouseenter',od);drop.addEventListener('mouseleave',cd);
-    if(dp){dp.addEventListener('mouseenter',od);dp.addEventListener('mouseleave',cd);}
-    dbtn.addEventListener('click',function(e){e.stopPropagation();drop.classList.contains('open')?cd():od();});
-    if(dp){dp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drop.classList.remove('open');nl.classList.remove('open');});});}
+  /* ── nav scroll shadow ── */
+  var nav=document.getElementById('main-nav')||document.getElementById('mn');
+  if(nav){
+    window.addEventListener('scroll',function(){
+      nav.style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.1)':'0 1px 0 rgba(0,0,0,.06)';
+    },{passive:true});
   }
-  document.addEventListener('click',function(){if(drop)drop.classList.remove('open');});
-  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.rv,.rv-r').forEach(function(el){io.observe(el);});
-  document.querySelectorAll('.faq-q').forEach(function(btn){
+
+  /* ── hamburger ── */
+  var hb=document.getElementById('hamburger')||document.getElementById('hb');
+  var nl=document.getElementById('nav-links')||document.getElementById('nl');
+  if(hb&&nl){
+    hb.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=nl.classList.toggle('open');
+      hb.setAttribute('aria-expanded',open);
+      var bars=hb.querySelectorAll('span');
+      if(open){
+        bars[0].style.transform='translateY(7px) rotate(45deg)';
+        bars[1].style.opacity='0';
+        bars[2].style.transform='translateY(-7px) rotate(-45deg)';
+        document.body.style.overflow='hidden';
+      } else {
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+        document.body.style.overflow='';
+      }
+    });
+  }
+
+  /* ── services dropdown ── */
+  var dropEl=document.getElementById('drop-services')||document.getElementById('dsvcs');
+  if(dropEl){
+    var dbtn=dropEl.querySelector('button');
+    var ddMenu=dropEl.querySelector('.nav-dropdown');
+    var timer;
+    function openDrop(){clearTimeout(timer);dropEl.classList.add('open');if(dbtn)dbtn.setAttribute('aria-expanded','true');}
+    function closeDrop(){timer=setTimeout(function(){dropEl.classList.remove('open');if(dbtn)dbtn.setAttribute('aria-expanded','false');},120);}
+    /* desktop hover */
+    dropEl.addEventListener('mouseenter',openDrop);
+    dropEl.addEventListener('mouseleave',closeDrop);
+    if(ddMenu){ddMenu.addEventListener('mouseenter',openDrop);ddMenu.addEventListener('mouseleave',closeDrop);}
+    /* mobile / click toggle */
+    if(dbtn){
+      dbtn.addEventListener('click',function(e){
+        e.stopPropagation();
+        dropEl.classList.contains('open')?closeDrop():openDrop();
+      });
+    }
+    /* close when link clicked */
+    if(ddMenu){
+      ddMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){
+          dropEl.classList.remove('open');
+          if(nl)nl.classList.remove('open');
+          if(hb){
+            var bars=hb.querySelectorAll('span');
+            bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+            hb.setAttribute('aria-expanded','false');
+          }
+          document.body.style.overflow='';
+        });
+      });
+    }
+  }
+
+  /* ── close on outside click ── */
+  document.addEventListener('click',function(){
+    if(dropEl)dropEl.classList.remove('open');
+    if(nl&&window.innerWidth<=768){
+      nl.classList.remove('open');
+      document.body.style.overflow='';
+      if(hb){
+        var bars=hb.querySelectorAll('span');
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+        hb.setAttribute('aria-expanded','false');
+      }
+    }
+  });
+
+  /* ── scroll reveal ── */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+  document.querySelectorAll('.rv,.rv-r,.rv-l,.rv-scale').forEach(function(el){io.observe(el);});
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q,.faq-question').forEach(function(btn){
     btn.addEventListener('click',function(){
-      var it=btn.closest('.faq-item'),op=it.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
-      if(!op)it.classList.add('open');
+      var item=btn.closest('.faq-item,.faq-card');
+      if(!item)return;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open,.faq-card.open').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
     });
   });
 })();
+
 </script>
 </body>
 </html>

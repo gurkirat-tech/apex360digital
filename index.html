@@ -7,7 +7,6 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Apex360 Digital — Full-Service Digital Marketing &amp; IT Agency</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FF5C1A'/%3E%3Ctext x='50' y='68' font-family='Arial,Helvetica,sans-serif' font-size='58' font-weight='800' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -170,14 +169,11 @@ section{padding:5.5rem 5rem}
 .who-lbl{font-size:.82rem;font-weight:500}
 /* ── INDUSTRIES ── */
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
-.ind-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;cursor:default}
+.ind-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.75rem;transition:transform .25s,box-shadow .25s;cursor:default}
 .ind-card:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.09)}
-.ind-icon{width:100%;height:150px;overflow:hidden;flex-shrink:0}
-.ind-icon img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
-.ind-card:hover .ind-icon img{transform:scale(1.07)}
-.ind-body{padding:1.5rem 1.35rem 1.75rem}
-.ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:.5rem}
-.ind-desc{font-size:.78rem;color:var(--orange);line-height:1.6;text-align:left}
+.ind-icon{width:68px;height:68px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;flex-shrink:0}
+.ind-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.3}
+.ind-desc{font-size:.78rem;color:var(--orange);line-height:1.6;text-align:center}
 
 /* ── PRICING ── */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start;max-width:1100px;margin:0 auto}
@@ -575,22 +571,87 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
   }
 
 
-.marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
-.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
-.marquee-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
-.marquee-wrap::after{right:0;background:linear-gradient(270deg,#fff,transparent)}
-.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
-.marquee-wrap:hover .marquee-track{animation-play-state:paused}
-@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
-.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+/* ── NAV FIXES ── */
+nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 4rem;height:76px;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;gap:0}
+.logo svg{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav-links>li{position:relative}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:.28rem;padding:.45rem .82rem;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:500;color:#111;text-decoration:none;background:none;border:none;cursor:pointer;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s;line-height:1}
+.nav-links>li>a:hover,.nav-links>li>button:hover{background:#FFF0EB;color:#FF5C1A}
+.nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{background:#FF5C1A;color:#fff!important;padding:.48rem 1.3rem;border-radius:100px;font-weight:700;font-size:.86rem}
+.nav-links>li>a.nav-cta:hover,.nav-links>li>a.nav-cta-purple:hover{background:#e04a0e;color:#fff!important}
+.nav-chevron{width:13px;height:13px;flex-shrink:0;transition:transform .2s;opacity:.45;pointer-events:none}
+.nav-item-drop.open .nav-chevron{transform:rotate(180deg);opacity:1}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.13);padding:.5rem;min-width:220px;max-width:260px;width:max-content;opacity:0;pointer-events:none;transition:opacity .18s,transform .2s cubic-bezier(.22,1,.36,1);z-index:9999}
+.nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:#fff;border-top:none}
+.nav-item-drop.open>.nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.drop-item{display:flex;align-items:center;gap:.65rem;padding:.58rem .75rem;border-radius:10px;text-decoration:none;color:#111;font-size:.83rem;font-weight:500;transition:background .14s;white-space:nowrap}
+.drop-item:hover,.drop-item.active{background:#f7f7f5;color:#FF5C1A}
+.drop-item.active{font-weight:700;background:#FFF0EB}
+.drop-ico{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.drop-title{font-size:.83rem;font-weight:600;color:inherit}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem;flex-shrink:0;z-index:10}
+.hamburger span{display:block;width:22px;height:2px;background:#111;border-radius:2px;transition:transform .25s,opacity .25s}
+
+/* MOBILE NAV */
+@media(max-width:1024px){nav{padding:0 2rem}}
+@media(max-width:768px){
+  nav{padding:0 1.25rem;height:64px}
+  .hamburger{display:flex}
+  .nav-links{
+    display:none;position:fixed;top:64px;left:0;right:0;bottom:0;
+    background:#fff;flex-direction:column;align-items:stretch;
+    padding:1rem 1.25rem 2rem;gap:.2rem;
+    overflow-y:auto;z-index:9998;
+    box-shadow:0 8px 32px rgba(0,0,0,.12);
+    border-top:1px solid rgba(0,0,0,.07)
+  }
+  .nav-links.open{display:flex}
+  .nav-links>li>a,.nav-links>li>button{
+    padding:.75rem 1rem;border-radius:10px;
+    width:100%;justify-content:space-between;font-size:.92rem
+  }
+  .nav-dropdown{
+    position:static;transform:none!important;opacity:1;pointer-events:auto;
+    box-shadow:none;border:none;background:#f7f7f5;border-radius:12px;
+    padding:.35rem .5rem .35rem 1rem;margin-top:.25rem;
+    min-width:0;max-width:none;width:auto;display:none
+  }
+  .nav-dropdown::before{display:none}
+  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column;gap:.05rem}
+  .drop-item{padding:.6rem .75rem;font-size:.88rem}
+  .nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{
+    margin-top:.5rem;text-align:center;justify-content:center;
+    padding:.75rem 1rem;border-radius:10px
+  }
+  .logo svg{height:38px}
+}
+@media(max-width:480px){
+  nav{padding:0 1rem;height:60px}
+  .nav-links{top:60px}
+  .logo svg{height:34px}
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a class="logo" href="#">Apex<span>360</span> Digital</a>
+  <a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="44" style="display:block;flex-shrink:0" aria-hidden="true">
+    <defs><linearGradient id="aG1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <!-- Icon square -->
+    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aG1)"/>
+    <circle cx="20" cy="22" r="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="70 26" transform="rotate(128 20 22)" opacity="0.55"/>
+    <circle cx="30" cy="12" r="2" fill="#fff" opacity="0.9"/>
+    <path d="M20 12 L29 32 L24 32 L20 23 L16 32 L11 32 Z" fill="#fff"/>
+    <!-- Wordmark -->
+    <text x="50" y="18" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:-.3px" fill="#111">Apex<tspan fill="#FF5C1A">360</tspan></text>
+    <text x="50" y="36" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.02em" fill="#888">Digital Agency</text>
+  </svg>
+</a>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -795,13 +856,6 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
   </div>
 
 </section>
-
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <div class="marquee-item"><span class="marquee-dot"></span>500+ Clients Served Globally</div><div class="marquee-item"><span class="marquee-dot"></span>Certified Growth Specialists</div><div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div><div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div><div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div><div class="marquee-item"><span class="marquee-dot"></span>4.9★ Average Client Rating</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>500+ Clients Served Globally</div><div class="marquee-item"><span class="marquee-dot"></span>Certified Growth Specialists</div><div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div><div class="marquee-item"><span class="marquee-dot"></span>Results Within 30 Days</div><div class="marquee-item"><span class="marquee-dot"></span>No Lock-In Contracts</div><div class="marquee-item"><span class="marquee-dot"></span>4.9★ Average Client Rating</div>
-  </div>
-</div>
 
 <!-- WHO WE ARE -->
 <section id="who">
@@ -1060,90 +1114,74 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
     <!-- SaaS & Technology -->
     <div class="ind-card rv-card">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="SaaS and technology team collaborating"/>
+      <div class="ind-icon" style="background:#EBF2FF">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">SaaS &amp; Technology</div>
       <p class="ind-desc">Product-led growth, trial signups, demo bookings, and MRR expansion campaigns</p>
-    </div>
     </div>
 
     <!-- E-Commerce -->
     <div class="ind-card rv-card d1">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="E-commerce packaging box"/>
+      <div class="ind-icon" style="background:#FFF0EB">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">E-Commerce</div>
       <p class="ind-desc">ROAS-focused paid ads, abandoned cart recovery, and lifecycle email automation</p>
-    </div>
     </div>
 
     <!-- Healthcare -->
     <div class="ind-card rv-card d2">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1758691461957-474a7686e388?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Doctor consulting with patient"/>
+      <div class="ind-icon" style="background:#F3FFF8">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0f9e72" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">Healthcare</div>
       <p class="ind-desc">Compliant patient acquisition, reputation management, and telehealth growth</p>
-    </div>
     </div>
 
     <!-- Real Estate -->
     <div class="ind-card rv-card d3">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Modern house exterior"/>
+      <div class="ind-icon" style="background:#FFF8E1">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5Z"/><path d="M9 21V12h6v9"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">Real Estate</div>
       <p class="ind-desc">Geo-targeted lead gen, property marketing, and developer campaign management</p>
-    </div>
     </div>
 
     <!-- Finance & Fintech -->
     <div class="ind-card rv-card d1">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1645226880663-81561dcab0ae?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Finance app stock chart on phone"/>
+      <div class="ind-icon" style="background:#F5F2FF">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">Finance &amp; Fintech</div>
       <p class="ind-desc">Compliant digital marketing, lead nurturing, and trust-building content strategy</p>
-    </div>
     </div>
 
     <!-- EdTech & Education -->
     <div class="ind-card rv-card d2">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1758270705290-62b6294dd044?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Students gathered around a laptop"/>
+      <div class="ind-icon" style="background:#FFF5FB">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">EdTech &amp; Education</div>
       <p class="ind-desc">Student acquisition, course promotion, and retention-focused email campaigns</p>
-    </div>
     </div>
 
     <!-- Manufacturing & B2B -->
     <div class="ind-card rv-card d3">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Interior of large industrial factory"/>
+      <div class="ind-icon" style="background:#F0F7FF">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7-6H4a2 2 0 0 0-2 2v16Z"/><path d="M14 2v6h6M10 13H8M16 13h-2M10 17H8M16 17h-2"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">Manufacturing &amp; B2B</div>
       <p class="ind-desc">LinkedIn ABM campaigns, thought leadership, and long sales cycle lead nurturing</p>
-    </div>
     </div>
 
     <!-- Hospitality & F&B -->
     <div class="ind-card rv-card d4">
-      <div class="ind-icon">
-        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?fm=jpg&amp;q=80&amp;w=300&amp;auto=format&amp;fit=crop" alt="Modern restaurant interior with booths"/>
+      <div class="ind-icon" style="background:#FFF0EB">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
       </div>
-      <div class="ind-body">
       <div class="ind-title">Hospitality &amp; F&amp;B</div>
       <p class="ind-desc">Local SEO, social media management, and seasonal campaign execution</p>
-    </div>
     </div>
 
   </div>
@@ -1401,7 +1439,16 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a class="logo" href="#" style="color:#fff">Apex<span>360</span> Digital</a>
+      <a href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
+    <defs><linearGradient id="aGf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <rect x="98" y="0" width="64" height="64" rx="17.5" fill="url(#aGf)"/>
+    <circle cx="130" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="125 42" transform="rotate(128 130 32)" opacity="0.55"/>
+    <circle cx="149.3" cy="15.8" r="2.7" fill="#fff" opacity="0.9"/>
+    <path d="M130 16.5 L145 46.5 L137 46.5 L130 32 L123 46.5 L115 46.5 Z" fill="#fff"/>
+    <text x="130" y="100" text-anchor="middle" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:21px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan><tspan fill="#fff"> Digital</tspan></text>
+  </svg>
+</a>
       <p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p>
     </div>
     <div class="footer-col">
@@ -1586,6 +1633,110 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+</script>
+
+<script>
+
+(function(){
+  /* ── nav scroll shadow ── */
+  var nav=document.getElementById('main-nav')||document.getElementById('mn');
+  if(nav){
+    window.addEventListener('scroll',function(){
+      nav.style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.1)':'0 1px 0 rgba(0,0,0,.06)';
+    },{passive:true});
+  }
+
+  /* ── hamburger ── */
+  var hb=document.getElementById('hamburger')||document.getElementById('hb');
+  var nl=document.getElementById('nav-links')||document.getElementById('nl');
+  if(hb&&nl){
+    hb.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=nl.classList.toggle('open');
+      hb.setAttribute('aria-expanded',open);
+      var bars=hb.querySelectorAll('span');
+      if(open){
+        bars[0].style.transform='translateY(7px) rotate(45deg)';
+        bars[1].style.opacity='0';
+        bars[2].style.transform='translateY(-7px) rotate(-45deg)';
+        document.body.style.overflow='hidden';
+      } else {
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+        document.body.style.overflow='';
+      }
+    });
+  }
+
+  /* ── services dropdown ── */
+  var dropEl=document.getElementById('drop-services')||document.getElementById('dsvcs');
+  if(dropEl){
+    var dbtn=dropEl.querySelector('button');
+    var ddMenu=dropEl.querySelector('.nav-dropdown');
+    var timer;
+    function openDrop(){clearTimeout(timer);dropEl.classList.add('open');if(dbtn)dbtn.setAttribute('aria-expanded','true');}
+    function closeDrop(){timer=setTimeout(function(){dropEl.classList.remove('open');if(dbtn)dbtn.setAttribute('aria-expanded','false');},120);}
+    /* desktop hover */
+    dropEl.addEventListener('mouseenter',openDrop);
+    dropEl.addEventListener('mouseleave',closeDrop);
+    if(ddMenu){ddMenu.addEventListener('mouseenter',openDrop);ddMenu.addEventListener('mouseleave',closeDrop);}
+    /* mobile / click toggle */
+    if(dbtn){
+      dbtn.addEventListener('click',function(e){
+        e.stopPropagation();
+        dropEl.classList.contains('open')?closeDrop():openDrop();
+      });
+    }
+    /* close when link clicked */
+    if(ddMenu){
+      ddMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){
+          dropEl.classList.remove('open');
+          if(nl)nl.classList.remove('open');
+          if(hb){
+            var bars=hb.querySelectorAll('span');
+            bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+            hb.setAttribute('aria-expanded','false');
+          }
+          document.body.style.overflow='';
+        });
+      });
+    }
+  }
+
+  /* ── close on outside click ── */
+  document.addEventListener('click',function(){
+    if(dropEl)dropEl.classList.remove('open');
+    if(nl&&window.innerWidth<=768){
+      nl.classList.remove('open');
+      document.body.style.overflow='';
+      if(hb){
+        var bars=hb.querySelectorAll('span');
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+        hb.setAttribute('aria-expanded','false');
+      }
+    }
+  });
+
+  /* ── scroll reveal ── */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+  document.querySelectorAll('.rv,.rv-r,.rv-l,.rv-scale').forEach(function(el){io.observe(el);});
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q,.faq-question').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.closest('.faq-item,.faq-card');
+      if(!item)return;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open,.faq-card.open').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
 
 </script>
 </body>

@@ -273,10 +273,85 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 @keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
 .marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+
+/* ── NAV FIXES ── */
+nav{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 4rem;height:76px;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.logo{display:inline-flex;align-items:center;text-decoration:none;flex-shrink:0;gap:0}
+.logo svg{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
+.nav-links>li{position:relative}
+.nav-links>li>a,.nav-links>li>button{display:flex;align-items:center;gap:.28rem;padding:.45rem .82rem;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:500;color:#111;text-decoration:none;background:none;border:none;cursor:pointer;border-radius:8px;white-space:nowrap;transition:background .15s,color .15s;line-height:1}
+.nav-links>li>a:hover,.nav-links>li>button:hover{background:#FFF0EB;color:#FF5C1A}
+.nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{background:#FF5C1A;color:#fff!important;padding:.48rem 1.3rem;border-radius:100px;font-weight:700;font-size:.86rem}
+.nav-links>li>a.nav-cta:hover,.nav-links>li>a.nav-cta-purple:hover{background:#e04a0e;color:#fff!important}
+.nav-chevron{width:13px;height:13px;flex-shrink:0;transition:transform .2s;opacity:.45;pointer-events:none}
+.nav-item-drop.open .nav-chevron{transform:rotate(180deg);opacity:1}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,.13);padding:.5rem;min-width:220px;max-width:260px;width:max-content;opacity:0;pointer-events:none;transition:opacity .18s,transform .2s cubic-bezier(.22,1,.36,1);z-index:9999}
+.nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:#fff;border-top:none}
+.nav-item-drop.open>.nav-dropdown{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.drop-item{display:flex;align-items:center;gap:.65rem;padding:.58rem .75rem;border-radius:10px;text-decoration:none;color:#111;font-size:.83rem;font-weight:500;transition:background .14s;white-space:nowrap}
+.drop-item:hover,.drop-item.active{background:#f7f7f5;color:#FF5C1A}
+.drop-item.active{font-weight:700;background:#FFF0EB}
+.drop-ico{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.drop-title{font-size:.83rem;font-weight:600;color:inherit}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem;flex-shrink:0;z-index:10}
+.hamburger span{display:block;width:22px;height:2px;background:#111;border-radius:2px;transition:transform .25s,opacity .25s}
+
+/* MOBILE NAV */
+@media(max-width:1024px){nav{padding:0 2rem}}
+@media(max-width:768px){
+  nav{padding:0 1.25rem;height:64px}
+  .hamburger{display:flex}
+  .nav-links{
+    display:none;position:fixed;top:64px;left:0;right:0;bottom:0;
+    background:#fff;flex-direction:column;align-items:stretch;
+    padding:1rem 1.25rem 2rem;gap:.2rem;
+    overflow-y:auto;z-index:9998;
+    box-shadow:0 8px 32px rgba(0,0,0,.12);
+    border-top:1px solid rgba(0,0,0,.07)
+  }
+  .nav-links.open{display:flex}
+  .nav-links>li>a,.nav-links>li>button{
+    padding:.75rem 1rem;border-radius:10px;
+    width:100%;justify-content:space-between;font-size:.92rem
+  }
+  .nav-dropdown{
+    position:static;transform:none!important;opacity:1;pointer-events:auto;
+    box-shadow:none;border:none;background:#f7f7f5;border-radius:12px;
+    padding:.35rem .5rem .35rem 1rem;margin-top:.25rem;
+    min-width:0;max-width:none;width:auto;display:none
+  }
+  .nav-dropdown::before{display:none}
+  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column;gap:.05rem}
+  .drop-item{padding:.6rem .75rem;font-size:.88rem}
+  .nav-links>li>a.nav-cta,.nav-links>li>a.nav-cta-purple{
+    margin-top:.5rem;text-align:center;justify-content:center;
+    padding:.75rem 1rem;border-radius:10px
+  }
+  .logo svg{height:38px}
+}
+@media(max-width:480px){
+  nav{padding:0 1rem;height:60px}
+  .nav-links{top:60px}
+  .logo svg{height:34px}
+}
+
 </style>
 </head>
 <body>
-<nav id="mn"><a class="logo" href="index.html">Apex<span>360</span> Digital</a>
+<nav id="mn"><a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="44" style="display:block;flex-shrink:0" aria-hidden="true">
+    <defs><linearGradient id="aG6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <!-- Icon square -->
+    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aG6)"/>
+    <circle cx="20" cy="22" r="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="70 26" transform="rotate(128 20 22)" opacity="0.55"/>
+    <circle cx="30" cy="12" r="2" fill="#fff" opacity="0.9"/>
+    <path d="M20 12 L29 32 L24 32 L20 23 L16 32 L11 32 Z" fill="#fff"/>
+    <!-- Wordmark -->
+    <text x="50" y="18" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:-.3px" fill="#111">Apex<tspan fill="#FF5C1A">360</tspan></text>
+    <text x="50" y="36" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.02em" fill="#888">Digital Agency</text>
+  </svg>
+</a>
   <button class="hamburger" id="hb" aria-label="Menu"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="nl">
     <li class="nav-item-drop" id="dsvcs">
@@ -648,7 +723,16 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 </div>
 
 <footer><div class="footer-top">
-  <div class="footer-brand"><a class="logo" href="index.html" style="color:#fff">Apex<span>360</span> Digital</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
+  <div class="footer-brand"><a href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
+    <defs><linearGradient id="aGf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
+    <rect x="98" y="0" width="64" height="64" rx="17.5" fill="url(#aGf)"/>
+    <circle cx="130" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="125 42" transform="rotate(128 130 32)" opacity="0.55"/>
+    <circle cx="149.3" cy="15.8" r="2.7" fill="#fff" opacity="0.9"/>
+    <path d="M130 16.5 L145 46.5 L137 46.5 L130 32 L123 46.5 L115 46.5 Z" fill="#fff"/>
+    <text x="130" y="100" text-anchor="middle" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:21px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan><tspan fill="#fff"> Digital</tspan></text>
+  </svg>
+</a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
   <div class="footer-col"><div class="fc-title">Services</div><ul>
     <li><a href="digital-marketing.html">Digital Marketing</a></li>
     <li><a href="hubspot.html">HubSpot Solutions</a></li>
@@ -675,38 +759,110 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="fsoc"><a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a><a href="#" aria-label="X"><i class="ti ti-brand-x"></i></a><a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a></div>
   <div class="fleg"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
 </div></footer>
+
+
 <script>
+
 (function(){
-  var nav=document.getElementById('mn');
-  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
-  var hb=document.getElementById('hb'),nl=document.getElementById('nl');
-  hb.addEventListener('click',function(){
-    var o=nl.classList.toggle('open');hb.setAttribute('aria-expanded',o);
-    var b=hb.querySelectorAll('span');
-    if(o){b[0].style.transform='translateY(7px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-7px) rotate(-45deg)';}
-    else{b.forEach(function(x){x.style.transform='';x.style.opacity='';});}
-  });
-  var drop=document.getElementById('dsvcs');
-  if(drop){
-    var dbtn=drop.querySelector('button'),dp=drop.querySelector('.nav-dropdown'),dt;
-    function od(){clearTimeout(dt);drop.classList.add('open');dbtn.setAttribute('aria-expanded','true');}
-    function cd(){dt=setTimeout(function(){drop.classList.remove('open');dbtn.setAttribute('aria-expanded','false');},100);}
-    drop.addEventListener('mouseenter',od);drop.addEventListener('mouseleave',cd);
-    if(dp){dp.addEventListener('mouseenter',od);dp.addEventListener('mouseleave',cd);}
-    dbtn.addEventListener('click',function(e){e.stopPropagation();drop.classList.contains('open')?cd():od();});
-    if(dp){dp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drop.classList.remove('open');nl.classList.remove('open');});});}
+  /* ── nav scroll shadow ── */
+  var nav=document.getElementById('main-nav')||document.getElementById('mn');
+  if(nav){
+    window.addEventListener('scroll',function(){
+      nav.style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.1)':'0 1px 0 rgba(0,0,0,.06)';
+    },{passive:true});
   }
-  document.addEventListener('click',function(){if(drop)drop.classList.remove('open');});
-  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.rv,.rv-r').forEach(function(el){io.observe(el);});
-  document.querySelectorAll('.faq-q').forEach(function(btn){
+
+  /* ── hamburger ── */
+  var hb=document.getElementById('hamburger')||document.getElementById('hb');
+  var nl=document.getElementById('nav-links')||document.getElementById('nl');
+  if(hb&&nl){
+    hb.addEventListener('click',function(e){
+      e.stopPropagation();
+      var open=nl.classList.toggle('open');
+      hb.setAttribute('aria-expanded',open);
+      var bars=hb.querySelectorAll('span');
+      if(open){
+        bars[0].style.transform='translateY(7px) rotate(45deg)';
+        bars[1].style.opacity='0';
+        bars[2].style.transform='translateY(-7px) rotate(-45deg)';
+        document.body.style.overflow='hidden';
+      } else {
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+        document.body.style.overflow='';
+      }
+    });
+  }
+
+  /* ── services dropdown ── */
+  var dropEl=document.getElementById('drop-services')||document.getElementById('dsvcs');
+  if(dropEl){
+    var dbtn=dropEl.querySelector('button');
+    var ddMenu=dropEl.querySelector('.nav-dropdown');
+    var timer;
+    function openDrop(){clearTimeout(timer);dropEl.classList.add('open');if(dbtn)dbtn.setAttribute('aria-expanded','true');}
+    function closeDrop(){timer=setTimeout(function(){dropEl.classList.remove('open');if(dbtn)dbtn.setAttribute('aria-expanded','false');},120);}
+    /* desktop hover */
+    dropEl.addEventListener('mouseenter',openDrop);
+    dropEl.addEventListener('mouseleave',closeDrop);
+    if(ddMenu){ddMenu.addEventListener('mouseenter',openDrop);ddMenu.addEventListener('mouseleave',closeDrop);}
+    /* mobile / click toggle */
+    if(dbtn){
+      dbtn.addEventListener('click',function(e){
+        e.stopPropagation();
+        dropEl.classList.contains('open')?closeDrop():openDrop();
+      });
+    }
+    /* close when link clicked */
+    if(ddMenu){
+      ddMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){
+          dropEl.classList.remove('open');
+          if(nl)nl.classList.remove('open');
+          if(hb){
+            var bars=hb.querySelectorAll('span');
+            bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+            hb.setAttribute('aria-expanded','false');
+          }
+          document.body.style.overflow='';
+        });
+      });
+    }
+  }
+
+  /* ── close on outside click ── */
+  document.addEventListener('click',function(){
+    if(dropEl)dropEl.classList.remove('open');
+    if(nl&&window.innerWidth<=768){
+      nl.classList.remove('open');
+      document.body.style.overflow='';
+      if(hb){
+        var bars=hb.querySelectorAll('span');
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+        hb.setAttribute('aria-expanded','false');
+      }
+    }
+  });
+
+  /* ── scroll reveal ── */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+  document.querySelectorAll('.rv,.rv-r,.rv-l,.rv-scale').forEach(function(el){io.observe(el);});
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q,.faq-question').forEach(function(btn){
     btn.addEventListener('click',function(){
-      var it=btn.closest('.faq-item'),op=it.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');});
-      if(!op)it.classList.add('open');
+      var item=btn.closest('.faq-item,.faq-card');
+      if(!item)return;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open,.faq-card.open').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
     });
   });
 })();
+
 </script>
 </body>
 </html>
