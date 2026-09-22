@@ -204,7 +204,7 @@ section{padding:5.5rem 5rem}
 .pr-footnote{text-align:center;font-size:.78rem;color:var(--muted);margin-top:2.5rem}
 .pr-footnote a{color:var(--orange);text-decoration:none;font-weight:600}
 .pr-footnote a:hover{text-decoration:underline}
-@media(max-width:1100px){.pricing-grid{grid-template-columns:1fr;max-width:480px}}
+
 
 /* ── FAQ ── */
 .faq-inner{max-width:780px;margin:0 auto}
@@ -231,7 +231,7 @@ section{padding:5.5rem 5rem}
 .book-btn-primary:hover{opacity:.88;transform:translateY(-2px)}
 .book-btn-outline{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;padding:.82rem 1.8rem;border-radius:var(--pill);font-family:'Figtree',sans-serif;font-weight:600;font-size:.9rem;text-decoration:none;border:2px solid rgba(255,255,255,.3);cursor:pointer;transition:border-color .2s,transform .15s;white-space:nowrap}
 .book-btn-outline:hover{border-color:#fff;transform:translateY(-2px)}
-@media(max-width:768px){.book-inner{flex-direction:column;text-align:center}.book-sub{margin:0 auto}.book-actions{justify-content:center}.book-band{padding-left:1.5rem;padding-right:1.5rem}}
+
 .who-body p{font-size:.95rem;color:var(--muted);line-height:1.8}
 .values-list{display:flex;flex-direction:column;gap:1.25rem;margin-top:1.75rem}
 .value-item{display:flex;gap:1rem;align-items:flex-start}
@@ -316,54 +316,12 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 /* hero entry */
 .he{opacity:0;transform:translateY(18px);animation:heIn .7s cubic-bezier(.22,1,.36,1) forwards}
 @keyframes heIn{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
-  .rv-up,.rv-card,.rv-blur,.rv-fade,.he{opacity:1!important;transform:none!important;filter:none!important}
-}
+
 
 /* RESPONSIVE */
-@media(max-width:1100px){
-  nav{padding:0 2.5rem}
-  .hero,section,.cta-band,footer{padding-left:2.5rem;padding-right:2.5rem}
-  .hero-inner{grid-template-columns:1fr;gap:3rem}
-  .hero-right{display:none}
-  .hero-stats-row{grid-template-columns:repeat(2,1fr)}
-  .services-grid{grid-template-columns:repeat(2,1fr)}
-  .resources-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
-}
-@media(max-width:768px){
-  nav{padding:0 1.5rem}
-  .hero,section,.cta-band,footer{padding-left:1.5rem;padding-right:1.5rem}
-  .hero{padding-top:3rem;padding-bottom:3rem}
-  section{padding-top:3.5rem;padding-bottom:3.5rem}
-  .hamburger{display:flex}
-  .hero-h1{font-size:2.2rem}
-  .hero-stats-row{grid-template-columns:repeat(2,1fr)}
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(14px);flex-direction:column;align-items:stretch;padding:.75rem 1rem 1rem;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.07);gap:.15rem}
-  .nav-links.open{display:flex}
-  .nav-links>li>a,.nav-links>li>button{font-size:.95rem;padding:.65rem 1rem;border-radius:8px;width:100%;justify-content:space-between}
-  .nav-dropdown{position:static;box-shadow:none;border:none;border-radius:0;padding:0 0 0 .75rem;min-width:0;max-width:none;width:auto;opacity:1;pointer-events:auto;transform:none!important;display:none}
-  .nav-dropdown::before{display:none}
-  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column}
-  .drop-desc{display:none}
-  .who-grid{grid-template-columns:1fr;gap:2.5rem}
-  .services-grid{grid-template-columns:1fr}
-  .cases-grid{grid-template-columns:1fr}
-  .resources-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr;gap:2rem}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
-  .cta-form{flex-direction:column}
-  .cta-band{padding-top:3.5rem;padding-bottom:3.5rem}
-}
-@media(max-width:480px){
-  .stats-strip{grid-template-columns:1fr}
-  .stat-cell{border-right:none!important;border-top:1px solid var(--border)}
-  .stat-cell:first-child{border-top:none}
-  .who-tiles{grid-template-columns:1fr 1fr}
-  .ind-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-top{grid-template-columns:1fr 1fr}
-}
+
+
+
 
   /* ══════════════════════════════════════════
      FUNNEL DESIGN — Digital Marketing Section
@@ -562,17 +520,8 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
   }
 
   /* Responsive */
-  @media (max-width: 900px) {
-    .funnel-layout { grid-template-columns: 1fr; gap: 3rem; }
-    .funnel-visual { max-width: 480px; margin: 0 auto; }
-    .funnel-step::after { display: none; }
-    .funnel-step-dot { display: none; }
-  }
-  @media (max-width: 600px) {
-    .funnel-body { height: 44px; }
-    .funnel-top  { height: 16px; }
-    .funnel-num  { font-size: 1.2rem; }
-  }
+  
+  
 
 
 .marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
@@ -584,6 +533,67 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 @keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
 .marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+
+/* ===== RESPONSIVE (kept last so mobile rules always win) ===== */
+@media(max-width:1100px){.pricing-grid{grid-template-columns:1fr;max-width:480px}}
+@media(max-width:768px){.book-inner{flex-direction:column;text-align:center}.book-sub{margin:0 auto}.book-actions{justify-content:center}.book-band{padding-left:1.5rem;padding-right:1.5rem}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .rv-up,.rv-card,.rv-blur,.rv-fade,.he{opacity:1!important;transform:none!important;filter:none!important}
+}
+@media(max-width:1100px){
+  nav{padding:0 2.5rem}
+  .hero,section,.cta-band,footer{padding-left:2.5rem;padding-right:2.5rem}
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-right{display:none}
+  .hero-stats-row{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .resources-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  nav{padding:0 1.5rem}
+  .hero,section,.cta-band,footer{padding-left:1.5rem;padding-right:1.5rem}
+  .hero{padding-top:3rem;padding-bottom:3rem}
+  section{padding-top:3.5rem;padding-bottom:3.5rem}
+  .hamburger{display:flex}
+  .hero-h1{font-size:2.2rem}
+  .hero-stats-row{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(14px);flex-direction:column;align-items:stretch;padding:.75rem 1rem 1rem;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.07);gap:.15rem}
+  .nav-links.open{display:flex}
+  .nav-links>li>a,.nav-links>li>button{font-size:.95rem;padding:.65rem 1rem;border-radius:8px;width:100%;justify-content:space-between}
+  .nav-dropdown{position:static;box-shadow:none;border:none;border-radius:0;padding:0 0 0 .75rem;min-width:0;max-width:none;width:auto;opacity:1;pointer-events:auto;transform:none!important;display:none}
+  .nav-dropdown::before{display:none}
+  .nav-item-drop.open>.nav-dropdown{display:flex;flex-direction:column}
+  .drop-desc{display:none}
+  .who-grid{grid-template-columns:1fr;gap:2.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .resources-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .cta-form{flex-direction:column}
+  .cta-band{padding-top:3.5rem;padding-bottom:3.5rem}
+}
+@media(max-width:480px){
+  .stats-strip{grid-template-columns:1fr}
+  .stat-cell{border-right:none!important;border-top:1px solid var(--border)}
+  .stat-cell:first-child{border-top:none}
+  .who-tiles{grid-template-columns:1fr 1fr}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 900px) {
+    .funnel-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .funnel-visual { max-width: 480px; margin: 0 auto; }
+    .funnel-step::after { display: none; }
+    .funnel-step-dot { display: none; }
+  }
+@media (max-width: 600px) {
+    .funnel-body { height: 44px; }
+    .funnel-top  { height: 16px; }
+    .funnel-num  { font-size: 1.2rem; }
+  }
 </style>
 </head>
 <body>
@@ -1409,13 +1419,14 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a class="logo" href="#" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
+      <a class="logo" href="#" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="64" style="display:block;flex-shrink:0" aria-hidden="true">
     <defs><linearGradient id="aGf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
-    <rect x="98" y="0" width="64" height="64" rx="17.5" fill="url(#aGf)"/>
-    <circle cx="130" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="125 42" transform="rotate(128 130 32)" opacity="0.55"/>
-    <circle cx="149.3" cy="15.8" r="2.7" fill="#fff" opacity="0.9"/>
-    <path d="M130 16.5 L145 46.5 L137 46.5 L130 32 L123 46.5 L115 46.5 Z" fill="#fff"/>
-    <text x="130" y="100" text-anchor="middle" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:21px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan><tspan fill="#fff"> Digital</tspan></text>
+    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aGf)"/>
+    <circle cx="20" cy="22" r="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="70 26" transform="rotate(128 20 22)" opacity="0.55"/>
+    <circle cx="30" cy="12" r="2" fill="#fff" opacity="0.9"/>
+    <path d="M20 12 L29 32 L24 32 L20 23 L16 32 L11 32 Z" fill="#fff"/>
+    <text x="50" y="18" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:-.3px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan></text>
+    <text x="50" y="36" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.02em" fill="rgba(255,255,255,.55)">Digital Agency</text>
   </svg></a>
       <p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p>
     </div>

@@ -190,6 +190,28 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
 .rv-r{opacity:0;transform:translateX(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s}
 .rv-r.in{opacity:1;transform:none}
+
+
+
+
+.trust-bar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;max-width:1000px;margin:0 auto;row-gap:1.75rem}
+.trust-item{display:flex;align-items:center;gap:.65rem;padding:0 1.85rem;position:relative}
+.trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:22px;background:rgba(0,0,0,.1)}
+.trust-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.trust-label{font-size:.87rem;font-weight:600;color:var(--ink);white-space:nowrap}
+
+
+.marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(270deg,#fff,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
+.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+
+/* ===== RESPONSIVE (kept last so mobile rules always win) ===== */
 @media(max-width:1100px){
   nav,section,footer,.svc-hero,.stats-icon-section,.dark-sect,.page-cta{padding-left:2.5rem;padding-right:2.5rem}
   .svc-hero-inner{grid-template-columns:1fr}
@@ -220,23 +242,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .funnel-wrap{width:100%}
   .funnel-stage{width:100%!important}
 }
-
-.trust-bar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;max-width:1000px;margin:0 auto;row-gap:1.75rem}
-.trust-item{display:flex;align-items:center;gap:.65rem;padding:0 1.85rem;position:relative}
-.trust-item:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:22px;background:rgba(0,0,0,.1)}
-.trust-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.trust-label{font-size:.87rem;font-weight:600;color:var(--ink);white-space:nowrap}
 @media(max-width:768px){.trust-item{padding:0 1rem}.trust-item::after{display:none}}
-
-.marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
-.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
-.marquee-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
-.marquee-wrap::after{right:0;background:linear-gradient(270deg,#fff,transparent)}
-.marquee-track{display:flex;width:max-content;animation:marqueeScroll 28s linear infinite}
-.marquee-wrap:hover .marquee-track{animation-play-state:paused}
-@keyframes marqueeScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.marquee-item{display:flex;align-items:center;gap:.6rem;padding:0 2.25rem;white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--ink)}
-.marquee-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
 </style>
 </head>
 <body>
@@ -262,10 +268,10 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 </div>
     </li>
     <li><a href="about.html">About Us</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="nav-cta">Get Started →</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get Started →</a></li>
   </ul></nav>
 
 <div class="svc-hero">
@@ -282,7 +288,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
       <h1>Automate the Busywork. <span>Scale Revenue Faster.</span></h1>
       <p class="hero-sub">We design and build automated workflows that score leads, trigger campaigns, and move deals through your pipeline without manual effort — connected to HubSpot, ActiveCampaign, or Marketo and tailored to how your team actually sells.</p>
       <div class="hero-btns">
-        <a href="contact.html" class="btn-orange">Get Free Automation Audit →</a>
+        <a href="index.html#contact" class="btn-orange">Get Free Automation Audit →</a>
         <a href="#services" class="btn-ghost">Explore Services</a>
       </div>
     </div>
@@ -373,7 +379,7 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <div class="metric"><div class="metric-num">60%</div><div class="metric-lbl">Reduction in manual work</div></div>
         <div class="metric"><div class="metric-num">40%</div><div class="metric-lbl">Faster deal close time</div></div>
         <div class="metric"><div class="metric-num">200+</div><div class="metric-lbl">Workflows delivered</div></div>
-        <div class="metric-cta"><div><strong>Less Admin + More Pipeline = Your Competitive Advantage</strong><p>Every automation stack we build is engineered to capture, score, and nurture leads automatically — freeing your team to focus on closing, not chasing.</p></div><a href="contact.html" class="btn-orange" style="white-space:nowrap">Get Started →</a></div>
+        <div class="metric-cta"><div><strong>Less Admin + More Pipeline = Your Competitive Advantage</strong><p>Every automation stack we build is engineered to capture, score, and nurture leads automatically — freeing your team to focus on closing, not chasing.</p></div><a href="index.html#contact" class="btn-orange" style="white-space:nowrap">Get Started →</a></div>
       </div>
     </div>
   </div>
@@ -454,20 +460,21 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     <h2>Ready to Automate Your <span>Marketing &amp; Sales?</span></h2>
     <p>Get a free automation audit and a custom workflow proposal — we will identify every manual bottleneck, dropped lead, and missed follow-up costing you pipeline right now.</p>
     <div class="cta-btns">
-      <a href="contact.html" class="btn-orange">Get Free Automation Audit →</a>
+      <a href="index.html#contact" class="btn-orange">Get Free Automation Audit →</a>
       <a href="index.html#cases" class="btn-outline">View Case Studies</a>
     </div>
   </div>
 </div>
 
 <footer><div class="footer-top">
-  <div class="footer-brand"><a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" height="34" style="display:block" aria-hidden="true">
+  <div class="footer-brand"><a class="logo" href="index.html" aria-label="Apex360 Digital" style="text-decoration:none;display:inline-flex;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" height="64" style="display:block;flex-shrink:0" aria-hidden="true">
     <defs><linearGradient id="aGf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/></linearGradient></defs>
-    <rect x="98" y="0" width="64" height="64" rx="17.5" fill="url(#aGf)"/>
-    <circle cx="130" cy="32" r="26.5" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-dasharray="125 42" transform="rotate(128 130 32)" opacity="0.55"/>
-    <circle cx="149.3" cy="15.8" r="2.7" fill="#fff" opacity="0.9"/>
-    <path d="M130 16.5 L145 46.5 L137 46.5 L130 32 L123 46.5 L115 46.5 Z" fill="#fff"/>
-    <text x="130" y="100" text-anchor="middle" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:21px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan><tspan fill="#fff"> Digital</tspan></text>
+    <rect x="0" y="2" width="40" height="40" rx="10" fill="url(#aGf)"/>
+    <circle cx="20" cy="22" r="16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="70 26" transform="rotate(128 20 22)" opacity="0.55"/>
+    <circle cx="30" cy="12" r="2" fill="#fff" opacity="0.9"/>
+    <path d="M20 12 L29 32 L24 32 L20 23 L16 32 L11 32 Z" fill="#fff"/>
+    <text x="50" y="18" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:800;font-size:15px;letter-spacing:-.3px" fill="#fff">Apex<tspan fill="#FF5C1A">360</tspan></text>
+    <text x="50" y="36" style="font-family:Plus Jakarta Sans,Arial,sans-serif;font-weight:600;font-size:11px;letter-spacing:.02em" fill="rgba(255,255,255,.55)">Digital Agency</text>
   </svg></a><p>Full-service digital growth agency helping ambitious brands rank higher, convert better, and scale faster.</p></div>
   <div class="footer-col"><div class="fc-title">Services</div><ul>
     <li><a href="digital-marketing.html">Digital Marketing</a></li>
@@ -481,13 +488,13 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
     <li><a href="about.html">About Us</a></li>
     <li><a href="index.html#cases">Case Studies</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
   </ul></div>
   <div class="footer-col"><div class="fc-title">Contact</div><ul>
     <li><a href="mailto:hello@apex360digital.com">hello@apex360digital.com</a></li>
     <li><a href="tel:+919876543210">+91 98765 43210</a></li>
     <li><a href="#">Chandigarh, India</a></li>
-    <li><a href="contact.html">Book a Call</a></li>
+    <li><a href="index.html#contact">Book a Call</a></li>
   </ul></div>
 </div>
 <div class="footer-btm">
