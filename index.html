@@ -323,208 +323,108 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
 
 
 
-  /* ══════════════════════════════════════════
-     FUNNEL DESIGN — Digital Marketing Section
-     Matches 5-layer 3D stacked funnel reference
+  /* ═══════════════════════════════     AUTOMATION WORKFLOW ANIMATION — Digital Marketing Section
   ══════════════════════════════════════════ */
 
-  /* Layout: funnel SVG on left, numbered steps on right */
-  .funnel-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 4rem;
-    align-items: center;
-    margin-top: 3rem;
+  /* ── Layout ── */
+  .auto-layout{display:grid;grid-template-columns:1fr 1fr;gap:0 4rem;align-items:center;margin-top:3rem}
+
+  /* ── Workflow canvas ── */
+  .auto-canvas{position:relative;background:#EAF2FF;border-radius:22px;padding:2rem 1.75rem 1.75rem;overflow:hidden;min-height:420px;box-shadow:0 30px 80px rgba(15,23,42,.1);border:1px solid var(--border)}
+  .auto-canvas::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(255,92,26,.08) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(37,99,235,.07) 0%,transparent 55%);pointer-events:none}
+
+  /* ── Canvas header ── */
+  .ac-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+  .ac-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .ac-live{display:flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:600;color:#0f9e72}
+  .ac-live-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:livePulse 1.4s ease infinite}
+  @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+  /* ── Nodes ── */
+  .wf-node{position:absolute;display:flex;flex-direction:column;align-items:center;gap:.4rem;z-index:3}
+  .wf-node-ico{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;position:relative;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+  .wf-node-ico::after{content:'';position:absolute;inset:-3px;border-radius:17px;border:1.5px solid transparent;transition:border-color .3s}
+  .wf-node.active .wf-node-ico{transform:scale(1.18);box-shadow:0 0 0 6px rgba(255,255,255,.08)}
+  .wf-node.active .wf-node-ico::after{border-color:rgba(255,255,255,.35)}
+  .wf-node-lbl{font-family:'Plus Jakarta Sans',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.5);text-align:center;letter-spacing:.04em;white-space:nowrap}
+  .wf-node.active .wf-node-lbl{color:rgba(255,255,255,.9)}
+
+  /* ── SVG connector lines ── */
+  .wf-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+  .wf-line{stroke:rgba(255,255,255,.08);stroke-width:1.5;fill:none;stroke-dasharray:5 4}
+  .wf-line-active{stroke:rgba(255,255,255,.25);stroke-width:1.5;fill:none;stroke-dasharray:5 4;animation:dashScroll 1s linear infinite}
+  @keyframes dashScroll{to{stroke-dashoffset:-18}}
+
+  /* ── Travelling data packet ── */
+  .wf-packet{position:absolute;width:10px;height:10px;border-radius:50%;z-index:5;pointer-events:none;transition:none;display:none}
+
+  /* ── Mini stat chips ── */
+  .wf-chip{position:absolute;display:flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.35rem .65rem;z-index:4;opacity:0;transform:translateY(6px) scale(.92);transition:opacity .35s,transform .35s;box-shadow:0 6px 16px rgba(15,23,42,.08)}
+  .wf-chip.show{opacity:1;transform:none}
+
+  /* ── NEW: Automation Pipeline (replaces old node-graph animation) ── */
+  .pipeline{position:relative;padding:.5rem 0 .5rem 0;margin:0 auto;max-width:280px}
+  .pipeline-line{position:absolute;left:29px;top:30px;bottom:30px;width:2px;background:var(--border)}
+  .pipeline-pulse{position:absolute;left:29px;top:30px;width:9px;height:9px;margin-left:-3.5px;border-radius:50%;background:#FF5C1A;box-shadow:0 0 14px 5px rgba(255,92,26,.4);animation:pulseTravel 5.2s linear infinite;z-index:2}
+  @keyframes pulseTravel{
+    0%{top:30px;opacity:0}
+    4%{opacity:1}
+    92%{opacity:1}
+    100%{top:calc(100% - 30px);opacity:0}
+  }
+  .pipeline-stage{position:relative;display:flex;align-items:center;gap:1rem;padding:.85rem 0;z-index:1}
+  .pipeline-ico{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;background:#fff;border:2px solid var(--border);box-shadow:0 4px 12px rgba(15,23,42,.06);animation:stageGlow 5.2s ease-in-out infinite}
+  @keyframes stageGlow{
+    0%,20%,100%{border-color:var(--border);box-shadow:0 4px 12px rgba(15,23,42,.06);transform:scale(1)}
+    6%{border-color:#FF5C1A;box-shadow:0 0 22px rgba(255,92,26,.35);transform:scale(1.09)}
+  }
+  .pipeline-title{color:var(--ink);font-weight:700;font-size:.88rem;margin-bottom:.15rem;line-height:1.3}
+  .pipeline-sub{color:var(--muted);font-size:.73rem;line-height:1.5}
+  @media(max-width:480px){
+    .pipeline{max-width:none}
+    .pipeline-title{font-size:.82rem}
+    .pipeline-sub{font-size:.7rem}
+  }
+  .wf-chip-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:800;color:var(--ink)}
+  .wf-chip-lbl{font-size:.6rem;color:var(--muted);font-weight:500}
+
+  /* ── Activity feed ── */
+  .ac-feed{margin-top:1.25rem;display:flex;flex-direction:column;gap:.4rem;max-height:72px;overflow:hidden}
+  .ac-feed-row{display:flex;align-items:center;gap:.55rem;font-size:.65rem;color:rgba(255,255,255,.4);animation:feedIn .4s ease both}
+  @keyframes feedIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+  .ac-feed-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+  .ac-feed-time{color:rgba(255,255,255,.2);margin-left:auto;flex-shrink:0}
+
+  /* ── Right step list ── */
+  .auto-steps{display:flex;flex-direction:column;gap:0}
+  .auto-step{display:flex;align-items:flex-start;gap:1.1rem;padding:1rem 0;border-bottom:1px dashed rgba(0,0,0,.1);opacity:0;transform:translateX(24px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1),background .2s;border-radius:10px;padding-left:.5rem;cursor:default}
+  .auto-step:last-child{border-bottom:none}
+  .auto-step.in{opacity:1;transform:none}
+  .auto-step.active{background:rgba(0,0,0,.03)}
+  .auto-step-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:800;color:var(--sc);line-height:1;flex-shrink:0;min-width:44px;letter-spacing:-.02em;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+  .auto-step.active .auto-step-num{transform:scale(1.15)}
+  .auto-step-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.97rem;color:var(--ink);line-height:1.35;margin-bottom:.3rem}
+  .auto-step-desc{font-size:.82rem;color:var(--muted);line-height:1.55}
+  .auto-step-dot{width:10px;height:10px;border-radius:50%;background:var(--sc);border:2px solid #fff;box-shadow:0 0 0 2px var(--sc);flex-shrink:0;align-self:center;margin-left:auto;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+  .auto-step.active .auto-step-dot{transform:scale(1.5)}
+  .auto-step::after{content:'';position:absolute;right:0;top:50%;width:30px;height:1px;border-top:2px dashed rgba(0,0,0,.12);transform:translateY(-50%)}
+  .auto-step{position:relative}
+
+  /* ── Mobile ── */
+  @media(max-width:1100px){
+    .auto-layout{grid-template-columns:1fr;gap:3rem}
+    .auto-canvas{min-height:360px}
+    .auto-step::after{display:none}
+    .auto-step-dot{display:none}
+  }
+  @media(max-width:768px){
+    .auto-canvas{min-height:300px;padding:1.5rem 1.25rem 1.25rem;border-radius:16px}
+    .wf-node-ico{width:38px;height:38px;font-size:1rem;border-radius:11px}
+    .wf-chip{display:none}
   }
 
-  /* ── LEFT: 3D Stacked Funnel Visual ── */
-  .funnel-visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    position: relative;
-  }
 
-  .funnel-layer {
-    width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: default;
-    transition: filter .2s;
-  }
-  .funnel-layer:hover { filter: brightness(1.06); }
-
-  /* Top face (flat ellipse) */
-  .funnel-top {
-    width: var(--fw);
-    height: 22px;
-    border-radius: 50%;
-    background: var(--ftop);
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 -2px 0 rgba(255,255,255,.35) inset;
-    transition: width .3s ease;
-  }
-
-  /* Body (trapezoid via clip-path + slight 3D shading) */
-  .funnel-body {
-    width: var(--fw);
-    height: 52px;
-    background: linear-gradient(180deg, var(--fmid) 0%, var(--fbot) 100%);
-    clip-path: polygon(0% 0%, 100% 0%, calc(100% - 3%) 100%, 3% 100%);
-    margin-top: -11px;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .7rem;
-  }
-
-  /* Step number inside body */
-  .funnel-num {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.55rem;
-    font-weight: 800;
-    color: rgba(255,255,255,.92);
-    line-height: 1;
-    letter-spacing: -.02em;
-    text-shadow: 0 1px 3px rgba(0,0,0,.2);
-  }
-
-  /* Icon inside body */
-  .funnel-ico {
-    color: rgba(255,255,255,.88);
-    display: flex;
-    align-items: center;
-  }
-
-  /* Bottom ellipse shadow */
-  .funnel-shadow {
-    width: calc(var(--fw) - 6%);
-    height: 14px;
-    border-radius: 50%;
-    background: var(--fbot);
-    opacity: .45;
-    margin-top: -7px;
-    z-index: 0;
-    filter: blur(3px);
-  }
-
-  /* Gap between layers */
-  .funnel-gap { height: 6px; }
-
-  /* Label ABOVE top ellipse */
-
-  /* Bottom point / conversion badge */
-  .funnel-point {
-    width: 0;
-    height: 0;
-    border-left: 60px solid transparent;
-    border-right: 60px solid transparent;
-    border-top: 32px solid #8B2500;
-    margin-top: -2px;
-    position: relative;
-    z-index: 1;
-  }
-  .funnel-bottom-badge {
-    margin-top: 1.25rem;
-    display: inline-flex;
-    align-items: center;
-    gap: .55rem;
-    background: var(--orange);
-    color: #fff;
-    font-family: 'Figtree', sans-serif;
-    font-size: .88rem;
-    font-weight: 700;
-    padding: .65rem 1.75rem;
-    border-radius: var(--pill);
-    box-shadow: 0 4px 20px rgba(255,92,26,.35);
-    letter-spacing: .01em;
-  }
-
-  /* ── RIGHT: Numbered step list ── */
-  .funnel-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .funnel-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.1rem;
-    padding: 1rem 0;
-    border-bottom: 1px dashed rgba(0,0,0,.10);
-    position: relative;
-    opacity: 0;
-    transform: translateX(24px);
-    transition: opacity .55s cubic-bezier(.22,1,.36,1),
-                transform .55s cubic-bezier(.22,1,.36,1);
-  }
-  .funnel-step.in { opacity: 1; transform: none; }
-  .funnel-step:last-child { border-bottom: none; }
-
-  /* Dashed connector line on right of step number */
-  .funnel-step::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 50%;
-    width: 30px;
-    height: 1px;
-    border-top: 2px dashed rgba(0,0,0,.12);
-    transform: translateY(-50%);
-  }
-
-  .funnel-step-num {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--sc);
-    line-height: 1;
-    flex-shrink: 0;
-    min-width: 44px;
-    letter-spacing: -.02em;
-  }
-
-  .funnel-step-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
-    font-size: .97rem;
-    color: var(--ink);
-    line-height: 1.35;
-    margin-bottom: .3rem;
-  }
-
-  .funnel-step-desc {
-    font-size: .82rem;
-    color: var(--muted);
-    line-height: 1.55;
-  }
-
-  /* Connector dot at right edge */
-  .funnel-step-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--sc);
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px var(--sc);
-    flex-shrink: 0;
-    align-self: center;
-    margin-left: auto;
-  }
-
-  /* Responsive */
-  
-  
-
-
-.marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
+  .marquee-wrap{background:#fff;padding:1.6rem 0;overflow:hidden;position:relative;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07)}
 .marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
 .marquee-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
 .marquee-wrap::after{right:0;background:linear-gradient(270deg,#fff,transparent)}
@@ -942,136 +842,116 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:3.5rem 5rem 2rem;m
     <p class="section-sub rv-up d2">Beyond SEO — we run paid media, social, email, and CRO campaigns that turn your traffic into loyal customers.</p>
   </div>
 
-  <!-- NEW 3D FUNNEL LAYOUT -->
-  <div class="funnel-layout">
+  <!-- AUTOMATION WORKFLOW ANIMATION -->
+  <div class="auto-layout">
 
-    <!-- LEFT: 3D Stacked Funnel Visual -->
-    <div class="funnel-visual rv-up">
+    <!-- LEFT: Live Automation Pipeline -->
+    <div class="auto-canvas" id="autoCanvas">
 
-      <!-- Layer 1 — widest, teal -->
-      <div class="funnel-layer" style="--fw:100%;--ftop:#9fd8ce;--fmid:#6dbfb4;--fbot:#4aab9e;">
-        <div class="funnel-top" style="--fw:100%;"></div>
-        <div class="funnel-body">
-          <div class="funnel-num">01</div>
-          <div class="funnel-ico">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+      <!-- Header -->
+      <div class="ac-header">
+        <div class="ac-title">Live Campaign Automation</div>
+        <div class="ac-live"><div class="ac-live-dot"></div>Running</div>
+      </div>
+
+      <!-- Floating stat chips -->
+      <div class="wf-chip show" style="right:6%;top:14px">
+        <div><div class="wf-chip-val">+184%</div><div class="wf-chip-lbl">Organic Traffic</div></div>
+      </div>
+
+      <!-- Vertical pipeline -->
+      <div class="pipeline">
+        <div class="pipeline-line"></div>
+        <div class="pipeline-pulse"></div>
+
+        <div class="pipeline-stage">
+          <div class="pipeline-ico" style="animation-delay:0s">🎯</div>
+          <div class="pipeline-text">
+            <div class="pipeline-title">New Lead Captured</div>
+            <div class="pipeline-sub">Form fill, ad click, or chat message</div>
           </div>
         </div>
-        <div class="funnel-shadow" style="--fw:100%;"></div>
-      </div>
 
-      <div class="funnel-gap"></div>
-
-      <!-- Layer 2 — purple -->
-      <div class="funnel-layer" style="--fw:85%;--ftop:#b8a5d4;--fmid:#9b82c0;--fbot:#7c5fac;">
-        <div class="funnel-top" style="--fw:85%;"></div>
-        <div class="funnel-body">
-          <div class="funnel-num">02</div>
-          <div class="funnel-ico">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <div class="pipeline-stage">
+          <div class="pipeline-ico" style="animation-delay:1.3s">✉️</div>
+          <div class="pipeline-text">
+            <div class="pipeline-title">Nurture Sequence Starts</div>
+            <div class="pipeline-sub">Email + retargeting ads trigger instantly</div>
           </div>
         </div>
-        <div class="funnel-shadow" style="--fw:85%;"></div>
-      </div>
 
-      <div class="funnel-gap"></div>
-
-      <!-- Layer 3 — coral/red -->
-      <div class="funnel-layer" style="--fw:70%;--ftop:#f0907a;--fmid:#e26b52;--fbot:#d44a30;">
-        <div class="funnel-top" style="--fw:70%;"></div>
-        <div class="funnel-body">
-          <div class="funnel-num">03</div>
-          <div class="funnel-ico">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <div class="pipeline-stage">
+          <div class="pipeline-ico" style="animation-delay:2.6s">⚡</div>
+          <div class="pipeline-text">
+            <div class="pipeline-title">Lead Scored &amp; Routed</div>
+            <div class="pipeline-sub">HubSpot ranks intent, alerts sales team</div>
           </div>
         </div>
-        <div class="funnel-shadow" style="--fw:70%;"></div>
-      </div>
 
-      <div class="funnel-gap"></div>
-
-      <!-- Layer 4 — amber/gold -->
-      <div class="funnel-layer" style="--fw:55%;--ftop:#f5c26a;--fmid:#e8a83a;--fbot:#d4901a;">
-        <div class="funnel-top" style="--fw:55%;"></div>
-        <div class="funnel-body">
-          <div class="funnel-num">04</div>
-          <div class="funnel-ico">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5v12a4 4 0 0 0 8 0V3h-4"/><path d="M5 3h14"/><path d="M7 12h4"/></svg>
+        <div class="pipeline-stage">
+          <div class="pipeline-ico" style="animation-delay:3.9s">💰</div>
+          <div class="pipeline-text">
+            <div class="pipeline-title">Converted!</div>
+            <div class="pipeline-sub">Deal closed, reporting updates live</div>
           </div>
         </div>
-        <div class="funnel-shadow" style="--fw:55%;"></div>
       </div>
 
-      <div class="funnel-gap"></div>
-
-      <!-- Layer 5 — orange/salmon, narrowest -->
-      <div class="funnel-layer" style="--fw:40%;--ftop:#f4a07a;--fmid:#e8804a;--fbot:#d96030;">
-        <div class="funnel-top" style="--fw:40%;"></div>
-        <div class="funnel-body">
-          <div class="funnel-num">05</div>
-          <div class="funnel-ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-          </div>
-        </div>
-        <div class="funnel-shadow" style="--fw:40%;"></div>
+      <div class="wf-chip show" style="left:6%;bottom:16px">
+        <div><div class="wf-chip-val">4.7×</div><div class="wf-chip-lbl">ROAS</div></div>
+      </div>
+      <div class="wf-chip show" style="right:6%;bottom:16px">
+        <div><div class="wf-chip-val">38K</div><div class="wf-chip-lbl">Leads/Qtr</div></div>
       </div>
 
-      <!-- Triangle tip pointing down -->
-      <div class="funnel-point"></div>
-
-      <!-- Revenue badge -->
-      <div class="funnel-bottom-badge">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        Revenue &amp; Growth
-      </div>
     </div>
 
     <!-- RIGHT: Numbered step descriptions -->
-    <div class="funnel-steps">
+    <div class="auto-steps" id="autoSteps">
 
-      <div class="funnel-step" style="--sc:#4aab9e;">
-        <div class="funnel-step-num">01</div>
+      <div class="auto-step" style="--sc:#4aab9e;">
+        <div class="auto-step-num">01</div>
         <div>
-          <div class="funnel-step-title">PPC &amp; Paid Search</div>
-          <div class="funnel-step-desc">Google Ads, Bing Ads &amp; Shopping campaigns with precision bidding, audience segmentation, and creative testing to drive qualified traffic at scale.</div>
+          <div class="auto-step-title">PPC &amp; Paid Search</div>
+          <div class="auto-step-desc">Google Ads, Bing Ads &amp; Shopping campaigns with precision bidding, audience segmentation, and creative testing to drive qualified traffic at scale.</div>
         </div>
-        <div class="funnel-step-dot"></div>
+        <div class="auto-step-dot"></div>
       </div>
 
-      <div class="funnel-step" style="--sc:#7c5fac;">
-        <div class="funnel-step-num">02</div>
+      <div class="auto-step" style="--sc:#7c5fac;">
+        <div class="auto-step-num">02</div>
         <div>
-          <div class="funnel-step-title">Social Media Marketing</div>
-          <div class="funnel-step-desc">Organic + paid social across Instagram, LinkedIn, X &amp; Meta — content creation, paid ads, and community management that builds real engagement.</div>
+          <div class="auto-step-title">Social Media Marketing</div>
+          <div class="auto-step-desc">Organic + paid social across Instagram, LinkedIn, X &amp; Meta — content creation, paid ads, and community management that builds real engagement.</div>
         </div>
-        <div class="funnel-step-dot"></div>
+        <div class="auto-step-dot"></div>
       </div>
 
-      <div class="funnel-step" style="--sc:#d44a30;">
-        <div class="funnel-step-num">03</div>
+      <div class="auto-step" style="--sc:#d44a30;">
+        <div class="auto-step-num">03</div>
         <div>
-          <div class="funnel-step-title">Email &amp; Marketing Automation</div>
-          <div class="funnel-step-desc">Klaviyo, HubSpot &amp; ActiveCampaign flows that nurture leads, recover abandoned carts, and grow revenue on complete autopilot.</div>
+          <div class="auto-step-title">Email &amp; Marketing Automation</div>
+          <div class="auto-step-desc">Klaviyo, HubSpot &amp; ActiveCampaign flows that nurture leads, recover abandoned carts, and grow revenue on complete autopilot.</div>
         </div>
-        <div class="funnel-step-dot"></div>
+        <div class="auto-step-dot"></div>
       </div>
 
-      <div class="funnel-step" style="--sc:#d4901a;">
-        <div class="funnel-step-num">04</div>
+      <div class="auto-step" style="--sc:#d4901a;">
+        <div class="auto-step-num">04</div>
         <div>
-          <div class="funnel-step-title">CRO &amp; Landing Pages</div>
-          <div class="funnel-step-desc">A/B testing, heatmaps &amp; conversion-optimised landing pages that squeeze more revenue from your existing traffic without increasing ad spend.</div>
+          <div class="auto-step-title">CRO &amp; Landing Pages</div>
+          <div class="auto-step-desc">A/B testing, heatmaps &amp; conversion-optimised landing pages that squeeze more revenue from your existing traffic without increasing ad spend.</div>
         </div>
-        <div class="funnel-step-dot"></div>
+        <div class="auto-step-dot"></div>
       </div>
 
-      <div class="funnel-step" style="--sc:#d96030;">
-        <div class="funnel-step-num">05</div>
+      <div class="auto-step" style="--sc:#d96030;">
+        <div class="auto-step-num">05</div>
         <div>
-          <div class="funnel-step-title">Video, Content &amp; Influencer Marketing</div>
-          <div class="funnel-step-desc">YouTube SEO, short-form video, thought leadership content &amp; creator partnerships that build lasting brand authority and a self-sustaining growth loop.</div>
+          <div class="auto-step-title">Video, Content &amp; Influencer Marketing</div>
+          <div class="auto-step-desc">YouTube SEO, short-form video, thought leadership content &amp; creator partnerships that build lasting brand authority and a self-sustaining growth loop.</div>
         </div>
-        <div class="funnel-step-dot"></div>
+        <div class="auto-step-dot"></div>
       </div>
 
     </div>
@@ -1630,6 +1510,34 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
     if(!isOpen){this.setAttribute('aria-expanded','true');ans.classList.add('open');}
   });
 });
+
+/* Marketing channel steps — reveal + auto-cycle highlight */
+var autoSteps = document.querySelectorAll('#autoSteps .auto-step');
+if(autoSteps.length){
+  var stepsIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        autoSteps.forEach(function(step,i){
+          setTimeout(function(){
+            step.style.opacity = '1';
+            step.style.transform = 'translateX(0)';
+          }, i*120);
+        });
+        stepsIO.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.2});
+  stepsIO.observe(document.getElementById('autoSteps'));
+
+  var stepIdx = 0;
+  function cycleAutoStep(){
+    autoSteps.forEach(function(s){s.classList.remove('active');});
+    autoSteps[stepIdx].classList.add('active');
+    stepIdx = (stepIdx+1) % autoSteps.length;
+  }
+  cycleAutoStep();
+  setInterval(cycleAutoStep, 2200);
+}
 })();
 
 /* ── Guaranteed About Us navigation ── */
@@ -1699,6 +1607,12 @@ if(chatBubble) chatBubble.addEventListener('click', function(){ chatPanel.classL
 if(chatClose) chatClose.addEventListener('click', function(){ chatPanel.classList.remove('open'); });
 })();
 </script>
+
+
+
+
+
+
 
 </body>
 </html>
