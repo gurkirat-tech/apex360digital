@@ -275,6 +275,30 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   #chat-widget{right:.9rem;bottom:.9rem}
   #chat-panel{width:calc(100vw - 1.8rem);right:-.15rem}
 }
+
+/* ── Marketing Automation AI image block ── */
+.ma-img-block{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.13)}
+.ma-img-block img{width:100%;height:420px;object-fit:cover;display:block}
+.ma-img-block .ma-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,10,20,.68) 0%,rgba(10,10,20,.35) 55%,rgba(10,10,20,.15) 100%)}
+.ma-live{position:absolute;top:1rem;left:1rem;display:flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:30px;padding:.4rem .9rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.7rem;font-weight:700;color:#111;box-shadow:0 4px 14px rgba(0,0,0,.12);z-index:3}
+.ma-live-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:maPulse 1.5s ease infinite;flex-shrink:0}
+@keyframes maPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+.ma-metrics-grid{position:absolute;bottom:1rem;left:1rem;right:1rem;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;z-index:3}
+.ma-mc{background:rgba(255,255,255,.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:.75rem 1rem;text-align:center}
+.ma-mc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.45rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em}
+.ma-mc-lbl{font-size:.62rem;color:rgba(255,255,255,.7);margin-top:.2rem;line-height:1.3}
+.ma-cta-card{background:var(--orange-lt);border:1px solid rgba(255,92,26,.15);border-radius:16px;padding:1.4rem 1.5rem;margin-top:1rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.ma-cta-card strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:.97rem;font-weight:700;color:var(--ink);display:block;margin-bottom:.35rem}
+.ma-cta-card p{font-size:.82rem;color:var(--muted);line-height:1.55;margin:0}
+@media(max-width:768px){
+  .ma-img-block img{height:280px}
+  .ma-mc-num{font-size:1.2rem}
+  .ma-cta-card{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .ma-metrics-grid{gap:.4rem}
+  .ma-mc{padding:.6rem .75rem}
+}
 </style>
 </head>
 <body>
@@ -406,12 +430,200 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   <div class="dark-grid">
     <div><div class="feats"><div class="feat rv"><div class="feat-ico">🤖</div><div><div class="feat-title">AI Lead Scoring &amp; Prioritisation <span class="feat-badge">Active</span></div><div class="feat-desc">Machine learning models that rank leads by likelihood to close using firmographic and behavioural signals — putting your reps' time on the deals most likely to convert first.</div></div></div><div class="feat rv"><div class="feat-ico">✉️</div><div><div class="feat-title">Predictive Send-Time Optimisation <span class="feat-badge">Active</span></div><div class="feat-desc">AI determines the optimal moment to send every email to every contact based on their historical open and click behaviour — lifting open rates without any manual scheduling.</div></div></div><div class="feat rv"><div class="feat-ico">💬</div><div><div class="feat-title">Chatbot Follow-Up &amp; Qualification <span class="feat-badge">Active</span></div><div class="feat-desc">Conversational AI that follows up with unresponsive leads, answers common questions, and re-engages cold contacts automatically — recovering pipeline that would otherwise go cold.</div></div></div><div class="feat rv"><div class="feat-ico">🧩</div><div><div class="feat-title">Dynamic Audience Segmentation <span class="feat-badge">Active</span></div><div class="feat-desc">Segments that update themselves in real time as contacts engage — so every campaign automatically targets the right audience without manual list management.</div></div></div></div></div>
     <div class="rv-r">
-      <div class="metrics">
-        <div class="metric"><div class="metric-num">3×</div><div class="metric-lbl">Average pipeline growth</div></div>
-        <div class="metric"><div class="metric-num">60%</div><div class="metric-lbl">Reduction in manual work</div></div>
-        <div class="metric"><div class="metric-num">40%</div><div class="metric-lbl">Faster deal close time</div></div>
-        <div class="metric"><div class="metric-num">200+</div><div class="metric-lbl">Workflows delivered</div></div>
-        <div class="metric-cta"><div><strong>Less Admin + More Pipeline = Your Competitive Advantage</strong><p>Every automation stack we build is engineered to capture, score, and nurture leads automatically — freeing your team to focus on closing, not chasing.</p></div><a href="contact.html" class="btn-orange" style="white-space:nowrap">Get Started →</a></div>
+      <!-- Real image: marketing automation workflow on screen -->
+      <div class="ma-img-block rv">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" style="width:100%;height:420px;display:block" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="maBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="60%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="maOr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A3D"/>
+      <stop offset="100%" stop-color="#FF5C1A"/>
+    </linearGradient>
+    <linearGradient id="maGr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="maBl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="maGlow">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="maShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="rgba(0,0,0,.4)"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="420" fill="url(#maBg)"/>
+  <!-- Ambient glows -->
+  <circle cx="150" cy="100" r="140" fill="rgba(255,92,26,.07)"/>
+  <circle cx="650" cy="320" r="160" fill="rgba(37,99,235,.06)"/>
+  <circle cx="400" cy="210" r="120" fill="rgba(124,58,237,.05)"/>
+
+  <!-- Grid lines (subtle) -->
+  <line x1="0" y1="105" x2="800" y2="105" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="0" y1="210" x2="800" y2="210" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="0" y1="315" x2="800" y2="315" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="200" y1="0" x2="200" y2="420" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="420" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="420" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+
+  <!-- ══ HEADER BAR ══ -->
+  <rect x="30" y="22" width="740" height="42" rx="10" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  <circle cx="52" cy="43" r="6" fill="#FF5C1A"/>
+  <text x="66" y="48" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,.7)">Apex360 — Marketing Automation Hub</text>
+  <!-- Tab pills -->
+  <rect x="490" y="32" width="80" height="22" rx="11" fill="rgba(255,92,26,.25)" stroke="rgba(255,92,26,.4)" stroke-width="1"/>
+  <text x="530" y="47" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#FF7A3D">Workflows</text>
+  <rect x="580" y="32" width="64" height="22" rx="11" fill="rgba(255,255,255,.06)"/>
+  <text x="612" y="47" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,.5)">Contacts</text>
+  <rect x="654" y="32" width="56" height="22" rx="11" fill="rgba(255,255,255,.06)"/>
+  <text x="682" y="47" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,.5)">Reports</text>
+  <!-- Live dot -->
+  <circle cx="738" cy="43" r="5" fill="#22c55e"/>
+  <circle cx="738" cy="43" r="9" fill="rgba(34,197,94,.2)"/>
+
+  <!-- ══ AUTOMATION FLOW — 5 connected nodes ══ -->
+  <!-- Connector lines -->
+  <line x1="138" y1="170" x2="192" y2="170" stroke="rgba(255,92,26,.5)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="298" y1="170" x2="352" y2="170" stroke="rgba(255,92,26,.5)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="458" y1="170" x2="512" y2="170" stroke="rgba(255,92,26,.5)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="618" y1="170" x2="672" y2="170" stroke="rgba(34,197,94,.6)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <!-- Arrow heads -->
+  <polygon points="190,166 198,170 190,174" fill="rgba(255,92,26,.6)"/>
+  <polygon points="350,166 358,170 350,174" fill="rgba(255,92,26,.6)"/>
+  <polygon points="510,166 518,170 510,174" fill="rgba(255,92,26,.6)"/>
+  <polygon points="670,166 678,170 670,174" fill="rgba(34,197,94,.7)"/>
+
+  <!-- Node 1: Trigger -->
+  <rect x="30" y="140" width="108" height="60" rx="14" fill="rgba(255,255,255,.07)" stroke="rgba(255,92,26,.35)" stroke-width="1.5" filter="url(#maShadow)"/>
+  <rect x="38" y="148" width="28" height="28" rx="8" fill="url(#maOr)"/>
+  <text x="52" y="167" text-anchor="middle" font-size="14" fill="#fff">🎯</text>
+  <text x="75" y="162" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.85)">New Lead</text>
+  <text x="75" y="174" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.45)">Trigger</text>
+  <rect x="38" y="181" width="92" height="12" rx="6" fill="rgba(255,92,26,.2)"/>
+  <text x="84" y="191" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#FF7A3D">ACTIVE</text>
+
+  <!-- Node 2: Score -->
+  <rect x="200" y="140" width="108" height="60" rx="14" fill="rgba(255,255,255,.07)" stroke="rgba(96,165,250,.3)" stroke-width="1.5" filter="url(#maShadow)"/>
+  <rect x="208" y="148" width="28" height="28" rx="8" fill="url(#maBl)"/>
+  <text x="222" y="167" text-anchor="middle" font-size="14" fill="#fff">⚡</text>
+  <text x="244" y="162" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.85)">AI Score</text>
+  <text x="244" y="174" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.45)">Lead rank</text>
+  <rect x="208" y="181" width="92" height="12" rx="6" fill="rgba(96,165,250,.2)"/>
+  <text x="254" y="191" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#60a5fa">RUNNING</text>
+
+  <!-- Node 3: Email Seq -->
+  <rect x="360" y="140" width="108" height="60" rx="14" fill="rgba(255,255,255,.07)" stroke="rgba(167,139,250,.3)" stroke-width="1.5" filter="url(#maShadow)"/>
+  <rect x="368" y="148" width="28" height="28" rx="8" fill="rgba(124,58,237,.8)"/>
+  <text x="382" y="167" text-anchor="middle" font-size="14" fill="#fff">✉️</text>
+  <text x="404" y="162" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.85)">Email Seq.</text>
+  <text x="404" y="174" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.45)">Nurture flow</text>
+  <rect x="368" y="181" width="92" height="12" rx="6" fill="rgba(124,58,237,.2)"/>
+  <text x="414" y="191" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#a78bfa">ACTIVE</text>
+
+  <!-- Node 4: Chatbot -->
+  <rect x="520" y="140" width="108" height="60" rx="14" fill="rgba(255,255,255,.07)" stroke="rgba(250,204,21,.3)" stroke-width="1.5" filter="url(#maShadow)"/>
+  <rect x="528" y="148" width="28" height="28" rx="8" fill="rgba(202,138,4,.85)"/>
+  <text x="542" y="167" text-anchor="middle" font-size="14" fill="#fff">🤖</text>
+  <text x="564" y="162" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.85)">Chatbot</text>
+  <text x="564" y="174" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.45)">Qualify 24/7</text>
+  <rect x="528" y="181" width="92" height="12" rx="6" fill="rgba(250,204,21,.15)"/>
+  <text x="574" y="191" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#fbbf24">ACTIVE</text>
+
+  <!-- Node 5: Converted -->
+  <rect x="680" y="140" width="90" height="60" rx="14" fill="rgba(34,197,94,.12)" stroke="rgba(34,197,94,.45)" stroke-width="1.5" filter="url(#maShadow)"/>
+  <rect x="688" y="148" width="28" height="28" rx="8" fill="url(#maGr)"/>
+  <text x="702" y="167" text-anchor="middle" font-size="14" fill="#fff">💰</text>
+  <text x="718" y="162" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#4ade80">Converted</text>
+  <text x="718" y="174" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.45)">Deal closed</text>
+  <rect x="688" y="181" width="74" height="12" rx="6" fill="rgba(34,197,94,.25)"/>
+  <text x="725" y="191" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#4ade80">✓ WON</text>
+
+  <!-- ══ EMAIL PREVIEW CARD ══ -->
+  <rect x="30" y="230" width="310" height="130" rx="16" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.1)" stroke-width="1" filter="url(#maShadow)"/>
+  <rect x="30" y="230" width="310" height="38" rx="16" fill="rgba(255,255,255,.05)"/>
+  <rect x="30" y="252" width="310" height="8" fill="rgba(255,255,255,.05)"/>
+  <circle cx="52" cy="249" r="10" fill="url(#maOr)"/>
+  <text x="52" y="254" text-anchor="middle" font-size="10" fill="#fff">A</text>
+  <text x="70" y="246" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.8)">Apex360 Automation</text>
+  <text x="70" y="258" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">noreply@apex360digital.com</text>
+  <text x="300" y="246" text-anchor="end" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.3)">just now</text>
+  <!-- Email body lines -->
+  <text x="46" y="283" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.75)">Hi {{first_name}}, your free audit is ready 🎯</text>
+  <rect x="46" y="292" width="240" height="7" rx="3" fill="rgba(255,255,255,.08)"/>
+  <rect x="46" y="304" width="200" height="7" rx="3" fill="rgba(255,255,255,.08)"/>
+  <rect x="46" y="316" width="160" height="7" rx="3" fill="rgba(255,255,255,.06)"/>
+  <!-- CTA button in email -->
+  <rect x="46" y="330" width="120" height="22" rx="11" fill="url(#maOr)"/>
+  <text x="106" y="345" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#fff">View Your Audit →</text>
+  <!-- Open rate badge -->
+  <rect x="260" y="310" width="70" height="38" rx="10" fill="rgba(34,197,94,.15)" stroke="rgba(34,197,94,.3)" stroke-width="1"/>
+  <text x="295" y="326" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#4ade80">48%</text>
+  <text x="295" y="340" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.5)">Open Rate</text>
+
+  <!-- ══ PIPELINE CHART ══ -->
+  <rect x="360" y="230" width="410" height="130" rx="16" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.1)" stroke-width="1" filter="url(#maShadow)"/>
+  <text x="380" y="254" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,.7)">Pipeline Growth · This Quarter</text>
+  <rect x="680" y="240" width="72" height="20" rx="10" fill="rgba(34,197,94,.15)" stroke="rgba(34,197,94,.3)" stroke-width="1"/>
+  <text x="716" y="254" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#4ade80">↑ 3× avg</text>
+  <!-- Bar chart -->
+  <rect x="380" y="308" width="28" height="32" rx="4" fill="rgba(255,92,26,.3)"/>
+  <rect x="418" y="295" width="28" height="45" rx="4" fill="rgba(255,92,26,.45)"/>
+  <rect x="456" y="280" width="28" height="60" rx="4" fill="rgba(255,92,26,.6)"/>
+  <rect x="494" y="268" width="28" height="72" rx="4" fill="rgba(255,92,26,.75)"/>
+  <rect x="532" y="258" width="28" height="82" rx="4" fill="rgba(255,92,26,.85)"/>
+  <rect x="570" y="245" width="28" height="95" rx="4" fill="url(#maOr)" filter="url(#maGlow)"/>
+  <!-- Month labels -->
+  <text x="394" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">Jan</text>
+  <text x="432" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">Feb</text>
+  <text x="470" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">Mar</text>
+  <text x="508" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">Apr</text>
+  <text x="546" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">May</text>
+  <text x="584" y="350" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,92,26,.8)">Jun</text>
+  <!-- Stats row -->
+  <rect x="626" y="268" width="130" height="72" rx="12" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  <text x="691" y="290" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="800" fill="#FF5C1A">200+</text>
+  <text x="691" y="306" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.5)">Workflows</text>
+  <text x="691" y="318" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.5)">Delivered</text>
+  <text x="691" y="332" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#4ade80">Active ✓</text>
+
+  <!-- ══ BOTTOM STATS STRIP ══ -->
+  <rect x="30" y="376" width="740" height="32" rx="10" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+  <text x="100" y="397" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="800" fill="#FF5C1A">3×</text>
+  <text x="140" y="397" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Pipeline Growth</text>
+  <line x1="220" y1="380" x2="220" y2="405" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  <text x="290" y="397" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="800" fill="#FF5C1A">60%</text>
+  <text x="330" y="397" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Less Manual Work</text>
+  <line x1="430" y1="380" x2="430" y2="405" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  <text x="490" y="397" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="800" fill="#FF5C1A">40%</text>
+  <text x="530" y="397" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Faster Deal Close</text>
+  <line x1="640" y1="380" x2="640" y2="405" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  <text x="700" y="397" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="800" fill="#4ade80">24/7</text>
+  <text x="718" y="397" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Running</text>
+</svg>
+        <div class="ma-overlay"></div>
+        <div class="ma-live"><div class="ma-live-dot"></div>Automations Running</div>
+        <div class="ma-metrics-grid">
+          <div class="ma-mc"><div class="ma-mc-num">3×</div><div class="ma-mc-lbl">Pipeline Growth</div></div>
+          <div class="ma-mc"><div class="ma-mc-num">60%</div><div class="ma-mc-lbl">Less Manual Work</div></div>
+          <div class="ma-mc"><div class="ma-mc-num">40%</div><div class="ma-mc-lbl">Faster Deal Close</div></div>
+          <div class="ma-mc"><div class="ma-mc-num">200+</div><div class="ma-mc-lbl">Workflows Built</div></div>
+        </div>
+      </div>
+      <div class="ma-cta-card rv d1">
+        <div>
+          <strong>Less Admin + More Pipeline = Your Competitive Advantage</strong>
+          <p>Every automation stack we build is engineered to capture, score, and nurture leads automatically — freeing your team to focus on closing, not chasing.</p>
+        </div>
+        <a href="contact.html" class="btn-orange" style="white-space:nowrap;flex-shrink:0">Get Started →</a>
       </div>
     </div>
   </div>
