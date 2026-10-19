@@ -502,6 +502,26 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   #chat-widget{right:.9rem;bottom:.9rem}
   #chat-panel{width:calc(100vw - 1.8rem);right:-.15rem}
 }
+
+/* ── AI Strategy image block ── */
+.ai-img-block{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.13);background:#050d1f}
+.ai-img-block svg{width:100%;height:420px;display:block;max-width:100%}
+.ai-live{position:absolute;top:1rem;left:1rem;display:flex;align-items:center;gap:.45rem;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:30px;padding:.4rem .9rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.7rem;font-weight:700;color:#111;box-shadow:0 4px 14px rgba(0,0,0,.12);z-index:3}
+.ai-live-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;animation:aiPulse 1.5s ease infinite;flex-shrink:0}
+@keyframes aiPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+.ai-metrics-grid{position:absolute;bottom:1rem;left:1rem;right:1rem;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;z-index:3}
+.ai-mc{background:rgba(255,255,255,.13);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:.75rem 1rem;text-align:center}
+.ai-mc-num{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.45rem;font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em}
+.ai-mc-lbl{font-size:.62rem;color:rgba(255,255,255,.7);margin-top:.2rem;line-height:1.3}
+.ai-cta-card{background:var(--purple-bg);border:1px solid rgba(124,58,237,.2);border-radius:16px;padding:1.4rem 1.5rem;margin-top:1rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.ai-cta-card strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:.97rem;font-weight:700;color:var(--ink);display:block;margin-bottom:.35rem}
+.ai-cta-card p{font-size:.82rem;color:var(--muted);line-height:1.55;margin:0}
+@media(max-width:768px){
+  .ai-img-block svg{height:280px}
+  .ai-mc-num{font-size:1.2rem}
+  .ai-cta-card{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){.ai-metrics-grid{gap:.4rem}.ai-mc{padding:.6rem .75rem}}
 </style>
 </head>
 <body>
@@ -800,12 +820,223 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
       </div>
     </div>
     <div class="rv-r">
-      <div class="metrics">
-        <div class="metric"><div class="metric-num">10×</div><div class="metric-lbl">Operational efficiency gain on average</div></div>
-        <div class="metric"><div class="metric-num">70%</div><div class="metric-lbl">Cost reduction from AI process automation</div></div>
-        <div class="metric"><div class="metric-num">4×</div><div class="metric-lbl">Faster decision making with AI analytics</div></div>
-        <div class="metric"><div class="metric-num">91%</div><div class="metric-lbl">AI implementation success rate across clients</div></div>
-        <div class="metric-cta"><div><strong>Custom AI Built For Your Business Goals</strong><p>Every AI system we build is designed around your specific data, processes, and competitive context — not generic off-the-shelf tools deployed without any strategic thinking behind them.</p></div><a href="contact.html" class="btn-orange" style="white-space:nowrap">Get Started →</a></div>
+      <div class="ai-img-block rv">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" style="width:100%;height:420px;display:block" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="s_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/><stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="s_or" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF7A3D"/><stop offset="100%" stop-color="#FF5C1A"/>
+    </linearGradient>
+    <linearGradient id="s_pu" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="s_gr" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6ee7b7"/><stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="s_bl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#93c5fd"/><stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="scrn" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d1f3c"/><stop offset="100%" stop-color="#060e1e"/>
+    </linearGradient>
+    <linearGradient id="area1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,92,26,.4)"/><stop offset="100%" stop-color="rgba(255,92,26,0)"/>
+    </linearGradient>
+    <linearGradient id="area2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(124,58,237,.35)"/><stop offset="100%" stop-color="rgba(124,58,237,0)"/>
+    </linearGradient>
+    <filter id="gA"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="gB"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="sh"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(0,0,0,.6)"/></filter>
+  </defs>
+
+  <!-- BG -->
+  <rect width="800" height="420" fill="url(#s_bg)"/>
+  <!-- Glow blobs -->
+  <ellipse cx="140" cy="180" rx="160" ry="120" fill="rgba(255,92,26,.05)"/>
+  <ellipse cx="660" cy="240" rx="180" ry="130" fill="rgba(124,58,237,.06)"/>
+  <ellipse cx="400" cy="80"  rx="200" ry="80"  fill="rgba(37,99,235,.04)"/>
+
+  <!-- ══ LAPTOP SHELL ══ -->
+  <!-- Screen lid -->
+  <rect x="155" y="28" width="490" height="298" rx="16" fill="#1a1f2e" stroke="rgba(255,255,255,.12)" stroke-width="2" filter="url(#sh)"/>
+  <!-- Screen bezel -->
+  <rect x="168" y="40"  width="464" height="274" rx="10" fill="url(#scrn)"/>
+  <!-- Camera dot -->
+  <circle cx="400" cy="46" r="3" fill="rgba(255,255,255,.15)"/>
+
+  <!-- ── SCREEN CONTENT ── -->
+  <!-- Top bar inside screen -->
+  <rect x="174" y="48" width="452" height="28" rx="4" fill="rgba(255,255,255,.04)"/>
+  <circle cx="186" cy="62" r="5" fill="rgba(255,80,80,.6)"/>
+  <circle cx="200" cy="62" r="5" fill="rgba(255,180,0,.5)"/>
+  <circle cx="214" cy="62" r="5" fill="rgba(50,200,80,.5)"/>
+  <rect x="232" y="55" width="200" height="14" rx="7" fill="rgba(255,255,255,.06)"/>
+  <text x="332" y="66" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.35)">apex360.ai/dashboard</text>
+  <text x="594" y="66" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.3)">AI Strategy Hub</text>
+
+  <!-- ── Left sidebar ── -->
+  <rect x="174" y="76" width="80" height="230" fill="rgba(0,0,0,.25)"/>
+  <text x="214" y="100" text-anchor="middle" font-size="16">🧠</text>
+  <text x="214" y="113" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">AI Core</text>
+  <rect x="181" y="92" width="66" height="26" rx="6" fill="rgba(255,92,26,.15)" stroke="rgba(255,92,26,.3)" stroke-width="1"/>
+  <text x="214" y="140" text-anchor="middle" font-size="14">📊</text>
+  <text x="214" y="153" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Data</text>
+  <text x="214" y="178" text-anchor="middle" font-size="14">⚡</text>
+  <text x="214" y="191" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Automate</text>
+  <text x="214" y="216" text-anchor="middle" font-size="14">🎯</text>
+  <text x="214" y="229" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Strategy</text>
+  <text x="214" y="254" text-anchor="middle" font-size="14">📈</text>
+  <text x="214" y="267" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Results</text>
+  <text x="214" y="292" text-anchor="middle" font-size="14">⚙️</text>
+  <text x="214" y="305" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Settings</text>
+
+  <!-- ── Main content area ── -->
+  <!-- Header row -->
+  <text x="268" y="96" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="rgba(255,255,255,.8)">AI Performance Dashboard</text>
+  <rect x="524" y="82" width="90" height="18" rx="9" fill="rgba(52,211,153,.15)" stroke="rgba(52,211,153,.3)" stroke-width="1"/>
+  <circle cx="533" cy="91" r="4" fill="#34d399" filter="url(#gA)"/>
+  <text x="570" y="95" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#34d399">Live · 3 Models</text>
+
+  <!-- KPI mini cards row -->
+  <rect x="258" y="104" width="88" height="44" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(255,92,26,.2)" stroke-width="1"/>
+  <text x="268" y="118" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">EFFICIENCY</text>
+  <text x="268" y="138" font-family="Arial,sans-serif" font-size="16" font-weight="800" fill="#FF7A3D" filter="url(#gA)">10×</text>
+  <rect x="355" y="104" width="88" height="44" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(124,58,237,.2)" stroke-width="1"/>
+  <text x="365" y="118" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">COST DOWN</text>
+  <text x="365" y="138" font-family="Arial,sans-serif" font-size="16" font-weight="800" fill="#c084fc" filter="url(#gA)">70%</text>
+  <rect x="452" y="104" width="88" height="44" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(96,165,250,.2)" stroke-width="1"/>
+  <text x="462" y="118" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">DECISIONS</text>
+  <text x="462" y="138" font-family="Arial,sans-serif" font-size="16" font-weight="800" fill="#93c5fd" filter="url(#gA)">4×</text>
+  <rect x="549" y="104" width="88" height="44" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(52,211,153,.2)" stroke-width="1"/>
+  <text x="559" y="118" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">SUCCESS</text>
+  <text x="559" y="138" font-family="Arial,sans-serif" font-size="16" font-weight="800" fill="#6ee7b7" filter="url(#gA)">91%</text>
+
+  <!-- Main chart area -->
+  <rect x="258" y="156" width="252" height="140" rx="10" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+  <text x="270" y="174" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.55)">AI vs Traditional Performance</text>
+  <!-- Chart grid lines -->
+  <line x1="268" y1="194" x2="498" y2="194" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="268" y1="214" x2="498" y2="214" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="268" y1="234" x2="498" y2="234" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="268" y1="254" x2="498" y2="254" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+  <line x1="268" y1="282" x2="498" y2="282" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+  <!-- Traditional flat line -->
+  <path d="M275,278 C310,276 345,274 383,272 C420,270 455,269 492,268" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <!-- AI area fill -->
+  <path d="M275,278 C305,265 330,248 360,228 C388,210 415,194 445,182 C462,176 478,178 492,180 L492,282 L275,282 Z" fill="url(#area1)" opacity=".8"/>
+  <!-- AI growth line -->
+  <path d="M275,278 C305,265 330,248 360,228 C388,210 415,194 445,182 C462,176 478,178 492,180" fill="none" stroke="url(#s_or)" stroke-width="2.5" stroke-linecap="round" filter="url(#gA)"/>
+  <!-- Data dots -->
+  <circle cx="275" cy="278" r="3" fill="#fff" stroke="#FF5C1A" stroke-width="1.5"/>
+  <circle cx="330" cy="248" r="3" fill="#fff" stroke="#FF5C1A" stroke-width="1.5"/>
+  <circle cx="388" cy="210" r="3" fill="#fff" stroke="#FF5C1A" stroke-width="1.5"/>
+  <circle cx="445" cy="182" r="4" fill="#FF7A3D" filter="url(#gA)"/>
+  <circle cx="492" cy="180" r="4" fill="#FF5C1A" filter="url(#gA)"/>
+  <!-- Tooltip -->
+  <rect x="410" y="165" width="82" height="26" rx="7" fill="rgba(255,92,26,.9)"/>
+  <polygon points="442,191 450,198 458,191" fill="rgba(255,92,26,.9)"/>
+  <text x="451" y="177" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#fff">Peak: 10× ROI</text>
+  <text x="451" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.8)">Month 4</text>
+  <!-- X labels -->
+  <text x="285" y="292" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Mo1</text>
+  <text x="340" y="292" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Mo2</text>
+  <text x="395" y="292" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Mo3</text>
+  <text x="448" y="292" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,92,26,.8)">Mo4</text>
+  <text x="480" y="292" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.3)">Mo5</text>
+
+  <!-- Right panel: AI Model cards -->
+  <rect x="520" y="156" width="116" height="140" rx="10" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+  <text x="530" y="174" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="rgba(255,255,255,.55)">Active Models</text>
+  <!-- Model 1 -->
+  <rect x="528" y="180" width="100" height="28" rx="7" fill="rgba(255,92,26,.1)" stroke="rgba(255,92,26,.2)" stroke-width="1"/>
+  <circle cx="536" cy="194" r="4" fill="#FF7A3D" filter="url(#gA)"/>
+  <text x="548" y="191" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,.8)">GPT-4</text>
+  <text x="548" y="202" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">Accuracy 94%</text>
+  <!-- Model 2 -->
+  <rect x="528" y="214" width="100" height="28" rx="7" fill="rgba(124,58,237,.1)" stroke="rgba(124,58,237,.2)" stroke-width="1"/>
+  <circle cx="536" cy="228" r="4" fill="#c084fc" filter="url(#gA)"/>
+  <text x="548" y="225" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,.8)">Claude</text>
+  <text x="548" y="236" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">847 tasks/day</text>
+  <!-- Model 3 -->
+  <rect x="528" y="248" width="100" height="28" rx="7" fill="rgba(52,211,153,.1)" stroke="rgba(52,211,153,.2)" stroke-width="1"/>
+  <circle cx="536" cy="262" r="4" fill="#6ee7b7" filter="url(#gA)"/>
+  <text x="548" y="259" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,.8)">LLaMA</text>
+  <text x="548" y="270" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">91% precision</text>
+  <!-- Model 4 badge -->
+  <rect x="528" y="282" width="100" height="18" rx="5" fill="rgba(52,211,153,.12)"/>
+  <text x="578" y="295" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#6ee7b7">✓ Week 1 Live</text>
+
+  <!-- ── Keyboard base ── -->
+  <rect x="130" y="326" width="540" height="18" rx="8" fill="#1a1f2e" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+  <rect x="315" y="329" width="170" height="12" rx="6" fill="rgba(255,255,255,.06)"/>
+  <rect x="140" y="326" width="520" height="6" rx="0" fill="rgba(0,0,0,.5)"/>
+
+  <!-- ══ FLOATING CHIPS outside laptop ══ -->
+  <!-- Top left -->
+  <rect x="18" y="38" width="118" height="38" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(255,92,26,.25)" stroke-width="1" filter="url(#sh)"/>
+  <text x="28" y="54" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">AI Opportunity</text>
+  <text x="28" y="67" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#FF7A3D" filter="url(#gA)">Discover</text>
+
+  <!-- Bottom left -->
+  <rect x="18" y="290" width="118" height="38" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(167,139,250,.25)" stroke-width="1" filter="url(#sh)"/>
+  <text x="28" y="306" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Custom Build</text>
+  <text x="28" y="319" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#c084fc" filter="url(#gA)">GPT-4</text>
+
+  <!-- Top right -->
+  <rect x="664" y="38" width="118" height="38" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(52,211,153,.25)" stroke-width="1" filter="url(#sh)"/>
+  <text x="674" y="54" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Implementation</text>
+  <text x="674" y="67" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#6ee7b7" filter="url(#gA)">Week 1</text>
+
+  <!-- Bottom right -->
+  <rect x="664" y="290" width="118" height="38" rx="12" fill="rgba(255,255,255,.06)" stroke="rgba(96,165,250,.25)" stroke-width="1" filter="url(#sh)"/>
+  <text x="674" y="306" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,.4)">Success Rate</text>
+  <text x="674" y="319" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#93c5fd" filter="url(#gA)">91%</text>
+
+  <!-- ══ BOTTOM STRIP ══ -->
+  <rect x="18" y="356" width="764" height="52" rx="12" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+  <text x="38" y="376" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="rgba(255,255,255,.35)" letter-spacing="1">IMPLEMENTATION ROADMAP</text>
+  <!-- Steps -->
+  <circle cx="68"  cy="396" r="11" fill="url(#s_pu)"/><text x="68"  y="401" text-anchor="middle" font-size="11">🔍</text>
+  <text x="68"  y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">Discover</text>
+  <line x1="79" y1="396" x2="127" y2="396" stroke="rgba(255,255,255,.12)" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="138" cy="396" r="11" fill="url(#s_or)"/><text x="138" y="401" text-anchor="middle" font-size="11">🏗</text>
+  <text x="138" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">Build</text>
+  <line x1="149" y1="396" x2="197" y2="396" stroke="rgba(255,255,255,.12)" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="208" cy="396" r="11" fill="url(#s_bl)"/><text x="208" y="401" text-anchor="middle" font-size="11">🔗</text>
+  <text x="208" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">Integrate</text>
+  <line x1="219" y1="396" x2="267" y2="396" stroke="rgba(255,255,255,.12)" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="278" cy="396" r="11" fill="url(#s_pu)"/><text x="278" y="401" text-anchor="middle" font-size="11">🧪</text>
+  <text x="278" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,.4)">Test</text>
+  <line x1="289" y1="396" x2="337" y2="396" stroke="rgba(255,255,255,.12)" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="348" cy="396" r="11" fill="url(#s_or)"/><text x="348" y="401" text-anchor="middle" font-size="11">🚀</text>
+  <text x="348" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#FF7A3D">Launch</text>
+  <line x1="359" y1="396" x2="407" y2="396" stroke="rgba(255,92,26,.25)" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="418" cy="396" r="11" fill="url(#s_gr)"/><text x="418" y="401" text-anchor="middle" font-size="11">📊</text>
+  <text x="418" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#6ee7b7">Monitor</text>
+  <line x1="429" y1="396" x2="477" y2="396" stroke="rgba(52,211,153,.25)" stroke-width="1" stroke-dasharray="3 2"/>
+  <circle cx="488" cy="396" r="11" fill="url(#s_gr)"/><text x="488" y="401" text-anchor="middle" font-size="11">💰</text>
+  <text x="488" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#6ee7b7">ROI</text>
+  <!-- Result badge -->
+  <rect x="520" y="382" width="244" height="28" rx="10" fill="rgba(52,211,153,.12)" stroke="rgba(52,211,153,.25)" stroke-width="1"/>
+  <text x="642" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#6ee7b7">✓ First Results in Week 1 · 91% Success Rate</text>
+</svg>
+        <div class="ai-live"><div class="ai-live-dot"></div>AI Systems Active</div>
+        <div class="ai-metrics-grid">
+          <div class="ai-mc"><div class="ai-mc-num">10×</div><div class="ai-mc-lbl">Efficiency Gain</div></div>
+          <div class="ai-mc"><div class="ai-mc-num">70%</div><div class="ai-mc-lbl">Cost Reduction</div></div>
+          <div class="ai-mc"><div class="ai-mc-num">4×</div><div class="ai-mc-lbl">Faster Decisions</div></div>
+          <div class="ai-mc"><div class="ai-mc-num">91%</div><div class="ai-mc-lbl">Success Rate</div></div>
+        </div>
+      </div>
+      <div class="ai-cta-card rv d1">
+        <div>
+          <strong>Custom AI Built For Your Business Goals</strong>
+          <p>Every AI system we build is designed around your specific data, processes, and competitive context — not generic off-the-shelf tools deployed without any strategic thinking behind them.</p>
+        </div>
+        <a href="contact.html" class="btn-orange" style="white-space:nowrap;flex-shrink:0">Get Started →</a>
       </div>
     </div>
   </div>
