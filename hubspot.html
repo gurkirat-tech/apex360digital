@@ -342,6 +342,23 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
   .hs-metrics-grid{grid-template-columns:1fr 1fr;gap:.45rem}
   .hs-mc{padding:.6rem .75rem}
 }
+
+/* ── HubSpot logo placements ── */
+.hs-logo-tag{width:15px;height:15px;flex-shrink:0;display:block}
+.hero-tag.hs-tag{background:#fff;border:1px solid rgba(255,122,89,.35);color:#33475b;gap:.5rem;box-shadow:0 2px 10px rgba(255,122,89,.12)}
+.hs-logo-badge{width:42px;height:42px;border-radius:12px;background:#FFF1ED;border:1px solid rgba(255,122,89,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hs-logo-badge svg{width:24px;height:24px;display:block}
+.hero-snap-head .hs-head-text-wrap{display:flex;flex-direction:column;gap:.1rem;flex:1}
+.hero-snap-head .hs-head-sub{font-size:.66rem;color:var(--muted);font-weight:500}
+.hs-logo-marq{width:16px;height:16px;flex-shrink:0;display:block}
+.hs-partner-strip{display:flex;align-items:center;gap:.85rem;margin-top:1.75rem;padding-top:1.4rem;border-top:1px dashed rgba(0,0,0,.1)}
+.hs-partner-strip .hs-logo-badge{width:46px;height:46px}
+.hs-partner-strip strong{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.86rem;color:var(--ink);line-height:1.25}
+.hs-partner-strip span.hs-ps-sub{font-size:.74rem;color:var(--muted)}
+@media(max-width:768px){
+  .hs-partner-strip{margin-top:1.4rem;padding-top:1.1rem}
+  .hs-logo-badge{width:38px;height:38px}
+}
 </style>
 </head>
 <body>
@@ -383,19 +400,26 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
         <span>HubSpot Solutions</span>
       </div>
-      <div class="hero-tag"><span class="hero-dot"></span>HubSpot Solutions</div>
+      <div class="hero-tag hs-tag"><svg class="hs-logo-tag" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HubSpot"><path fill="#FF7A59" d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg>HubSpot Solutions</div>
       <h1>Turn HubSpot Into Your <span>Revenue Growth Engine</span></h1>
       <p class="hero-sub">We implement, migrate, and optimise HubSpot CRM so your sales and marketing teams work smarter — automating repetitive tasks, closing deals faster, and scaling revenue without scaling headcount.</p>
       <div class="hero-btns">
         <a href="contact.html" class="btn-orange">Get Free Consultation →</a>
         <a href="#services" class="btn-ghost">Explore Services</a>
       </div>
+      <div class="hs-partner-strip">
+        <div class="hs-logo-badge"><svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HubSpot"><path fill="#FF7A59" d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg></div>
+        <div><strong>Official HubSpot Certified Partner</strong><span class="hs-ps-sub">Platinum Solutions · 200+ portals delivered</span></div>
+      </div>
     </div>
     <div class="hero-snap-wrap rv">
       <div class="hero-snap-card">
         <div class="hero-snap-head">
-          <span class="hero-snap-dot"></span>
-          <span class="hero-snap-head-text">HubSpot Certified Partner</span>
+          <div class="hs-logo-badge"><svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HubSpot"><path fill="#FF7A59" d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg></div>
+          <div class="hs-head-text-wrap">
+            <span class="hero-snap-head-text">HubSpot Certified Partner</span>
+            <span class="hs-head-sub"><span class="hero-snap-dot" style="display:inline-block;margin-right:.35rem;vertical-align:middle"></span>Verified &amp; active</span>
+          </div>
         </div>
         <div class="hero-snap-grid"><div><div class="hero-snap-stat-num">3×</div><div class="hero-snap-stat-lbl">Pipeline growth on average</div></div><div><div class="hero-snap-stat-num">60%</div><div class="hero-snap-stat-lbl">Less manual work</div></div><div><div class="hero-snap-stat-num">40%</div><div class="hero-snap-stat-lbl">Faster deal close</div></div><div><div class="hero-snap-stat-num">200+</div><div class="hero-snap-stat-lbl">Portals delivered</div></div></div>
         <div class="hero-snap-quote">"They don't just install HubSpot — they make it think."</div>
@@ -410,14 +434,14 @@ footer{background:#0a0a0a;color:rgba(255,255,255,.55);padding:4rem 5rem 2rem;bor
 
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <div class="marquee-item"><span class="marquee-dot"></span>HubSpot Certified Partner</div>
+    <div class="marquee-item"><svg class="hs-logo-marq" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HubSpot"><path fill="#FF7A59" d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg>HubSpot Certified Partner</div>
     <div class="marquee-item"><span class="marquee-dot"></span>200+ Portals Migrated</div>
     <div class="marquee-item"><span class="marquee-dot"></span>Zero Data Loss Guarantee</div>
     <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
     <div class="marquee-item"><span class="marquee-dot"></span>24/7 Priority Support</div>
     <div class="marquee-item"><span class="marquee-dot"></span>3× Average Pipeline Growth</div>
     <div class="marquee-item"><span class="marquee-dot"></span>Platinum Solutions Partner</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>HubSpot Certified Partner</div>
+    <div class="marquee-item"><svg class="hs-logo-marq" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HubSpot"><path fill="#FF7A59" d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></svg>HubSpot Certified Partner</div>
     <div class="marquee-item"><span class="marquee-dot"></span>200+ Portals Migrated</div>
     <div class="marquee-item"><span class="marquee-dot"></span>Zero Data Loss Guarantee</div>
     <div class="marquee-item"><span class="marquee-dot"></span>GDPR Compliant Builds</div>
